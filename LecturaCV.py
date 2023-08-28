@@ -14,24 +14,42 @@ for index, file in enumerate(files, start = 1): # Por c/archivo en el directorio
         word.Visible = False # Ocultar doc para el usuario
         doc = word.Documents.Open(ruta_actual + '\\files\\' + file) # Ruta del archivo
 
-        table_contents = [] # Todas las tablas
+        tablas=[]
+        nombre = ''
+        contenido=[]
+        counter = 0
         for table in doc.Tables: # Por c/tabla en el doc
-            table_content = [] # Cada tabla en específico
             for row in table.Rows: # Por c/fila en la tabla
                 row_content = [cell.Range.Text[0:-1].strip() for cell in row.Cells] # Texto de c/u de las celdas de la fila
-                table_content.append(row_content)
-            table_contents.append(table_content)
+                if len(row_content) == 1 and row_content[0] != '': 
+                    if len(contenido) > 0:
+                        counter = counter + 1
+                        print(counter)
+                        print({'nombre': nombre, 'contenido': contenido})
+                        print('')
+                        print('')
+                        print('')
+                        tablas.append({'nombre': nombre, 'contenido': contenido})
+                        contenido = []
+                                                
+                    nombre = row_content[0]                    
+                    # print(row_content)
+                    
+                elif len(row_content)  > 1:
+                    contenido.append(row_content)
+                    # print(f"\t {row_content}")
+                    
         doc.Close() # Cerrar el doc
         word.Quit() # Eliminar la instancia del word
+        
+        print('tabla final')
+        print(tablas)
 
-        # Dar formato a la info
-        print(f"\nArchivo {index} - {file}:")
-        for table_number, table_content in enumerate(table_contents, start = 1):
-            print(f"Tabla {table_number}:")
-            for row_number, row in enumerate(table_content, start = 1):
-                print(f"  Fila {row_number}: {row}")
-    except:
-        print(f"\nEl archivo que intentas leer no tiene el formato adecuado para extraer la información y se ha omitido: {file}")
+    except Exception as error:
+        print("An exception occurred:", error)
+    # except:
+    #     print()
+    #     print(f"\nEl archivo que intentas leer no tiene el formato adecuado para extraer la información y se ha omitido: {file}")
 
 print("\n------------------------------------- Terminando Lectura -------------------------------------\n")
 fin = time.time() # Fin de la ejecución
