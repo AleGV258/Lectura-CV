@@ -24,11 +24,11 @@ for index, file in enumerate(files, start = 1): # Por c/archivo en el directorio
                 if len(row_content) == 1 and row_content[0] != '': 
                     if len(contenido) > 0:
                         counter = counter + 1
-                        print(counter)
-                        print({'nombre': nombre, 'contenido': contenido})
-                        print('')
-                        print('')
-                        print('')
+                        # print(counter)
+                        # print({'nombre': nombre, 'contenido': contenido})
+                        # print('')
+                        # print('')
+                        # print('')
                         tablas.append({'nombre': nombre, 'contenido': contenido})
                         contenido = []
                                                 
@@ -43,7 +43,13 @@ for index, file in enumerate(files, start = 1): # Por c/archivo en el directorio
         word.Quit() # Eliminar la instancia del word
         
         print('tabla final')
-        print(tablas)
+        # BUCAR TODO EN Variable tablas
+        
+        # Separar datos del profesor    
+        # Formato al objeto
+        # Enviarlo
+        
+        
 
     except Exception as error:
         print("An exception occurred:", error)
