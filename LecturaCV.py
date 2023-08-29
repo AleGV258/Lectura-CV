@@ -96,7 +96,7 @@ for index, file in enumerate(files, start = 1): # Por c/archivo en el directorio
             Logro_Arreglo.append(logro)            
             contador = contador + 1
            
-        # 
+        #
         # ProfesorLogros = {
         #     'IdProfesor': tablas[1]['contenido'][0][1],
         #     'IdLogro': tablas[1]['contenido'][0][1]
@@ -136,6 +136,22 @@ for index, file in enumerate(files, start = 1): # Por c/archivo en el directorio
             contador = contador + 1
        
         print("\nInvestigaciones: ", Investigaciones)
+        ########################################################################################################
+        #  def tablasCreacion(contador, arrayArreglo, insertado=false, tabla, nombreTitulo, array):
+        #    arrayGUardado = []
+        #      for dato in tabla['contenido']:
+        #       if dato[0] == nombreTitulo and contador != 0:
+        #           insertado = TRUE 
+        #       if insertado: 
+        #           arrayDiccionario = RecocorrerInfoArray(arrayArreglo, array)
+        #           arrayGuardado.append(arrayDiccionario)
+
+        #           arrayArreglo = []
+        #           insertado = Falso
+        #       arrayArreglo.append(dato)
+        #       contador = contador + 1
+        #   return arrayGUardado
+        #####################################################################################################
         # ProfesorInvestigaciones = {
         #     'IdProfesor': tablas[1]['contenido'][0][1],
         #     'IdInvestigacion': tablas[1]['contenido'][0][1]
