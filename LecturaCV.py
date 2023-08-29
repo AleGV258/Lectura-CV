@@ -6,8 +6,9 @@ inicio = time.time() # Inicio de la ejecución
 print("\n-------------------------------------- Iniciando Lectura --------------------------------------")
 
 ruta_actual = os.path.dirname(os.path.abspath(__file__)) # Directorio actual
-files = os.listdir(ruta_actual + "\\files") # Ruta de los archivos
 
+files = os.listdir(ruta_actual + "\\files") # Ruta de los archivos
+print(files)
 for index, file in enumerate(files, start = 1): # Por c/archivo en el directorio
     try:
         word = win32com.client.Dispatch("Word.Application") # Generar instancia de word
@@ -44,7 +45,21 @@ for index, file in enumerate(files, start = 1): # Por c/archivo en el directorio
         
         print('tabla final')
         # BUCAR TODO EN Variable tablas
+        datosTablas=tablas[1] 
+        datosTablas2=tablas[4]
         
+
+        datos3 = {
+            Nombre: datosTablas['nombre'],
+            RFC: datosTablas['RFC'],
+            CURP: datosTablas['CURP'],
+            FechaNacimiento: datosTablas['Fecha de nacimiento'],
+            IES: datosTablas['IES de adscripción'],
+            EstudioRealizado: tablas[2],
+            DatosLaborales: tablas[3],
+            Area: datosTablas2['Área'],
+            DIciplina: datosTablas2['Diciplina'],
+        }
         # Separar datos del profesor    
         # Formato al objeto
         # Enviarlo
