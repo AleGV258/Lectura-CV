@@ -19,7 +19,7 @@ def RetrieveAllRecords(collection):
     records = mc[0].find()
     for record in records:
         data.append(record)
-    print(f"Records encontrados {len(data)}") if (len(data) != 0) else print("Records no encontrados")
+    print(f"Records encontrados {len(data)}") if (len(data) > 0) else print("Records no encontrados")
     mc[1].close()
     return data
 
@@ -30,7 +30,7 @@ def RetrieveRecords(collection, record):
     records = mc[0].find(record)
     for record in records:
         data.append(record)
-    print(f"Records encontrados {len(data)}") if (len(data) != 0) else print("Records no encontrados")
+    print(f"Records encontrados {len(data)}") if (len(data) > 0) else print("Records no encontrados")
     mc[1].close()
     return data
     
@@ -57,7 +57,7 @@ def InsertRecord(collection, record):
 def UpdateRecords(collection, recordAnterior, recordNuevo):
     mc = connectionDB(collection)
     result = mc[0].update_many(recordAnterior, {"$set": recordNuevo})
-    print(f"Records actualizados {result.modified_count}") if (result.modified_count != 0) else print("Records no actualizados")
+    print(f"Records actualizados {result.modified_count}") if (result.modified_count > 0) else print("Records no actualizados")
     mc[1].close()
 
 # Actualizar por un id (id del documento), {field: value}
@@ -65,7 +65,7 @@ def UpdateRecordByID(collection, recordAnterior, recordNuevo):
     mc = connectionDB(collection)
     try:
         result = mc[0].update_one({"_id":ObjectId(recordAnterior)}, {"$set": recordNuevo})
-        print("Record actualizado") if (result.modified_count != 0) else print("Records no actualizados")
+        print("Record actualizado") if (result.modified_count > 0) else print("Records no actualizados")
     except:
         print("Ese no es un ObjectId")
     mc[1].close()
@@ -74,7 +74,7 @@ def UpdateRecordByID(collection, recordAnterior, recordNuevo):
 def DeleteRecords(collection, record):
     mc = connectionDB(collection)
     result = mc[0].delete_many(record)
-    print(f"Records eliminados {result.deleted_count}") if (result.deleted_count != 0) else print("Records no eliminados")
+    print(f"Records eliminados {result.deleted_count}") if (result.deleted_count > 0) else print("Records no eliminados")
     mc[1].close()
 
 # Borrar por un id (id del documento)
