@@ -51,7 +51,7 @@ for index, file in enumerate(files, start = 1): # Por c/archivo en el directorio
             'EstudioRealizado':  tablas[2]['contenido'],
             'DatosLaborales':  tablas[3]['contenido'],
             'Area':  tablas[4]['contenido'][0][1],
-            'DIciplina':  tablas[4]['contenido'][1][1]
+            'Disciplina':  tablas[4]['contenido'][1][1]
         }
         print("\n Profesor: ", Profesor)
         
@@ -64,6 +64,24 @@ for index, file in enumerate(files, start = 1): # Por c/archivo en el directorio
         #     'IdProfesor': tablas[1]['contenido'][0][1],
         #     'IdLogro': tablas[1]['contenido'][0][1]
         # }
+        
+        # Docencia = {
+        #     'Curso': tablas[1]['contenido'][0][1],
+        #     'InstitucionEducacionSuperior': tablas[1]['contenido'][0][1],
+        #     'DependenciaEducacionSuperior': tablas[1]['contenido'][0][1],
+        #     'ProgramaEducativo': tablas[1]['contenido'][0][1],
+        #     'Nivel': tablas[1]['contenido'][0][1],
+        #     'FechaInicio': tablas[1]['contenido'][0][1],
+        #     'Alumnos': tablas[1]['contenido'][0][1],
+        #     'Semanas': tablas[1]['contenido'][0][1],
+        #     'HorasMes': tablas[1]['contenido'][0][1],
+        #     'HorasSemanalesDedicadas': tablas[1]['contenido'][0][1]
+        # }
+        
+        # print('\n------------------Docencias--------------------')
+        # # Obtención de diccionarios de docencias
+        # Docencias = createDictionary()
+        # print("\n Docencias: ", Docencias)   
         
         # Investigaciones = {
         #     'Titulo': tablas[1]['contenido'][0][1],

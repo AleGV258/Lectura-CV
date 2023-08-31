@@ -1,0 +1,5895 @@
+  
+<html xmlns:w="urn:schemas-microsoft-com:office:word"> 
+   <HEAD>
+      <meta name="robots" content="noindex,nofollow" />
+      <title>Currículum </title>
+   
+
+<xml> 
+<o:documentProperties> 
+<o:Author>PROMEP</o:Author> 
+</o:documentProperties> 
+</xml> 
+
+<style> 
+h1{font:16pt arial,sans-serif} 
+p{font:12pt arial,sans-serif} 
+.Estilo1 {font:10pt arial,sans-serif}
+</style> 
+
+<link href="https://framework-gb.cdn.gob.mx/favicon.ico" rel="shortcut icon">
+    <link href="https://framework-gb.cdn.gob.mx/assets/styles/main.css" rel="stylesheet">
+  </HEAD>
+<body bgcolor="#FFFFFF" text="#000000">
+<div>
+ <form name="frmCurr" method="post" action="./resumencurr.php">   
+   <script language="JavaScript">
+    var Mensajes = new Array(); 
+    function Regresar() {
+    URL = "page?doc=rip\\SolicitudesPendientes.html"
+	document.location.replace(URL);	  
+  }    
+</script>
+	<script language="JavaScript" src="../../public/dbsp.js"></script>
+<CENTER>
+      <DIV id="Hint" class="hint"></DIV>
+      <TABLE width="95%" border='1' cellspacing="0" cellpadding="2">
+        <TR><TD><div align="center" class='Estilo1'><strong>Curriculum <br>
+                  <font size="1"></font></strong></div></TD>
+        </TR>
+      </TABLE>
+</CENTER>	  
+  <br>
+  <div align="center">
+    <table width="95%" border='1' cellpadding="1">
+      <tr>         
+        <td width="*" ><span class='Estilo1'> Secci&oacute;n</span></td>
+		  <td width="200" class='Estilo1'><div align="center" class='Estilo1'>N&uacute;mero de registros</div></td>
+      </tr>	 
+    
+	             <tr>  
+	             <td width="*" class='Estilo1'><A HREF="#4" class="Estilo11">Área y disciplina a la que se dedica</a></td>	
+           
+                <td width="200" class='Estilo1'><div align="center" class="Estilo11">1</div>                 </td>
+                </tr>  
+	 
+	             <tr>  
+	             <td width="*" class='Estilo1'><A HREF="#14" class="Estilo11">Beneficios Promep</a></td>	
+           
+                <td width="200" class='Estilo1'><div align="center" class="Estilo11">1</div>                 </td>
+                </tr>  
+	 
+	             <tr>  
+	             <td width="*" class='Estilo1'><A HREF="#15" class="Estilo11">Cuerpo académico al que pertenece</a></td>	
+           
+                <td width="200" class='Estilo1'><div align="center" class="Estilo11">1</div>                 </td>
+                </tr>  
+	 
+	             <tr>  
+	             <td width="*" class='Estilo1'><A HREF="#3" class="Estilo11">Datos laborales</a></td>	
+           
+                <td width="200" class='Estilo1'><div align="center" class="Estilo11">1</div>                 </td>
+                </tr>  
+	 
+	             <tr>  
+	             <td width="*" class='Estilo1'><A HREF="#9" class="Estilo11">Dirección individualizada</a></td>	
+           
+                <td width="200" class='Estilo1'><div align="center" class="Estilo11">1</div>                 </td>
+                </tr>  
+	 
+	             <tr>  
+	             <td width="*" class='Estilo1'><A HREF="#7" class="Estilo11">Docencia</a></td>	
+           
+                <td width="200" class='Estilo1'><div align="center" class="Estilo11">48</div>                 </td>
+                </tr>  
+	 
+	             <tr>  
+	             <td width="*" class='Estilo1'><A HREF="#2" class="Estilo11">Estudios realizados</a></td>	
+           
+                <td width="200" class='Estilo1'><div align="center" class="Estilo11">2</div>                 </td>
+                </tr>  
+	 
+	             <tr>  
+	             <td width="*" class='Estilo1'><A HREF="#10" class="Estilo11">Gestión académica</a></td>	
+           
+                <td width="200" class='Estilo1'><div align="center" class="Estilo11">8</div>                 </td>
+                </tr>  
+	 
+	             <tr>  
+	             <td width="*" class='Estilo1'><A HREF="#1" class="Estilo11">Identificación del profesor</a></td>	
+           
+                <td width="200" class='Estilo1'><div align="center" class="Estilo11">1</div>                 </td>
+                </tr>  
+	 
+	             <tr>  
+	             <td width="*" class='Estilo1'><A HREF="#11" class="Estilo11">Líneas de generación o aplicación innovadora del conocimiento</a></td>	
+           
+                <td width="200" class='Estilo1'><div align="center" class="Estilo11">0</div>                 </td>
+                </tr>  
+	 
+	             <tr>  
+	             <td width="*" class='Estilo1'><A HREF="#16" class="Estilo11">Participación en la Actualización de PE de Licenciatura</a></td>	
+           
+                <td width="200" class='Estilo1'><div align="center" class="Estilo11">0</div>                 </td>
+                </tr>  
+	 
+	             <tr>  
+	             <td width="*" class='Estilo1'><A HREF="#5" class="Estilo11">Premios o distinciones</a></td>	
+           
+                <td width="200" class='Estilo1'><div align="center" class="Estilo11">0</div>                 </td>
+                </tr>  
+	 
+	             <tr>  
+	             <td width="*" class='Estilo1'><A HREF="#6" class="Estilo11">Producción académica</a></td>	
+           
+                <td width="200" class='Estilo1'><div align="center" class="Estilo11">8</div>                 </td>
+                </tr>  
+	 
+	             <tr>  
+	             <td width="*" class='Estilo1'><A HREF="#13" class="Estilo11">Proyectos de investigación</a></td>	
+           
+                <td width="200" class='Estilo1'><div align="center" class="Estilo11">0</div>                 </td>
+                </tr>  
+	 
+	             <tr>  
+	             <td width="*" class='Estilo1'><A HREF="#8" class="Estilo11">Tutoría</a></td>	
+           
+                <td width="200" class='Estilo1'><div align="center" class="Estilo11">23</div>                 </td>
+                </tr>  
+	       
+    </table>	 
+  </div>
+  <hr>
+  <br>
+
+  <A NAME="1">
+    <DIV align="center">
+      <TABLE width="95%" border='1' cellspacing="0" cellpadding="2">
+        <TR><TD class='Estilo1'><div align="center">Identificaci&oacute;n del profesor</div></TD>
+        </TR>
+      </TABLE>
+    </DIV>
+  </A>
+  <div align="center">
+    <table width="95%" border='1' cellpadding="1">
+      <tr>         
+        <td width="202" class='Estilo1'>Nombre</td>        
+        <td class='Estilo1' width="726"><span class='Estilo1'>DIEGO OCTAVIO IBARRA CORONA</span></td>
+      </tr>
+	  <tr>
+        <td width="202" class='Estilo1'>Género</td>
+        <td class='Estilo1' width="726"> <span class='Estilo1'>Masculino</span></td>
+      </tr>
+      <tr> 
+        <td width="202" class='Estilo1'>RFC</td>
+        <td width="726" class='Estilo1'>IACD910628JH6&nbsp;</td>
+      </tr>
+       <tr> 
+        <td width="202" class='Estilo1'>CURP</td>
+        <td width="726" class='Estilo1'>IACD910628HMCBRG05&nbsp;</td>
+      </tr>
+      <tr> 
+        <td width="202" class='Estilo1'>Nacido en</td>
+        <td width="726" class='Estilo1'><span class='Estilo1'>Mexico</span></td>
+      </tr>
+      <tr> 
+        <td width="202" class='Estilo1'>Fecha de nacimiento</td>
+        <td width="726" class='Estilo1'><span class='Estilo1'>28/06/1991</span></td>
+      </tr>
+	  <tr> 
+        <td width="202" class='Estilo1'>IES de adscripción</td>
+        <td width="726" class='Estilo1'><span class='Estilo1'>Universidad Autónoma de Querétaro</span></td>
+      </tr>
+    </table>
+</div>
+
+  <BR>
+  <A NAME="2">	
+    <DIV align="center">
+      <TABLE width="95%" border='1' cellspacing="0" cellpadding="2">
+        <TR><TD class='Estilo1'><div align="center">Estudios realizados</div></TD></TR>
+      </TABLE>
+    </DIV>
+  </A>	     
+      <table width=95% border='1' cellpadding=2 align=Center>
+		<tr>
+ 			<td class='Estilo1' width=202>Nivel de estudios</td>
+			<td class='Estilo1' width=726>
+				Maestría&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;M.S.I.			</td>
+		</tr>
+		<tr>
+			<td class='Estilo1' height=29 width=202>Estudios en</td>
+			<td class='Estilo1' height=29 width=726>
+				SISTEMAS DE INFORMACION 			</td>
+		</tr>
+		<tr>
+			<td class='Estilo1' width=202>&Aacute;rea ----> Disciplina</td>
+			<td class='Estilo1' width=726>
+				Ingeniería y Tecnología ----> Sistemas de Información			</td>
+		</tr>
+		<tr>
+			<td width=202 class='Estilo1'>Instituci&oacute;n otorgante</td>
+			<td width=726 class='Estilo1'>
+				Universidad Autónoma de Querétaro			</td>
+		</tr>
+		<tr>
+			<td width=202 class='Estilo1'>Instituci&oacute;n otorgante no considerada en el cat&aacute;logo</td>
+			<td width=726 class='Estilo1'>
+				 			</td>
+		</tr>
+	</Table>
+	<table width=95% border='1' cellpadding=2 align=Center>
+		<tr>
+			<td class='Estilo1'><div align="center">Pa&iacute;s</div></td>
+			<td class='Estilo1'><div align="center">Fecha de inicio de estudios</div></td>
+			<td class='Estilo1'><div align="center">Fecha de fin de estudios</div></td>
+			<td class='Estilo1'><div align="center">Fecha de obtenci&oacute;n del t&iacute;tulo o grado</div></td>
+		</tr>
+		<tr>
+			<td class='Estilo1'>
+				MÉXICO			</td>
+			<td class='Estilo1' align=center>
+							</td>
+			<td class='Estilo1' align=center>
+							</td>
+			<td class='Estilo1' align=center>
+				01/08/2017			</td>
+		</tr>
+	</table>
+	<hr>
+	<br>
+   <table width=95% border='1' cellpadding=2 align=Center>
+		<tr>
+ 			<td class='Estilo1' width=202>Nivel de estudios</td>
+			<td class='Estilo1' width=726>
+				Licenciatura&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;I.S.			</td>
+		</tr>
+		<tr>
+			<td class='Estilo1' height=29 width=202>Estudios en</td>
+			<td class='Estilo1' height=29 width=726>
+				Ingeniería de Software 			</td>
+		</tr>
+		<tr>
+			<td class='Estilo1' width=202>&Aacute;rea ----> Disciplina</td>
+			<td class='Estilo1' width=726>
+				Ingeniería y Tecnología ----> Informática			</td>
+		</tr>
+		<tr>
+			<td width=202 class='Estilo1'>Instituci&oacute;n otorgante</td>
+			<td width=726 class='Estilo1'>
+				Universidad Autónoma de Querétaro			</td>
+		</tr>
+		<tr>
+			<td width=202 class='Estilo1'>Instituci&oacute;n otorgante no considerada en el cat&aacute;logo</td>
+			<td width=726 class='Estilo1'>
+				 			</td>
+		</tr>
+	</Table>
+	<table width=95% border='1' cellpadding=2 align=Center>
+		<tr>
+			<td class='Estilo1'><div align="center">Pa&iacute;s</div></td>
+			<td class='Estilo1'><div align="center">Fecha de inicio de estudios</div></td>
+			<td class='Estilo1'><div align="center">Fecha de fin de estudios</div></td>
+			<td class='Estilo1'><div align="center">Fecha de obtenci&oacute;n del t&iacute;tulo o grado</div></td>
+		</tr>
+		<tr>
+			<td class='Estilo1'>
+				MÉXICO			</td>
+			<td class='Estilo1' align=center>
+				16/06/2009			</td>
+			<td class='Estilo1' align=center>
+				15/11/2013			</td>
+			<td class='Estilo1' align=center>
+				29/11/2013			</td>
+		</tr>
+	</table>
+	<hr>
+	<br>
+ 
+<br>
+  <A NAME="3">
+    <DIV align="center">
+      <TABLE width="95%" border='1' cellspacing="0" cellpadding="2">
+        <TR>
+          <TD class='Estilo1'>
+            <div align="center">Datos laborales
+          </div></TD>
+        </TR>
+      </TABLE>
+    </DIV>
+  </A>	       
+  <div align="center"> 
+
+     <table width=95% border='1' cellpadding=2 align=Center>
+      <tr> 
+        <td class='Estilo1' width=202> Nombramiento</td>
+        <td class='Estilo1' width=726> 
+PROFESOR DE TIEMPO COMPLETO
+        </td>
+      </tr>
+      <tr> 
+        <td class='Estilo1' width=202>Tipo de nombramiento</td>
+        <td class='Estilo1' width=726> 
+Profesor-investigador
+        </td>
+      </tr>
+      <tr> 
+        <td class='Estilo1' width=202>Dedicaci&oacute;n</td>
+        <td class='Estilo1' width=726> 
+Tiempo completo
+        </td>
+      </tr>
+	        <tr> 
+        <td class='Estilo1' width=202>Institución de Educación Superior</td>
+        <td class='Estilo1' width=726> 
+Universidad Autónoma de Querétaro
+        </td>
+      </tr>
+	        <tr> 
+        <td class='Estilo1' width=202>Dependencia de Educación Superior</td>
+        <td class='Estilo1' width=726> 
+TECNOLOGÍAS DE INFORMACIÓN Y COMUNICACIONES
+        </td>
+      </tr>
+      <tr> 
+        <td class='Estilo1' height=29 width=202>Unidad Acad&eacute;mica</td>
+        <td class='Estilo1' height=29 width=726> 
+FACULTAD DE INFORMÁTICA
+        </td>
+      </tr>
+      <tr> 
+        <td width=202 class='Estilo1'>Inicio del contrato</td>
+        <td width=726 class='Estilo1'> 
+15/01/2022
+        </td>
+      </tr>
+      <tr> 
+        <td width=202 class='Estilo1'>Fin del contrato</td>
+        <td width=726 class='Estilo1'> 
+
+        </td>
+      </tr>
+        <td width=202 class='Estilo1'>Cronología</td>
+        <td width=726 class='Estilo1'> Primer nombramiento  <br>
+Nombramiento actual        </td>
+      </tr>
+      <tr> 
+        <td colspan=2>&nbsp;</td>
+      </tr>  	  
+ </TABLE>
+  <hr>  	
+ 
+
+</div>
+
+	
+<br>
+  <A NAME="4">	
+    <DIV align="center">
+      <TABLE width="95%" border='1' cellspacing="0" cellpadding="2">
+        <TR><TD class='Estilo1'><div align="center">Área y dsicplina a la que se dedica</div></TD></TR>
+      </TABLE>
+    </DIV>
+  </A>	 
+<br>
+ <div align="center">
+    <table width="95%" border='1' cellpadding="1">
+      <tr>         
+        <td class='Estilo1' width="202">Área</td>        
+        <td class='Estilo1' width="726">Ingeniería y Tecnología</td>
+      </tr>
+	  <tr>
+        <td class='Estilo1' width="202">Disciplina</td>
+        <td class='Estilo1' width="726"> Tecnología (Otros)</td>
+      </tr>
+	  </table>
+    </div>  
+<br>
+  <A NAME="5"></A>
+    <DIV align="center">
+      <TABLE width="95%" border='1' cellspacing="0" cellpadding="2">
+        <TR>
+          <TD class='Estilo1'>
+            <div align="center">Premios y distinciones
+          </div></TD>
+        </TR>
+      </TABLE>
+  <A NAME="1"></A>
+  
+
+
+<br>
+</DIV>	  
+
+  <A NAME="6"></A>
+    <DIV align="center">
+      <TABLE width="95%" border='1' cellspacing="0" cellpadding="2">
+        <TR>
+          
+        <TD class='Estilo1' height="22"> <div align="center">Producci&oacute;n </div></TD>
+        </TR>
+      </TABLE>
+  
+     <TABLE width=95% border='1' cellspacing=1 cellpadding=2 align=Center>
+	  <TR>
+                <TD width=202 class=th1> Tipo </TD>
+                <TD class=td1>
+Artículo arbitrado
+                </TD>
+            </TR>
+              <TR>
+                <TD class=th1 width=202> Autor(es) </TD>
+                <TD class=td1>
+IBARRA CORONA, DIEGO OCTAVIO; DE ALVINO MELGOZA, ALEJANDRA; RIVAS VELAZQUEZ, IRENE; MUÑOZ MANDUJANO, MARTIN.
+                </TD>
+              </TR>
+              <TR>
+                <TD width=202 class=th1> T&iacute;tulo </TD>
+                <TD class=td1>
+Construcción de herramienta para el manejo y consulta de datos climatológicos en la investigación de vulnerabilidades
+                </TD>
+              </TR>
+              <TR>
+                <TD width=202 class=th1> Estado actual</TD>
+                <TD class=td1>
+2
+                </TD>
+              </TR>
+              <TR>
+                <TD class=th1 height=29 width=202> Pa&iacute;s </TD>
+                <TD class=td1 height=29>
+MÉXICO
+                </TD>
+              </TR>
+              <TR>
+                <TD width=202 class=th1>Nombre de la Revista</TD>
+                <TD class=td1>
+NTHE
+                </TD>
+              </TR>
+              <TR>
+                <TD width=202 class=th1> Editorial </TD>
+                <TD class=td1>
+CONCYTEQ
+                </TD>
+              </TR>
+              <TR>
+                <TD width=202 class=th1> Volumen</TD>
+                <TD class=td1>
+13
+                </TD>
+              </TR>
+              <TR>
+                <TD width=202 class=th1>ISSN</TD>
+                <TD class=td1>
+2007-9079
+                </TD>
+              </TR>
+              <TR>
+                <TD class=th1 height=29 width=202> A&ntilde;o</TD>
+                <TD class=td1 height=29>
+2022
+                </TD>
+              </TR>
+            <TR>
+                <TD width=202 class=th1> Propósito </TD>
+                <TD class=td1>
+Desarrollo tecnológico
+                </TD>
+            </TR>
+              <TR>
+                <TD class=th1 height=29 width=202>Para considerar en el currículum de cuerpo académico</TD>
+                <TD class=td1 height=29>
+No
+                </TD>
+              </TR>
+              <TR>
+                <TD class=th1 height=29 width=202>Miembros</TD>
+                <TD class=td1 height=29>
+0
+                </TD>
+              </TR>
+              <TR>
+                <TD class=th1 height=29 width=202>LGACs</TD>
+                <TD class=td1 height=29>
+0
+                </TD>
+              </TR>
+      <tr> 
+        <td colspan=2>&nbsp;</td>
+      </tr>  	  
+</table>
+    <TABLE width=95% border='1' cellspacing=1 cellpadding=2 align=Center>
+            <TR>
+                <TD width=202 class='Estilo1'> Tipo</TD>
+                <TD class='Estilo1'>
+Prototipo
+                </TD>
+            </TR>
+              <TR>
+                <TD class='Estilo1' width=202> Autor(es)</TD>
+                <TD class='Estilo1'>
+IBARRA CORONA, DIEGO OCTAVIO; IBARRA CORONA, MAURICIO ARTURO; LOPEZ MARTINEZ, ROCIO EDITH; OLMOS TREJO, CARLOS ALBERTO; RINCONES, JESUS ARMANDO; VARGAS DIAZ, JOSE ALEJANDRO; XICOTENCATL RAMIREZ, GABRIELA.
+                </TD>
+              </TR>
+              <TR>
+                <TD class=th1 width=202> Tipo de Prototipo</TD>
+                <TD class=td1>
+Programas de cómputo
+                </TD>
+              </TR>
+              <TR>
+                <TD width=202 class='Estilo1'>Nombre del prototipo</TD>
+                <TD class='Estilo1'>
+ASISTENTE VIRTUAL INCLUSIVO - UAQ (AVI-UAQ)
+                </TD>
+              </TR>
+              <TR>
+                <TD width=202 class='Estilo1'>Objetivos</TD>
+                <TD class='Estilo1'>
+SOFTWARE INCLUSIVO
+                </TD>
+              <TR>
+                <TD width=202 class='Estilo1'>Características</TD>
+                <TD class='Estilo1'>
+COMPILACION DE DATOS (BASE DE DATOS)
+                </TD>
+              <TR>
+                <TD width=202 class='Estilo1'> Año</TD>
+                <TD class='Estilo1'>
+2022
+                </TD>
+              </TR>
+              <TR>
+                <TD width=202 class='Estilo1'>Institución para la que fue creado</TD>
+                <TD class='Estilo1'>
+UNIVERSIDAD AUTONOMA DE QUERETARO
+                </TD>
+              </TR>
+              <TR>
+                <TD width=202 class='Estilo1'>Estado actual</TD>
+                <TD class='Estilo1'>
+6
+                </TD>
+              </TR>
+              <TR>
+                <TD width=202 class='Estilo1'> País</TD>
+                <TD class='Estilo1'>
+MÉXICO
+                </TD>
+              </TR>
+              <TR>
+                <TD width=202 class=th1>Propósito</TD>
+                <TD class=td1>
+Desarrollo tecnológico
+                </TD>
+            </TR>
+              <TR>
+                <TD width=202 class='Estilo1'>Para considerar en el curriculum del cuerpo académico</TD>
+                <TD class='Estilo1'>
+Si
+                </TD>
+            </TR>
+              <TR>
+                <TD width=202 class='Estilo1'>Miembros</TD>
+                <TD class='Estilo1'>
+6
+                </TD>
+            </TR>
+              <TR>
+                <TD width=202 class='Estilo1'>LGACs</TD>
+                <TD class='Estilo1'>
+1
+                </TD>
+            </TR>
+      <tr> 
+        <td colspan=2>&nbsp;</td>
+      </tr>  	  
+</table>
+    <TABLE width=95% border='1' cellspacing=1 cellpadding=2 align=Center>
+            <TR>
+                <TD width=202 class='Estilo1'> Tipo</TD>
+                <TD class='Estilo1'>
+Prototipo
+                </TD>
+            </TR>
+              <TR>
+                <TD class='Estilo1' width=202> Autor(es)</TD>
+                <TD class='Estilo1'>
+CHAVEZ MORALES, UBALDO; IBARRA CORONA, DIEGO OCTAVIO; IBARRA CORONA, MAURICIO ARTURO; LOPEZ MARTINEZ, ROCIO EDITH; OLMOS TREJO, CARLOS ALBERTO; RINCONES, JESUS ARMANDO; VARGAS DIAZ, JOSE ALEJANDRO; XICOTENCATL RAMIREZ, GABRIELA.
+                </TD>
+              </TR>
+              <TR>
+                <TD class=th1 width=202> Tipo de Prototipo</TD>
+                <TD class=td1>
+Programas de cómputo
+                </TD>
+              </TR>
+              <TR>
+                <TD width=202 class='Estilo1'>Nombre del prototipo</TD>
+                <TD class='Estilo1'>
+BLEND
+                </TD>
+              </TR>
+              <TR>
+                <TD width=202 class='Estilo1'>Objetivos</TD>
+                <TD class='Estilo1'>
+SOFTWARE EDUCATIVO
+                </TD>
+              <TR>
+                <TD width=202 class='Estilo1'>Características</TD>
+                <TD class='Estilo1'>
+PROGRAMA DE COMPUTACION
+                </TD>
+              <TR>
+                <TD width=202 class='Estilo1'> Año</TD>
+                <TD class='Estilo1'>
+2022
+                </TD>
+              </TR>
+              <TR>
+                <TD width=202 class='Estilo1'>Institución para la que fue creado</TD>
+                <TD class='Estilo1'>
+UNIVERSIDAD AUTONOMA DE QUERETARO
+                </TD>
+              </TR>
+              <TR>
+                <TD width=202 class='Estilo1'>Estado actual</TD>
+                <TD class='Estilo1'>
+6
+                </TD>
+              </TR>
+              <TR>
+                <TD width=202 class='Estilo1'> País</TD>
+                <TD class='Estilo1'>
+MÉXICO
+                </TD>
+              </TR>
+              <TR>
+                <TD width=202 class=th1>Propósito</TD>
+                <TD class=td1>
+Desarrollo tecnológico
+                </TD>
+            </TR>
+              <TR>
+                <TD width=202 class='Estilo1'>Para considerar en el curriculum del cuerpo académico</TD>
+                <TD class='Estilo1'>
+Si
+                </TD>
+            </TR>
+              <TR>
+                <TD width=202 class='Estilo1'>Miembros</TD>
+                <TD class='Estilo1'>
+7
+                </TD>
+            </TR>
+              <TR>
+                <TD width=202 class='Estilo1'>LGACs</TD>
+                <TD class='Estilo1'>
+1
+                </TD>
+            </TR>
+      <tr> 
+        <td colspan=2>&nbsp;</td>
+      </tr>  	  
+</table>
+    <TABLE width=95% border='1' cellspacing=1 cellpadding=2 align=Center>
+            <TR>
+                <TD width=202 class=th1> Tipo</TD>
+                <TD class=td1>
+Capítulo de libro
+                </TD>
+            </TR>
+              <TR>
+                <TD class=th1 width=202> Autor(es)</TD>
+                <TD class=td1>
+ESCUDERO-NAHON, ALEXANDRO; PALACIOS-DIAZ, ROSALBA.
+                </TD>
+              </TR>
+              <TR>
+                <TD width=202 class=th1> T&iacute;tulo del Libro</TD>
+                <TD class=td1>
+TECNOLOGIA Y CONTINGENCIAS
+                </TD>
+              </TR>
+              <TR>
+                <TD width=202 class=th1> Estado actual</TD>
+                <TD class=td1>
+2
+                </TD>
+              </TR>
+              <TR>
+                <TD class=th1 height=29 width=202> Pa&iacute;s* </TD>
+                <TD class=td1 height=29>
+MÉXICO
+                </TD>
+              </TR>
+              <TR>
+                <TD width=202 class=th1> Editorial</TD>
+                <TD class=td1>
+TRANSDIGITAL
+                </TD>
+              </TR>
+              <TR>
+                <TD width=202 class=th1> Edición</TD>
+                <TD class=td1>
+1
+                </TD>
+              </TR>
+              <TR>
+                <TD width=202 class=th1>Tiraje</TD>
+                <TD class=td1>
+1
+                </TD>
+              </TR>
+              <TR>
+                <TD width=202 class=th1>ISBN</TD>
+                <TD class=td1>
+978-607-99594-0-1
+                </TD>
+              </TR>
+              <TR>
+                <TD class=th1 height=29 width=202> A&ntilde;o </TD>
+                <TD class=td1 height=29>
+2021
+                </TD>
+              </TR>
+            <TR>
+                <TD width=202 class=th1> Propósito </TD>
+                <TD class=td1>
+Difusión
+                </TD>
+            </TR>
+ 
+ 
+ <table width="95%" border="0" cellspacing="1" cellpadding="2" align="Center">
+    <tr> 
+      <td class="th1" width="45%"><div align="left">&nbsp;Nombre del Cap&iacute;tulo del Libro </div></td>
+      <td class="th1" width="15%"><div align="center">De la p&aacute;gina </div></td>
+      <td class="th1" width="14%"><div align="center">A la p&aacute;gina </div></td>
+	  <td class="th1" width="4%" ><div align="center">Citas</div></td>
+	  <td class="th1" width="8%" ><div align="center">Para CA</div></td>
+      <td class="th1" width="6%" ><div align="center">Miembros</div></td>
+      <td class="th1" width="5%" ><div align="center">LGACs</div></td>
+    </tr>
+	    
+	 
+	    
+    <tr> 
+      <td class="td1" width="50%"><div align="left">La formulación logística de la reincorporación a las clases presenciales en la educación superior</div></td>
+      <td class="td1" width="15%"><div align="center">28</div></td>
+      <td class="td1" width="14%"><div align="center">34</div></td>
+	  <td class="td1" width="4%"><div align="center">0</div></td>
+	  <td class="td1" width="4%"><div align="center"> SI</div></td>
+      <td class="td1" width="6%"><div align="center">  2</div> </td>
+      <td class="td1" width="5%"><div align="center"> 1</div></td>
+    </tr>
+      </table>
+  </br>
+</table>
+    <TABLE width=95% border='1' cellspacing=1 cellpadding=2 align=Center>
+            <TR>
+                <TD width=202 class=th1> Tipo</TD>
+                <TD class=td1>
+Memorias en extenso
+                </TD>
+            </TR>
+              <TR>
+                <TD class=th1 width=202> Autor(es)</TD>
+                <TD class=td1>
+IBARRA-CORONA, DIEGO; ESCUDERO-NAHON, ALEXANDRO; IBARRA CORONA, MAURICIO ARTURIO; VARGAS-DIAZ, JOSE ALEJANDRO.
+                </TD>
+              </TR>
+              <TR>
+                <TD width=202 class=th1> T&iacute;tulo de la presentación</TD>
+                <TD class=td1>
+ANALISIS CRITICO AL CONCEPTO DE \"SOFTWARE EDUCATIVO\", UNA CARTOGRAFIA CONCEPTUAL
+                </TD>
+              </TR>
+              <TR>
+                <TD width=202 class=th1>Nombre del congreso donde se present&oacute;</TD>
+                <TD class=td1>
+ACADEMIA JOURNALS 2021
+                </TD>
+              </TR>
+              <TR>
+                <TD width=202 class=th1>Pa&iacute;s</TD>
+                <TD class=td1>
+MÉXICO
+                </TD>
+              </TR>
+              <TR>
+                <TD width=202 class=th1>Estado</TD>
+                <TD class=td1>
+QUERETARO
+                </TD>
+              </TR>
+              <TR>
+                <TD width=202 class=th1>Ciudad</TD>
+                <TD class=td1>
+QUERETARO
+                </TD>
+              </TR>
+              <TR>
+                <TD width=202 class=th1>Año</TD>
+                <TD class=td1>
+2021
+                </TD>
+              </TR>
+              <TR>
+                <TD width=202 class=th1>De la página</TD>
+                <TD class=td1>
+372
+                </TD>
+              </TR>
+              <TR>
+                <TD width=202 class=th1>A la página</TD>
+                <TD class=td1>
+377
+                </TD>
+              </TR>
+              <TR>
+                <TD width=202 class=th1>Archivo PDF</TD>
+                <TD class=td1>
+  <a href="\\168.255.254.49\pdfs\produccion\Producto3851158.PDF" target="_blank"> Producto3851158.PDF</a>  
+                 </TD>
+              </TR>
+              <TR>
+                <TD width=202 class=th1> Estado actual</TD>
+                <TD class=td1>
+2
+                </TD>
+              </TR>
+              <TR>
+                <TD width=202 class=th1> Propósito</TD>
+                <TD class=td1>
+Generación de conocimiento
+                </TD>
+            </TR>
+              <TR>
+                <TD width=202 class=th1>Para considerar en el currículum de cuerpo académico</TD>
+                <TD class=td1>
+Si
+                </TD>
+              </TR>
+              <TR>
+                <TD width=202 class=th1>Miembros</TD>
+                <TD class=td1>
+2
+                </TD>
+              </TR>
+              <TR>
+                <TD width=202 class=th1>LGACs</TD>
+                <TD class=td1>
+1
+                </TD>
+              </TR>
+      <tr> 
+        <td colspan=2>&nbsp;</td>
+      </tr>  	  
+</table>
+    <TABLE width=95% border='1' cellspacing=1 cellpadding=2 align=Center>
+            <TR>
+                <TD width=202 class=th1> Tipo</TD>
+                <TD class=td1>
+Capítulo de libro
+                </TD>
+            </TR>
+              <TR>
+                <TD class=th1 width=202> Autor(es)</TD>
+                <TD class=td1>
+Ojeda Orta, María Elizabeth; Berrelleza Carrillo, Marianna; Bernal Escoto, Blanca Estela
+                </TD>
+              </TR>
+              <TR>
+                <TD width=202 class=th1> T&iacute;tulo del Libro</TD>
+                <TD class=td1>
+Gestión Integral de Prácticas Innovadoras
+                </TD>
+              </TR>
+              <TR>
+                <TD width=202 class=th1> Estado actual</TD>
+                <TD class=td1>
+2
+                </TD>
+              </TR>
+              <TR>
+                <TD class=th1 height=29 width=202> Pa&iacute;s* </TD>
+                <TD class=td1 height=29>
+MÉXICO
+                </TD>
+              </TR>
+              <TR>
+                <TD width=202 class=th1> Editorial</TD>
+                <TD class=td1>
+Ediciones ILCSA
+                </TD>
+              </TR>
+              <TR>
+                <TD width=202 class=th1> Edición</TD>
+                <TD class=td1>
+1
+                </TD>
+              </TR>
+              <TR>
+                <TD width=202 class=th1>Tiraje</TD>
+                <TD class=td1>
+1
+                </TD>
+              </TR>
+              <TR>
+                <TD width=202 class=th1>ISBN</TD>
+                <TD class=td1>
+978-607-8705-07-8
+                </TD>
+              </TR>
+              <TR>
+                <TD class=th1 height=29 width=202> A&ntilde;o </TD>
+                <TD class=td1 height=29>
+2019
+                </TD>
+              </TR>
+            <TR>
+                <TD width=202 class=th1> Propósito </TD>
+                <TD class=td1>
+Difusión
+                </TD>
+            </TR>
+ 
+ 
+ <table width="95%" border="0" cellspacing="1" cellpadding="2" align="Center">
+    <tr> 
+      <td class="th1" width="45%"><div align="left">&nbsp;Nombre del Cap&iacute;tulo del Libro </div></td>
+      <td class="th1" width="15%"><div align="center">De la p&aacute;gina </div></td>
+      <td class="th1" width="14%"><div align="center">A la p&aacute;gina </div></td>
+	  <td class="th1" width="4%" ><div align="center">Citas</div></td>
+	  <td class="th1" width="8%" ><div align="center">Para CA</div></td>
+      <td class="th1" width="6%" ><div align="center">Miembros</div></td>
+      <td class="th1" width="5%" ><div align="center">LGACs</div></td>
+    </tr>
+	    
+	 
+	    
+    <tr> 
+      <td class="td1" width="50%"><div align="left">Modelo Inteligente Predictivo Basado en Redes Neuronales Artificiales para el Pronóstico de Momento e Intensidad de Precipitaciones</div></td>
+      <td class="td1" width="15%"><div align="center">753</div></td>
+      <td class="td1" width="14%"><div align="center">767</div></td>
+	  <td class="td1" width="4%"><div align="center">0</div></td>
+	  <td class="td1" width="4%"><div align="center"> NO</div></td>
+      <td class="td1" width="6%"><div align="center">  0</div> </td>
+      <td class="td1" width="5%"><div align="center"> 0</div></td>
+    </tr>
+      </table>
+  </br>
+</table>
+    <TABLE width=95% border='1' cellspacing=1 cellpadding=2 align=Center>
+            <TR>
+                <TD width=202 class='Estilo1'> Tipo</TD>
+                <TD class='Estilo1'>
+Prototipo
+                </TD>
+            </TR>
+              <TR>
+                <TD class='Estilo1' width=202> Autor(es)</TD>
+                <TD class='Estilo1'>
+FLORES VALDERRAMA, SALVADOR MIGUEL; IBARRA CORONA, DIEGO OCTAVIO; IBARRA CORONA, MAURICIO ARTURO; VARGAS DIAZ, JOSE ALEJANDRO.
+                </TD>
+              </TR>
+              <TR>
+                <TD class=th1 width=202> Tipo de Prototipo</TD>
+                <TD class=td1>
+Programas de cómputo
+                </TD>
+              </TR>
+              <TR>
+                <TD width=202 class='Estilo1'>Nombre del prototipo</TD>
+                <TD class='Estilo1'>
+APENDICOGRAMA: ESCALA DE APENDICITIS DE FLORES VALDERRAMA Y ABURTO
+                </TD>
+              </TR>
+              <TR>
+                <TD width=202 class='Estilo1'>Objetivos</TD>
+                <TD class='Estilo1'>
+DETECTAR APENDICITIS
+                </TD>
+              <TR>
+                <TD width=202 class='Estilo1'>Características</TD>
+                <TD class='Estilo1'>
+PROGRAMA DE COMPUTACION
+                </TD>
+              <TR>
+                <TD width=202 class='Estilo1'> Año</TD>
+                <TD class='Estilo1'>
+2019
+                </TD>
+              </TR>
+              <TR>
+                <TD width=202 class='Estilo1'>Institución para la que fue creado</TD>
+                <TD class='Estilo1'>
+UNIVERSIDAD AUTONOMA DE QUERETARO
+                </TD>
+              </TR>
+              <TR>
+                <TD width=202 class='Estilo1'>Estado actual</TD>
+                <TD class='Estilo1'>
+6
+                </TD>
+              </TR>
+              <TR>
+                <TD width=202 class='Estilo1'> País</TD>
+                <TD class='Estilo1'>
+MÉXICO
+                </TD>
+              </TR>
+              <TR>
+                <TD width=202 class=th1>Propósito</TD>
+                <TD class=td1>
+Desarrollo tecnológico
+                </TD>
+            </TR>
+              <TR>
+                <TD width=202 class='Estilo1'>Para considerar en el curriculum del cuerpo académico</TD>
+                <TD class='Estilo1'>
+Si
+                </TD>
+            </TR>
+              <TR>
+                <TD width=202 class='Estilo1'>Miembros</TD>
+                <TD class='Estilo1'>
+2
+                </TD>
+            </TR>
+              <TR>
+                <TD width=202 class='Estilo1'>LGACs</TD>
+                <TD class='Estilo1'>
+1
+                </TD>
+            </TR>
+      <tr> 
+        <td colspan=2>&nbsp;</td>
+      </tr>  	  
+</table>
+    <TABLE width=95% border='1' cellspacing=1 cellpadding=2 align=Center>
+            <TR>
+                <TD width=202 class='Estilo1'> Tipo</TD>
+                <TD class='Estilo1'>
+Prototipo
+                </TD>
+            </TR>
+              <TR>
+                <TD class='Estilo1' width=202> Autor(es)</TD>
+                <TD class='Estilo1'>
+IBARRA CORONA DIEGO OCTAVIO; IBARRA CORONA MAURICIO ARTURO; MUÑOZ MANDUJANO, MARTIN; VARGAS DIAZ, JOSE ALEJANDRO.
+                </TD>
+              </TR>
+              <TR>
+                <TD class=th1 width=202> Tipo de Prototipo</TD>
+                <TD class=td1>
+Programas de cómputo
+                </TD>
+              </TR>
+              <TR>
+                <TD width=202 class='Estilo1'>Nombre del prototipo</TD>
+                <TD class='Estilo1'>
+CHRUDA (CROSSING HUMIDITY, DEWPOINT AND ATMOSPHERIC PRESSURE)
+                </TD>
+              </TR>
+              <TR>
+                <TD width=202 class='Estilo1'>Objetivos</TD>
+                <TD class='Estilo1'>
+MEDICIONES METEOROLOGICAS
+                </TD>
+              <TR>
+                <TD width=202 class='Estilo1'>Características</TD>
+                <TD class='Estilo1'>
+PROGRAMA DE COMPUTACION
+                </TD>
+              <TR>
+                <TD width=202 class='Estilo1'> Año</TD>
+                <TD class='Estilo1'>
+2019
+                </TD>
+              </TR>
+              <TR>
+                <TD width=202 class='Estilo1'>Institución para la que fue creado</TD>
+                <TD class='Estilo1'>
+UNIVERSIDAD AUTÓNOMA DE QUERÉTARO
+                </TD>
+              </TR>
+              <TR>
+                <TD width=202 class='Estilo1'>Estado actual</TD>
+                <TD class='Estilo1'>
+6
+                </TD>
+              </TR>
+              <TR>
+                <TD width=202 class='Estilo1'> País</TD>
+                <TD class='Estilo1'>
+MÉXICO
+                </TD>
+              </TR>
+              <TR>
+                <TD width=202 class=th1>Propósito</TD>
+                <TD class=td1>
+Desarrollo tecnológico
+                </TD>
+            </TR>
+              <TR>
+                <TD width=202 class='Estilo1'>Para considerar en el curriculum del cuerpo académico</TD>
+                <TD class='Estilo1'>
+Si
+                </TD>
+            </TR>
+              <TR>
+                <TD width=202 class='Estilo1'>Miembros</TD>
+                <TD class='Estilo1'>
+2
+                </TD>
+            </TR>
+              <TR>
+                <TD width=202 class='Estilo1'>LGACs</TD>
+                <TD class='Estilo1'>
+1
+                </TD>
+            </TR>
+      <tr> 
+        <td colspan=2>&nbsp;</td>
+      </tr>  	  
+</table>
+ 
+ <br>
+ 
+<A NAME="7">
+<div align=center>
+  <table width=95% border='1' cellpadding=1>
+    <tr>
+      <td class='Estilo1'> <div align="center">Docencia</div></td>
+  </tr>
+</table> 
+</div>
+</A>
+   <TABLE width=95% border='1' cellspacing=1 cellpadding=2 align=Center>
+      <tr> 
+        <td class='Estilo1' width=202>Nombre del curso</td>
+        <td class='Estilo1' width=726> 
+Bases de Datos
+        </td>
+      </tr>
+      <tr>
+        <td class='Estilo1' height=29 width=202>Institución de Educación Superior (IES)</td>
+        <td class='Estilo1' height=29 width=726>
+Universidad Autónoma de Querétaro
+        </td>
+      </tr>	 
+      <tr>
+        <td class='Estilo1' height=29 width=202>Dependencia de Educación Superior (IES)</td>
+        <td class='Estilo1' height=29 width=726>
+TECNOLOGÍAS DE INFORMACIÓN Y COMUNICACIONES
+        </td>
+      </tr>	 
+      <tr>
+        <td class='Estilo1' height=29 width=202>Programa educativo</td>
+        <td class='Estilo1' height=29 width=726>
+INFORMATICA
+        </td>
+      </tr>	 
+      <tr> 
+        <td class='Estilo1' width=202>Nivel</td>
+        <td class='Estilo1' width=726> 
+Licenciatura
+        </td>
+      </tr>
+	  </table>
+	  <TABLE width=95% border='1' cellspacing=1 cellpadding=2 align=Center>
+      <tr> 
+        <td class='Estilo1'>Fecha de inicio</td>
+		<td class='Estilo1'>N&uacute;mero de alumnos</td>
+		<td class='Estilo1'>Duraci&oacute;n en semanas</td>
+		<td class='Estilo1'>Horas de asesor&iacute;a al mes</td>
+		<td class='Estilo1'>Horas semanales dedicadas a este curso</td>
+	  </tr>
+	  <tr>
+        <td class='Estilo1' align=center> 
+17/01/2022
+        </td>
+        <td class='Estilo1' align=center> 
+19
+        </td>
+        <td class='Estilo1' align=center> 
+18
+        </td>
+        <td class='Estilo1' align=center> 
+1
+        </td>			 
+        <td class='Estilo1' align=center> 
+4
+        </td>
+      </tr>  	 
+</TABLE>
+<hr>
+<br>   
+  <TABLE width=95% border='1' cellspacing=1 cellpadding=2 align=Center>
+      <tr> 
+        <td class='Estilo1' width=202>Nombre del curso</td>
+        <td class='Estilo1' width=726> 
+Bases de Datos I
+        </td>
+      </tr>
+      <tr>
+        <td class='Estilo1' height=29 width=202>Institución de Educación Superior (IES)</td>
+        <td class='Estilo1' height=29 width=726>
+Universidad Autónoma de Querétaro
+        </td>
+      </tr>	 
+      <tr>
+        <td class='Estilo1' height=29 width=202>Dependencia de Educación Superior (IES)</td>
+        <td class='Estilo1' height=29 width=726>
+TECNOLOGÍAS DE INFORMACIÓN Y COMUNICACIONES
+        </td>
+      </tr>	 
+      <tr>
+        <td class='Estilo1' height=29 width=202>Programa educativo</td>
+        <td class='Estilo1' height=29 width=726>
+INGENIERIA DE SOFTWARE
+        </td>
+      </tr>	 
+      <tr> 
+        <td class='Estilo1' width=202>Nivel</td>
+        <td class='Estilo1' width=726> 
+Licenciatura
+        </td>
+      </tr>
+	  </table>
+	  <TABLE width=95% border='1' cellspacing=1 cellpadding=2 align=Center>
+      <tr> 
+        <td class='Estilo1'>Fecha de inicio</td>
+		<td class='Estilo1'>N&uacute;mero de alumnos</td>
+		<td class='Estilo1'>Duraci&oacute;n en semanas</td>
+		<td class='Estilo1'>Horas de asesor&iacute;a al mes</td>
+		<td class='Estilo1'>Horas semanales dedicadas a este curso</td>
+	  </tr>
+	  <tr>
+        <td class='Estilo1' align=center> 
+17/01/2022
+        </td>
+        <td class='Estilo1' align=center> 
+21
+        </td>
+        <td class='Estilo1' align=center> 
+18
+        </td>
+        <td class='Estilo1' align=center> 
+1
+        </td>			 
+        <td class='Estilo1' align=center> 
+4
+        </td>
+      </tr>  	 
+</TABLE>
+<hr>
+<br>   
+  <TABLE width=95% border='1' cellspacing=1 cellpadding=2 align=Center>
+      <tr> 
+        <td class='Estilo1' width=202>Nombre del curso</td>
+        <td class='Estilo1' width=726> 
+Desarrollo de Interfaces de Hardware II
+        </td>
+      </tr>
+      <tr>
+        <td class='Estilo1' height=29 width=202>Institución de Educación Superior (IES)</td>
+        <td class='Estilo1' height=29 width=726>
+Universidad Autónoma de Querétaro
+        </td>
+      </tr>	 
+      <tr>
+        <td class='Estilo1' height=29 width=202>Dependencia de Educación Superior (IES)</td>
+        <td class='Estilo1' height=29 width=726>
+TECNOLOGÍAS DE INFORMACIÓN Y COMUNICACIONES
+        </td>
+      </tr>	 
+      <tr>
+        <td class='Estilo1' height=29 width=202>Programa educativo</td>
+        <td class='Estilo1' height=29 width=726>
+INGENIERIA EN COMPUTACION
+        </td>
+      </tr>	 
+      <tr> 
+        <td class='Estilo1' width=202>Nivel</td>
+        <td class='Estilo1' width=726> 
+Licenciatura
+        </td>
+      </tr>
+	  </table>
+	  <TABLE width=95% border='1' cellspacing=1 cellpadding=2 align=Center>
+      <tr> 
+        <td class='Estilo1'>Fecha de inicio</td>
+		<td class='Estilo1'>N&uacute;mero de alumnos</td>
+		<td class='Estilo1'>Duraci&oacute;n en semanas</td>
+		<td class='Estilo1'>Horas de asesor&iacute;a al mes</td>
+		<td class='Estilo1'>Horas semanales dedicadas a este curso</td>
+	  </tr>
+	  <tr>
+        <td class='Estilo1' align=center> 
+17/01/2022
+        </td>
+        <td class='Estilo1' align=center> 
+13
+        </td>
+        <td class='Estilo1' align=center> 
+18
+        </td>
+        <td class='Estilo1' align=center> 
+1
+        </td>			 
+        <td class='Estilo1' align=center> 
+4
+        </td>
+      </tr>  	 
+</TABLE>
+<hr>
+<br>   
+  <TABLE width=95% border='1' cellspacing=1 cellpadding=2 align=Center>
+      <tr> 
+        <td class='Estilo1' width=202>Nombre del curso</td>
+        <td class='Estilo1' width=726> 
+Introducción a la Programación
+        </td>
+      </tr>
+      <tr>
+        <td class='Estilo1' height=29 width=202>Institución de Educación Superior (IES)</td>
+        <td class='Estilo1' height=29 width=726>
+Universidad Autónoma de Querétaro
+        </td>
+      </tr>	 
+      <tr>
+        <td class='Estilo1' height=29 width=202>Dependencia de Educación Superior (IES)</td>
+        <td class='Estilo1' height=29 width=726>
+TECNOLOGÍAS DE INFORMACIÓN Y COMUNICACIONES
+        </td>
+      </tr>	 
+      <tr>
+        <td class='Estilo1' height=29 width=202>Programa educativo</td>
+        <td class='Estilo1' height=29 width=726>
+INGENIERIA DE SOFTWARE
+        </td>
+      </tr>	 
+      <tr> 
+        <td class='Estilo1' width=202>Nivel</td>
+        <td class='Estilo1' width=726> 
+Licenciatura
+        </td>
+      </tr>
+	  </table>
+	  <TABLE width=95% border='1' cellspacing=1 cellpadding=2 align=Center>
+      <tr> 
+        <td class='Estilo1'>Fecha de inicio</td>
+		<td class='Estilo1'>N&uacute;mero de alumnos</td>
+		<td class='Estilo1'>Duraci&oacute;n en semanas</td>
+		<td class='Estilo1'>Horas de asesor&iacute;a al mes</td>
+		<td class='Estilo1'>Horas semanales dedicadas a este curso</td>
+	  </tr>
+	  <tr>
+        <td class='Estilo1' align=center> 
+17/01/2022
+        </td>
+        <td class='Estilo1' align=center> 
+14
+        </td>
+        <td class='Estilo1' align=center> 
+18
+        </td>
+        <td class='Estilo1' align=center> 
+1
+        </td>			 
+        <td class='Estilo1' align=center> 
+4
+        </td>
+      </tr>  	 
+</TABLE>
+<hr>
+<br>   
+  <TABLE width=95% border='1' cellspacing=1 cellpadding=2 align=Center>
+      <tr> 
+        <td class='Estilo1' width=202>Nombre del curso</td>
+        <td class='Estilo1' width=726> 
+Programación Orientada a Objetos
+        </td>
+      </tr>
+      <tr>
+        <td class='Estilo1' height=29 width=202>Institución de Educación Superior (IES)</td>
+        <td class='Estilo1' height=29 width=726>
+Universidad Autónoma de Querétaro
+        </td>
+      </tr>	 
+      <tr>
+        <td class='Estilo1' height=29 width=202>Dependencia de Educación Superior (IES)</td>
+        <td class='Estilo1' height=29 width=726>
+TECNOLOGÍAS DE INFORMACIÓN Y COMUNICACIONES
+        </td>
+      </tr>	 
+      <tr>
+        <td class='Estilo1' height=29 width=202>Programa educativo</td>
+        <td class='Estilo1' height=29 width=726>
+INGENIERIA DE SOFTWARE
+        </td>
+      </tr>	 
+      <tr> 
+        <td class='Estilo1' width=202>Nivel</td>
+        <td class='Estilo1' width=726> 
+Licenciatura
+        </td>
+      </tr>
+	  </table>
+	  <TABLE width=95% border='1' cellspacing=1 cellpadding=2 align=Center>
+      <tr> 
+        <td class='Estilo1'>Fecha de inicio</td>
+		<td class='Estilo1'>N&uacute;mero de alumnos</td>
+		<td class='Estilo1'>Duraci&oacute;n en semanas</td>
+		<td class='Estilo1'>Horas de asesor&iacute;a al mes</td>
+		<td class='Estilo1'>Horas semanales dedicadas a este curso</td>
+	  </tr>
+	  <tr>
+        <td class='Estilo1' align=center> 
+17/01/2022
+        </td>
+        <td class='Estilo1' align=center> 
+19
+        </td>
+        <td class='Estilo1' align=center> 
+18
+        </td>
+        <td class='Estilo1' align=center> 
+1
+        </td>			 
+        <td class='Estilo1' align=center> 
+4
+        </td>
+      </tr>  	 
+</TABLE>
+<hr>
+<br>   
+  <TABLE width=95% border='1' cellspacing=1 cellpadding=2 align=Center>
+      <tr> 
+        <td class='Estilo1' width=202>Nombre del curso</td>
+        <td class='Estilo1' width=726> 
+Redes II
+        </td>
+      </tr>
+      <tr>
+        <td class='Estilo1' height=29 width=202>Institución de Educación Superior (IES)</td>
+        <td class='Estilo1' height=29 width=726>
+Universidad Autónoma de Querétaro
+        </td>
+      </tr>	 
+      <tr>
+        <td class='Estilo1' height=29 width=202>Dependencia de Educación Superior (IES)</td>
+        <td class='Estilo1' height=29 width=726>
+TECNOLOGÍAS DE INFORMACIÓN Y COMUNICACIONES
+        </td>
+      </tr>	 
+      <tr>
+        <td class='Estilo1' height=29 width=202>Programa educativo</td>
+        <td class='Estilo1' height=29 width=726>
+INGENIERIA DE SOFTWARE
+        </td>
+      </tr>	 
+      <tr> 
+        <td class='Estilo1' width=202>Nivel</td>
+        <td class='Estilo1' width=726> 
+Licenciatura
+        </td>
+      </tr>
+	  </table>
+	  <TABLE width=95% border='1' cellspacing=1 cellpadding=2 align=Center>
+      <tr> 
+        <td class='Estilo1'>Fecha de inicio</td>
+		<td class='Estilo1'>N&uacute;mero de alumnos</td>
+		<td class='Estilo1'>Duraci&oacute;n en semanas</td>
+		<td class='Estilo1'>Horas de asesor&iacute;a al mes</td>
+		<td class='Estilo1'>Horas semanales dedicadas a este curso</td>
+	  </tr>
+	  <tr>
+        <td class='Estilo1' align=center> 
+17/01/2022
+        </td>
+        <td class='Estilo1' align=center> 
+12
+        </td>
+        <td class='Estilo1' align=center> 
+18
+        </td>
+        <td class='Estilo1' align=center> 
+1
+        </td>			 
+        <td class='Estilo1' align=center> 
+4
+        </td>
+      </tr>  	 
+</TABLE>
+<hr>
+<br>   
+  <TABLE width=95% border='1' cellspacing=1 cellpadding=2 align=Center>
+      <tr> 
+        <td class='Estilo1' width=202>Nombre del curso</td>
+        <td class='Estilo1' width=726> 
+Redes II
+        </td>
+      </tr>
+      <tr>
+        <td class='Estilo1' height=29 width=202>Institución de Educación Superior (IES)</td>
+        <td class='Estilo1' height=29 width=726>
+Universidad Autónoma de Querétaro
+        </td>
+      </tr>	 
+      <tr>
+        <td class='Estilo1' height=29 width=202>Dependencia de Educación Superior (IES)</td>
+        <td class='Estilo1' height=29 width=726>
+TECNOLOGÍAS DE INFORMACIÓN Y COMUNICACIONES
+        </td>
+      </tr>	 
+      <tr>
+        <td class='Estilo1' height=29 width=202>Programa educativo</td>
+        <td class='Estilo1' height=29 width=726>
+INGENIERIA DE SOFTWARE
+        </td>
+      </tr>	 
+      <tr> 
+        <td class='Estilo1' width=202>Nivel</td>
+        <td class='Estilo1' width=726> 
+Licenciatura
+        </td>
+      </tr>
+	  </table>
+	  <TABLE width=95% border='1' cellspacing=1 cellpadding=2 align=Center>
+      <tr> 
+        <td class='Estilo1'>Fecha de inicio</td>
+		<td class='Estilo1'>N&uacute;mero de alumnos</td>
+		<td class='Estilo1'>Duraci&oacute;n en semanas</td>
+		<td class='Estilo1'>Horas de asesor&iacute;a al mes</td>
+		<td class='Estilo1'>Horas semanales dedicadas a este curso</td>
+	  </tr>
+	  <tr>
+        <td class='Estilo1' align=center> 
+17/01/2022
+        </td>
+        <td class='Estilo1' align=center> 
+19
+        </td>
+        <td class='Estilo1' align=center> 
+18
+        </td>
+        <td class='Estilo1' align=center> 
+1
+        </td>			 
+        <td class='Estilo1' align=center> 
+4
+        </td>
+      </tr>  	 
+</TABLE>
+<hr>
+<br>   
+  <TABLE width=95% border='1' cellspacing=1 cellpadding=2 align=Center>
+      <tr> 
+        <td class='Estilo1' width=202>Nombre del curso</td>
+        <td class='Estilo1' width=726> 
+Bases de Datos 
+        </td>
+      </tr>
+      <tr>
+        <td class='Estilo1' height=29 width=202>Institución de Educación Superior (IES)</td>
+        <td class='Estilo1' height=29 width=726>
+Universidad Autónoma de Querétaro
+        </td>
+      </tr>	 
+      <tr>
+        <td class='Estilo1' height=29 width=202>Dependencia de Educación Superior (IES)</td>
+        <td class='Estilo1' height=29 width=726>
+TECNOLOGÍAS DE INFORMACIÓN Y COMUNICACIONES
+        </td>
+      </tr>	 
+      <tr>
+        <td class='Estilo1' height=29 width=202>Programa educativo</td>
+        <td class='Estilo1' height=29 width=726>
+INGENIERIA DE SOFTWARE
+        </td>
+      </tr>	 
+      <tr> 
+        <td class='Estilo1' width=202>Nivel</td>
+        <td class='Estilo1' width=726> 
+Licenciatura
+        </td>
+      </tr>
+	  </table>
+	  <TABLE width=95% border='1' cellspacing=1 cellpadding=2 align=Center>
+      <tr> 
+        <td class='Estilo1'>Fecha de inicio</td>
+		<td class='Estilo1'>N&uacute;mero de alumnos</td>
+		<td class='Estilo1'>Duraci&oacute;n en semanas</td>
+		<td class='Estilo1'>Horas de asesor&iacute;a al mes</td>
+		<td class='Estilo1'>Horas semanales dedicadas a este curso</td>
+	  </tr>
+	  <tr>
+        <td class='Estilo1' align=center> 
+27/07/2021
+        </td>
+        <td class='Estilo1' align=center> 
+2
+        </td>
+        <td class='Estilo1' align=center> 
+18
+        </td>
+        <td class='Estilo1' align=center> 
+1
+        </td>			 
+        <td class='Estilo1' align=center> 
+4
+        </td>
+      </tr>  	 
+</TABLE>
+<hr>
+<br>   
+  <TABLE width=95% border='1' cellspacing=1 cellpadding=2 align=Center>
+      <tr> 
+        <td class='Estilo1' width=202>Nombre del curso</td>
+        <td class='Estilo1' width=726> 
+Bases de Datos
+        </td>
+      </tr>
+      <tr>
+        <td class='Estilo1' height=29 width=202>Institución de Educación Superior (IES)</td>
+        <td class='Estilo1' height=29 width=726>
+Universidad Autónoma de Querétaro
+        </td>
+      </tr>	 
+      <tr>
+        <td class='Estilo1' height=29 width=202>Dependencia de Educación Superior (IES)</td>
+        <td class='Estilo1' height=29 width=726>
+TECNOLOGÍAS DE INFORMACIÓN Y COMUNICACIONES
+        </td>
+      </tr>	 
+      <tr>
+        <td class='Estilo1' height=29 width=202>Programa educativo</td>
+        <td class='Estilo1' height=29 width=726>
+ADMINISTRACION DE TECNOLOGIAS DE INFORMACION
+        </td>
+      </tr>	 
+      <tr> 
+        <td class='Estilo1' width=202>Nivel</td>
+        <td class='Estilo1' width=726> 
+Licenciatura
+        </td>
+      </tr>
+	  </table>
+	  <TABLE width=95% border='1' cellspacing=1 cellpadding=2 align=Center>
+      <tr> 
+        <td class='Estilo1'>Fecha de inicio</td>
+		<td class='Estilo1'>N&uacute;mero de alumnos</td>
+		<td class='Estilo1'>Duraci&oacute;n en semanas</td>
+		<td class='Estilo1'>Horas de asesor&iacute;a al mes</td>
+		<td class='Estilo1'>Horas semanales dedicadas a este curso</td>
+	  </tr>
+	  <tr>
+        <td class='Estilo1' align=center> 
+27/07/2021
+        </td>
+        <td class='Estilo1' align=center> 
+5
+        </td>
+        <td class='Estilo1' align=center> 
+18
+        </td>
+        <td class='Estilo1' align=center> 
+1
+        </td>			 
+        <td class='Estilo1' align=center> 
+4
+        </td>
+      </tr>  	 
+</TABLE>
+<hr>
+<br>   
+  <TABLE width=95% border='1' cellspacing=1 cellpadding=2 align=Center>
+      <tr> 
+        <td class='Estilo1' width=202>Nombre del curso</td>
+        <td class='Estilo1' width=726> 
+Bases de Datos
+        </td>
+      </tr>
+      <tr>
+        <td class='Estilo1' height=29 width=202>Institución de Educación Superior (IES)</td>
+        <td class='Estilo1' height=29 width=726>
+Universidad Autónoma de Querétaro
+        </td>
+      </tr>	 
+      <tr>
+        <td class='Estilo1' height=29 width=202>Dependencia de Educación Superior (IES)</td>
+        <td class='Estilo1' height=29 width=726>
+TECNOLOGÍAS DE INFORMACIÓN Y COMUNICACIONES
+        </td>
+      </tr>	 
+      <tr>
+        <td class='Estilo1' height=29 width=202>Programa educativo</td>
+        <td class='Estilo1' height=29 width=726>
+ADMINISTRACION DE TECNOLOGIAS DE INFORMACION
+        </td>
+      </tr>	 
+      <tr> 
+        <td class='Estilo1' width=202>Nivel</td>
+        <td class='Estilo1' width=726> 
+Licenciatura
+        </td>
+      </tr>
+	  </table>
+	  <TABLE width=95% border='1' cellspacing=1 cellpadding=2 align=Center>
+      <tr> 
+        <td class='Estilo1'>Fecha de inicio</td>
+		<td class='Estilo1'>N&uacute;mero de alumnos</td>
+		<td class='Estilo1'>Duraci&oacute;n en semanas</td>
+		<td class='Estilo1'>Horas de asesor&iacute;a al mes</td>
+		<td class='Estilo1'>Horas semanales dedicadas a este curso</td>
+	  </tr>
+	  <tr>
+        <td class='Estilo1' align=center> 
+27/07/2021
+        </td>
+        <td class='Estilo1' align=center> 
+3
+        </td>
+        <td class='Estilo1' align=center> 
+18
+        </td>
+        <td class='Estilo1' align=center> 
+1
+        </td>			 
+        <td class='Estilo1' align=center> 
+4
+        </td>
+      </tr>  	 
+</TABLE>
+<hr>
+<br>   
+  <TABLE width=95% border='1' cellspacing=1 cellpadding=2 align=Center>
+      <tr> 
+        <td class='Estilo1' width=202>Nombre del curso</td>
+        <td class='Estilo1' width=726> 
+Bases de Datos I
+        </td>
+      </tr>
+      <tr>
+        <td class='Estilo1' height=29 width=202>Institución de Educación Superior (IES)</td>
+        <td class='Estilo1' height=29 width=726>
+Universidad Autónoma de Querétaro
+        </td>
+      </tr>	 
+      <tr>
+        <td class='Estilo1' height=29 width=202>Dependencia de Educación Superior (IES)</td>
+        <td class='Estilo1' height=29 width=726>
+TECNOLOGÍAS DE INFORMACIÓN Y COMUNICACIONES
+        </td>
+      </tr>	 
+      <tr>
+        <td class='Estilo1' height=29 width=202>Programa educativo</td>
+        <td class='Estilo1' height=29 width=726>
+INGENIERIA DE SOFTWARE
+        </td>
+      </tr>	 
+      <tr> 
+        <td class='Estilo1' width=202>Nivel</td>
+        <td class='Estilo1' width=726> 
+Licenciatura
+        </td>
+      </tr>
+	  </table>
+	  <TABLE width=95% border='1' cellspacing=1 cellpadding=2 align=Center>
+      <tr> 
+        <td class='Estilo1'>Fecha de inicio</td>
+		<td class='Estilo1'>N&uacute;mero de alumnos</td>
+		<td class='Estilo1'>Duraci&oacute;n en semanas</td>
+		<td class='Estilo1'>Horas de asesor&iacute;a al mes</td>
+		<td class='Estilo1'>Horas semanales dedicadas a este curso</td>
+	  </tr>
+	  <tr>
+        <td class='Estilo1' align=center> 
+27/07/2021
+        </td>
+        <td class='Estilo1' align=center> 
+15
+        </td>
+        <td class='Estilo1' align=center> 
+18
+        </td>
+        <td class='Estilo1' align=center> 
+1
+        </td>			 
+        <td class='Estilo1' align=center> 
+4
+        </td>
+      </tr>  	 
+</TABLE>
+<hr>
+<br>   
+  <TABLE width=95% border='1' cellspacing=1 cellpadding=2 align=Center>
+      <tr> 
+        <td class='Estilo1' width=202>Nombre del curso</td>
+        <td class='Estilo1' width=726> 
+Introducción a la Programación
+        </td>
+      </tr>
+      <tr>
+        <td class='Estilo1' height=29 width=202>Institución de Educación Superior (IES)</td>
+        <td class='Estilo1' height=29 width=726>
+Universidad Autónoma de Querétaro
+        </td>
+      </tr>	 
+      <tr>
+        <td class='Estilo1' height=29 width=202>Dependencia de Educación Superior (IES)</td>
+        <td class='Estilo1' height=29 width=726>
+TECNOLOGÍAS DE INFORMACIÓN Y COMUNICACIONES
+        </td>
+      </tr>	 
+      <tr>
+        <td class='Estilo1' height=29 width=202>Programa educativo</td>
+        <td class='Estilo1' height=29 width=726>
+INGENIERIA DE SOFTWARE
+        </td>
+      </tr>	 
+      <tr> 
+        <td class='Estilo1' width=202>Nivel</td>
+        <td class='Estilo1' width=726> 
+Licenciatura
+        </td>
+      </tr>
+	  </table>
+	  <TABLE width=95% border='1' cellspacing=1 cellpadding=2 align=Center>
+      <tr> 
+        <td class='Estilo1'>Fecha de inicio</td>
+		<td class='Estilo1'>N&uacute;mero de alumnos</td>
+		<td class='Estilo1'>Duraci&oacute;n en semanas</td>
+		<td class='Estilo1'>Horas de asesor&iacute;a al mes</td>
+		<td class='Estilo1'>Horas semanales dedicadas a este curso</td>
+	  </tr>
+	  <tr>
+        <td class='Estilo1' align=center> 
+27/07/2021
+        </td>
+        <td class='Estilo1' align=center> 
+18
+        </td>
+        <td class='Estilo1' align=center> 
+18
+        </td>
+        <td class='Estilo1' align=center> 
+1
+        </td>			 
+        <td class='Estilo1' align=center> 
+4
+        </td>
+      </tr>  	 
+</TABLE>
+<hr>
+<br>   
+  <TABLE width=95% border='1' cellspacing=1 cellpadding=2 align=Center>
+      <tr> 
+        <td class='Estilo1' width=202>Nombre del curso</td>
+        <td class='Estilo1' width=726> 
+Programación Orientada a Objetos
+        </td>
+      </tr>
+      <tr>
+        <td class='Estilo1' height=29 width=202>Institución de Educación Superior (IES)</td>
+        <td class='Estilo1' height=29 width=726>
+Universidad Autónoma de Querétaro
+        </td>
+      </tr>	 
+      <tr>
+        <td class='Estilo1' height=29 width=202>Dependencia de Educación Superior (IES)</td>
+        <td class='Estilo1' height=29 width=726>
+TECNOLOGÍAS DE INFORMACIÓN Y COMUNICACIONES
+        </td>
+      </tr>	 
+      <tr>
+        <td class='Estilo1' height=29 width=202>Programa educativo</td>
+        <td class='Estilo1' height=29 width=726>
+INGENIERIA DE SOFTWARE
+        </td>
+      </tr>	 
+      <tr> 
+        <td class='Estilo1' width=202>Nivel</td>
+        <td class='Estilo1' width=726> 
+Licenciatura
+        </td>
+      </tr>
+	  </table>
+	  <TABLE width=95% border='1' cellspacing=1 cellpadding=2 align=Center>
+      <tr> 
+        <td class='Estilo1'>Fecha de inicio</td>
+		<td class='Estilo1'>N&uacute;mero de alumnos</td>
+		<td class='Estilo1'>Duraci&oacute;n en semanas</td>
+		<td class='Estilo1'>Horas de asesor&iacute;a al mes</td>
+		<td class='Estilo1'>Horas semanales dedicadas a este curso</td>
+	  </tr>
+	  <tr>
+        <td class='Estilo1' align=center> 
+27/07/2021
+        </td>
+        <td class='Estilo1' align=center> 
+17
+        </td>
+        <td class='Estilo1' align=center> 
+18
+        </td>
+        <td class='Estilo1' align=center> 
+1
+        </td>			 
+        <td class='Estilo1' align=center> 
+4
+        </td>
+      </tr>  	 
+</TABLE>
+<hr>
+<br>   
+  <TABLE width=95% border='1' cellspacing=1 cellpadding=2 align=Center>
+      <tr> 
+        <td class='Estilo1' width=202>Nombre del curso</td>
+        <td class='Estilo1' width=726> 
+Recuperación de la Información y Bases de Datos
+        </td>
+      </tr>
+      <tr>
+        <td class='Estilo1' height=29 width=202>Institución de Educación Superior (IES)</td>
+        <td class='Estilo1' height=29 width=726>
+Universidad Autónoma de Querétaro
+        </td>
+      </tr>	 
+      <tr>
+        <td class='Estilo1' height=29 width=202>Dependencia de Educación Superior (IES)</td>
+        <td class='Estilo1' height=29 width=726>
+TECNOLOGÍAS DE INFORMACIÓN Y COMUNICACIONES
+        </td>
+      </tr>	 
+      <tr>
+        <td class='Estilo1' height=29 width=202>Programa educativo</td>
+        <td class='Estilo1' height=29 width=726>
+INGENIERIA EN TELECOMUNICACIONES
+        </td>
+      </tr>	 
+      <tr> 
+        <td class='Estilo1' width=202>Nivel</td>
+        <td class='Estilo1' width=726> 
+Licenciatura
+        </td>
+      </tr>
+	  </table>
+	  <TABLE width=95% border='1' cellspacing=1 cellpadding=2 align=Center>
+      <tr> 
+        <td class='Estilo1'>Fecha de inicio</td>
+		<td class='Estilo1'>N&uacute;mero de alumnos</td>
+		<td class='Estilo1'>Duraci&oacute;n en semanas</td>
+		<td class='Estilo1'>Horas de asesor&iacute;a al mes</td>
+		<td class='Estilo1'>Horas semanales dedicadas a este curso</td>
+	  </tr>
+	  <tr>
+        <td class='Estilo1' align=center> 
+27/07/2021
+        </td>
+        <td class='Estilo1' align=center> 
+5
+        </td>
+        <td class='Estilo1' align=center> 
+18
+        </td>
+        <td class='Estilo1' align=center> 
+1
+        </td>			 
+        <td class='Estilo1' align=center> 
+4
+        </td>
+      </tr>  	 
+</TABLE>
+<hr>
+<br>   
+  <TABLE width=95% border='1' cellspacing=1 cellpadding=2 align=Center>
+      <tr> 
+        <td class='Estilo1' width=202>Nombre del curso</td>
+        <td class='Estilo1' width=726> 
+Recuperación de la Información y Bases de Datos
+        </td>
+      </tr>
+      <tr>
+        <td class='Estilo1' height=29 width=202>Institución de Educación Superior (IES)</td>
+        <td class='Estilo1' height=29 width=726>
+Universidad Autónoma de Querétaro
+        </td>
+      </tr>	 
+      <tr>
+        <td class='Estilo1' height=29 width=202>Dependencia de Educación Superior (IES)</td>
+        <td class='Estilo1' height=29 width=726>
+TECNOLOGÍAS DE INFORMACIÓN Y COMUNICACIONES
+        </td>
+      </tr>	 
+      <tr>
+        <td class='Estilo1' height=29 width=202>Programa educativo</td>
+        <td class='Estilo1' height=29 width=726>
+INGENIERIA EN COMPUTACION
+        </td>
+      </tr>	 
+      <tr> 
+        <td class='Estilo1' width=202>Nivel</td>
+        <td class='Estilo1' width=726> 
+Licenciatura
+        </td>
+      </tr>
+	  </table>
+	  <TABLE width=95% border='1' cellspacing=1 cellpadding=2 align=Center>
+      <tr> 
+        <td class='Estilo1'>Fecha de inicio</td>
+		<td class='Estilo1'>N&uacute;mero de alumnos</td>
+		<td class='Estilo1'>Duraci&oacute;n en semanas</td>
+		<td class='Estilo1'>Horas de asesor&iacute;a al mes</td>
+		<td class='Estilo1'>Horas semanales dedicadas a este curso</td>
+	  </tr>
+	  <tr>
+        <td class='Estilo1' align=center> 
+27/07/2021
+        </td>
+        <td class='Estilo1' align=center> 
+2
+        </td>
+        <td class='Estilo1' align=center> 
+18
+        </td>
+        <td class='Estilo1' align=center> 
+1
+        </td>			 
+        <td class='Estilo1' align=center> 
+4
+        </td>
+      </tr>  	 
+</TABLE>
+<hr>
+<br>   
+  <TABLE width=95% border='1' cellspacing=1 cellpadding=2 align=Center>
+      <tr> 
+        <td class='Estilo1' width=202>Nombre del curso</td>
+        <td class='Estilo1' width=726> 
+Recuperación de la Información y Bases de Datos
+        </td>
+      </tr>
+      <tr>
+        <td class='Estilo1' height=29 width=202>Institución de Educación Superior (IES)</td>
+        <td class='Estilo1' height=29 width=726>
+Universidad Autónoma de Querétaro
+        </td>
+      </tr>	 
+      <tr>
+        <td class='Estilo1' height=29 width=202>Dependencia de Educación Superior (IES)</td>
+        <td class='Estilo1' height=29 width=726>
+TECNOLOGÍAS DE INFORMACIÓN Y COMUNICACIONES
+        </td>
+      </tr>	 
+      <tr>
+        <td class='Estilo1' height=29 width=202>Programa educativo</td>
+        <td class='Estilo1' height=29 width=726>
+INGENIERIA EN COMPUTACION
+        </td>
+      </tr>	 
+      <tr> 
+        <td class='Estilo1' width=202>Nivel</td>
+        <td class='Estilo1' width=726> 
+Licenciatura
+        </td>
+      </tr>
+	  </table>
+	  <TABLE width=95% border='1' cellspacing=1 cellpadding=2 align=Center>
+      <tr> 
+        <td class='Estilo1'>Fecha de inicio</td>
+		<td class='Estilo1'>N&uacute;mero de alumnos</td>
+		<td class='Estilo1'>Duraci&oacute;n en semanas</td>
+		<td class='Estilo1'>Horas de asesor&iacute;a al mes</td>
+		<td class='Estilo1'>Horas semanales dedicadas a este curso</td>
+	  </tr>
+	  <tr>
+        <td class='Estilo1' align=center> 
+27/07/2021
+        </td>
+        <td class='Estilo1' align=center> 
+9
+        </td>
+        <td class='Estilo1' align=center> 
+18
+        </td>
+        <td class='Estilo1' align=center> 
+1
+        </td>			 
+        <td class='Estilo1' align=center> 
+4
+        </td>
+      </tr>  	 
+</TABLE>
+<hr>
+<br>   
+  <TABLE width=95% border='1' cellspacing=1 cellpadding=2 align=Center>
+      <tr> 
+        <td class='Estilo1' width=202>Nombre del curso</td>
+        <td class='Estilo1' width=726> 
+Redes I
+        </td>
+      </tr>
+      <tr>
+        <td class='Estilo1' height=29 width=202>Institución de Educación Superior (IES)</td>
+        <td class='Estilo1' height=29 width=726>
+Universidad Autónoma de Querétaro
+        </td>
+      </tr>	 
+      <tr>
+        <td class='Estilo1' height=29 width=202>Dependencia de Educación Superior (IES)</td>
+        <td class='Estilo1' height=29 width=726>
+TECNOLOGÍAS DE INFORMACIÓN Y COMUNICACIONES
+        </td>
+      </tr>	 
+      <tr>
+        <td class='Estilo1' height=29 width=202>Programa educativo</td>
+        <td class='Estilo1' height=29 width=726>
+INGENIERIA DE SOFTWARE
+        </td>
+      </tr>	 
+      <tr> 
+        <td class='Estilo1' width=202>Nivel</td>
+        <td class='Estilo1' width=726> 
+Licenciatura
+        </td>
+      </tr>
+	  </table>
+	  <TABLE width=95% border='1' cellspacing=1 cellpadding=2 align=Center>
+      <tr> 
+        <td class='Estilo1'>Fecha de inicio</td>
+		<td class='Estilo1'>N&uacute;mero de alumnos</td>
+		<td class='Estilo1'>Duraci&oacute;n en semanas</td>
+		<td class='Estilo1'>Horas de asesor&iacute;a al mes</td>
+		<td class='Estilo1'>Horas semanales dedicadas a este curso</td>
+	  </tr>
+	  <tr>
+        <td class='Estilo1' align=center> 
+27/07/2021
+        </td>
+        <td class='Estilo1' align=center> 
+12
+        </td>
+        <td class='Estilo1' align=center> 
+18
+        </td>
+        <td class='Estilo1' align=center> 
+1
+        </td>			 
+        <td class='Estilo1' align=center> 
+4
+        </td>
+      </tr>  	 
+</TABLE>
+<hr>
+<br>   
+  <TABLE width=95% border='1' cellspacing=1 cellpadding=2 align=Center>
+      <tr> 
+        <td class='Estilo1' width=202>Nombre del curso</td>
+        <td class='Estilo1' width=726> 
+Redes II
+        </td>
+      </tr>
+      <tr>
+        <td class='Estilo1' height=29 width=202>Institución de Educación Superior (IES)</td>
+        <td class='Estilo1' height=29 width=726>
+Universidad Autónoma de Querétaro
+        </td>
+      </tr>	 
+      <tr>
+        <td class='Estilo1' height=29 width=202>Dependencia de Educación Superior (IES)</td>
+        <td class='Estilo1' height=29 width=726>
+TECNOLOGÍAS DE INFORMACIÓN Y COMUNICACIONES
+        </td>
+      </tr>	 
+      <tr>
+        <td class='Estilo1' height=29 width=202>Programa educativo</td>
+        <td class='Estilo1' height=29 width=726>
+ADMINISTRACION DE TECNOLOGIAS DE INFORMACION
+        </td>
+      </tr>	 
+      <tr> 
+        <td class='Estilo1' width=202>Nivel</td>
+        <td class='Estilo1' width=726> 
+Licenciatura
+        </td>
+      </tr>
+	  </table>
+	  <TABLE width=95% border='1' cellspacing=1 cellpadding=2 align=Center>
+      <tr> 
+        <td class='Estilo1'>Fecha de inicio</td>
+		<td class='Estilo1'>N&uacute;mero de alumnos</td>
+		<td class='Estilo1'>Duraci&oacute;n en semanas</td>
+		<td class='Estilo1'>Horas de asesor&iacute;a al mes</td>
+		<td class='Estilo1'>Horas semanales dedicadas a este curso</td>
+	  </tr>
+	  <tr>
+        <td class='Estilo1' align=center> 
+27/07/2021
+        </td>
+        <td class='Estilo1' align=center> 
+2
+        </td>
+        <td class='Estilo1' align=center> 
+18
+        </td>
+        <td class='Estilo1' align=center> 
+1
+        </td>			 
+        <td class='Estilo1' align=center> 
+4
+        </td>
+      </tr>  	 
+</TABLE>
+<hr>
+<br>   
+  <TABLE width=95% border='1' cellspacing=1 cellpadding=2 align=Center>
+      <tr> 
+        <td class='Estilo1' width=202>Nombre del curso</td>
+        <td class='Estilo1' width=726> 
+Redes II
+        </td>
+      </tr>
+      <tr>
+        <td class='Estilo1' height=29 width=202>Institución de Educación Superior (IES)</td>
+        <td class='Estilo1' height=29 width=726>
+Universidad Autónoma de Querétaro
+        </td>
+      </tr>	 
+      <tr>
+        <td class='Estilo1' height=29 width=202>Dependencia de Educación Superior (IES)</td>
+        <td class='Estilo1' height=29 width=726>
+TECNOLOGÍAS DE INFORMACIÓN Y COMUNICACIONES
+        </td>
+      </tr>	 
+      <tr>
+        <td class='Estilo1' height=29 width=202>Programa educativo</td>
+        <td class='Estilo1' height=29 width=726>
+INGENIERIA DE SOFTWARE
+        </td>
+      </tr>	 
+      <tr> 
+        <td class='Estilo1' width=202>Nivel</td>
+        <td class='Estilo1' width=726> 
+Licenciatura
+        </td>
+      </tr>
+	  </table>
+	  <TABLE width=95% border='1' cellspacing=1 cellpadding=2 align=Center>
+      <tr> 
+        <td class='Estilo1'>Fecha de inicio</td>
+		<td class='Estilo1'>N&uacute;mero de alumnos</td>
+		<td class='Estilo1'>Duraci&oacute;n en semanas</td>
+		<td class='Estilo1'>Horas de asesor&iacute;a al mes</td>
+		<td class='Estilo1'>Horas semanales dedicadas a este curso</td>
+	  </tr>
+	  <tr>
+        <td class='Estilo1' align=center> 
+27/07/2021
+        </td>
+        <td class='Estilo1' align=center> 
+18
+        </td>
+        <td class='Estilo1' align=center> 
+18
+        </td>
+        <td class='Estilo1' align=center> 
+1
+        </td>			 
+        <td class='Estilo1' align=center> 
+4
+        </td>
+      </tr>  	 
+</TABLE>
+<hr>
+<br>   
+  <TABLE width=95% border='1' cellspacing=1 cellpadding=2 align=Center>
+      <tr> 
+        <td class='Estilo1' width=202>Nombre del curso</td>
+        <td class='Estilo1' width=726> 
+Redes II
+        </td>
+      </tr>
+      <tr>
+        <td class='Estilo1' height=29 width=202>Institución de Educación Superior (IES)</td>
+        <td class='Estilo1' height=29 width=726>
+Universidad Autónoma de Querétaro
+        </td>
+      </tr>	 
+      <tr>
+        <td class='Estilo1' height=29 width=202>Dependencia de Educación Superior (IES)</td>
+        <td class='Estilo1' height=29 width=726>
+TECNOLOGÍAS DE INFORMACIÓN Y COMUNICACIONES
+        </td>
+      </tr>	 
+      <tr>
+        <td class='Estilo1' height=29 width=202>Programa educativo</td>
+        <td class='Estilo1' height=29 width=726>
+INGENIERIA EN COMPUTACION
+        </td>
+      </tr>	 
+      <tr> 
+        <td class='Estilo1' width=202>Nivel</td>
+        <td class='Estilo1' width=726> 
+Licenciatura
+        </td>
+      </tr>
+	  </table>
+	  <TABLE width=95% border='1' cellspacing=1 cellpadding=2 align=Center>
+      <tr> 
+        <td class='Estilo1'>Fecha de inicio</td>
+		<td class='Estilo1'>N&uacute;mero de alumnos</td>
+		<td class='Estilo1'>Duraci&oacute;n en semanas</td>
+		<td class='Estilo1'>Horas de asesor&iacute;a al mes</td>
+		<td class='Estilo1'>Horas semanales dedicadas a este curso</td>
+	  </tr>
+	  <tr>
+        <td class='Estilo1' align=center> 
+27/07/2021
+        </td>
+        <td class='Estilo1' align=center> 
+1
+        </td>
+        <td class='Estilo1' align=center> 
+18
+        </td>
+        <td class='Estilo1' align=center> 
+1
+        </td>			 
+        <td class='Estilo1' align=center> 
+4
+        </td>
+      </tr>  	 
+</TABLE>
+<hr>
+<br>   
+  <TABLE width=95% border='1' cellspacing=1 cellpadding=2 align=Center>
+      <tr> 
+        <td class='Estilo1' width=202>Nombre del curso</td>
+        <td class='Estilo1' width=726> 
+Bases de Datos
+        </td>
+      </tr>
+      <tr>
+        <td class='Estilo1' height=29 width=202>Institución de Educación Superior (IES)</td>
+        <td class='Estilo1' height=29 width=726>
+Universidad Autónoma de Querétaro
+        </td>
+      </tr>	 
+      <tr>
+        <td class='Estilo1' height=29 width=202>Dependencia de Educación Superior (IES)</td>
+        <td class='Estilo1' height=29 width=726>
+TECNOLOGÍAS DE INFORMACIÓN Y COMUNICACIONES
+        </td>
+      </tr>	 
+      <tr>
+        <td class='Estilo1' height=29 width=202>Programa educativo</td>
+        <td class='Estilo1' height=29 width=726>
+ADMINISTRACION DE TECNOLOGIAS DE INFORMACION
+        </td>
+      </tr>	 
+      <tr> 
+        <td class='Estilo1' width=202>Nivel</td>
+        <td class='Estilo1' width=726> 
+Licenciatura
+        </td>
+      </tr>
+	  </table>
+	  <TABLE width=95% border='1' cellspacing=1 cellpadding=2 align=Center>
+      <tr> 
+        <td class='Estilo1'>Fecha de inicio</td>
+		<td class='Estilo1'>N&uacute;mero de alumnos</td>
+		<td class='Estilo1'>Duraci&oacute;n en semanas</td>
+		<td class='Estilo1'>Horas de asesor&iacute;a al mes</td>
+		<td class='Estilo1'>Horas semanales dedicadas a este curso</td>
+	  </tr>
+	  <tr>
+        <td class='Estilo1' align=center> 
+12/01/2021
+        </td>
+        <td class='Estilo1' align=center> 
+15
+        </td>
+        <td class='Estilo1' align=center> 
+18
+        </td>
+        <td class='Estilo1' align=center> 
+1
+        </td>			 
+        <td class='Estilo1' align=center> 
+4
+        </td>
+      </tr>  	 
+</TABLE>
+<hr>
+<br>   
+  <TABLE width=95% border='1' cellspacing=1 cellpadding=2 align=Center>
+      <tr> 
+        <td class='Estilo1' width=202>Nombre del curso</td>
+        <td class='Estilo1' width=726> 
+Desarrollo de Interfaces de Hardware II
+        </td>
+      </tr>
+      <tr>
+        <td class='Estilo1' height=29 width=202>Institución de Educación Superior (IES)</td>
+        <td class='Estilo1' height=29 width=726>
+Universidad Autónoma de Querétaro
+        </td>
+      </tr>	 
+      <tr>
+        <td class='Estilo1' height=29 width=202>Dependencia de Educación Superior (IES)</td>
+        <td class='Estilo1' height=29 width=726>
+TECNOLOGÍAS DE INFORMACIÓN Y COMUNICACIONES
+        </td>
+      </tr>	 
+      <tr>
+        <td class='Estilo1' height=29 width=202>Programa educativo</td>
+        <td class='Estilo1' height=29 width=726>
+INGENIERIA EN COMPUTACION
+        </td>
+      </tr>	 
+      <tr> 
+        <td class='Estilo1' width=202>Nivel</td>
+        <td class='Estilo1' width=726> 
+Licenciatura
+        </td>
+      </tr>
+	  </table>
+	  <TABLE width=95% border='1' cellspacing=1 cellpadding=2 align=Center>
+      <tr> 
+        <td class='Estilo1'>Fecha de inicio</td>
+		<td class='Estilo1'>N&uacute;mero de alumnos</td>
+		<td class='Estilo1'>Duraci&oacute;n en semanas</td>
+		<td class='Estilo1'>Horas de asesor&iacute;a al mes</td>
+		<td class='Estilo1'>Horas semanales dedicadas a este curso</td>
+	  </tr>
+	  <tr>
+        <td class='Estilo1' align=center> 
+12/01/2021
+        </td>
+        <td class='Estilo1' align=center> 
+8
+        </td>
+        <td class='Estilo1' align=center> 
+18
+        </td>
+        <td class='Estilo1' align=center> 
+1
+        </td>			 
+        <td class='Estilo1' align=center> 
+4
+        </td>
+      </tr>  	 
+</TABLE>
+<hr>
+<br>   
+  <TABLE width=95% border='1' cellspacing=1 cellpadding=2 align=Center>
+      <tr> 
+        <td class='Estilo1' width=202>Nombre del curso</td>
+        <td class='Estilo1' width=726> 
+Introducción a la Programación
+        </td>
+      </tr>
+      <tr>
+        <td class='Estilo1' height=29 width=202>Institución de Educación Superior (IES)</td>
+        <td class='Estilo1' height=29 width=726>
+Universidad Autónoma de Querétaro
+        </td>
+      </tr>	 
+      <tr>
+        <td class='Estilo1' height=29 width=202>Dependencia de Educación Superior (IES)</td>
+        <td class='Estilo1' height=29 width=726>
+TECNOLOGÍAS DE INFORMACIÓN Y COMUNICACIONES
+        </td>
+      </tr>	 
+      <tr>
+        <td class='Estilo1' height=29 width=202>Programa educativo</td>
+        <td class='Estilo1' height=29 width=726>
+INGENIERIA DE SOFTWARE
+        </td>
+      </tr>	 
+      <tr> 
+        <td class='Estilo1' width=202>Nivel</td>
+        <td class='Estilo1' width=726> 
+Licenciatura
+        </td>
+      </tr>
+	  </table>
+	  <TABLE width=95% border='1' cellspacing=1 cellpadding=2 align=Center>
+      <tr> 
+        <td class='Estilo1'>Fecha de inicio</td>
+		<td class='Estilo1'>N&uacute;mero de alumnos</td>
+		<td class='Estilo1'>Duraci&oacute;n en semanas</td>
+		<td class='Estilo1'>Horas de asesor&iacute;a al mes</td>
+		<td class='Estilo1'>Horas semanales dedicadas a este curso</td>
+	  </tr>
+	  <tr>
+        <td class='Estilo1' align=center> 
+12/01/2021
+        </td>
+        <td class='Estilo1' align=center> 
+19
+        </td>
+        <td class='Estilo1' align=center> 
+18
+        </td>
+        <td class='Estilo1' align=center> 
+1
+        </td>			 
+        <td class='Estilo1' align=center> 
+4
+        </td>
+      </tr>  	 
+</TABLE>
+<hr>
+<br>   
+  <TABLE width=95% border='1' cellspacing=1 cellpadding=2 align=Center>
+      <tr> 
+        <td class='Estilo1' width=202>Nombre del curso</td>
+        <td class='Estilo1' width=726> 
+Programación Orientada a Objetos
+        </td>
+      </tr>
+      <tr>
+        <td class='Estilo1' height=29 width=202>Institución de Educación Superior (IES)</td>
+        <td class='Estilo1' height=29 width=726>
+Universidad Autónoma de Querétaro
+        </td>
+      </tr>	 
+      <tr>
+        <td class='Estilo1' height=29 width=202>Dependencia de Educación Superior (IES)</td>
+        <td class='Estilo1' height=29 width=726>
+TECNOLOGÍAS DE INFORMACIÓN Y COMUNICACIONES
+        </td>
+      </tr>	 
+      <tr>
+        <td class='Estilo1' height=29 width=202>Programa educativo</td>
+        <td class='Estilo1' height=29 width=726>
+INGENIERIA DE SOFTWARE
+        </td>
+      </tr>	 
+      <tr> 
+        <td class='Estilo1' width=202>Nivel</td>
+        <td class='Estilo1' width=726> 
+Licenciatura
+        </td>
+      </tr>
+	  </table>
+	  <TABLE width=95% border='1' cellspacing=1 cellpadding=2 align=Center>
+      <tr> 
+        <td class='Estilo1'>Fecha de inicio</td>
+		<td class='Estilo1'>N&uacute;mero de alumnos</td>
+		<td class='Estilo1'>Duraci&oacute;n en semanas</td>
+		<td class='Estilo1'>Horas de asesor&iacute;a al mes</td>
+		<td class='Estilo1'>Horas semanales dedicadas a este curso</td>
+	  </tr>
+	  <tr>
+        <td class='Estilo1' align=center> 
+12/01/2021
+        </td>
+        <td class='Estilo1' align=center> 
+13
+        </td>
+        <td class='Estilo1' align=center> 
+18
+        </td>
+        <td class='Estilo1' align=center> 
+1
+        </td>			 
+        <td class='Estilo1' align=center> 
+4
+        </td>
+      </tr>  	 
+</TABLE>
+<hr>
+<br>   
+  <TABLE width=95% border='1' cellspacing=1 cellpadding=2 align=Center>
+      <tr> 
+        <td class='Estilo1' width=202>Nombre del curso</td>
+        <td class='Estilo1' width=726> 
+Redes I
+        </td>
+      </tr>
+      <tr>
+        <td class='Estilo1' height=29 width=202>Institución de Educación Superior (IES)</td>
+        <td class='Estilo1' height=29 width=726>
+Universidad Autónoma de Querétaro
+        </td>
+      </tr>	 
+      <tr>
+        <td class='Estilo1' height=29 width=202>Dependencia de Educación Superior (IES)</td>
+        <td class='Estilo1' height=29 width=726>
+TECNOLOGÍAS DE INFORMACIÓN Y COMUNICACIONES
+        </td>
+      </tr>	 
+      <tr>
+        <td class='Estilo1' height=29 width=202>Programa educativo</td>
+        <td class='Estilo1' height=29 width=726>
+INGENIERIA DE SOFTWARE
+        </td>
+      </tr>	 
+      <tr> 
+        <td class='Estilo1' width=202>Nivel</td>
+        <td class='Estilo1' width=726> 
+Licenciatura
+        </td>
+      </tr>
+	  </table>
+	  <TABLE width=95% border='1' cellspacing=1 cellpadding=2 align=Center>
+      <tr> 
+        <td class='Estilo1'>Fecha de inicio</td>
+		<td class='Estilo1'>N&uacute;mero de alumnos</td>
+		<td class='Estilo1'>Duraci&oacute;n en semanas</td>
+		<td class='Estilo1'>Horas de asesor&iacute;a al mes</td>
+		<td class='Estilo1'>Horas semanales dedicadas a este curso</td>
+	  </tr>
+	  <tr>
+        <td class='Estilo1' align=center> 
+12/01/2021
+        </td>
+        <td class='Estilo1' align=center> 
+1
+        </td>
+        <td class='Estilo1' align=center> 
+18
+        </td>
+        <td class='Estilo1' align=center> 
+1
+        </td>			 
+        <td class='Estilo1' align=center> 
+4
+        </td>
+      </tr>  	 
+</TABLE>
+<hr>
+<br>   
+  <TABLE width=95% border='1' cellspacing=1 cellpadding=2 align=Center>
+      <tr> 
+        <td class='Estilo1' width=202>Nombre del curso</td>
+        <td class='Estilo1' width=726> 
+Redes II
+        </td>
+      </tr>
+      <tr>
+        <td class='Estilo1' height=29 width=202>Institución de Educación Superior (IES)</td>
+        <td class='Estilo1' height=29 width=726>
+Universidad Autónoma de Querétaro
+        </td>
+      </tr>	 
+      <tr>
+        <td class='Estilo1' height=29 width=202>Dependencia de Educación Superior (IES)</td>
+        <td class='Estilo1' height=29 width=726>
+TECNOLOGÍAS DE INFORMACIÓN Y COMUNICACIONES
+        </td>
+      </tr>	 
+      <tr>
+        <td class='Estilo1' height=29 width=202>Programa educativo</td>
+        <td class='Estilo1' height=29 width=726>
+INGENIERIA DE SOFTWARE
+        </td>
+      </tr>	 
+      <tr> 
+        <td class='Estilo1' width=202>Nivel</td>
+        <td class='Estilo1' width=726> 
+Licenciatura
+        </td>
+      </tr>
+	  </table>
+	  <TABLE width=95% border='1' cellspacing=1 cellpadding=2 align=Center>
+      <tr> 
+        <td class='Estilo1'>Fecha de inicio</td>
+		<td class='Estilo1'>N&uacute;mero de alumnos</td>
+		<td class='Estilo1'>Duraci&oacute;n en semanas</td>
+		<td class='Estilo1'>Horas de asesor&iacute;a al mes</td>
+		<td class='Estilo1'>Horas semanales dedicadas a este curso</td>
+	  </tr>
+	  <tr>
+        <td class='Estilo1' align=center> 
+12/01/2021
+        </td>
+        <td class='Estilo1' align=center> 
+17
+        </td>
+        <td class='Estilo1' align=center> 
+18
+        </td>
+        <td class='Estilo1' align=center> 
+1
+        </td>			 
+        <td class='Estilo1' align=center> 
+4
+        </td>
+      </tr>  	 
+</TABLE>
+<hr>
+<br>   
+  <TABLE width=95% border='1' cellspacing=1 cellpadding=2 align=Center>
+      <tr> 
+        <td class='Estilo1' width=202>Nombre del curso</td>
+        <td class='Estilo1' width=726> 
+Bases de Datos I
+        </td>
+      </tr>
+      <tr>
+        <td class='Estilo1' height=29 width=202>Institución de Educación Superior (IES)</td>
+        <td class='Estilo1' height=29 width=726>
+Universidad Autónoma de Querétaro
+        </td>
+      </tr>	 
+      <tr>
+        <td class='Estilo1' height=29 width=202>Dependencia de Educación Superior (IES)</td>
+        <td class='Estilo1' height=29 width=726>
+TECNOLOGÍAS DE INFORMACIÓN Y COMUNICACIONES
+        </td>
+      </tr>	 
+      <tr>
+        <td class='Estilo1' height=29 width=202>Programa educativo</td>
+        <td class='Estilo1' height=29 width=726>
+INGENIERIA DE SOFTWARE
+        </td>
+      </tr>	 
+      <tr> 
+        <td class='Estilo1' width=202>Nivel</td>
+        <td class='Estilo1' width=726> 
+Licenciatura
+        </td>
+      </tr>
+	  </table>
+	  <TABLE width=95% border='1' cellspacing=1 cellpadding=2 align=Center>
+      <tr> 
+        <td class='Estilo1'>Fecha de inicio</td>
+		<td class='Estilo1'>N&uacute;mero de alumnos</td>
+		<td class='Estilo1'>Duraci&oacute;n en semanas</td>
+		<td class='Estilo1'>Horas de asesor&iacute;a al mes</td>
+		<td class='Estilo1'>Horas semanales dedicadas a este curso</td>
+	  </tr>
+	  <tr>
+        <td class='Estilo1' align=center> 
+28/07/2020
+        </td>
+        <td class='Estilo1' align=center> 
+18
+        </td>
+        <td class='Estilo1' align=center> 
+18
+        </td>
+        <td class='Estilo1' align=center> 
+1
+        </td>			 
+        <td class='Estilo1' align=center> 
+4
+        </td>
+      </tr>  	 
+</TABLE>
+<hr>
+<br>   
+  <TABLE width=95% border='1' cellspacing=1 cellpadding=2 align=Center>
+      <tr> 
+        <td class='Estilo1' width=202>Nombre del curso</td>
+        <td class='Estilo1' width=726> 
+Desarrollo de Interfaces de Hardware II
+        </td>
+      </tr>
+      <tr>
+        <td class='Estilo1' height=29 width=202>Institución de Educación Superior (IES)</td>
+        <td class='Estilo1' height=29 width=726>
+Universidad Autónoma de Querétaro
+        </td>
+      </tr>	 
+      <tr>
+        <td class='Estilo1' height=29 width=202>Dependencia de Educación Superior (IES)</td>
+        <td class='Estilo1' height=29 width=726>
+TECNOLOGÍAS DE INFORMACIÓN Y COMUNICACIONES
+        </td>
+      </tr>	 
+      <tr>
+        <td class='Estilo1' height=29 width=202>Programa educativo</td>
+        <td class='Estilo1' height=29 width=726>
+INGENIERIA EN COMPUTACION
+        </td>
+      </tr>	 
+      <tr> 
+        <td class='Estilo1' width=202>Nivel</td>
+        <td class='Estilo1' width=726> 
+Licenciatura
+        </td>
+      </tr>
+	  </table>
+	  <TABLE width=95% border='1' cellspacing=1 cellpadding=2 align=Center>
+      <tr> 
+        <td class='Estilo1'>Fecha de inicio</td>
+		<td class='Estilo1'>N&uacute;mero de alumnos</td>
+		<td class='Estilo1'>Duraci&oacute;n en semanas</td>
+		<td class='Estilo1'>Horas de asesor&iacute;a al mes</td>
+		<td class='Estilo1'>Horas semanales dedicadas a este curso</td>
+	  </tr>
+	  <tr>
+        <td class='Estilo1' align=center> 
+28/07/2020
+        </td>
+        <td class='Estilo1' align=center> 
+10
+        </td>
+        <td class='Estilo1' align=center> 
+18
+        </td>
+        <td class='Estilo1' align=center> 
+1
+        </td>			 
+        <td class='Estilo1' align=center> 
+4
+        </td>
+      </tr>  	 
+</TABLE>
+<hr>
+<br>   
+  <TABLE width=95% border='1' cellspacing=1 cellpadding=2 align=Center>
+      <tr> 
+        <td class='Estilo1' width=202>Nombre del curso</td>
+        <td class='Estilo1' width=726> 
+Introducción a la Programación
+        </td>
+      </tr>
+      <tr>
+        <td class='Estilo1' height=29 width=202>Institución de Educación Superior (IES)</td>
+        <td class='Estilo1' height=29 width=726>
+Universidad Autónoma de Querétaro
+        </td>
+      </tr>	 
+      <tr>
+        <td class='Estilo1' height=29 width=202>Dependencia de Educación Superior (IES)</td>
+        <td class='Estilo1' height=29 width=726>
+TECNOLOGÍAS DE INFORMACIÓN Y COMUNICACIONES
+        </td>
+      </tr>	 
+      <tr>
+        <td class='Estilo1' height=29 width=202>Programa educativo</td>
+        <td class='Estilo1' height=29 width=726>
+INGENIERIA DE SOFTWARE
+        </td>
+      </tr>	 
+      <tr> 
+        <td class='Estilo1' width=202>Nivel</td>
+        <td class='Estilo1' width=726> 
+Licenciatura
+        </td>
+      </tr>
+	  </table>
+	  <TABLE width=95% border='1' cellspacing=1 cellpadding=2 align=Center>
+      <tr> 
+        <td class='Estilo1'>Fecha de inicio</td>
+		<td class='Estilo1'>N&uacute;mero de alumnos</td>
+		<td class='Estilo1'>Duraci&oacute;n en semanas</td>
+		<td class='Estilo1'>Horas de asesor&iacute;a al mes</td>
+		<td class='Estilo1'>Horas semanales dedicadas a este curso</td>
+	  </tr>
+	  <tr>
+        <td class='Estilo1' align=center> 
+28/07/2020
+        </td>
+        <td class='Estilo1' align=center> 
+15
+        </td>
+        <td class='Estilo1' align=center> 
+18
+        </td>
+        <td class='Estilo1' align=center> 
+1
+        </td>			 
+        <td class='Estilo1' align=center> 
+4
+        </td>
+      </tr>  	 
+</TABLE>
+<hr>
+<br>   
+  <TABLE width=95% border='1' cellspacing=1 cellpadding=2 align=Center>
+      <tr> 
+        <td class='Estilo1' width=202>Nombre del curso</td>
+        <td class='Estilo1' width=726> 
+Programación Orientada a Objetos
+        </td>
+      </tr>
+      <tr>
+        <td class='Estilo1' height=29 width=202>Institución de Educación Superior (IES)</td>
+        <td class='Estilo1' height=29 width=726>
+Universidad Autónoma de Querétaro
+        </td>
+      </tr>	 
+      <tr>
+        <td class='Estilo1' height=29 width=202>Dependencia de Educación Superior (IES)</td>
+        <td class='Estilo1' height=29 width=726>
+TECNOLOGÍAS DE INFORMACIÓN Y COMUNICACIONES
+        </td>
+      </tr>	 
+      <tr>
+        <td class='Estilo1' height=29 width=202>Programa educativo</td>
+        <td class='Estilo1' height=29 width=726>
+INGENIERIA DE SOFTWARE
+        </td>
+      </tr>	 
+      <tr> 
+        <td class='Estilo1' width=202>Nivel</td>
+        <td class='Estilo1' width=726> 
+Licenciatura
+        </td>
+      </tr>
+	  </table>
+	  <TABLE width=95% border='1' cellspacing=1 cellpadding=2 align=Center>
+      <tr> 
+        <td class='Estilo1'>Fecha de inicio</td>
+		<td class='Estilo1'>N&uacute;mero de alumnos</td>
+		<td class='Estilo1'>Duraci&oacute;n en semanas</td>
+		<td class='Estilo1'>Horas de asesor&iacute;a al mes</td>
+		<td class='Estilo1'>Horas semanales dedicadas a este curso</td>
+	  </tr>
+	  <tr>
+        <td class='Estilo1' align=center> 
+28/07/2020
+        </td>
+        <td class='Estilo1' align=center> 
+20
+        </td>
+        <td class='Estilo1' align=center> 
+18
+        </td>
+        <td class='Estilo1' align=center> 
+1
+        </td>			 
+        <td class='Estilo1' align=center> 
+4
+        </td>
+      </tr>  	 
+</TABLE>
+<hr>
+<br>   
+  <TABLE width=95% border='1' cellspacing=1 cellpadding=2 align=Center>
+      <tr> 
+        <td class='Estilo1' width=202>Nombre del curso</td>
+        <td class='Estilo1' width=726> 
+Programación Orientada a Objetos
+        </td>
+      </tr>
+      <tr>
+        <td class='Estilo1' height=29 width=202>Institución de Educación Superior (IES)</td>
+        <td class='Estilo1' height=29 width=726>
+Universidad Autónoma de Querétaro
+        </td>
+      </tr>	 
+      <tr>
+        <td class='Estilo1' height=29 width=202>Dependencia de Educación Superior (IES)</td>
+        <td class='Estilo1' height=29 width=726>
+TECNOLOGÍAS DE INFORMACIÓN Y COMUNICACIONES
+        </td>
+      </tr>	 
+      <tr>
+        <td class='Estilo1' height=29 width=202>Programa educativo</td>
+        <td class='Estilo1' height=29 width=726>
+INFORMATICA
+        </td>
+      </tr>	 
+      <tr> 
+        <td class='Estilo1' width=202>Nivel</td>
+        <td class='Estilo1' width=726> 
+Licenciatura
+        </td>
+      </tr>
+	  </table>
+	  <TABLE width=95% border='1' cellspacing=1 cellpadding=2 align=Center>
+      <tr> 
+        <td class='Estilo1'>Fecha de inicio</td>
+		<td class='Estilo1'>N&uacute;mero de alumnos</td>
+		<td class='Estilo1'>Duraci&oacute;n en semanas</td>
+		<td class='Estilo1'>Horas de asesor&iacute;a al mes</td>
+		<td class='Estilo1'>Horas semanales dedicadas a este curso</td>
+	  </tr>
+	  <tr>
+        <td class='Estilo1' align=center> 
+28/07/2020
+        </td>
+        <td class='Estilo1' align=center> 
+1
+        </td>
+        <td class='Estilo1' align=center> 
+18
+        </td>
+        <td class='Estilo1' align=center> 
+1
+        </td>			 
+        <td class='Estilo1' align=center> 
+4
+        </td>
+      </tr>  	 
+</TABLE>
+<hr>
+<br>   
+  <TABLE width=95% border='1' cellspacing=1 cellpadding=2 align=Center>
+      <tr> 
+        <td class='Estilo1' width=202>Nombre del curso</td>
+        <td class='Estilo1' width=726> 
+Redes I
+        </td>
+      </tr>
+      <tr>
+        <td class='Estilo1' height=29 width=202>Institución de Educación Superior (IES)</td>
+        <td class='Estilo1' height=29 width=726>
+Universidad Autónoma de Querétaro
+        </td>
+      </tr>	 
+      <tr>
+        <td class='Estilo1' height=29 width=202>Dependencia de Educación Superior (IES)</td>
+        <td class='Estilo1' height=29 width=726>
+TECNOLOGÍAS DE INFORMACIÓN Y COMUNICACIONES
+        </td>
+      </tr>	 
+      <tr>
+        <td class='Estilo1' height=29 width=202>Programa educativo</td>
+        <td class='Estilo1' height=29 width=726>
+INGENIERIA DE SOFTWARE
+        </td>
+      </tr>	 
+      <tr> 
+        <td class='Estilo1' width=202>Nivel</td>
+        <td class='Estilo1' width=726> 
+Licenciatura
+        </td>
+      </tr>
+	  </table>
+	  <TABLE width=95% border='1' cellspacing=1 cellpadding=2 align=Center>
+      <tr> 
+        <td class='Estilo1'>Fecha de inicio</td>
+		<td class='Estilo1'>N&uacute;mero de alumnos</td>
+		<td class='Estilo1'>Duraci&oacute;n en semanas</td>
+		<td class='Estilo1'>Horas de asesor&iacute;a al mes</td>
+		<td class='Estilo1'>Horas semanales dedicadas a este curso</td>
+	  </tr>
+	  <tr>
+        <td class='Estilo1' align=center> 
+28/07/2020
+        </td>
+        <td class='Estilo1' align=center> 
+19
+        </td>
+        <td class='Estilo1' align=center> 
+18
+        </td>
+        <td class='Estilo1' align=center> 
+1
+        </td>			 
+        <td class='Estilo1' align=center> 
+4
+        </td>
+      </tr>  	 
+</TABLE>
+<hr>
+<br>   
+  <TABLE width=95% border='1' cellspacing=1 cellpadding=2 align=Center>
+      <tr> 
+        <td class='Estilo1' width=202>Nombre del curso</td>
+        <td class='Estilo1' width=726> 
+Redes I
+        </td>
+      </tr>
+      <tr>
+        <td class='Estilo1' height=29 width=202>Institución de Educación Superior (IES)</td>
+        <td class='Estilo1' height=29 width=726>
+Universidad Autónoma de Querétaro
+        </td>
+      </tr>	 
+      <tr>
+        <td class='Estilo1' height=29 width=202>Dependencia de Educación Superior (IES)</td>
+        <td class='Estilo1' height=29 width=726>
+TECNOLOGÍAS DE INFORMACIÓN Y COMUNICACIONES
+        </td>
+      </tr>	 
+      <tr>
+        <td class='Estilo1' height=29 width=202>Programa educativo</td>
+        <td class='Estilo1' height=29 width=726>
+INFORMATICA
+        </td>
+      </tr>	 
+      <tr> 
+        <td class='Estilo1' width=202>Nivel</td>
+        <td class='Estilo1' width=726> 
+Licenciatura
+        </td>
+      </tr>
+	  </table>
+	  <TABLE width=95% border='1' cellspacing=1 cellpadding=2 align=Center>
+      <tr> 
+        <td class='Estilo1'>Fecha de inicio</td>
+		<td class='Estilo1'>N&uacute;mero de alumnos</td>
+		<td class='Estilo1'>Duraci&oacute;n en semanas</td>
+		<td class='Estilo1'>Horas de asesor&iacute;a al mes</td>
+		<td class='Estilo1'>Horas semanales dedicadas a este curso</td>
+	  </tr>
+	  <tr>
+        <td class='Estilo1' align=center> 
+28/07/2020
+        </td>
+        <td class='Estilo1' align=center> 
+1
+        </td>
+        <td class='Estilo1' align=center> 
+18
+        </td>
+        <td class='Estilo1' align=center> 
+1
+        </td>			 
+        <td class='Estilo1' align=center> 
+4
+        </td>
+      </tr>  	 
+</TABLE>
+<hr>
+<br>   
+  <TABLE width=95% border='1' cellspacing=1 cellpadding=2 align=Center>
+      <tr> 
+        <td class='Estilo1' width=202>Nombre del curso</td>
+        <td class='Estilo1' width=726> 
+Redes II
+        </td>
+      </tr>
+      <tr>
+        <td class='Estilo1' height=29 width=202>Institución de Educación Superior (IES)</td>
+        <td class='Estilo1' height=29 width=726>
+Universidad Autónoma de Querétaro
+        </td>
+      </tr>	 
+      <tr>
+        <td class='Estilo1' height=29 width=202>Dependencia de Educación Superior (IES)</td>
+        <td class='Estilo1' height=29 width=726>
+TECNOLOGÍAS DE INFORMACIÓN Y COMUNICACIONES
+        </td>
+      </tr>	 
+      <tr>
+        <td class='Estilo1' height=29 width=202>Programa educativo</td>
+        <td class='Estilo1' height=29 width=726>
+INGENIERIA EN COMPUTACION
+        </td>
+      </tr>	 
+      <tr> 
+        <td class='Estilo1' width=202>Nivel</td>
+        <td class='Estilo1' width=726> 
+Licenciatura
+        </td>
+      </tr>
+	  </table>
+	  <TABLE width=95% border='1' cellspacing=1 cellpadding=2 align=Center>
+      <tr> 
+        <td class='Estilo1'>Fecha de inicio</td>
+		<td class='Estilo1'>N&uacute;mero de alumnos</td>
+		<td class='Estilo1'>Duraci&oacute;n en semanas</td>
+		<td class='Estilo1'>Horas de asesor&iacute;a al mes</td>
+		<td class='Estilo1'>Horas semanales dedicadas a este curso</td>
+	  </tr>
+	  <tr>
+        <td class='Estilo1' align=center> 
+28/07/2020
+        </td>
+        <td class='Estilo1' align=center> 
+2
+        </td>
+        <td class='Estilo1' align=center> 
+18
+        </td>
+        <td class='Estilo1' align=center> 
+1
+        </td>			 
+        <td class='Estilo1' align=center> 
+4
+        </td>
+      </tr>  	 
+</TABLE>
+<hr>
+<br>   
+  <TABLE width=95% border='1' cellspacing=1 cellpadding=2 align=Center>
+      <tr> 
+        <td class='Estilo1' width=202>Nombre del curso</td>
+        <td class='Estilo1' width=726> 
+Redes II
+        </td>
+      </tr>
+      <tr>
+        <td class='Estilo1' height=29 width=202>Institución de Educación Superior (IES)</td>
+        <td class='Estilo1' height=29 width=726>
+Universidad Autónoma de Querétaro
+        </td>
+      </tr>	 
+      <tr>
+        <td class='Estilo1' height=29 width=202>Dependencia de Educación Superior (IES)</td>
+        <td class='Estilo1' height=29 width=726>
+TECNOLOGÍAS DE INFORMACIÓN Y COMUNICACIONES
+        </td>
+      </tr>	 
+      <tr>
+        <td class='Estilo1' height=29 width=202>Programa educativo</td>
+        <td class='Estilo1' height=29 width=726>
+INFORMATICA
+        </td>
+      </tr>	 
+      <tr> 
+        <td class='Estilo1' width=202>Nivel</td>
+        <td class='Estilo1' width=726> 
+Licenciatura
+        </td>
+      </tr>
+	  </table>
+	  <TABLE width=95% border='1' cellspacing=1 cellpadding=2 align=Center>
+      <tr> 
+        <td class='Estilo1'>Fecha de inicio</td>
+		<td class='Estilo1'>N&uacute;mero de alumnos</td>
+		<td class='Estilo1'>Duraci&oacute;n en semanas</td>
+		<td class='Estilo1'>Horas de asesor&iacute;a al mes</td>
+		<td class='Estilo1'>Horas semanales dedicadas a este curso</td>
+	  </tr>
+	  <tr>
+        <td class='Estilo1' align=center> 
+28/07/2020
+        </td>
+        <td class='Estilo1' align=center> 
+1
+        </td>
+        <td class='Estilo1' align=center> 
+18
+        </td>
+        <td class='Estilo1' align=center> 
+1
+        </td>			 
+        <td class='Estilo1' align=center> 
+4
+        </td>
+      </tr>  	 
+</TABLE>
+<hr>
+<br>   
+  <TABLE width=95% border='1' cellspacing=1 cellpadding=2 align=Center>
+      <tr> 
+        <td class='Estilo1' width=202>Nombre del curso</td>
+        <td class='Estilo1' width=726> 
+Redes II
+        </td>
+      </tr>
+      <tr>
+        <td class='Estilo1' height=29 width=202>Institución de Educación Superior (IES)</td>
+        <td class='Estilo1' height=29 width=726>
+Universidad Autónoma de Querétaro
+        </td>
+      </tr>	 
+      <tr>
+        <td class='Estilo1' height=29 width=202>Dependencia de Educación Superior (IES)</td>
+        <td class='Estilo1' height=29 width=726>
+TECNOLOGÍAS DE INFORMACIÓN Y COMUNICACIONES
+        </td>
+      </tr>	 
+      <tr>
+        <td class='Estilo1' height=29 width=202>Programa educativo</td>
+        <td class='Estilo1' height=29 width=726>
+INGENIERIA DE SOFTWARE
+        </td>
+      </tr>	 
+      <tr> 
+        <td class='Estilo1' width=202>Nivel</td>
+        <td class='Estilo1' width=726> 
+Licenciatura
+        </td>
+      </tr>
+	  </table>
+	  <TABLE width=95% border='1' cellspacing=1 cellpadding=2 align=Center>
+      <tr> 
+        <td class='Estilo1'>Fecha de inicio</td>
+		<td class='Estilo1'>N&uacute;mero de alumnos</td>
+		<td class='Estilo1'>Duraci&oacute;n en semanas</td>
+		<td class='Estilo1'>Horas de asesor&iacute;a al mes</td>
+		<td class='Estilo1'>Horas semanales dedicadas a este curso</td>
+	  </tr>
+	  <tr>
+        <td class='Estilo1' align=center> 
+28/07/2020
+        </td>
+        <td class='Estilo1' align=center> 
+3
+        </td>
+        <td class='Estilo1' align=center> 
+18
+        </td>
+        <td class='Estilo1' align=center> 
+1
+        </td>			 
+        <td class='Estilo1' align=center> 
+4
+        </td>
+      </tr>  	 
+</TABLE>
+<hr>
+<br>   
+  <TABLE width=95% border='1' cellspacing=1 cellpadding=2 align=Center>
+      <tr> 
+        <td class='Estilo1' width=202>Nombre del curso</td>
+        <td class='Estilo1' width=726> 
+Redes II
+        </td>
+      </tr>
+      <tr>
+        <td class='Estilo1' height=29 width=202>Institución de Educación Superior (IES)</td>
+        <td class='Estilo1' height=29 width=726>
+Universidad Autónoma de Querétaro
+        </td>
+      </tr>	 
+      <tr>
+        <td class='Estilo1' height=29 width=202>Dependencia de Educación Superior (IES)</td>
+        <td class='Estilo1' height=29 width=726>
+TECNOLOGÍAS DE INFORMACIÓN Y COMUNICACIONES
+        </td>
+      </tr>	 
+      <tr>
+        <td class='Estilo1' height=29 width=202>Programa educativo</td>
+        <td class='Estilo1' height=29 width=726>
+INGENIERIA DE SOFTWARE
+        </td>
+      </tr>	 
+      <tr> 
+        <td class='Estilo1' width=202>Nivel</td>
+        <td class='Estilo1' width=726> 
+Licenciatura
+        </td>
+      </tr>
+	  </table>
+	  <TABLE width=95% border='1' cellspacing=1 cellpadding=2 align=Center>
+      <tr> 
+        <td class='Estilo1'>Fecha de inicio</td>
+		<td class='Estilo1'>N&uacute;mero de alumnos</td>
+		<td class='Estilo1'>Duraci&oacute;n en semanas</td>
+		<td class='Estilo1'>Horas de asesor&iacute;a al mes</td>
+		<td class='Estilo1'>Horas semanales dedicadas a este curso</td>
+	  </tr>
+	  <tr>
+        <td class='Estilo1' align=center> 
+28/07/2020
+        </td>
+        <td class='Estilo1' align=center> 
+6
+        </td>
+        <td class='Estilo1' align=center> 
+18
+        </td>
+        <td class='Estilo1' align=center> 
+1
+        </td>			 
+        <td class='Estilo1' align=center> 
+4
+        </td>
+      </tr>  	 
+</TABLE>
+<hr>
+<br>   
+  <TABLE width=95% border='1' cellspacing=1 cellpadding=2 align=Center>
+      <tr> 
+        <td class='Estilo1' width=202>Nombre del curso</td>
+        <td class='Estilo1' width=726> 
+Bases de Datos
+        </td>
+      </tr>
+      <tr>
+        <td class='Estilo1' height=29 width=202>Institución de Educación Superior (IES)</td>
+        <td class='Estilo1' height=29 width=726>
+Universidad Autónoma de Querétaro
+        </td>
+      </tr>	 
+      <tr>
+        <td class='Estilo1' height=29 width=202>Dependencia de Educación Superior (IES)</td>
+        <td class='Estilo1' height=29 width=726>
+TECNOLOGÍAS DE INFORMACIÓN Y COMUNICACIONES
+        </td>
+      </tr>	 
+      <tr>
+        <td class='Estilo1' height=29 width=202>Programa educativo</td>
+        <td class='Estilo1' height=29 width=726>
+ADMINISTRACION DE TECNOLOGIAS DE INFORMACION
+        </td>
+      </tr>	 
+      <tr> 
+        <td class='Estilo1' width=202>Nivel</td>
+        <td class='Estilo1' width=726> 
+Licenciatura
+        </td>
+      </tr>
+	  </table>
+	  <TABLE width=95% border='1' cellspacing=1 cellpadding=2 align=Center>
+      <tr> 
+        <td class='Estilo1'>Fecha de inicio</td>
+		<td class='Estilo1'>N&uacute;mero de alumnos</td>
+		<td class='Estilo1'>Duraci&oacute;n en semanas</td>
+		<td class='Estilo1'>Horas de asesor&iacute;a al mes</td>
+		<td class='Estilo1'>Horas semanales dedicadas a este curso</td>
+	  </tr>
+	  <tr>
+        <td class='Estilo1' align=center> 
+14/01/2020
+        </td>
+        <td class='Estilo1' align=center> 
+1
+        </td>
+        <td class='Estilo1' align=center> 
+18
+        </td>
+        <td class='Estilo1' align=center> 
+1
+        </td>			 
+        <td class='Estilo1' align=center> 
+4
+        </td>
+      </tr>  	 
+</TABLE>
+<hr>
+<br>   
+  <TABLE width=95% border='1' cellspacing=1 cellpadding=2 align=Center>
+      <tr> 
+        <td class='Estilo1' width=202>Nombre del curso</td>
+        <td class='Estilo1' width=726> 
+Bases de Datos
+        </td>
+      </tr>
+      <tr>
+        <td class='Estilo1' height=29 width=202>Institución de Educación Superior (IES)</td>
+        <td class='Estilo1' height=29 width=726>
+Universidad Autónoma de Querétaro
+        </td>
+      </tr>	 
+      <tr>
+        <td class='Estilo1' height=29 width=202>Dependencia de Educación Superior (IES)</td>
+        <td class='Estilo1' height=29 width=726>
+TECNOLOGÍAS DE INFORMACIÓN Y COMUNICACIONES
+        </td>
+      </tr>	 
+      <tr>
+        <td class='Estilo1' height=29 width=202>Programa educativo</td>
+        <td class='Estilo1' height=29 width=726>
+INFORMATICA
+        </td>
+      </tr>	 
+      <tr> 
+        <td class='Estilo1' width=202>Nivel</td>
+        <td class='Estilo1' width=726> 
+Licenciatura
+        </td>
+      </tr>
+	  </table>
+	  <TABLE width=95% border='1' cellspacing=1 cellpadding=2 align=Center>
+      <tr> 
+        <td class='Estilo1'>Fecha de inicio</td>
+		<td class='Estilo1'>N&uacute;mero de alumnos</td>
+		<td class='Estilo1'>Duraci&oacute;n en semanas</td>
+		<td class='Estilo1'>Horas de asesor&iacute;a al mes</td>
+		<td class='Estilo1'>Horas semanales dedicadas a este curso</td>
+	  </tr>
+	  <tr>
+        <td class='Estilo1' align=center> 
+13/01/2020
+        </td>
+        <td class='Estilo1' align=center> 
+25
+        </td>
+        <td class='Estilo1' align=center> 
+18
+        </td>
+        <td class='Estilo1' align=center> 
+1
+        </td>			 
+        <td class='Estilo1' align=center> 
+4
+        </td>
+      </tr>  	 
+</TABLE>
+<hr>
+<br>   
+  <TABLE width=95% border='1' cellspacing=1 cellpadding=2 align=Center>
+      <tr> 
+        <td class='Estilo1' width=202>Nombre del curso</td>
+        <td class='Estilo1' width=726> 
+Bases de Datos I
+        </td>
+      </tr>
+      <tr>
+        <td class='Estilo1' height=29 width=202>Institución de Educación Superior (IES)</td>
+        <td class='Estilo1' height=29 width=726>
+Universidad Autónoma de Querétaro
+        </td>
+      </tr>	 
+      <tr>
+        <td class='Estilo1' height=29 width=202>Dependencia de Educación Superior (IES)</td>
+        <td class='Estilo1' height=29 width=726>
+TECNOLOGÍAS DE INFORMACIÓN Y COMUNICACIONES
+        </td>
+      </tr>	 
+      <tr>
+        <td class='Estilo1' height=29 width=202>Programa educativo</td>
+        <td class='Estilo1' height=29 width=726>
+INGENIERIA DE SOFTWARE
+        </td>
+      </tr>	 
+      <tr> 
+        <td class='Estilo1' width=202>Nivel</td>
+        <td class='Estilo1' width=726> 
+Licenciatura
+        </td>
+      </tr>
+	  </table>
+	  <TABLE width=95% border='1' cellspacing=1 cellpadding=2 align=Center>
+      <tr> 
+        <td class='Estilo1'>Fecha de inicio</td>
+		<td class='Estilo1'>N&uacute;mero de alumnos</td>
+		<td class='Estilo1'>Duraci&oacute;n en semanas</td>
+		<td class='Estilo1'>Horas de asesor&iacute;a al mes</td>
+		<td class='Estilo1'>Horas semanales dedicadas a este curso</td>
+	  </tr>
+	  <tr>
+        <td class='Estilo1' align=center> 
+13/01/2020
+        </td>
+        <td class='Estilo1' align=center> 
+16
+        </td>
+        <td class='Estilo1' align=center> 
+18
+        </td>
+        <td class='Estilo1' align=center> 
+1
+        </td>			 
+        <td class='Estilo1' align=center> 
+4
+        </td>
+      </tr>  	 
+</TABLE>
+<hr>
+<br>   
+  <TABLE width=95% border='1' cellspacing=1 cellpadding=2 align=Center>
+      <tr> 
+        <td class='Estilo1' width=202>Nombre del curso</td>
+        <td class='Estilo1' width=726> 
+Desarrollo de Interfaces de Hardware II
+        </td>
+      </tr>
+      <tr>
+        <td class='Estilo1' height=29 width=202>Institución de Educación Superior (IES)</td>
+        <td class='Estilo1' height=29 width=726>
+Universidad Autónoma de Querétaro
+        </td>
+      </tr>	 
+      <tr>
+        <td class='Estilo1' height=29 width=202>Dependencia de Educación Superior (IES)</td>
+        <td class='Estilo1' height=29 width=726>
+TECNOLOGÍAS DE INFORMACIÓN Y COMUNICACIONES
+        </td>
+      </tr>	 
+      <tr>
+        <td class='Estilo1' height=29 width=202>Programa educativo</td>
+        <td class='Estilo1' height=29 width=726>
+INGENIERIA EN COMPUTACION
+        </td>
+      </tr>	 
+      <tr> 
+        <td class='Estilo1' width=202>Nivel</td>
+        <td class='Estilo1' width=726> 
+Licenciatura
+        </td>
+      </tr>
+	  </table>
+	  <TABLE width=95% border='1' cellspacing=1 cellpadding=2 align=Center>
+      <tr> 
+        <td class='Estilo1'>Fecha de inicio</td>
+		<td class='Estilo1'>N&uacute;mero de alumnos</td>
+		<td class='Estilo1'>Duraci&oacute;n en semanas</td>
+		<td class='Estilo1'>Horas de asesor&iacute;a al mes</td>
+		<td class='Estilo1'>Horas semanales dedicadas a este curso</td>
+	  </tr>
+	  <tr>
+        <td class='Estilo1' align=center> 
+13/01/2020
+        </td>
+        <td class='Estilo1' align=center> 
+11
+        </td>
+        <td class='Estilo1' align=center> 
+18
+        </td>
+        <td class='Estilo1' align=center> 
+1
+        </td>			 
+        <td class='Estilo1' align=center> 
+4
+        </td>
+      </tr>  	 
+</TABLE>
+<hr>
+<br>   
+  <TABLE width=95% border='1' cellspacing=1 cellpadding=2 align=Center>
+      <tr> 
+        <td class='Estilo1' width=202>Nombre del curso</td>
+        <td class='Estilo1' width=726> 
+Introducción a la Programación
+        </td>
+      </tr>
+      <tr>
+        <td class='Estilo1' height=29 width=202>Institución de Educación Superior (IES)</td>
+        <td class='Estilo1' height=29 width=726>
+Universidad Autónoma de Querétaro
+        </td>
+      </tr>	 
+      <tr>
+        <td class='Estilo1' height=29 width=202>Dependencia de Educación Superior (IES)</td>
+        <td class='Estilo1' height=29 width=726>
+TECNOLOGÍAS DE INFORMACIÓN Y COMUNICACIONES
+        </td>
+      </tr>	 
+      <tr>
+        <td class='Estilo1' height=29 width=202>Programa educativo</td>
+        <td class='Estilo1' height=29 width=726>
+INGENIERIA DE SOFTWARE
+        </td>
+      </tr>	 
+      <tr> 
+        <td class='Estilo1' width=202>Nivel</td>
+        <td class='Estilo1' width=726> 
+Licenciatura
+        </td>
+      </tr>
+	  </table>
+	  <TABLE width=95% border='1' cellspacing=1 cellpadding=2 align=Center>
+      <tr> 
+        <td class='Estilo1'>Fecha de inicio</td>
+		<td class='Estilo1'>N&uacute;mero de alumnos</td>
+		<td class='Estilo1'>Duraci&oacute;n en semanas</td>
+		<td class='Estilo1'>Horas de asesor&iacute;a al mes</td>
+		<td class='Estilo1'>Horas semanales dedicadas a este curso</td>
+	  </tr>
+	  <tr>
+        <td class='Estilo1' align=center> 
+13/01/2020
+        </td>
+        <td class='Estilo1' align=center> 
+21
+        </td>
+        <td class='Estilo1' align=center> 
+18
+        </td>
+        <td class='Estilo1' align=center> 
+1
+        </td>			 
+        <td class='Estilo1' align=center> 
+4
+        </td>
+      </tr>  	 
+</TABLE>
+<hr>
+<br>   
+  <TABLE width=95% border='1' cellspacing=1 cellpadding=2 align=Center>
+      <tr> 
+        <td class='Estilo1' width=202>Nombre del curso</td>
+        <td class='Estilo1' width=726> 
+Programación Orientada a Objetos
+        </td>
+      </tr>
+      <tr>
+        <td class='Estilo1' height=29 width=202>Institución de Educación Superior (IES)</td>
+        <td class='Estilo1' height=29 width=726>
+Universidad Autónoma de Querétaro
+        </td>
+      </tr>	 
+      <tr>
+        <td class='Estilo1' height=29 width=202>Dependencia de Educación Superior (IES)</td>
+        <td class='Estilo1' height=29 width=726>
+TECNOLOGÍAS DE INFORMACIÓN Y COMUNICACIONES
+        </td>
+      </tr>	 
+      <tr>
+        <td class='Estilo1' height=29 width=202>Programa educativo</td>
+        <td class='Estilo1' height=29 width=726>
+ADMINISTRACION DE TECNOLOGIAS DE INFORMACION
+        </td>
+      </tr>	 
+      <tr> 
+        <td class='Estilo1' width=202>Nivel</td>
+        <td class='Estilo1' width=726> 
+Licenciatura
+        </td>
+      </tr>
+	  </table>
+	  <TABLE width=95% border='1' cellspacing=1 cellpadding=2 align=Center>
+      <tr> 
+        <td class='Estilo1'>Fecha de inicio</td>
+		<td class='Estilo1'>N&uacute;mero de alumnos</td>
+		<td class='Estilo1'>Duraci&oacute;n en semanas</td>
+		<td class='Estilo1'>Horas de asesor&iacute;a al mes</td>
+		<td class='Estilo1'>Horas semanales dedicadas a este curso</td>
+	  </tr>
+	  <tr>
+        <td class='Estilo1' align=center> 
+13/01/2020
+        </td>
+        <td class='Estilo1' align=center> 
+1
+        </td>
+        <td class='Estilo1' align=center> 
+18
+        </td>
+        <td class='Estilo1' align=center> 
+1
+        </td>			 
+        <td class='Estilo1' align=center> 
+4
+        </td>
+      </tr>  	 
+</TABLE>
+<hr>
+<br>   
+  <TABLE width=95% border='1' cellspacing=1 cellpadding=2 align=Center>
+      <tr> 
+        <td class='Estilo1' width=202>Nombre del curso</td>
+        <td class='Estilo1' width=726> 
+Programación Orientada a Objetos
+        </td>
+      </tr>
+      <tr>
+        <td class='Estilo1' height=29 width=202>Institución de Educación Superior (IES)</td>
+        <td class='Estilo1' height=29 width=726>
+Universidad Autónoma de Querétaro
+        </td>
+      </tr>	 
+      <tr>
+        <td class='Estilo1' height=29 width=202>Dependencia de Educación Superior (IES)</td>
+        <td class='Estilo1' height=29 width=726>
+TECNOLOGÍAS DE INFORMACIÓN Y COMUNICACIONES
+        </td>
+      </tr>	 
+      <tr>
+        <td class='Estilo1' height=29 width=202>Programa educativo</td>
+        <td class='Estilo1' height=29 width=726>
+INGENIERIA DE SOFTWARE
+        </td>
+      </tr>	 
+      <tr> 
+        <td class='Estilo1' width=202>Nivel</td>
+        <td class='Estilo1' width=726> 
+Licenciatura
+        </td>
+      </tr>
+	  </table>
+	  <TABLE width=95% border='1' cellspacing=1 cellpadding=2 align=Center>
+      <tr> 
+        <td class='Estilo1'>Fecha de inicio</td>
+		<td class='Estilo1'>N&uacute;mero de alumnos</td>
+		<td class='Estilo1'>Duraci&oacute;n en semanas</td>
+		<td class='Estilo1'>Horas de asesor&iacute;a al mes</td>
+		<td class='Estilo1'>Horas semanales dedicadas a este curso</td>
+	  </tr>
+	  <tr>
+        <td class='Estilo1' align=center> 
+13/01/2020
+        </td>
+        <td class='Estilo1' align=center> 
+19
+        </td>
+        <td class='Estilo1' align=center> 
+18
+        </td>
+        <td class='Estilo1' align=center> 
+1
+        </td>			 
+        <td class='Estilo1' align=center> 
+4
+        </td>
+      </tr>  	 
+</TABLE>
+<hr>
+<br>   
+  <TABLE width=95% border='1' cellspacing=1 cellpadding=2 align=Center>
+      <tr> 
+        <td class='Estilo1' width=202>Nombre del curso</td>
+        <td class='Estilo1' width=726> 
+Redes I
+        </td>
+      </tr>
+      <tr>
+        <td class='Estilo1' height=29 width=202>Institución de Educación Superior (IES)</td>
+        <td class='Estilo1' height=29 width=726>
+Universidad Autónoma de Querétaro
+        </td>
+      </tr>	 
+      <tr>
+        <td class='Estilo1' height=29 width=202>Dependencia de Educación Superior (IES)</td>
+        <td class='Estilo1' height=29 width=726>
+TECNOLOGÍAS DE INFORMACIÓN Y COMUNICACIONES
+        </td>
+      </tr>	 
+      <tr>
+        <td class='Estilo1' height=29 width=202>Programa educativo</td>
+        <td class='Estilo1' height=29 width=726>
+INGENIERIA DE SOFTWARE
+        </td>
+      </tr>	 
+      <tr> 
+        <td class='Estilo1' width=202>Nivel</td>
+        <td class='Estilo1' width=726> 
+Licenciatura
+        </td>
+      </tr>
+	  </table>
+	  <TABLE width=95% border='1' cellspacing=1 cellpadding=2 align=Center>
+      <tr> 
+        <td class='Estilo1'>Fecha de inicio</td>
+		<td class='Estilo1'>N&uacute;mero de alumnos</td>
+		<td class='Estilo1'>Duraci&oacute;n en semanas</td>
+		<td class='Estilo1'>Horas de asesor&iacute;a al mes</td>
+		<td class='Estilo1'>Horas semanales dedicadas a este curso</td>
+	  </tr>
+	  <tr>
+        <td class='Estilo1' align=center> 
+13/01/2020
+        </td>
+        <td class='Estilo1' align=center> 
+14
+        </td>
+        <td class='Estilo1' align=center> 
+18
+        </td>
+        <td class='Estilo1' align=center> 
+1
+        </td>			 
+        <td class='Estilo1' align=center> 
+4
+        </td>
+      </tr>  	 
+</TABLE>
+<hr>
+<br>   
+  <TABLE width=95% border='1' cellspacing=1 cellpadding=2 align=Center>
+      <tr> 
+        <td class='Estilo1' width=202>Nombre del curso</td>
+        <td class='Estilo1' width=726> 
+Redes II
+        </td>
+      </tr>
+      <tr>
+        <td class='Estilo1' height=29 width=202>Institución de Educación Superior (IES)</td>
+        <td class='Estilo1' height=29 width=726>
+Universidad Autónoma de Querétaro
+        </td>
+      </tr>	 
+      <tr>
+        <td class='Estilo1' height=29 width=202>Dependencia de Educación Superior (IES)</td>
+        <td class='Estilo1' height=29 width=726>
+TECNOLOGÍAS DE INFORMACIÓN Y COMUNICACIONES
+        </td>
+      </tr>	 
+      <tr>
+        <td class='Estilo1' height=29 width=202>Programa educativo</td>
+        <td class='Estilo1' height=29 width=726>
+INGENIERIA EN COMPUTACION
+        </td>
+      </tr>	 
+      <tr> 
+        <td class='Estilo1' width=202>Nivel</td>
+        <td class='Estilo1' width=726> 
+Licenciatura
+        </td>
+      </tr>
+	  </table>
+	  <TABLE width=95% border='1' cellspacing=1 cellpadding=2 align=Center>
+      <tr> 
+        <td class='Estilo1'>Fecha de inicio</td>
+		<td class='Estilo1'>N&uacute;mero de alumnos</td>
+		<td class='Estilo1'>Duraci&oacute;n en semanas</td>
+		<td class='Estilo1'>Horas de asesor&iacute;a al mes</td>
+		<td class='Estilo1'>Horas semanales dedicadas a este curso</td>
+	  </tr>
+	  <tr>
+        <td class='Estilo1' align=center> 
+13/01/2020
+        </td>
+        <td class='Estilo1' align=center> 
+1
+        </td>
+        <td class='Estilo1' align=center> 
+18
+        </td>
+        <td class='Estilo1' align=center> 
+1
+        </td>			 
+        <td class='Estilo1' align=center> 
+4
+        </td>
+      </tr>  	 
+</TABLE>
+<hr>
+<br>   
+  <TABLE width=95% border='1' cellspacing=1 cellpadding=2 align=Center>
+      <tr> 
+        <td class='Estilo1' width=202>Nombre del curso</td>
+        <td class='Estilo1' width=726> 
+Redes II
+        </td>
+      </tr>
+      <tr>
+        <td class='Estilo1' height=29 width=202>Institución de Educación Superior (IES)</td>
+        <td class='Estilo1' height=29 width=726>
+Universidad Autónoma de Querétaro
+        </td>
+      </tr>	 
+      <tr>
+        <td class='Estilo1' height=29 width=202>Dependencia de Educación Superior (IES)</td>
+        <td class='Estilo1' height=29 width=726>
+TECNOLOGÍAS DE INFORMACIÓN Y COMUNICACIONES
+        </td>
+      </tr>	 
+      <tr>
+        <td class='Estilo1' height=29 width=202>Programa educativo</td>
+        <td class='Estilo1' height=29 width=726>
+INGENIERIA DE SOFTWARE
+        </td>
+      </tr>	 
+      <tr> 
+        <td class='Estilo1' width=202>Nivel</td>
+        <td class='Estilo1' width=726> 
+Licenciatura
+        </td>
+      </tr>
+	  </table>
+	  <TABLE width=95% border='1' cellspacing=1 cellpadding=2 align=Center>
+      <tr> 
+        <td class='Estilo1'>Fecha de inicio</td>
+		<td class='Estilo1'>N&uacute;mero de alumnos</td>
+		<td class='Estilo1'>Duraci&oacute;n en semanas</td>
+		<td class='Estilo1'>Horas de asesor&iacute;a al mes</td>
+		<td class='Estilo1'>Horas semanales dedicadas a este curso</td>
+	  </tr>
+	  <tr>
+        <td class='Estilo1' align=center> 
+13/01/2020
+        </td>
+        <td class='Estilo1' align=center> 
+24
+        </td>
+        <td class='Estilo1' align=center> 
+18
+        </td>
+        <td class='Estilo1' align=center> 
+1
+        </td>			 
+        <td class='Estilo1' align=center> 
+4
+        </td>
+      </tr>  	 
+</TABLE>
+<hr>
+<br>   
+  <TABLE width=95% border='1' cellspacing=1 cellpadding=2 align=Center>
+      <tr> 
+        <td class='Estilo1' width=202>Nombre del curso</td>
+        <td class='Estilo1' width=726> 
+Redes II
+        </td>
+      </tr>
+      <tr>
+        <td class='Estilo1' height=29 width=202>Institución de Educación Superior (IES)</td>
+        <td class='Estilo1' height=29 width=726>
+Universidad Autónoma de Querétaro
+        </td>
+      </tr>	 
+      <tr>
+        <td class='Estilo1' height=29 width=202>Dependencia de Educación Superior (IES)</td>
+        <td class='Estilo1' height=29 width=726>
+TECNOLOGÍAS DE INFORMACIÓN Y COMUNICACIONES
+        </td>
+      </tr>	 
+      <tr>
+        <td class='Estilo1' height=29 width=202>Programa educativo</td>
+        <td class='Estilo1' height=29 width=726>
+INFORMATICA
+        </td>
+      </tr>	 
+      <tr> 
+        <td class='Estilo1' width=202>Nivel</td>
+        <td class='Estilo1' width=726> 
+Licenciatura
+        </td>
+      </tr>
+	  </table>
+	  <TABLE width=95% border='1' cellspacing=1 cellpadding=2 align=Center>
+      <tr> 
+        <td class='Estilo1'>Fecha de inicio</td>
+		<td class='Estilo1'>N&uacute;mero de alumnos</td>
+		<td class='Estilo1'>Duraci&oacute;n en semanas</td>
+		<td class='Estilo1'>Horas de asesor&iacute;a al mes</td>
+		<td class='Estilo1'>Horas semanales dedicadas a este curso</td>
+	  </tr>
+	  <tr>
+        <td class='Estilo1' align=center> 
+13/01/2020
+        </td>
+        <td class='Estilo1' align=center> 
+2
+        </td>
+        <td class='Estilo1' align=center> 
+18
+        </td>
+        <td class='Estilo1' align=center> 
+1
+        </td>			 
+        <td class='Estilo1' align=center> 
+4
+        </td>
+      </tr>  	 
+</TABLE>
+<hr>
+<br>   
+ 
+
+  <A NAME="8">
+<div align=center>
+  <table width=95% border='1' cellpadding=1>
+    <tr>
+      <td class='Estilo1'> <div align="center">Tutor&iacute;a</div></td>
+  </tr>
+</table>
+</div>
+  </A> 
+    <div align=center>
+	
+     <table width=95% border='1' cellpadding=2 align=Center>
+      <tr> 
+        <td class='Estilo1' width=202>Tutoría</td>
+        <td class='Estilo1' > 
+Tutoría Individual - MARTINEZ GUERRERO DANIEL
+        </td>
+      </tr>
+        </td>
+      </tr>
+      <tr> 
+        <td class='Estilo1' width=202>Nivel</td>
+        <td class='Estilo1' > 
+Licenciatura
+        </td>
+      </tr>
+  <tr> 
+        <td class='Estilo1' width=202>Programa educativo en el que participa</td>
+        <td class='Estilo1' > 
+INGENIERIA DE SOFTWARE
+        </td>
+      </tr>
+        <td class='Estilo1' width=202>Fecha de inicio</td>
+        <td class='Estilo1' > 
+27/07/2020
+        </td>
+      </tr>
+      <tr> 
+        <td class='Estilo1' width=202>Fecha de t&eacute;rmino</td>
+        <td class='Estilo1' > 
+
+        </td>
+      </tr>
+      <tr> 
+        <td class='Estilo1' width=202>Tipo de tutelaje</td>
+        <td class='Estilo1' > 
+Guía en el medio universitario y académico
+        </td>
+      </tr>
+      <tr> 
+        <td class='Estilo1' width=202>Estado del tutelaje</td>
+        <td class='Estilo1' > 
+En proceso
+        </td>
+      </tr>
+      </table>  	  
+      <hr>  	  
+    <table width=95% border='1' cellpadding=2 align=Center>
+      <tr> 
+        <td class='Estilo1' width=202>Tutoría</td>
+        <td class='Estilo1' > 
+Tutoría Individual - MELCHOR HERNANDEZ OSCAR ELI
+        </td>
+      </tr>
+        </td>
+      </tr>
+      <tr> 
+        <td class='Estilo1' width=202>Nivel</td>
+        <td class='Estilo1' > 
+Licenciatura
+        </td>
+      </tr>
+  <tr> 
+        <td class='Estilo1' width=202>Programa educativo en el que participa</td>
+        <td class='Estilo1' > 
+INGENIERIA DE SOFTWARE
+        </td>
+      </tr>
+        <td class='Estilo1' width=202>Fecha de inicio</td>
+        <td class='Estilo1' > 
+27/07/2020
+        </td>
+      </tr>
+      <tr> 
+        <td class='Estilo1' width=202>Fecha de t&eacute;rmino</td>
+        <td class='Estilo1' > 
+
+        </td>
+      </tr>
+      <tr> 
+        <td class='Estilo1' width=202>Tipo de tutelaje</td>
+        <td class='Estilo1' > 
+Guía en el medio universitario y académico
+        </td>
+      </tr>
+      <tr> 
+        <td class='Estilo1' width=202>Estado del tutelaje</td>
+        <td class='Estilo1' > 
+En proceso
+        </td>
+      </tr>
+      </table>  	  
+      <hr>  	  
+    <table width=95% border='1' cellpadding=2 align=Center>
+      <tr> 
+        <td class='Estilo1' width=202>Tutoría</td>
+        <td class='Estilo1' > 
+Tutoría Individual - CHAVARRIA VILLANUEVA SEBASTIAN
+        </td>
+      </tr>
+        </td>
+      </tr>
+      <tr> 
+        <td class='Estilo1' width=202>Nivel</td>
+        <td class='Estilo1' > 
+Licenciatura
+        </td>
+      </tr>
+  <tr> 
+        <td class='Estilo1' width=202>Programa educativo en el que participa</td>
+        <td class='Estilo1' > 
+INGENIERIA DE SOFTWARE
+        </td>
+      </tr>
+        <td class='Estilo1' width=202>Fecha de inicio</td>
+        <td class='Estilo1' > 
+26/07/2021
+        </td>
+      </tr>
+      <tr> 
+        <td class='Estilo1' width=202>Fecha de t&eacute;rmino</td>
+        <td class='Estilo1' > 
+
+        </td>
+      </tr>
+      <tr> 
+        <td class='Estilo1' width=202>Tipo de tutelaje</td>
+        <td class='Estilo1' > 
+Guía en el medio universitario y académico
+        </td>
+      </tr>
+      <tr> 
+        <td class='Estilo1' width=202>Estado del tutelaje</td>
+        <td class='Estilo1' > 
+En proceso
+        </td>
+      </tr>
+      </table>  	  
+      <hr>  	  
+    <table width=95% border='1' cellpadding=2 align=Center>
+      <tr> 
+        <td class='Estilo1' width=202>Tutoría</td>
+        <td class='Estilo1' > 
+Tutoría Individual - RAMIREZ MORENO JUAN DIEGO
+        </td>
+      </tr>
+        </td>
+      </tr>
+      <tr> 
+        <td class='Estilo1' width=202>Nivel</td>
+        <td class='Estilo1' > 
+Licenciatura
+        </td>
+      </tr>
+  <tr> 
+        <td class='Estilo1' width=202>Programa educativo en el que participa</td>
+        <td class='Estilo1' > 
+INGENIERIA EN COMPUTACION
+        </td>
+      </tr>
+        <td class='Estilo1' width=202>Fecha de inicio</td>
+        <td class='Estilo1' > 
+26/07/2021
+        </td>
+      </tr>
+      <tr> 
+        <td class='Estilo1' width=202>Fecha de t&eacute;rmino</td>
+        <td class='Estilo1' > 
+
+        </td>
+      </tr>
+      <tr> 
+        <td class='Estilo1' width=202>Tipo de tutelaje</td>
+        <td class='Estilo1' > 
+Guía en el medio universitario y académico
+        </td>
+      </tr>
+      <tr> 
+        <td class='Estilo1' width=202>Estado del tutelaje</td>
+        <td class='Estilo1' > 
+En proceso
+        </td>
+      </tr>
+      </table>  	  
+      <hr>  	  
+    <table width=95% border='1' cellpadding=2 align=Center>
+      <tr> 
+        <td class='Estilo1' width=202>Tutoría</td>
+        <td class='Estilo1' > 
+Tutoría Individual - BARRETO RIVAS GEOVANI
+        </td>
+      </tr>
+        </td>
+      </tr>
+      <tr> 
+        <td class='Estilo1' width=202>Nivel</td>
+        <td class='Estilo1' > 
+Licenciatura
+        </td>
+      </tr>
+  <tr> 
+        <td class='Estilo1' width=202>Programa educativo en el que participa</td>
+        <td class='Estilo1' > 
+INGENIERIA DE SOFTWARE
+        </td>
+      </tr>
+        <td class='Estilo1' width=202>Fecha de inicio</td>
+        <td class='Estilo1' > 
+25/01/2021
+        </td>
+      </tr>
+      <tr> 
+        <td class='Estilo1' width=202>Fecha de t&eacute;rmino</td>
+        <td class='Estilo1' > 
+
+        </td>
+      </tr>
+      <tr> 
+        <td class='Estilo1' width=202>Tipo de tutelaje</td>
+        <td class='Estilo1' > 
+Guía en el medio universitario y académico
+        </td>
+      </tr>
+      <tr> 
+        <td class='Estilo1' width=202>Estado del tutelaje</td>
+        <td class='Estilo1' > 
+En proceso
+        </td>
+      </tr>
+      </table>  	  
+      <hr>  	  
+    <table width=95% border='1' cellpadding=2 align=Center>
+      <tr> 
+        <td class='Estilo1' width=202>Tutoría</td>
+        <td class='Estilo1' > 
+Tutoría Individual - JUAREZ BASURTO EMMANUEL ALEJANDRO
+        </td>
+      </tr>
+        </td>
+      </tr>
+      <tr> 
+        <td class='Estilo1' width=202>Nivel</td>
+        <td class='Estilo1' > 
+Licenciatura
+        </td>
+      </tr>
+  <tr> 
+        <td class='Estilo1' width=202>Programa educativo en el que participa</td>
+        <td class='Estilo1' > 
+ADMINISTRACION DE TECNOLOGIAS DE INFORMACION
+        </td>
+      </tr>
+        <td class='Estilo1' width=202>Fecha de inicio</td>
+        <td class='Estilo1' > 
+25/01/2021
+        </td>
+      </tr>
+      <tr> 
+        <td class='Estilo1' width=202>Fecha de t&eacute;rmino</td>
+        <td class='Estilo1' > 
+
+        </td>
+      </tr>
+      <tr> 
+        <td class='Estilo1' width=202>Tipo de tutelaje</td>
+        <td class='Estilo1' > 
+Guía en el medio universitario y académico
+        </td>
+      </tr>
+      <tr> 
+        <td class='Estilo1' width=202>Estado del tutelaje</td>
+        <td class='Estilo1' > 
+En proceso
+        </td>
+      </tr>
+      </table>  	  
+      <hr>  	  
+    <table width=95% border='1' cellpadding=2 align=Center>
+      <tr> 
+        <td class='Estilo1' width=202>Tutoría</td>
+        <td class='Estilo1' > 
+Tutoría Individual - MATA PACHECO ROBERTO CARLOS
+        </td>
+      </tr>
+        </td>
+      </tr>
+      <tr> 
+        <td class='Estilo1' width=202>Nivel</td>
+        <td class='Estilo1' > 
+Licenciatura
+        </td>
+      </tr>
+  <tr> 
+        <td class='Estilo1' width=202>Programa educativo en el que participa</td>
+        <td class='Estilo1' > 
+INGENIERIA DE SOFTWARE
+        </td>
+      </tr>
+        <td class='Estilo1' width=202>Fecha de inicio</td>
+        <td class='Estilo1' > 
+22/06/2020
+        </td>
+      </tr>
+      <tr> 
+        <td class='Estilo1' width=202>Fecha de t&eacute;rmino</td>
+        <td class='Estilo1' > 
+
+        </td>
+      </tr>
+      <tr> 
+        <td class='Estilo1' width=202>Tipo de tutelaje</td>
+        <td class='Estilo1' > 
+Guía en el medio universitario y académico
+        </td>
+      </tr>
+      <tr> 
+        <td class='Estilo1' width=202>Estado del tutelaje</td>
+        <td class='Estilo1' > 
+En proceso
+        </td>
+      </tr>
+      </table>  	  
+      <hr>  	  
+    <table width=95% border='1' cellpadding=2 align=Center>
+      <tr> 
+        <td class='Estilo1' width=202>Tutoría</td>
+        <td class='Estilo1' > 
+Tutoría Individual - BELTRÁN CORONEL NADIA MARIEL
+        </td>
+      </tr>
+        </td>
+      </tr>
+      <tr> 
+        <td class='Estilo1' width=202>Nivel</td>
+        <td class='Estilo1' > 
+Licenciatura
+        </td>
+      </tr>
+  <tr> 
+        <td class='Estilo1' width=202>Programa educativo en el que participa</td>
+        <td class='Estilo1' > 
+ADMINISTRACION DE TECNOLOGIAS DE INFORMACION
+        </td>
+      </tr>
+        <td class='Estilo1' width=202>Fecha de inicio</td>
+        <td class='Estilo1' > 
+20/01/2020
+        </td>
+      </tr>
+      <tr> 
+        <td class='Estilo1' width=202>Fecha de t&eacute;rmino</td>
+        <td class='Estilo1' > 
+
+        </td>
+      </tr>
+      <tr> 
+        <td class='Estilo1' width=202>Tipo de tutelaje</td>
+        <td class='Estilo1' > 
+Guía en el medio universitario y académico
+        </td>
+      </tr>
+      <tr> 
+        <td class='Estilo1' width=202>Estado del tutelaje</td>
+        <td class='Estilo1' > 
+concluida
+        </td>
+      </tr>
+      </table>  	  
+      <hr>  	  
+    <table width=95% border='1' cellpadding=2 align=Center>
+      <tr> 
+        <td class='Estilo1' width=202>Tutoría</td>
+        <td class='Estilo1' > 
+Tutoría Individual - DURAN PEREZ JOSE ORLANDO
+        </td>
+      </tr>
+        </td>
+      </tr>
+      <tr> 
+        <td class='Estilo1' width=202>Nivel</td>
+        <td class='Estilo1' > 
+Licenciatura
+        </td>
+      </tr>
+  <tr> 
+        <td class='Estilo1' width=202>Programa educativo en el que participa</td>
+        <td class='Estilo1' > 
+INGENIERIA DE SOFTWARE
+        </td>
+      </tr>
+        <td class='Estilo1' width=202>Fecha de inicio</td>
+        <td class='Estilo1' > 
+20/01/2020
+        </td>
+      </tr>
+      <tr> 
+        <td class='Estilo1' width=202>Fecha de t&eacute;rmino</td>
+        <td class='Estilo1' > 
+
+        </td>
+      </tr>
+      <tr> 
+        <td class='Estilo1' width=202>Tipo de tutelaje</td>
+        <td class='Estilo1' > 
+Guía en el medio universitario y académico
+        </td>
+      </tr>
+      <tr> 
+        <td class='Estilo1' width=202>Estado del tutelaje</td>
+        <td class='Estilo1' > 
+En proceso
+        </td>
+      </tr>
+      </table>  	  
+      <hr>  	  
+    <table width=95% border='1' cellpadding=2 align=Center>
+      <tr> 
+        <td class='Estilo1' width=202>Tutoría</td>
+        <td class='Estilo1' > 
+Tutoría Individual - MARES MARTINEZ SERGIO
+        </td>
+      </tr>
+        </td>
+      </tr>
+      <tr> 
+        <td class='Estilo1' width=202>Nivel</td>
+        <td class='Estilo1' > 
+Licenciatura
+        </td>
+      </tr>
+  <tr> 
+        <td class='Estilo1' width=202>Programa educativo en el que participa</td>
+        <td class='Estilo1' > 
+INGENIERIA EN COMPUTACION
+        </td>
+      </tr>
+        <td class='Estilo1' width=202>Fecha de inicio</td>
+        <td class='Estilo1' > 
+20/01/2020
+        </td>
+      </tr>
+      <tr> 
+        <td class='Estilo1' width=202>Fecha de t&eacute;rmino</td>
+        <td class='Estilo1' > 
+
+        </td>
+      </tr>
+      <tr> 
+        <td class='Estilo1' width=202>Tipo de tutelaje</td>
+        <td class='Estilo1' > 
+Guía en el medio universitario y académico
+        </td>
+      </tr>
+      <tr> 
+        <td class='Estilo1' width=202>Estado del tutelaje</td>
+        <td class='Estilo1' > 
+concluida
+        </td>
+      </tr>
+      </table>  	  
+      <hr>  	  
+    <table width=95% border='1' cellpadding=2 align=Center>
+      <tr> 
+        <td class='Estilo1' width=202>Tutoría</td>
+        <td class='Estilo1' > 
+Tutoría Individual - OLVERA GARCÍA OMAR ALEJANDRO
+        </td>
+      </tr>
+        </td>
+      </tr>
+      <tr> 
+        <td class='Estilo1' width=202>Nivel</td>
+        <td class='Estilo1' > 
+Licenciatura
+        </td>
+      </tr>
+  <tr> 
+        <td class='Estilo1' width=202>Programa educativo en el que participa</td>
+        <td class='Estilo1' > 
+INGENIERIA DE SOFTWARE
+        </td>
+      </tr>
+        <td class='Estilo1' width=202>Fecha de inicio</td>
+        <td class='Estilo1' > 
+20/01/2020
+        </td>
+      </tr>
+      <tr> 
+        <td class='Estilo1' width=202>Fecha de t&eacute;rmino</td>
+        <td class='Estilo1' > 
+
+        </td>
+      </tr>
+      <tr> 
+        <td class='Estilo1' width=202>Tipo de tutelaje</td>
+        <td class='Estilo1' > 
+Guía en el medio universitario y académico
+        </td>
+      </tr>
+      <tr> 
+        <td class='Estilo1' width=202>Estado del tutelaje</td>
+        <td class='Estilo1' > 
+concluida
+        </td>
+      </tr>
+      </table>  	  
+      <hr>  	  
+    <table width=95% border='1' cellpadding=2 align=Center>
+      <tr> 
+        <td class='Estilo1' width=202>Tutoría</td>
+        <td class='Estilo1' > 
+Tutoría Individual - PEREZ TAMAYO OSCAR
+        </td>
+      </tr>
+        </td>
+      </tr>
+      <tr> 
+        <td class='Estilo1' width=202>Nivel</td>
+        <td class='Estilo1' > 
+Licenciatura
+        </td>
+      </tr>
+  <tr> 
+        <td class='Estilo1' width=202>Programa educativo en el que participa</td>
+        <td class='Estilo1' > 
+INFORMATICA
+        </td>
+      </tr>
+        <td class='Estilo1' width=202>Fecha de inicio</td>
+        <td class='Estilo1' > 
+20/01/2020
+        </td>
+      </tr>
+      <tr> 
+        <td class='Estilo1' width=202>Fecha de t&eacute;rmino</td>
+        <td class='Estilo1' > 
+
+        </td>
+      </tr>
+      <tr> 
+        <td class='Estilo1' width=202>Tipo de tutelaje</td>
+        <td class='Estilo1' > 
+Guía en el medio universitario y académico
+        </td>
+      </tr>
+      <tr> 
+        <td class='Estilo1' width=202>Estado del tutelaje</td>
+        <td class='Estilo1' > 
+concluida
+        </td>
+      </tr>
+      </table>  	  
+      <hr>  	  
+    <table width=95% border='1' cellpadding=2 align=Center>
+      <tr> 
+        <td class='Estilo1' width=202>Tutoría</td>
+        <td class='Estilo1' > 
+Tutoría Individual - RAMIREZ RAMIREZ ANGEL RAYMUNDO
+        </td>
+      </tr>
+        </td>
+      </tr>
+      <tr> 
+        <td class='Estilo1' width=202>Nivel</td>
+        <td class='Estilo1' > 
+Licenciatura
+        </td>
+      </tr>
+  <tr> 
+        <td class='Estilo1' width=202>Programa educativo en el que participa</td>
+        <td class='Estilo1' > 
+INGENIERIA EN COMPUTACION
+        </td>
+      </tr>
+        <td class='Estilo1' width=202>Fecha de inicio</td>
+        <td class='Estilo1' > 
+20/01/2020
+        </td>
+      </tr>
+      <tr> 
+        <td class='Estilo1' width=202>Fecha de t&eacute;rmino</td>
+        <td class='Estilo1' > 
+
+        </td>
+      </tr>
+      <tr> 
+        <td class='Estilo1' width=202>Tipo de tutelaje</td>
+        <td class='Estilo1' > 
+Guía en el medio universitario y académico
+        </td>
+      </tr>
+      <tr> 
+        <td class='Estilo1' width=202>Estado del tutelaje</td>
+        <td class='Estilo1' > 
+concluida
+        </td>
+      </tr>
+      </table>  	  
+      <hr>  	  
+    <table width=95% border='1' cellpadding=2 align=Center>
+      <tr> 
+        <td class='Estilo1' width=202>Tutoría</td>
+        <td class='Estilo1' > 
+Tutoría Individual - RINCON MENDEZ DANIEL
+        </td>
+      </tr>
+        </td>
+      </tr>
+      <tr> 
+        <td class='Estilo1' width=202>Nivel</td>
+        <td class='Estilo1' > 
+Licenciatura
+        </td>
+      </tr>
+  <tr> 
+        <td class='Estilo1' width=202>Programa educativo en el que participa</td>
+        <td class='Estilo1' > 
+INGENIERIA DE SOFTWARE
+        </td>
+      </tr>
+        <td class='Estilo1' width=202>Fecha de inicio</td>
+        <td class='Estilo1' > 
+20/01/2020
+        </td>
+      </tr>
+      <tr> 
+        <td class='Estilo1' width=202>Fecha de t&eacute;rmino</td>
+        <td class='Estilo1' > 
+
+        </td>
+      </tr>
+      <tr> 
+        <td class='Estilo1' width=202>Tipo de tutelaje</td>
+        <td class='Estilo1' > 
+Guía en el medio universitario y académico
+        </td>
+      </tr>
+      <tr> 
+        <td class='Estilo1' width=202>Estado del tutelaje</td>
+        <td class='Estilo1' > 
+En proceso
+        </td>
+      </tr>
+      </table>  	  
+      <hr>  	  
+    <table width=95% border='1' cellpadding=2 align=Center>
+      <tr> 
+        <td class='Estilo1' width=202>Tutoría</td>
+        <td class='Estilo1' > 
+Tutoría Individual - ROMERO CONDE ALAN GERARDO
+        </td>
+      </tr>
+        </td>
+      </tr>
+      <tr> 
+        <td class='Estilo1' width=202>Nivel</td>
+        <td class='Estilo1' > 
+Licenciatura
+        </td>
+      </tr>
+  <tr> 
+        <td class='Estilo1' width=202>Programa educativo en el que participa</td>
+        <td class='Estilo1' > 
+INGENIERIA DE SOFTWARE
+        </td>
+      </tr>
+        <td class='Estilo1' width=202>Fecha de inicio</td>
+        <td class='Estilo1' > 
+20/01/2020
+        </td>
+      </tr>
+      <tr> 
+        <td class='Estilo1' width=202>Fecha de t&eacute;rmino</td>
+        <td class='Estilo1' > 
+
+        </td>
+      </tr>
+      <tr> 
+        <td class='Estilo1' width=202>Tipo de tutelaje</td>
+        <td class='Estilo1' > 
+Guía en el medio universitario y académico
+        </td>
+      </tr>
+      <tr> 
+        <td class='Estilo1' width=202>Estado del tutelaje</td>
+        <td class='Estilo1' > 
+En proceso
+        </td>
+      </tr>
+      </table>  	  
+      <hr>  	  
+    <table width=95% border='1' cellpadding=2 align=Center>
+      <tr> 
+        <td class='Estilo1' width=202>Tutoría</td>
+        <td class='Estilo1' > 
+Tutoría Individual - RUBIO PACHECO HERNÁN
+        </td>
+      </tr>
+        </td>
+      </tr>
+      <tr> 
+        <td class='Estilo1' width=202>Nivel</td>
+        <td class='Estilo1' > 
+Licenciatura
+        </td>
+      </tr>
+  <tr> 
+        <td class='Estilo1' width=202>Programa educativo en el que participa</td>
+        <td class='Estilo1' > 
+INGENIERIA DE SOFTWARE
+        </td>
+      </tr>
+        <td class='Estilo1' width=202>Fecha de inicio</td>
+        <td class='Estilo1' > 
+20/01/2020
+        </td>
+      </tr>
+      <tr> 
+        <td class='Estilo1' width=202>Fecha de t&eacute;rmino</td>
+        <td class='Estilo1' > 
+
+        </td>
+      </tr>
+      <tr> 
+        <td class='Estilo1' width=202>Tipo de tutelaje</td>
+        <td class='Estilo1' > 
+Guía en el medio universitario y académico
+        </td>
+      </tr>
+      <tr> 
+        <td class='Estilo1' width=202>Estado del tutelaje</td>
+        <td class='Estilo1' > 
+concluida
+        </td>
+      </tr>
+      </table>  	  
+      <hr>  	  
+    <table width=95% border='1' cellpadding=2 align=Center>
+      <tr> 
+        <td class='Estilo1' width=202>Tutoría</td>
+        <td class='Estilo1' > 
+Tutoría Individual - TREJO GUERRERO KARLA ALEJANDRA
+        </td>
+      </tr>
+        </td>
+      </tr>
+      <tr> 
+        <td class='Estilo1' width=202>Nivel</td>
+        <td class='Estilo1' > 
+Licenciatura
+        </td>
+      </tr>
+  <tr> 
+        <td class='Estilo1' width=202>Programa educativo en el que participa</td>
+        <td class='Estilo1' > 
+INGENIERIA EN TELECOMUNICACIONES
+        </td>
+      </tr>
+        <td class='Estilo1' width=202>Fecha de inicio</td>
+        <td class='Estilo1' > 
+20/01/2020
+        </td>
+      </tr>
+      <tr> 
+        <td class='Estilo1' width=202>Fecha de t&eacute;rmino</td>
+        <td class='Estilo1' > 
+
+        </td>
+      </tr>
+      <tr> 
+        <td class='Estilo1' width=202>Tipo de tutelaje</td>
+        <td class='Estilo1' > 
+Guía en el medio universitario y académico
+        </td>
+      </tr>
+      <tr> 
+        <td class='Estilo1' width=202>Estado del tutelaje</td>
+        <td class='Estilo1' > 
+concluida
+        </td>
+      </tr>
+      </table>  	  
+      <hr>  	  
+    <table width=95% border='1' cellpadding=2 align=Center>
+      <tr> 
+        <td class='Estilo1' width=202>Tutoría</td>
+        <td class='Estilo1' > 
+Tutoría Individual - BAEZA RIOS JESE AMINADAB
+        </td>
+      </tr>
+        </td>
+      </tr>
+      <tr> 
+        <td class='Estilo1' width=202>Nivel</td>
+        <td class='Estilo1' > 
+Licenciatura
+        </td>
+      </tr>
+  <tr> 
+        <td class='Estilo1' width=202>Programa educativo en el que participa</td>
+        <td class='Estilo1' > 
+INGENIERIA DE SOFTWARE
+        </td>
+      </tr>
+        <td class='Estilo1' width=202>Fecha de inicio</td>
+        <td class='Estilo1' > 
+17/01/2022
+        </td>
+      </tr>
+      <tr> 
+        <td class='Estilo1' width=202>Fecha de t&eacute;rmino</td>
+        <td class='Estilo1' > 
+
+        </td>
+      </tr>
+      <tr> 
+        <td class='Estilo1' width=202>Tipo de tutelaje</td>
+        <td class='Estilo1' > 
+Guía en el medio universitario y académico
+        </td>
+      </tr>
+      <tr> 
+        <td class='Estilo1' width=202>Estado del tutelaje</td>
+        <td class='Estilo1' > 
+En proceso
+        </td>
+      </tr>
+      </table>  	  
+      <hr>  	  
+    <table width=95% border='1' cellpadding=2 align=Center>
+      <tr> 
+        <td class='Estilo1' width=202>Tutoría</td>
+        <td class='Estilo1' > 
+Tutoría Individual - NOVELO ROSALES YORICK YERIEL
+        </td>
+      </tr>
+        </td>
+      </tr>
+      <tr> 
+        <td class='Estilo1' width=202>Nivel</td>
+        <td class='Estilo1' > 
+Licenciatura
+        </td>
+      </tr>
+  <tr> 
+        <td class='Estilo1' width=202>Programa educativo en el que participa</td>
+        <td class='Estilo1' > 
+INGENIERIA DE SOFTWARE
+        </td>
+      </tr>
+        <td class='Estilo1' width=202>Fecha de inicio</td>
+        <td class='Estilo1' > 
+17/01/2022
+        </td>
+      </tr>
+      <tr> 
+        <td class='Estilo1' width=202>Fecha de t&eacute;rmino</td>
+        <td class='Estilo1' > 
+
+        </td>
+      </tr>
+      <tr> 
+        <td class='Estilo1' width=202>Tipo de tutelaje</td>
+        <td class='Estilo1' > 
+Guía en el medio universitario y académico
+        </td>
+      </tr>
+      <tr> 
+        <td class='Estilo1' width=202>Estado del tutelaje</td>
+        <td class='Estilo1' > 
+En proceso
+        </td>
+      </tr>
+      </table>  	  
+      <hr>  	  
+    <table width=95% border='1' cellpadding=2 align=Center>
+      <tr> 
+        <td class='Estilo1' width=202>Tutoría</td>
+        <td class='Estilo1' > 
+Tutoría Individual - PALOMO MARTINEZ JACOB NAEDH
+        </td>
+      </tr>
+        </td>
+      </tr>
+      <tr> 
+        <td class='Estilo1' width=202>Nivel</td>
+        <td class='Estilo1' > 
+Licenciatura
+        </td>
+      </tr>
+  <tr> 
+        <td class='Estilo1' width=202>Programa educativo en el que participa</td>
+        <td class='Estilo1' > 
+INGENIERIA DE SOFTWARE
+        </td>
+      </tr>
+        <td class='Estilo1' width=202>Fecha de inicio</td>
+        <td class='Estilo1' > 
+17/01/2022
+        </td>
+      </tr>
+      <tr> 
+        <td class='Estilo1' width=202>Fecha de t&eacute;rmino</td>
+        <td class='Estilo1' > 
+
+        </td>
+      </tr>
+      <tr> 
+        <td class='Estilo1' width=202>Tipo de tutelaje</td>
+        <td class='Estilo1' > 
+Guía en el medio universitario y académico
+        </td>
+      </tr>
+      <tr> 
+        <td class='Estilo1' width=202>Estado del tutelaje</td>
+        <td class='Estilo1' > 
+En proceso
+        </td>
+      </tr>
+      </table>  	  
+      <hr>  	  
+    <table width=95% border='1' cellpadding=2 align=Center>
+      <tr> 
+        <td class='Estilo1' width=202>Tutoría</td>
+        <td class='Estilo1' > 
+Tutoría Individual - RAMIREZ BRIONES MAURICIO ZAHID
+        </td>
+      </tr>
+        </td>
+      </tr>
+      <tr> 
+        <td class='Estilo1' width=202>Nivel</td>
+        <td class='Estilo1' > 
+Licenciatura
+        </td>
+      </tr>
+  <tr> 
+        <td class='Estilo1' width=202>Programa educativo en el que participa</td>
+        <td class='Estilo1' > 
+INGENIERIA EN COMPUTACION
+        </td>
+      </tr>
+        <td class='Estilo1' width=202>Fecha de inicio</td>
+        <td class='Estilo1' > 
+17/01/2022
+        </td>
+      </tr>
+      <tr> 
+        <td class='Estilo1' width=202>Fecha de t&eacute;rmino</td>
+        <td class='Estilo1' > 
+
+        </td>
+      </tr>
+      <tr> 
+        <td class='Estilo1' width=202>Tipo de tutelaje</td>
+        <td class='Estilo1' > 
+Guía en el medio universitario y académico
+        </td>
+      </tr>
+      <tr> 
+        <td class='Estilo1' width=202>Estado del tutelaje</td>
+        <td class='Estilo1' > 
+En proceso
+        </td>
+      </tr>
+      </table>  	  
+      <hr>  	  
+    <table width=95% border='1' cellpadding=2 align=Center>
+      <tr> 
+        <td class='Estilo1' width=202>Tutoría</td>
+        <td class='Estilo1' > 
+Tutoría Individual - RODRIGUEZ ANGELES FABIAN
+        </td>
+      </tr>
+        </td>
+      </tr>
+      <tr> 
+        <td class='Estilo1' width=202>Nivel</td>
+        <td class='Estilo1' > 
+Licenciatura
+        </td>
+      </tr>
+  <tr> 
+        <td class='Estilo1' width=202>Programa educativo en el que participa</td>
+        <td class='Estilo1' > 
+INFORMATICA
+        </td>
+      </tr>
+        <td class='Estilo1' width=202>Fecha de inicio</td>
+        <td class='Estilo1' > 
+17/01/2022
+        </td>
+      </tr>
+      <tr> 
+        <td class='Estilo1' width=202>Fecha de t&eacute;rmino</td>
+        <td class='Estilo1' > 
+
+        </td>
+      </tr>
+      <tr> 
+        <td class='Estilo1' width=202>Tipo de tutelaje</td>
+        <td class='Estilo1' > 
+Guía en el medio universitario y académico
+        </td>
+      </tr>
+      <tr> 
+        <td class='Estilo1' width=202>Estado del tutelaje</td>
+        <td class='Estilo1' > 
+En proceso
+        </td>
+      </tr>
+      </table>  	  
+      <hr>  	  
+    <table width=95% border='1' cellpadding=2 align=Center>
+      <tr> 
+        <td class='Estilo1' width=202>Tutoría</td>
+        <td class='Estilo1' > 
+Tutoría Individual - SANTIAGO FRANCISCO MARIBEL
+        </td>
+      </tr>
+        </td>
+      </tr>
+      <tr> 
+        <td class='Estilo1' width=202>Nivel</td>
+        <td class='Estilo1' > 
+Licenciatura
+        </td>
+      </tr>
+  <tr> 
+        <td class='Estilo1' width=202>Programa educativo en el que participa</td>
+        <td class='Estilo1' > 
+INGENIERIA DE SOFTWARE
+        </td>
+      </tr>
+        <td class='Estilo1' width=202>Fecha de inicio</td>
+        <td class='Estilo1' > 
+17/01/2022
+        </td>
+      </tr>
+      <tr> 
+        <td class='Estilo1' width=202>Fecha de t&eacute;rmino</td>
+        <td class='Estilo1' > 
+
+        </td>
+      </tr>
+      <tr> 
+        <td class='Estilo1' width=202>Tipo de tutelaje</td>
+        <td class='Estilo1' > 
+Guía en el medio universitario y académico
+        </td>
+      </tr>
+      <tr> 
+        <td class='Estilo1' width=202>Estado del tutelaje</td>
+        <td class='Estilo1' > 
+En proceso
+        </td>
+      </tr>
+      </table>  	  
+      <hr>  	  
+    </table>
+  </div>
+<br>
+
+  <A NAME="9">
+<div align=center>
+  <table width=95% border='1' cellpadding=1>
+    <tr>
+      <td class='Estilo1'> <div align="center">Direcci&oacute;n individualizada</div></td>
+  </tr>
+</table> 
+</div>
+</A>
+  <div align=center> 
+    <table width=95% border='1' cellpadding=1>	
+      <tr> 
+        <td class='Estilo1' width=202>T&iacute;tulo de la tesis o proyecto individual</td>
+        <td class='Estilo1' > 
+Comparativa de dispositivos de hardware en la identificación y prevención de vulnerabilidades en áreas de captación de agua
+        </td>
+      </tr>
+      <tr> 
+        <td class='Estilo1' width=202>Grado</td>
+        <td class='Estilo1' > 
+Licenciatura
+        </td>
+      </tr>
+	      </table>
+		      <table width=95% border='1' cellpadding=1>
+      <tr> 
+        <td class='Estilo1'>Fecha de inicio</td>
+        <td class='Estilo1'>Fecha de t&eacute;rmino</td>
+        <td class='Estilo1'>No. Alumnos</td>
+        <td class='Estilo1'>Estado de la dirección individualizada</td>
+        <td class='Estilo1'>Para considerar en el currículum de cuerpo académico</td>
+        <td class='Estilo1'>Miembros</td>
+        <td class='Estilo1'>LGACs</td>
+		</tr>
+      <tr>
+        <td  class='Estilo1' align=center> 
+12/02/2021
+        </td>
+        <td  class='Estilo1' align=center> 
+12/08/2022
+        </td>
+        <td  class='Estilo1' align=center> 
+1
+        </td>
+        <td  class='Estilo1' align=center> 
+Concluida
+        </td>
+        <td  class='Estilo1' align=center> 
+Si
+        </td>
+        <td  class='Estilo1' align=center> 
+0
+        </td>
+        <td  class='Estilo1' align=center> 
+0
+        </td>
+      </tr>
+	      </table>
+		  <hr>
+ 
+
+  </div>
+<br>
+
+  
+
+  
+
+
+<br>
+  <A NAME="10">
+<div align=center>
+  <table width=95% border='1' cellpadding=1>
+    <tr>
+      <td class='Estilo1'> <div align="center">Gesti&oacute;n acad&eacute;mica</div></td>
+  </tr>
+</table>
+</div>	  
+  </A>
+  <div align=center> 
+    
+   <table width=95% border='1' cellpadding=1> 
+      <tr>  
+      <td class='Estilo1' width=202>Tipo gesti&oacute;n</td> 
+    <td  class='Estilo1'>  
+Individual
+</td> 
+    </tr> 
+    <tr>  
+      <td class='Estilo1' width=202>Cargo dentro de la comisi&oacute;n o cuerpo colegiado</td> 
+      <td class='Estilo1' >  
+Coordinación del PE de Ingeniería en Telecomunicaciones y Redes
+</td> 
+    </tr> 
+    <tr>  
+      <td class='Estilo1' width=202>Funci&oacute;n encomendada</td> 
+      <td class='Estilo1' >  
+Coordinación de programa de estudios de Licenciatura
+</td> 
+    </tr> 
+    <tr>  
+      <td class='Estilo1' height=29 width=202>Órgano colegiado al que fu&eacute; presentado</td> 
+      <td class='Estilo1' height=29 >  
+Facultad de Informática
+</td> 
+    </tr> 
+    <tr>  
+      <td class='Estilo1' height=29 width=202>Aprobado</td> 
+      <td class='Estilo1' height=29 >  
+Si
+</td> 
+    </tr> 
+    <tr>  
+      <td class=th1 height=29 width=202>Resultados obtenidos</td> 
+      <td class=td1 height=29 >  
+Atención de estudiantes de licenciatura
+</td> 
+    </tr> 
+    <tr>  
+      <td class='Estilo1' height=29 width=202>Estado</td> 
+      <td class='Estilo1' height=29 >  
+En proceso
+</td> 
+    </tr> 
+	</table> 
+	<table width=95% border='1' cellpadding=1> 
+    <tr>  
+      <td class='Estilo1'>Fecha de inicio</td> 
+	  <td class='Estilo1'>Fecha de t&eacute;rmino</td> 
+      <td class='Estilo1'> Fecha del &uacute;ltimo informe presentado</td> 
+      <td class='Estilo1'>Horas a la semana dedicadas a esta gestión</td> 
+    </tr> 
+    <tr>  
+      <td  class='Estilo1' align=center>  
+01/12/2022
+</td> 
+      <td  class='Estilo1' align=center>  
+
+</td> 
+      <td class='Estilo1' align=center>  
+02/12/2022
+ </td> 
+      <td  class='Estilo1' align=center> 
+20
+ </td> 
+    </tr> 
+</table> 
+<hr> 
+<br> 
+  <table width=95% border='1' cellpadding=1> 
+      <tr>  
+      <td class='Estilo1' width=202>Tipo gesti&oacute;n</td> 
+    <td  class='Estilo1'>  
+Colectiva
+</td> 
+    </tr> 
+    <tr>  
+      <td class='Estilo1' width=202>Cargo dentro de la comisi&oacute;n o cuerpo colegiado</td> 
+      <td class='Estilo1' >  
+Miembro del Comité para la creación de PE de Licenciatura
+</td> 
+    </tr> 
+    <tr>  
+      <td class='Estilo1' width=202>Funci&oacute;n encomendada</td> 
+      <td class='Estilo1' >  
+Construcción de documento de creación de carrera de la Ingeniería en Tecnologías de Información y Ciberseguridad
+</td> 
+    </tr> 
+    <tr>  
+      <td class='Estilo1' height=29 width=202>Órgano colegiado al que fu&eacute; presentado</td> 
+      <td class='Estilo1' height=29 >  
+Facultad de Informática
+</td> 
+    </tr> 
+    <tr>  
+      <td class='Estilo1' height=29 width=202>Aprobado</td> 
+      <td class='Estilo1' height=29 >  
+Si
+</td> 
+    </tr> 
+    <tr>  
+      <td class=th1 height=29 width=202>Resultados obtenidos</td> 
+      <td class=td1 height=29 >  
+Creación y aprobación de nuevo PE de Licenciatura
+</td> 
+    </tr> 
+    <tr>  
+      <td class='Estilo1' height=29 width=202>Estado</td> 
+      <td class='Estilo1' height=29 >  
+Terminada
+</td> 
+    </tr> 
+	</table> 
+	<table width=95% border='1' cellpadding=1> 
+    <tr>  
+      <td class='Estilo1'>Fecha de inicio</td> 
+	  <td class='Estilo1'>Fecha de t&eacute;rmino</td> 
+      <td class='Estilo1'> Fecha del &uacute;ltimo informe presentado</td> 
+      <td class='Estilo1'>Horas a la semana dedicadas a esta gestión</td> 
+    </tr> 
+    <tr>  
+      <td  class='Estilo1' align=center>  
+02/02/2022
+</td> 
+      <td  class='Estilo1' align=center>  
+
+</td> 
+      <td class='Estilo1' align=center>  
+15/12/2022
+ </td> 
+      <td  class='Estilo1' align=center> 
+3
+ </td> 
+    </tr> 
+</table> 
+<hr> 
+<br> 
+  <table width=95% border='1' cellpadding=1> 
+      <tr>  
+      <td class='Estilo1' width=202>Tipo gesti&oacute;n</td> 
+    <td  class='Estilo1'>  
+Colectiva
+</td> 
+    </tr> 
+    <tr>  
+      <td class='Estilo1' width=202>Cargo dentro de la comisi&oacute;n o cuerpo colegiado</td> 
+      <td class='Estilo1' >  
+Miembro de Comité Organizador de Congreso de Investigación Internacional
+</td> 
+    </tr> 
+    <tr>  
+      <td class='Estilo1' width=202>Funci&oacute;n encomendada</td> 
+      <td class='Estilo1' >  
+Trabajos de organización de 3er Congreso Internacional de Computación y Tecnología Educativa
+</td> 
+    </tr> 
+    <tr>  
+      <td class='Estilo1' height=29 width=202>Órgano colegiado al que fu&eacute; presentado</td> 
+      <td class='Estilo1' height=29 >  
+Facultad de Informática
+</td> 
+    </tr> 
+    <tr>  
+      <td class='Estilo1' height=29 width=202>Aprobado</td> 
+      <td class='Estilo1' height=29 >  
+Si
+</td> 
+    </tr> 
+    <tr>  
+      <td class=th1 height=29 width=202>Resultados obtenidos</td> 
+      <td class=td1 height=29 >  
+Organización de congreso de investigación internacional
+</td> 
+    </tr> 
+    <tr>  
+      <td class='Estilo1' height=29 width=202>Estado</td> 
+      <td class='Estilo1' height=29 >  
+Terminada
+</td> 
+    </tr> 
+	</table> 
+	<table width=95% border='1' cellpadding=1> 
+    <tr>  
+      <td class='Estilo1'>Fecha de inicio</td> 
+	  <td class='Estilo1'>Fecha de t&eacute;rmino</td> 
+      <td class='Estilo1'> Fecha del &uacute;ltimo informe presentado</td> 
+      <td class='Estilo1'>Horas a la semana dedicadas a esta gestión</td> 
+    </tr> 
+    <tr>  
+      <td  class='Estilo1' align=center>  
+05/12/2022
+</td> 
+      <td  class='Estilo1' align=center>  
+
+</td> 
+      <td class='Estilo1' align=center>  
+07/12/2022
+ </td> 
+      <td  class='Estilo1' align=center> 
+10
+ </td> 
+    </tr> 
+</table> 
+<hr> 
+<br> 
+  <table width=95% border='1' cellpadding=1> 
+      <tr>  
+      <td class='Estilo1' width=202>Tipo gesti&oacute;n</td> 
+    <td  class='Estilo1'>  
+Colectiva
+</td> 
+    </tr> 
+    <tr>  
+      <td class='Estilo1' width=202>Cargo dentro de la comisi&oacute;n o cuerpo colegiado</td> 
+      <td class='Estilo1' >  
+Miembro de Comité Organizador de Coloquio Nacional de Investigación
+</td> 
+    </tr> 
+    <tr>  
+      <td class='Estilo1' width=202>Funci&oacute;n encomendada</td> 
+      <td class='Estilo1' >  
+Trabajos de organización del Coloquio Nacional de Investigación en Computación y Aplicaciones Tecnológicas
+</td> 
+    </tr> 
+    <tr>  
+      <td class='Estilo1' height=29 width=202>Órgano colegiado al que fu&eacute; presentado</td> 
+      <td class='Estilo1' height=29 >  
+Facultad de Informática
+</td> 
+    </tr> 
+    <tr>  
+      <td class='Estilo1' height=29 width=202>Aprobado</td> 
+      <td class='Estilo1' height=29 >  
+Si
+</td> 
+    </tr> 
+    <tr>  
+      <td class=th1 height=29 width=202>Resultados obtenidos</td> 
+      <td class=td1 height=29 >  
+Organización de coloquio nacional de investigación
+</td> 
+    </tr> 
+    <tr>  
+      <td class='Estilo1' height=29 width=202>Estado</td> 
+      <td class='Estilo1' height=29 >  
+Terminada
+</td> 
+    </tr> 
+	</table> 
+	<table width=95% border='1' cellpadding=1> 
+    <tr>  
+      <td class='Estilo1'>Fecha de inicio</td> 
+	  <td class='Estilo1'>Fecha de t&eacute;rmino</td> 
+      <td class='Estilo1'> Fecha del &uacute;ltimo informe presentado</td> 
+      <td class='Estilo1'>Horas a la semana dedicadas a esta gestión</td> 
+    </tr> 
+    <tr>  
+      <td  class='Estilo1' align=center>  
+13/06/2022
+</td> 
+      <td  class='Estilo1' align=center>  
+
+</td> 
+      <td class='Estilo1' align=center>  
+15/06/2022
+ </td> 
+      <td  class='Estilo1' align=center> 
+10
+ </td> 
+    </tr> 
+</table> 
+<hr> 
+<br> 
+  <table width=95% border='1' cellpadding=1> 
+      <tr>  
+      <td class='Estilo1' width=202>Tipo gesti&oacute;n</td> 
+    <td  class='Estilo1'>  
+Individual
+</td> 
+    </tr> 
+    <tr>  
+      <td class='Estilo1' width=202>Cargo dentro de la comisi&oacute;n o cuerpo colegiado</td> 
+      <td class='Estilo1' >  
+Organización de evento académico
+</td> 
+    </tr> 
+    <tr>  
+      <td class='Estilo1' width=202>Funci&oacute;n encomendada</td> 
+      <td class='Estilo1' >  
+Coordinador del evento académico \"Semana Académica y Cultural 2022\"
+</td> 
+    </tr> 
+    <tr>  
+      <td class='Estilo1' height=29 width=202>Órgano colegiado al que fu&eacute; presentado</td> 
+      <td class='Estilo1' height=29 >  
+Facultad de Informática
+</td> 
+    </tr> 
+    <tr>  
+      <td class='Estilo1' height=29 width=202>Aprobado</td> 
+      <td class='Estilo1' height=29 >  
+Si
+</td> 
+    </tr> 
+    <tr>  
+      <td class=th1 height=29 width=202>Resultados obtenidos</td> 
+      <td class=td1 height=29 >  
+Organización de evento académico con eventos académicos, culturales y deportivos
+</td> 
+    </tr> 
+    <tr>  
+      <td class='Estilo1' height=29 width=202>Estado</td> 
+      <td class='Estilo1' height=29 >  
+Terminada
+</td> 
+    </tr> 
+	</table> 
+	<table width=95% border='1' cellpadding=1> 
+    <tr>  
+      <td class='Estilo1'>Fecha de inicio</td> 
+	  <td class='Estilo1'>Fecha de t&eacute;rmino</td> 
+      <td class='Estilo1'> Fecha del &uacute;ltimo informe presentado</td> 
+      <td class='Estilo1'>Horas a la semana dedicadas a esta gestión</td> 
+    </tr> 
+    <tr>  
+      <td  class='Estilo1' align=center>  
+28/03/2022
+</td> 
+      <td  class='Estilo1' align=center>  
+
+</td> 
+      <td class='Estilo1' align=center>  
+01/04/2022
+ </td> 
+      <td  class='Estilo1' align=center> 
+10
+ </td> 
+    </tr> 
+</table> 
+<hr> 
+<br> 
+  <table width=95% border='1' cellpadding=1> 
+      <tr>  
+      <td class='Estilo1' width=202>Tipo gesti&oacute;n</td> 
+    <td  class='Estilo1'>  
+Colectiva
+</td> 
+    </tr> 
+    <tr>  
+      <td class='Estilo1' width=202>Cargo dentro de la comisi&oacute;n o cuerpo colegiado</td> 
+      <td class='Estilo1' >  
+Miembro de la Comisión para Acreditación Nacional de PE de Licenciatura
+</td> 
+    </tr> 
+    <tr>  
+      <td class='Estilo1' width=202>Funci&oacute;n encomendada</td> 
+      <td class='Estilo1' >  
+Trabajos de acreditación ante CONAIC de la Ingeniería en Computación
+</td> 
+    </tr> 
+    <tr>  
+      <td class='Estilo1' height=29 width=202>Órgano colegiado al que fu&eacute; presentado</td> 
+      <td class='Estilo1' height=29 >  
+Facultad de Informática
+</td> 
+    </tr> 
+    <tr>  
+      <td class='Estilo1' height=29 width=202>Aprobado</td> 
+      <td class='Estilo1' height=29 >  
+Si
+</td> 
+    </tr> 
+    <tr>  
+      <td class=th1 height=29 width=202>Resultados obtenidos</td> 
+      <td class=td1 height=29 >  
+Acreditación Nacional de PE de Licenciatura
+</td> 
+    </tr> 
+    <tr>  
+      <td class='Estilo1' height=29 width=202>Estado</td> 
+      <td class='Estilo1' height=29 >  
+Terminada
+</td> 
+    </tr> 
+	</table> 
+	<table width=95% border='1' cellpadding=1> 
+    <tr>  
+      <td class='Estilo1'>Fecha de inicio</td> 
+	  <td class='Estilo1'>Fecha de t&eacute;rmino</td> 
+      <td class='Estilo1'> Fecha del &uacute;ltimo informe presentado</td> 
+      <td class='Estilo1'>Horas a la semana dedicadas a esta gestión</td> 
+    </tr> 
+    <tr>  
+      <td  class='Estilo1' align=center>  
+26/03/2020
+</td> 
+      <td  class='Estilo1' align=center>  
+
+</td> 
+      <td class='Estilo1' align=center>  
+20/01/2021
+ </td> 
+      <td  class='Estilo1' align=center> 
+10
+ </td> 
+    </tr> 
+</table> 
+<hr> 
+<br> 
+  <table width=95% border='1' cellpadding=1> 
+      <tr>  
+      <td class='Estilo1' width=202>Tipo gesti&oacute;n</td> 
+    <td  class='Estilo1'>  
+Colectiva
+</td> 
+    </tr> 
+    <tr>  
+      <td class='Estilo1' width=202>Cargo dentro de la comisi&oacute;n o cuerpo colegiado</td> 
+      <td class='Estilo1' >  
+Miembro de la Comisión para la Acreditación Internacional del PE de Ingeniería en Computación
+</td> 
+    </tr> 
+    <tr>  
+      <td class='Estilo1' width=202>Funci&oacute;n encomendada</td> 
+      <td class='Estilo1' >  
+Trabajos de acreditación internacional de PE de Licenciatura
+</td> 
+    </tr> 
+    <tr>  
+      <td class='Estilo1' height=29 width=202>Órgano colegiado al que fu&eacute; presentado</td> 
+      <td class='Estilo1' height=29 >  
+Facultad de Informática
+</td> 
+    </tr> 
+    <tr>  
+      <td class='Estilo1' height=29 width=202>Aprobado</td> 
+      <td class='Estilo1' height=29 >  
+Si
+</td> 
+    </tr> 
+    <tr>  
+      <td class=th1 height=29 width=202>Resultados obtenidos</td> 
+      <td class=td1 height=29 >  
+Acreditación Internacional ante SEOUL Accord de PE de Licenciatuta
+</td> 
+    </tr> 
+    <tr>  
+      <td class='Estilo1' height=29 width=202>Estado</td> 
+      <td class='Estilo1' height=29 >  
+Terminada
+</td> 
+    </tr> 
+	</table> 
+	<table width=95% border='1' cellpadding=1> 
+    <tr>  
+      <td class='Estilo1'>Fecha de inicio</td> 
+	  <td class='Estilo1'>Fecha de t&eacute;rmino</td> 
+      <td class='Estilo1'> Fecha del &uacute;ltimo informe presentado</td> 
+      <td class='Estilo1'>Horas a la semana dedicadas a esta gestión</td> 
+    </tr> 
+    <tr>  
+      <td  class='Estilo1' align=center>  
+15/12/2020
+</td> 
+      <td  class='Estilo1' align=center>  
+
+</td> 
+      <td class='Estilo1' align=center>  
+11/03/2021
+ </td> 
+      <td  class='Estilo1' align=center> 
+10
+ </td> 
+    </tr> 
+</table> 
+<hr> 
+<br> 
+  <table width=95% border='1' cellpadding=1> 
+      <tr>  
+      <td class='Estilo1' width=202>Tipo gesti&oacute;n</td> 
+    <td  class='Estilo1'>  
+Individual
+</td> 
+    </tr> 
+    <tr>  
+      <td class='Estilo1' width=202>Cargo dentro de la comisi&oacute;n o cuerpo colegiado</td> 
+      <td class='Estilo1' >  
+Coordinación del PE de Licenciatura en Administración de Tecnologías de la Información
+</td> 
+    </tr> 
+    <tr>  
+      <td class='Estilo1' width=202>Funci&oacute;n encomendada</td> 
+      <td class='Estilo1' >  
+Coordinación de programa de estudios de Licenciatura
+</td> 
+    </tr> 
+    <tr>  
+      <td class='Estilo1' height=29 width=202>Órgano colegiado al que fu&eacute; presentado</td> 
+      <td class='Estilo1' height=29 >  
+Facultad de Informática
+</td> 
+    </tr> 
+    <tr>  
+      <td class='Estilo1' height=29 width=202>Aprobado</td> 
+      <td class='Estilo1' height=29 >  
+Si
+</td> 
+    </tr> 
+    <tr>  
+      <td class=th1 height=29 width=202>Resultados obtenidos</td> 
+      <td class=td1 height=29 >  
+Atención de estudiantes de la Licenciatura en Administración de Tecnologías de la Información
+</td> 
+    </tr> 
+    <tr>  
+      <td class='Estilo1' height=29 width=202>Estado</td> 
+      <td class='Estilo1' height=29 >  
+Terminada
+</td> 
+    </tr> 
+	</table> 
+	<table width=95% border='1' cellpadding=1> 
+    <tr>  
+      <td class='Estilo1'>Fecha de inicio</td> 
+	  <td class='Estilo1'>Fecha de t&eacute;rmino</td> 
+      <td class='Estilo1'> Fecha del &uacute;ltimo informe presentado</td> 
+      <td class='Estilo1'>Horas a la semana dedicadas a esta gestión</td> 
+    </tr> 
+    <tr>  
+      <td  class='Estilo1' align=center>  
+03/06/2020
+</td> 
+      <td  class='Estilo1' align=center>  
+01/12/2022
+</td> 
+      <td class='Estilo1' align=center>  
+01/12/2022
+ </td> 
+      <td  class='Estilo1' align=center> 
+20
+ </td> 
+    </tr> 
+</table> 
+<hr> 
+<br> 
+ 
+</div>
+<br>
+
+<div align=center>
+  <A NAME="11">
+  <table width=95% border='1' cellspacing=0 cellpadding=2>
+    <tr> 
+      <td class='Estilo1'><div align="center">L&iacute;nea de generaci&oacute;n y aplicaci&oacute;n del conocimiento (LGAC)</div></td>
+    </tr>
+  </table>
+  </A>
+	       
+  
+<table width=95% border='1' cellspacing=1 cellpadding=2 align=Center>
+
+  
+
+</table>
+</div>
+   
+
+  <br>
+ <A NAME='12'> 
+ <div align=center> 
+ <table width=95% border='1' cellpadding=1>
+ <tr> 
+ <td class='Estilo1'><div align=center>Beneficios externos a PROMEP</div></td> 
+ </tr> 
+ </table> 
+ </div> </A>
+ <div align=center> 
+ <table width=95% border='1' cellspacing=1 cellpadding=2 align=Center>
+      <tr> 
+         <td class='Estilo1'><div align=center>Tipo de apoyo</div></td>
+         <td class='Estilo1'><div align=center>Nivel</div></td>
+         <td class='Estilo1'><div align=center>Fecha inicial</div></td>
+         <td class='Estilo1'><div align=center>Fecha final</div></td> 
+         <td class='Estilo1'><div align=center>Monto</div></td>
+       </tr> 
+ 
+
+
+</table>
+<br>  
+
+
+  <A NAME="13">
+<div align=center>
+  <table width=95% border='1' cellspacing=0 cellpadding=2>
+    <tr> 
+      <td class='Estilo1'><div align="center">Proyectos de investigaci&oacute;n</div></td>
+    </tr>
+  </table>
+</div>
+  </A>
+<table width=95% border=1 cellspacing=1 cellpadding=2 align=Center>
+  </table>
+  </div>
+  
+ 
+</form><BR> 
+<A NAME="14">
+<div align=center>
+  <table width=95% border='1' cellspacing=0 cellpadding=2>
+    <tr> 
+      <td class='Estilo1'><div align="center">Beneficios PROMEP</div></td>
+    </tr>
+  </table>
+</div>
+  </A>
+  
+<table width=95% border='1' cellspacing=1 cellpadding=2 align=Center>
+   <tr> 
+      <td class='Estilo1'><div align="center">IES  de la solicitud</div></td>
+      <td class='Estilo1'><div align="center">Solicitud</div></td>
+      <td class='Estilo1'><div align="center">Vigencia</div></td>
+      <td class='Estilo1'><div align="center">Estado</div></td>         
+   </tr>
+
+     <tr> 
+      <td class='Estilo1'> 
+Universidad Autónoma de Querétaro
+</td>
+      <td class='Estilo1'> 
+Reconocimiento a Perfil Deseable
+</td>
+      <td  class='Estilo1' align=center> 
+16/07/2023-15/07/2026
+</td>
+      <td  class='Estilo1' align=center> 
+Vigente
+</td>
+      </tr>
+  </table>
+</div>
+
+<BR> 
+<A NAME="15">
+<div align=center>
+  <table width=95% border='1' cellspacing=0 cellpadding=2>
+    <tr> 
+      <td class='Estilo1'><div align="center">Cuerpo Académico</div></td>
+    </tr>
+  </table>
+</div>
+</A>
+  
+<table width=95% border='1' cellspacing=1 cellpadding=2 align=Center>
+   <tr> 
+      <td class='Estilo1'><div align="center">Nombre del cuerpo académico</div></td>
+      <td class='Estilo1'><div align="center">Clave</div></td>
+      <td class='Estilo1'><div align="center">Grado de consolidación</div></td>           
+   </tr>
+
+     <tr> 
+      <td class='Estilo1'> 
+INGENIERÍA DE SOFTWARE Y DESARROLLO DE APLICACIONES EDUCATIVAS
+</td>
+      <td class='Estilo1'> 
+UAQ-CA-129
+</td>
+      <td  class='Estilo1' align=center> 
+EN FORMACIÓN
+</td>
+      </tr>
+  </table>
+ 
+ <table width=95% border='1' cellspacing=1 cellpadding=2 align=Center>
+   <tr> 
+      <td class='Estilo1'><div align="center">Línea(s) que cultiva el cuerpo académico</div></td>      
+   </tr>
+     <tr> 
+      <td class='Estilo1'> 
+Tecnologías de la Información, Gestión y Educación 
+</td>
+      </tr>
+  </table>
+ <br>
+ <br>
+<A NAME="16">
+<div align=center>
+  <table width=95% border='1' cellspacing=0 cellpadding=2>
+    <tr> 
+      <td class='Estilo1'><div align="center">Programas Educativos Actualizados</div></td>
+    </tr>
+  </table>
+</div>
+</A>
+  <table width=95% border='1' cellspacing=1 cellpadding=2 align=Center>
+   <tr> 
+      <td class='Estilo1'><div align="center">Programa educativo</div></td>
+      <td class='Estilo1'><div align="center">Fecha</div></td>
+      <td class='Estilo1'><div align="center">Tipo de actualización</div></td>           
+   </tr>
+
+   </table>
+ <HR>
+
+ </table>
+    </div>
+</div>
+</body>
+</HTML>
+
