@@ -23,4 +23,19 @@ def createDictionary(array = [], fields = [], separatorWord=''):
     
     return result
     
+def tablePromep(array = [], fields = [], separatorWord=''):
     
+    backtothefuture = {}
+    field = array[0]; 
+    date = array[1]
+    cont = 0
+    
+    for title in field:
+        backtothefuture[title] = date[cont]     
+        cont += 1
+    
+    
+    
+    
+    
+    return backtothefuture
