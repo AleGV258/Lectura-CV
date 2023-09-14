@@ -2,6 +2,7 @@ import win32com.client # Para leer .doc → ´pip install pywin32´
 import os
 import time
 from functions.createDictionary import createDictionary, tablePromep
+from functions.cleanData import cleanData
 
 inicio = time.time() # Inicio de la ejecución
 print("\n-------------------------------------- Iniciando Lectura --------------------------------------")
@@ -16,14 +17,14 @@ for index, file in enumerate(files, start = 1): # Por c/archivo en el directorio
         word.Visible = False # Ocultar doc para el usuario
         doc = word.Documents.Open(ruta_actual + '\\files\\' + file) # Ruta del archivo
 
-        tablas=[]
+        tablas = []
         nombre = ''
-        contenido=[]
+        contenido = []
         counter = 0
         
         for table in doc.Tables: # Por c/tabla en el doc
             for row in table.Rows: # Por c/fila en la tabla
-                row_content = [cell.Range.Text[0:-1].strip() for cell in row.Cells] # Texto de c/u de las celdas de la fila
+                row_content = [cleanData(cell.Range.Text[0:-1].strip(), False) for cell in row.Cells] # Texto de c/u de las celdas de la fila
                 if len(row_content) == 1 and row_content[0] != '': 
                     if len(contenido) > 0:
                         counter = counter + 1
@@ -48,11 +49,11 @@ for index, file in enumerate(files, start = 1): # Por c/archivo en el directorio
             'Area':  tablas[4]['contenido'][0][1],
             'Disciplina':  tablas[4]['contenido'][1][1]
         }
-        # print("\nProfesor: ", Profesor)
+        print("\nProfesorAAA: ", Profesor)
         
         print('\n------------------Logros--------------------')
         Logros = createDictionary(tablas[5]['contenido'],['Tipo', 'Año', 'Título', 'País'], 'Tipo')
-        # print("\nLogros: ", Logros)
+        print("\nLogros: ", Logros)
         
         ProfesorLogros = {
             'IdProfesor': tablas[1]['contenido'][0][1],
@@ -72,8 +73,8 @@ for index, file in enumerate(files, start = 1): # Por c/archivo en el directorio
         #     'HorasSemanalesDedicadas': tablas[1]['contenido'][0][1]
         # }
         print('\n------------------Docencias--------------------')
-        Docencias = createDictionary() #FALTAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-        # print("\nDocencias: ", Docencias)  
+        Docencias = createDictionary()
+        print("\nDocencias: ", Docencias)  
         
         Investigaciones = {
             'Titulo': tablas[1]['contenido'][0][1],
@@ -89,7 +90,7 @@ for index, file in enumerate(files, start = 1): # Por c/archivo en el directorio
         }
         print('\n------------------Investigaciones--------------------')
         Investigaciones = createDictionary(tablas[11]['contenido'],['Título del proyecto','Nombre del patrocinador','Fecha de inicio','Fecha de fin del proyecto','Tipo de patrocinador','TipoPatrocinador','Investigadores participantes','Alumnos participantes','Actividades realizadas','Para considerar en el currículum de cuerpo académico','Miembros','LGACs'], 'Título del proyecto')
-        # print("\nInvestigaciones: ", Investigaciones)     
+        print("\nInvestigaciones: ", Investigaciones)     
         
         ProfesorInvestigaciones = {
             'IdProfesor': tablas[1]['contenido'][0][1],
@@ -108,14 +109,12 @@ for index, file in enumerate(files, start = 1): # Por c/archivo en el directorio
         }        
         print('\n------------------Gestion Academica--------------------')
         GestionAcademica = createDictionary(tablas[9]['contenido'],['Tipo gestión','Cargo dentro de la comisión o cuerpo colegiado','Función encomendada','Órgano colegiado al que fué presentado','Aprobado','Resultados obtenidos','Estado'], 'Tipo gestión')
-        # print("\nGestion Academica: ", GestionAcademica)
-        
-        
+        print("\nGestion Academica: ", GestionAcademica)
         
         print("\n-------------------Beneficios PROMEP----------------------")
-            # Obtención de diccionarios de Beneficios PROMEP
-        BeneficiosPROMEP= tablePromep(tablas[12]['contenido'],['IES', 'Solicitud', 'Vigencia', 'Estado'])
-        print("\n beneficios PROMEP: ",BeneficiosPROMEP)
+        # Obtención de diccionarios de Beneficios PROMEP
+        # BeneficiosPROMEP= tablePromep(tablas[12]['contenido'],['IES', 'Solicitud', 'Vigencia', 'Estado'])
+        # print("\nBeneficios PROMEP: ", BeneficiosPROMEP)
         
         
         print("\n-------------------Cuerpo Academico----------------------")
@@ -125,9 +124,8 @@ for index, file in enumerate(files, start = 1): # Por c/archivo en el directorio
         #     'GradoConsolidacion': tablas[1]['contenido'][0][1],
         #     'LineaAcademica': tablas[1]['contenido'][0][1]
         # }
-        CuerpoAcademico = tablePromep(tablas[13]['contenido'],['Nombre','Clave','Grado Consolidación','Línea Académica'])
-        print("\n Cuerpo Academico: ", CuerpoAcademico)
-        
+        # CuerpoAcademico = tablePromep(tablas[13]['contenido'],['Nombre','Clave','Grado Consolidación','Línea Académica'])
+        # print("\nCuerpo Academico: ", CuerpoAcademico)
         
         # ProgramaAcademico = {
         #     'Programa': tablas[1]['contenido'][0][1],
@@ -135,8 +133,6 @@ for index, file in enumerate(files, start = 1): # Por c/archivo en el directorio
         #     'TipoActualizacion': tablas[1]['contenido'][0][1]
         # }
         # print("\n Programa Academico: ", ProgramaAcademico)
-        
-        
         
         # Tutorias = {
         #     'Tutoria': tablas[1]['contenido'][0][1],
@@ -149,7 +145,7 @@ for index, file in enumerate(files, start = 1): # Por c/archivo en el directorio
         # }
         print('\n------------------Tutorias--------------------')
         Tutorias = createDictionary(tablas[7]['contenido'],['Tutoría','Nivel', 'Programa educativo en el que participa', 'Fecha de inicio', 'Fecha de término', 'Tipo de tutelaje', 'Estado del tutelaje'], 'Tutoría')
-        # print("\nTutorias: ", Tutorias)
+        print("\nTutorias: ", Tutorias)
         
         # DireccionIndividualizada = {
         #     'Titulo': tablas[1]['contenido'][0][1],
@@ -158,7 +154,7 @@ for index, file in enumerate(files, start = 1): # Por c/archivo en el directorio
         # }
         print('\n------------------Dirección Individualizada--------------------')
         DireccionIndividualizada = createDictionary(tablas[8]['contenido'],['Título de la tesis o proyecto individual','Grado'], 'Título de la tesis o proyecto individual')
-        # print("\nDirección Individualizada: ", DireccionIndividualizada)
+        print("\nDirección Individualizada: ", DireccionIndividualizada)
         
         
     except Exception as error:
