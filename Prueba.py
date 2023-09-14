@@ -1,4 +1,10 @@
 from DataFunctions import RetrieveAllRecords, RetrieveRecords, RetrieveRecordByID, InsertRecord, UpdateRecords, UpdateRecordByID, DeleteRecords, DeleteRecordByID
+from functions.cleanData import cleanData
+
+# string = "Hola mí nombre \t$#%[es michell alejandro y tengo 22 !?¿¡+-<>años de edad, espero llegar a mi casa y viciarme *^^un día más al bendito , juego que me quita ,:;:; mi sanidad mental el LÓL"
+
+# prueba = cleanData(string, False)
+# print(prueba)
 
 # #### Retrieve All Data
 # data = RetrieveAllRecords("Profesores")

@@ -18,9 +18,9 @@ def createDictionary(array = [], fields = [], separatorWord = ''):
         container.append(row)            
         counter = counter + 1
     return result
-    
+
+
 def tablePromep(array = [], fields = [], separatorWord=''):
-    
     backtothefuture = {}
     field = array[0]; 
     date = array[1]
@@ -29,26 +29,6 @@ def tablePromep(array = [], fields = [], separatorWord=''):
     for title in field:
         backtothefuture[title] = date[cont]     
         cont += 1
-    
-    
-    
-    
-    
-    return result
-    
-def tablePromep(array = [], fields = [], separatorWord=''):
-    
-    backtothefuture = {}
-    field = array[0]; 
-    date = array[1]
-    cont = 0
-    
-    for title in field:
-        backtothefuture[title] = date[cont]     
-        cont += 1
-    
-    
-    
     
     
     return backtothefuture
