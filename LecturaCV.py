@@ -1,7 +1,7 @@
 import win32com.client # Para leer .doc → ´pip install pywin32´
 import os
 import time
-from functions.createDictionary import createDictionary
+from functions.createDictionary import createDictionary, tablePromep
 
 inicio = time.time() # Inicio de la ejecución
 print("\n-------------------------------------- Iniciando Lectura --------------------------------------")
@@ -110,25 +110,33 @@ for index, file in enumerate(files, start = 1): # Por c/archivo en el directorio
         GestionAcademica = createDictionary(tablas[9]['contenido'],['Tipo gestión','Cargo dentro de la comisión o cuerpo colegiado','Función encomendada','Órgano colegiado al que fué presentado','Aprobado','Resultados obtenidos','Estado'], 'Tipo gestión')
         # print("\nGestion Academica: ", GestionAcademica)
         
-        # BeneficiosPROMEP = {
-        #     'IES': tablas[1]['contenido'][0][1],
-        #     'Solicitud': tablas[1]['contenido'][0][1],
-        #     'Vigencia': tablas[1]['contenido'][0][1],
-        #     'Estado': tablas[1]['contenido'][0][1]
-        # }
         
+        
+        print("\n-------------------Beneficios PROMEP----------------------")
+            # Obtención de diccionarios de Beneficios PROMEP
+        BeneficiosPROMEP= tablePromep(tablas[12]['contenido'],['IES', 'Solicitud', 'Vigencia', 'Estado'])
+        print("\n beneficios PROMEP: ",BeneficiosPROMEP)
+        
+        
+        print("\n-------------------Cuerpo Academico----------------------")
         # CuerpoAcademico = {
         #     'Nombre': tablas[1]['contenido'][0][1],
         #     'Clave': tablas[1]['contenido'][0][1],
         #     'GradoConsolidacion': tablas[1]['contenido'][0][1],
         #     'LineaAcademica': tablas[1]['contenido'][0][1]
         # }
+        CuerpoAcademico = tablePromep(tablas[13]['contenido'],['Nombre','Clave','Grado Consolidación','Línea Académica'])
+        print("\n Cuerpo Academico: ", CuerpoAcademico)
+        
         
         # ProgramaAcademico = {
         #     'Programa': tablas[1]['contenido'][0][1],
         #     'Fecha': tablas[1]['contenido'][0][1],
         #     'TipoActualizacion': tablas[1]['contenido'][0][1]
         # }
+        # print("\n Programa Academico: ", ProgramaAcademico)
+        
+        
         
         # Tutorias = {
         #     'Tutoria': tablas[1]['contenido'][0][1],
