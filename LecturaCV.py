@@ -53,18 +53,18 @@ for index, file in enumerate(files, start = 1): # Por c/archivo en el directorio
         
         print('\n------------------Logros--------------------')
         Logros = createDictionary(tablas[5]['contenido'],['Tipo', 'Año', 'Título', 'País'], 'Tipo')
-        print("\nLogros: ", Logros)
+        # print("\nLogros: ", Logros)
 
         
         for logro in Logros:
-            print("\n Autores: ")
+            # print("\n Autores: ")
             ProfesorLogros = []
             autores = logro['OtrosDatos'][0]['Autor'].split(', ')
             for autor in autores:
                 ProfesorLogrosRow ={
                     "Autor": autor
                 }
-                print(ProfesorLogrosRow)
+                # print(ProfesorLogrosRow)
                 ProfesorLogros.append(ProfesorLogrosRow)
             logro['OtrosDatos'][0]['Autor']= ProfesorLogros
         print("\nLogros: ", Logros)
