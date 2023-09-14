@@ -20,22 +20,17 @@ for index, file in enumerate(files, start = 1): # Por c/archivo en el directorio
         nombre = ''
         contenido=[]
         counter = 0
+        
         for table in doc.Tables: # Por c/tabla en el doc
             for row in table.Rows: # Por c/fila en la tabla
                 row_content = [cell.Range.Text[0:-1].strip() for cell in row.Cells] # Texto de c/u de las celdas de la fila
                 if len(row_content) == 1 and row_content[0] != '': 
                     if len(contenido) > 0:
                         counter = counter + 1
-                        print({'nombre': nombre, 'contenido': contenido})
-                        print(counter)
-                        print('')
-                        print('')
-                        print('')
                         tablas.append({'nombre': nombre, 'contenido': contenido})
-                        contenido = []                                                
-                    nombre = row_content[0]                    
-                    
-                elif len(row_content)  > 1:
+                        contenido = []
+                    nombre = row_content[0]
+                elif len(row_content) > 1:
                     contenido.append(row_content)
                     
         doc.Close() # Cerrar el doc
@@ -53,17 +48,16 @@ for index, file in enumerate(files, start = 1): # Por c/archivo en el directorio
             'Area':  tablas[4]['contenido'][0][1],
             'Disciplina':  tablas[4]['contenido'][1][1]
         }
-        print("\n Profesor: ", Profesor)
+        # print("\nProfesor: ", Profesor)
         
         print('\n------------------Logros--------------------')
-        # Obtención de diccionarios de Logros        
         Logros = createDictionary(tablas[5]['contenido'],['Tipo', 'Año', 'Título', 'País'], 'Tipo')
-        print("\n Logros: ", Logros)
+        # print("\nLogros: ", Logros)
         
-        # ProfesorLogros = {
-        #     'IdProfesor': tablas[1]['contenido'][0][1],
-        #     'IdLogro': tablas[1]['contenido'][0][1]
-        # }
+        ProfesorLogros = {
+            'IdProfesor': tablas[1]['contenido'][0][1],
+            'IdLogro': tablas[1]['contenido'][0][1]
+        }
         
         # Docencia = {
         #     'Curso': tablas[1]['contenido'][0][1],
@@ -77,48 +71,44 @@ for index, file in enumerate(files, start = 1): # Por c/archivo en el directorio
         #     'HorasMes': tablas[1]['contenido'][0][1],
         #     'HorasSemanalesDedicadas': tablas[1]['contenido'][0][1]
         # }
+        print('\n------------------Docencias--------------------')
+        Docencias = createDictionary() #FALTAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        # print("\nDocencias: ", Docencias)  
         
-        # print('\n------------------Docencias--------------------')
-        # # Obtención de diccionarios de docencias
-        # Docencias = createDictionary()
-        # print("\n Docencias: ", Docencias)   
-        
-        # Investigaciones = {
-        #     'Titulo': tablas[1]['contenido'][0][1],
-        #     'Patrocinador': tablas[1]['contenido'][0][1],
-        #     'FechaInicio': tablas[1]['contenido'][0][1],
-        #     'FechaTerminado': tablas[1]['contenido'][0][1],
-        #     'TipoPatrocinador': tablas[1]['contenido'][0][1],
-        #     'AlumnosParticipantes': tablas[1]['contenido'][0][1],
-        #     'ActividadesRealizadas': tablas[1]['contenido'][0][1],
-        #     'ConsideradoParaCurriculum': tablas[1]['contenido'][0][1],
-        #     'Miembros': tablas[1]['contenido'][0][1],
-        #     'LGACs': tablas[1]['contenido'][0][1],
-        # }
+        Investigaciones = {
+            'Titulo': tablas[1]['contenido'][0][1],
+            'Patrocinador': tablas[1]['contenido'][0][1],
+            'FechaInicio': tablas[1]['contenido'][0][1],
+            'FechaTerminado': tablas[1]['contenido'][0][1],
+            'TipoPatrocinador': tablas[1]['contenido'][0][1],
+            'AlumnosParticipantes': tablas[1]['contenido'][0][1],
+            'ActividadesRealizadas': tablas[1]['contenido'][0][1],
+            'ConsideradoParaCurriculum': tablas[1]['contenido'][0][1],
+            'Miembros': tablas[1]['contenido'][0][1],
+            'LGACs': tablas[1]['contenido'][0][1],
+        }
         print('\n------------------Investigaciones--------------------')
-        # Obtención de diccionarios de investigaciones
         Investigaciones = createDictionary(tablas[11]['contenido'],['Título del proyecto','Nombre del patrocinador','Fecha de inicio','Fecha de fin del proyecto','Tipo de patrocinador','TipoPatrocinador','Investigadores participantes','Alumnos participantes','Actividades realizadas','Para considerar en el currículum de cuerpo académico','Miembros','LGACs'], 'Título del proyecto')
-        print("\n Investigaciones: ", Investigaciones)     
+        # print("\nInvestigaciones: ", Investigaciones)     
         
-        # ProfesorInvestigaciones = {
-        #     'IdProfesor': tablas[1]['contenido'][0][1],
-        #     'IdInvestigacion': tablas[1]['contenido'][0][1]
-        # }
+        ProfesorInvestigaciones = {
+            'IdProfesor': tablas[1]['contenido'][0][1],
+            'IdInvestigacion': tablas[1]['contenido'][0][1]
+        }
         
-        # GestionAcademica = {
-        #     'Tipo': tablas[1]['contenido'][0][1],
-        #     'Cargo': tablas[1]['contenido'][0][1],
-        #     'Funcion': tablas[1]['contenido'][0][1],
-        #     'OrganoPresentado': tablas[1]['contenido'][0][1],
-        #     'Aprobado': tablas[1]['contenido'][0][1],
-        #     'Resultado': tablas[1]['contenido'][0][1],
-        #     'Estado': tablas[1]['contenido'][0][1],
-        #     'OtrosDatos': tablas[1]['contenido'][0][1]
-        # }        
+        GestionAcademica = {
+            'Tipo': tablas[1]['contenido'][0][1],
+            'Cargo': tablas[1]['contenido'][0][1],
+            'Funcion': tablas[1]['contenido'][0][1],
+            'OrganoPresentado': tablas[1]['contenido'][0][1],
+            'Aprobado': tablas[1]['contenido'][0][1],
+            'Resultado': tablas[1]['contenido'][0][1],
+            'Estado': tablas[1]['contenido'][0][1],
+            'OtrosDatos': tablas[1]['contenido'][0][1]
+        }        
         print('\n------------------Gestion Academica--------------------')
-        # Obtención de diccionarios de gestion academica
         GestionAcademica = createDictionary(tablas[9]['contenido'],['Tipo gestión','Cargo dentro de la comisión o cuerpo colegiado','Función encomendada','Órgano colegiado al que fué presentado','Aprobado','Resultados obtenidos','Estado'], 'Tipo gestión')
-        print("\n Gestion Academica: ", GestionAcademica)
+        # print("\nGestion Academica: ", GestionAcademica)
         
         # BeneficiosPROMEP = {
         #     'IES': tablas[1]['contenido'][0][1],
@@ -150,9 +140,8 @@ for index, file in enumerate(files, start = 1): # Por c/archivo en el directorio
         #     'EstadoTutelaje': tablas[1]['contenido'][0][1]
         # }
         print('\n------------------Tutorias--------------------')
-        # Obtención de diccionarios de Tutorias
         Tutorias = createDictionary(tablas[7]['contenido'],['Tutoría','Nivel', 'Programa educativo en el que participa', 'Fecha de inicio', 'Fecha de término', 'Tipo de tutelaje', 'Estado del tutelaje'], 'Tutoría')
-        print("\n Tutorias: ", Tutorias)
+        # print("\nTutorias: ", Tutorias)
         
         # DireccionIndividualizada = {
         #     'Titulo': tablas[1]['contenido'][0][1],
@@ -160,9 +149,8 @@ for index, file in enumerate(files, start = 1): # Por c/archivo en el directorio
         #     'OtrosDatos': tablas[1]['contenido'][0][1]
         # }
         print('\n------------------Dirección Individualizada--------------------')
-        # Obtención de diccionarios de Dirección Individualizada
         DireccionIndividualizada = createDictionary(tablas[8]['contenido'],['Título de la tesis o proyecto individual','Grado'], 'Título de la tesis o proyecto individual')
-        print("\n Dirección Individualizada: ", DireccionIndividualizada)
+        # print("\nDirección Individualizada: ", DireccionIndividualizada)
         
         
     except Exception as error:
