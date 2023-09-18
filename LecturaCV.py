@@ -1,8 +1,11 @@
 import win32com.client # Para leer .doc → ´pip install pywin32´
+# import difflib
 import os
 import time
+from bson import ObjectId
 from functions.createDictionary import createDictionary, tablePromep
 from functions.cleanData import cleanData
+from functions.dataFunctions import RetrieveAllRecords, RetrieveRecords, RetrieveRecordByID, InsertRecord, UpdateRecords, UpdateRecordByID, DeleteRecords, DeleteRecordByID
 
 inicio = time.time() # Inicio de la ejecución
 print("\n-------------------------------------- Iniciando Lectura --------------------------------------")
@@ -37,38 +40,84 @@ for index, file in enumerate(files, start = 1): # Por c/archivo en el directorio
         doc.Close() # Cerrar el doc
         word.Quit() # Eliminar la instancia del word
         
-        print('\n------------------Profesor--------------------')
-        Profesor = {
-            'Nombre': tablas[1]['contenido'][0][1],
+        # SEPARACIÓN DE DATOS DE LAS TABLAS
+            
+        print('\n------------------Profesores--------------------')
+        nombreProfesor = tablas[1]['contenido'][0][1].upper().replace("Á", "A").replace("É", "E").replace("Í", "I").replace("Ó", "O").replace("Ú", "U")
+        profesorRecord = {
+            'Nombre': nombreProfesor,
             'RFC': tablas[1]['contenido'][2][1],
             'CURP':  tablas[1]['contenido'][3][1],
             'FechaNacimiento':  tablas[1]['contenido'][5][1],
             'IES':  tablas[1]['contenido'][6][1],
-            'EstudioRealizado':  tablas[2]['contenido'],
-            'DatosLaborales':  tablas[3]['contenido'],
+            'EstudioRealizado':  tablas[2]['contenido'], # CORREGIR QUE NO SEA UN ARRAY SINO UN OBJETO
+            'DatosLaborales':  tablas[3]['contenido'], # CORREGIR QUE NO SEA UN ARRAY SINO UN OBJETO
             'Area':  tablas[4]['contenido'][0][1],
             'Disciplina':  tablas[4]['contenido'][1][1]
         }
-        print("\nProfesorAAA: ", Profesor)
+        # print("\nProfesor: ", Profesor)
+
+        # Verificar si el profesor ya existe o es uno nuevo
+        dataBusqueda = RetrieveRecords("Profesores", {"Nombre":nombreProfesor})
+        if(len(dataBusqueda) != 0):
+            profesorID = UpdateRecords("Profesores", {"Nombre":nombreProfesor}, profesorRecord)
+        else:
+            profesorID = InsertRecord("Profesores", profesorRecord)
+        data = RetrieveAllRecords("Profesores")
+        profesores = set([nombre["Nombre"] for nombre in data])
+        nuevosProfesores = set()
         
         print('\n------------------Logros--------------------')
-        Logros = createDictionary(tablas[5]['contenido'],['Tipo', 'Año', 'Título', 'País'], 'Tipo')
+        Logros = createDictionary(tablas[5]['contenido'], ['Tipo', 'Año', 'Título', 'País'], 'Tipo')
         # print("\nLogros: ", Logros)
-
         
+        # Separar a los Autores
         for logro in Logros:
-            # print("\n Autores: ")
             ProfesorLogros = []
-            autores = logro['OtrosDatos'][0]['Autor'].split(', ')
+            if(len(logro['OtrosDatos'][0]['Autor'].split(';')) > 1):
+                autores = logro['OtrosDatos'][0]['Autor'].replace('; ', ';').replace('.', '').replace(',', '').split(';')
+            else:
+                autores = logro['OtrosDatos'][0]['Autor'].replace(', ', ',').replace('.', '').split(',')
+            # print('autores:', autores)
             for autor in autores:
+                autor = autor.upper().replace('Á', 'A').replace('É', 'E').replace('Í', 'I').replace('Ó', 'O').replace('Ú', 'U')
+                contador = 0
+                nombresAutor = set(autor.split(' '))
+                for profesor in profesores:
+                    nombres = set(profesor.split(' '))
+                    interseccion = nombresAutor.intersection(nombres)
+                    if(len(interseccion) >= 3):
+                        contador = contador + 1
+                    # print(nombresAutor, " - ", nombres, " - ", len(interseccion))
+                if(contador == 0):
+                    nuevosProfesores.add(autor)
+                # print("\n", len(profesores), " - ", profesores)
                 ProfesorLogrosRow ={
-                    "Autor": autor
+                    'Autor': cleanData(autor, False),
                 }
                 # print(ProfesorLogrosRow)
                 ProfesorLogros.append(ProfesorLogrosRow)
-            logro['OtrosDatos'][0]['Autor']= ProfesorLogros
-        print("\nLogros: ", Logros)
+            logro['OtrosDatos'][0]['Autor'] = ProfesorLogros
         
+        # Insertar Nuevos Profesores Encontrados
+        for profesor in nuevosProfesores:
+            if(tablas[1]['contenido'][0][1].upper().replace("Á", "A").replace("É", "E").replace("Í", "I").replace("Ó", "O").replace("Ú", "U") != cleanData(profesor, False)):
+                record = {
+                    'Nombre': cleanData(profesor, False),
+                }
+                InsertRecord('Profesores', record)
+                
+        # Insertar Logros hacía un Profesor
+        # print("\nLogros: ", Logros[0])
+        for logro in Logros:
+            logroID = InsertRecord("Logros", logro)
+            ProfesorLogros = {
+                'IdProfesor': ObjectId(profesorID),
+                'IdLogro': ObjectId(logroID)
+            }
+            InsertRecord("ProfesorLogros", ProfesorLogros)
+            
+
         # print("\nProfesLogros: ", ProfesorLogros)
         # # ProfesorLogros = {
         # #     'IdProfesor': tablas[1]['contenido'][0][1],

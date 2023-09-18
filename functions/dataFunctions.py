@@ -50,16 +50,28 @@ def RetrieveRecordByID(collection, record):
 def InsertRecord(collection, record):
     mc = connectionDB(collection)
     result = mc[0].insert_one(record)
-    print("Record insertado") if (result.inserted_id) else print("Record no insertado")
-    mc[1].close()
+    if (result.inserted_id):
+        print("Record insertado")
+        mc[1].close()
+        return result.inserted_id
+    else:
+        print("Record no insertado")
+        mc[1].close()
+        return None
 
 # Actualizar uno o varios documentos por cualquier campo {field: value}, {field: value}
 def UpdateRecords(collection, recordAnterior, recordNuevo):
     mc = connectionDB(collection)
     result = mc[0].update_many(recordAnterior, {"$set": recordNuevo})
-    print(f"Records actualizados {result.modified_count}") if (result.modified_count > 0) else print("Records no actualizados")
-    mc[1].close()
-
+    if (result.modified_count > 0):
+        print(f"Records actualizados {result.modified_count}")
+        mc[1].close()
+        return result.upserted_id
+    else:
+        print("Records no actualizados")
+        mc[1].close()
+        return None
+    
 # Actualizar por un id (id del documento), {field: value}
 def UpdateRecordByID(collection, recordAnterior, recordNuevo):
     mc = connectionDB(collection)
