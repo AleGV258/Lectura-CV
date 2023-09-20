@@ -1,15 +1,47 @@
 import tkinter as tk
 from tkinter import filedialog, font
+import os
 
 backgroundColor = "#f3f3f4"
 fTitle= ("Arial", 15, "bold")
 fText = ("Arial", 10)
 fBotton = ("Arial", 13)
 
+def toggle_input():
+    if filtro_autor.get() == 1:
+        entry1.grid(row=1, column=0, padx=5, pady=5)
+    else:
+        entry1.grid_forget()
+
+    if filtro_anio.get() == 1:
+        entry2.grid(row=3, column=0, padx=5, pady=5)
+    else:
+        entry2.grid_forget()
+    
+    if filtro_documento.get() == 1:
+        entry3.grid(row=5, column=0, padx=5, pady=5)
+    else:
+        entry3.grid_forget()
+    
+    if filtro_area_conocimiento.get() == 1:
+        entry4.grid(row=7, column=0, padx=5, pady=5)
+    else:
+        entry4.grid_forget()
+        
+def crear_etiquetas(documentos=[]):
+    counter = 0
+    for document in documentos:
+        counter = counter + 1
+        print(document)
+        tk.Label(listado, font=fText,text=document, bg=backgroundColor).grid(row=counter, padx=10, pady=5)
+
 def select_folder():
     folder_path = filedialog.askdirectory()
     if folder_path:
         folder_path_label.config(text=f"Carpeta: {folder_path}")
+        documents =  os.listdir(folder_path) # Ruta de los archivos
+        print(documents)
+        crear_etiquetas(documents)
 
 # Create the main window
 root = tk.Tk()
@@ -96,26 +128,6 @@ titulo.grid(row=0, padx=170,pady=10)
 filters = tk.Frame(columns, bg=backgroundColor)
 filters.grid(row=1, column=0, padx=30)
 
-def toggle_input():
-    if filtro_autor.get() == 1:
-        entry1.grid(row=1, column=0, padx=5, pady=5)
-    else:
-        entry1.grid_forget()
-
-    if filtro_anio.get() == 1:
-        entry2.grid(row=3, column=0, padx=5, pady=5)
-    else:
-        entry2.grid_forget()
-    
-    if filtro_documento.get() == 1:
-        entry3.grid(row=5, column=0, padx=5, pady=5)
-    else:
-        entry3.grid_forget()
-    
-    if filtro_area_conocimiento.get() == 1:
-        entry4.grid(row=7, column=0, padx=5, pady=5)
-    else:
-        entry4.grid_forget()
 
 #Campos
 filtro_autor = tk.IntVar()
@@ -156,13 +168,7 @@ listado = tk.Frame(columns, bg=backgroundColor)
 listado.grid(row=1, column=1, sticky="n")
 # listado.grid(sticky="n")
 
-def crear_etiquetas():
-    elementos = ["Etiqueta 1", "Etiqueta 2", "Etiqueta 3", "Etiqueta 4"]
-    counter = 0
-    for elemento in elementos:
-        counter = counter + 1
-        print(elemento)
-        tk.Label(listado, font=fText,text=elemento, bg=backgroundColor).grid(row=counter, padx=10, pady=5)
+
         
 # tk.Label(listado, text="Seleccionar carpeta:", padx=10, pady=10).grid(row=1, column=0, padx=30)
 # tk.Label(listado, text="Seleccionar carpeta:", padx=10, pady=10).grid(row=2, column=0, padx=30)
