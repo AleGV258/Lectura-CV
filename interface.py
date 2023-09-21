@@ -12,6 +12,7 @@ folder_path = ""
 documentosArray = []
 
 
+
 def toggle_input():
     if filtro_autor.get() == True:
         entry1.grid(row=1, column=0, padx=5, pady=5)
