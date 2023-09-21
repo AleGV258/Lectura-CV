@@ -19,7 +19,7 @@ def RetrieveAllRecords(collection):
     records = mc[0].find()
     for record in records:
         data.append(record)
-    print(f"Records encontrados {len(data)}") if (len(data) > 0) else print("Records no encontrados")
+    print(f"Records encontrados {len(data)} en colección {collection}") if (len(data) > 0) else print(f"Records no encontrados en colección {collection}")
     mc[1].close()
     return data
 
@@ -30,7 +30,7 @@ def RetrieveRecords(collection, record):
     records = mc[0].find(record)
     for record in records:
         data.append(record)
-    print(f"Records encontrados {len(data)}") if (len(data) > 0) else print("Records no encontrados")
+    print(f"Records encontrados {len(data)} en colección {collection}") if (len(data) > 0) else print(f"Records no encontrados en colección {collection}")
     mc[1].close()
     return data
     
@@ -39,10 +39,10 @@ def RetrieveRecordByID(collection, record):
     mc = connectionDB(collection)
     try:
         result = mc[0].find_one({"_id":ObjectId(record)})
-        print("Record encontrado") if (result != None) else print("ID no valido")
+        print(f"Record encontrado en colección {collection} con ID: {record}") if (result != []) else print(f"ID no valido en colección {collection} con ID: {record}")
     except:
-        print("Ese no es un ObjectId")
-        result = None
+        print(f"Ese no es un ObjectId en colección {collection}: {record}")
+        result = []
     mc[1].close()
     return result
 
@@ -50,43 +50,41 @@ def RetrieveRecordByID(collection, record):
 def InsertRecord(collection, record):
     mc = connectionDB(collection)
     result = mc[0].insert_one(record)
+    mc[1].close()
     if (result.inserted_id):
-        print("Record insertado")
-        mc[1].close()
+        print(f"Record insertado en colección {collection} con ID: {result.inserted_id}")
         return result.inserted_id
     else:
-        print("Record no insertado")
-        mc[1].close()
-        return None
+        print(f"Record no insertado en colección {collection}")
+        return []
 
 # Actualizar uno o varios documentos por cualquier campo {field: value}, {field: value}
 def UpdateRecords(collection, recordAnterior, recordNuevo):
     mc = connectionDB(collection)
     result = mc[0].update_many(recordAnterior, {"$set": recordNuevo})
+    mc[1].close()
     if (result.modified_count > 0):
-        print(f"Records actualizados {result.modified_count}")
-        mc[1].close()
+        print(f"Records actualizados {result.modified_count} en colección {collection} con ID: {result.upserted_id}")
         return result.upserted_id
     else:
-        print("Records no actualizados")
-        mc[1].close()
-        return None
+        print(f"Records no actualizados en colección {collection}")
+        return []
     
 # Actualizar por un id (id del documento), {field: value}
 def UpdateRecordByID(collection, recordAnterior, recordNuevo):
     mc = connectionDB(collection)
     try:
         result = mc[0].update_one({"_id":ObjectId(recordAnterior)}, {"$set": recordNuevo})
-        print("Record actualizado") if (result.modified_count > 0) else print("Records no actualizados")
+        print(f"Record actualizado en colección {collection} con ID: {result.upserted_id}") if (result.modified_count > 0) else print(f"Records no actualizados en colección {collection}")
     except:
-        print("Ese no es un ObjectId")
+        print(f"Ese no es un ObjectId en colección {collection} con ID: {recordAnterior}")
     mc[1].close()
     
 # Borrar uno o varios documentos por cualquier campo {field: value}
 def DeleteRecords(collection, record):
     mc = connectionDB(collection)
     result = mc[0].delete_many(record)
-    print(f"Records eliminados {result.deleted_count}") if (result.deleted_count > 0) else print("Records no eliminados")
+    print(f"Records eliminados {result.deleted_count} en colección {collection}") if (result.deleted_count > 0) else print(f"Records no eliminados en colección {collection}")
     mc[1].close()
 
 # Borrar por un id (id del documento)
@@ -94,7 +92,7 @@ def DeleteRecordByID(collection, record):
     mc = connectionDB(collection)
     try:
         result = mc[0].delete_one({"_id":ObjectId(record)})
-        print("Record eliminado por ID") if (result.deleted_count == 1) else print("ID no valido")
+        print(f"Record eliminado por ID en colección {collection} con ID: {record}") if (result.deleted_count == 1) else print(f"ID no valido en colección {collection}")
     except:
-        print("Ese no es un ObjectId")
+        print(f"Ese no es un ObjectId en colección {collection} con ID: {record}")
     mc[1].close()

@@ -30,5 +30,4 @@ def tablePromep(array = [], fields = [], separatorWord=''):
         backtothefuture[title] = date[cont]     
         cont += 1
     
-    
     return backtothefuture

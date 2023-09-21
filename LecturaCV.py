@@ -13,18 +13,15 @@ ruta_actual = os.path.dirname(os.path.abspath(__file__)) # Directorio actual
 files = os.listdir(ruta_actual + "\\files") # Ruta de los archivos
 
 print(files)
-
 for index, file in enumerate(files, start = 1): # Por c/archivo en el directorio
     try:
         word = win32com.client.Dispatch("Word.Application") # Generar instancia de word
         word.Visible = False # Ocultar doc para el usuario
         doc = word.Documents.Open(ruta_actual + '\\files\\' + file) # Ruta del archivo
-
         tablas = []
-        nombre = ''
         contenido = []
+        nombre = ''
         counter = 0
-        
         for table in doc.Tables: # Por c/tabla en el doc
             for row in table.Rows: # Por c/fila en la tabla
                 row_content = [cleanData(cell.Range.Text[0:-1].strip(), False) for cell in row.Cells] # Texto de c/u de las celdas de la fila
@@ -64,7 +61,7 @@ for index, file in enumerate(files, start = 1): # Por c/archivo en el directorio
         else:
             profesorID = InsertRecord("Profesores", profesorRecord)
         data = RetrieveAllRecords("Profesores")
-        profesores = set([nombre["Nombre"] for nombre in data])
+        profesores = set(nombre["Nombre"] for nombre in data)
         nuevosProfesores = set()
         
         print('\n------------------Logros--------------------')
@@ -82,14 +79,22 @@ for index, file in enumerate(files, start = 1): # Por c/archivo en el directorio
             for autor in autores:
                 autor = autor.upper().replace('Á', 'A').replace('É', 'E').replace('Í', 'I').replace('Ó', 'O').replace('Ú', 'U')
                 contador = 0
-                nombresAutor = set(autor.split(' '))
+                nombresAutorSplit = set(autor.split(' '))
                 for profesor in profesores:
-                    nombres = set(profesor.split(' '))
-                    interseccion = nombresAutor.intersection(nombres)
+                    nombresSplit = set(profesor.split(' '))
+                    interseccion = nombresAutorSplit.intersection(nombresSplit)
+                    # print(nombresAutorSplit, " - \t", nombresSplit, " - \t", len(interseccion), " - \t", interseccion)
                     if(len(interseccion) >= 3):
                         contador = contador + 1
-                    # print(nombresAutor, " - ", nombres, " - ", len(interseccion))
+                        break
+                for profesor in nuevosProfesores:
+                    nombresSplit = set(profesor.split(' '))
+                    interseccion = nombresAutorSplit.intersection(nombresSplit)
+                    if(len(interseccion) >= 3):
+                        contador = contador + 1
+                        break
                 if(contador == 0):
+                    # print("\nSe agrego: ", autor)
                     nuevosProfesores.add(autor)
                 # print("\n", len(profesores), " - ", profesores)
                 ProfesorLogrosRow ={
@@ -101,28 +106,42 @@ for index, file in enumerate(files, start = 1): # Por c/archivo en el directorio
         
         # Insertar Nuevos Profesores Encontrados
         for profesor in nuevosProfesores:
-            if(tablas[1]['contenido'][0][1].upper().replace("Á", "A").replace("É", "E").replace("Í", "I").replace("Ó", "O").replace("Ú", "U") != cleanData(profesor, False)):
+            if(nombreProfesor != cleanData(profesor, False)):
                 record = {
                     'Nombre': cleanData(profesor, False),
                 }
                 InsertRecord('Profesores', record)
                 
+        data = RetrieveAllRecords("Profesores")
+        profesores = {nombre["_id"]: nombre["Nombre"] for nombre in data}
         # Insertar Logros hacía un Profesor
         # print("\nLogros: ", Logros[0])
         for logro in Logros:
-            logroID = InsertRecord("Logros", logro)
-            ProfesorLogros = {
-                'IdProfesor': ObjectId(profesorID),
-                'IdLogro': ObjectId(logroID)
-            }
-            InsertRecord("ProfesorLogros", ProfesorLogros)
+            busqueda = RetrieveRecords("Logros", logro)
+            if(len(busqueda) == 0):
+                logroID = InsertRecord("Logros", logro)
+                for autor in logro['OtrosDatos'][0]['Autor']:
+                    nombreProfesorSplit = set(autor['Autor'].split(' '))
+                    for profesorID, profesorNombre in profesores.items():
+                        profesorNombreSplit = set(profesorNombre.split(' '))
+                        interseccion = nombreProfesorSplit.intersection(profesorNombreSplit)
+                        if(len(interseccion) >= 3):
+                            ProfesorLogros = {
+                                'Nombre': profesorNombre,
+                                'IdProfesor': ObjectId(profesorID),
+                                'IdLogro': ObjectId(logroID)
+                            }
+                            InsertRecord("ProfesorLogros", ProfesorLogros)
+                            break
             
 
-        # print("\nProfesLogros: ", ProfesorLogros)
-        # # ProfesorLogros = {
-        # #     'IdProfesor': tablas[1]['contenido'][0][1],
-        # #     'IdLogro': tablas[1]['contenido'][0][1]
-        # # }
+            
+            
+            
+            
+            
+            
+            
         
         # # Docencia = {
         # #     'Curso': tablas[1]['contenido'][0][1],
