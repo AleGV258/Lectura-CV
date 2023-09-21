@@ -1,11 +1,15 @@
 import tkinter as tk
 from tkinter import filedialog, font
 import os
+from LecturaCV import lecturaCV
 
 backgroundColor = "#f3f3f4"
 fTitle= ("Arial", 15, "bold")
 fText = ("Arial", 10)
 fBotton = ("Arial", 13)
+
+folder_path = ""
+documentosArray = []
 
 def toggle_input():
     if filtro_autor.get() == 1:
@@ -36,12 +40,15 @@ def crear_etiquetas(documentos=[]):
         tk.Label(listado, font=fText,text=document, bg=backgroundColor).grid(row=counter, padx=10, pady=5)
 
 def select_folder():
+    global folder_path
+    global documentosArray
     folder_path = filedialog.askdirectory()
     if folder_path:
         folder_path_label.config(text=f"Carpeta: {folder_path}")
         documents =  os.listdir(folder_path) # Ruta de los archivos
         print(documents)
         crear_etiquetas(documents)
+        documentosArray = documents
 
 # Create the main window
 root = tk.Tk()
@@ -176,6 +183,9 @@ crear_etiquetas()
 
 def helloCallBack():
     print("Exportando")
+    # print(folder_path)
+    # print(documentosArray)
+    lecturaCV(folder_path, documentosArray)
     # msg=messagebox.showinfo( "Hello Python", "Hello World")
 
 
