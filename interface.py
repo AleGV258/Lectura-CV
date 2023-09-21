@@ -11,23 +11,24 @@ fBotton = ("Arial", 13)
 folder_path = ""
 documentosArray = []
 
+
 def toggle_input():
-    if filtro_autor.get() == 1:
+    if filtro_autor.get() == True:
         entry1.grid(row=1, column=0, padx=5, pady=5)
     else:
         entry1.grid_forget()
 
-    if filtro_anio.get() == 1:
+    if filtro_anio.get() == True:
         entry2.grid(row=3, column=0, padx=5, pady=5)
     else:
         entry2.grid_forget()
     
-    if filtro_documento.get() == 1:
+    if filtro_documento.get() == True:
         entry3.grid(row=5, column=0, padx=5, pady=5)
     else:
         entry3.grid_forget()
     
-    if filtro_area_conocimiento.get() == 1:
+    if filtro_area_conocimiento.get() == True:
         entry4.grid(row=7, column=0, padx=5, pady=5)
     else:
         entry4.grid_forget()
@@ -84,45 +85,45 @@ titulo.grid(row=0, padx=140, pady=10)
 checkBoxes_frame = tk.Frame(select_tables_frame,bg=backgroundColor)
 checkBoxes_frame.grid(row=1, padx=30)
 # Agregar contenido a la segunda columna (columna 0)
-check_info_Profesor = tk.IntVar()
-check_button = tk.Checkbutton(checkBoxes_frame, text="Información del Profesor", font=fText, variable=check_info_Profesor, onvalue=1, offvalue=0, bg=backgroundColor)
+check_info_Profesor = tk.BooleanVar()
+check_button = tk.Checkbutton(checkBoxes_frame, text="Información del Profesor", font=fText, variable=check_info_Profesor,  bg=backgroundColor)
 check_button.grid(row=0, column=0,sticky="W", padx=30, pady=2)
 
-check_logros_Profesor = tk.IntVar()
-check_button = tk.Checkbutton(checkBoxes_frame, text="Logros del Profesor", font=fText,variable=check_logros_Profesor, onvalue=1, offvalue=0, bg=backgroundColor)
+check_logros_Profesor = tk.BooleanVar()
+check_button = tk.Checkbutton(checkBoxes_frame, text="Logros del Profesor", font=fText,variable=check_logros_Profesor,  bg=backgroundColor)
 check_button.grid(row=1, column=0,sticky="W", padx=30, pady=2)
 
-check_invest_Profesor = tk.IntVar()
-check_button = tk.Checkbutton(checkBoxes_frame, text="Investigaciones del Profesor", font=fText,variable=check_invest_Profesor, onvalue=1, offvalue=0, bg=backgroundColor)
+check_invest_Profesor = tk.BooleanVar()
+check_button = tk.Checkbutton(checkBoxes_frame, text="Investigaciones del Profesor", font=fText,variable=check_invest_Profesor,  bg=backgroundColor)
 check_button.grid(row=2, column=0,sticky="W", padx=30, pady=2)
 
-check_gest_academica = tk.IntVar()
-check_button = tk.Checkbutton(checkBoxes_frame, text="Gestión Académica", font=fText,variable=check_gest_academica, onvalue=1, offvalue=0, bg=backgroundColor)
+check_gest_academica = tk.BooleanVar()
+check_button = tk.Checkbutton(checkBoxes_frame, text="Gestión Académica", font=fText,variable=check_gest_academica,  bg=backgroundColor)
 check_button.grid(row=3, column=0,sticky="W", padx=30, pady=2)
 
-check_docencias = tk.IntVar()
-check_button = tk.Checkbutton(checkBoxes_frame, text="Docencias", font=fText,variable=check_docencias, onvalue=1, offvalue=0, bg=backgroundColor)
+check_docencias = tk.BooleanVar()
+check_button = tk.Checkbutton(checkBoxes_frame, text="Docencias", font=fText,variable=check_docencias,  bg=backgroundColor)
 check_button.grid(row=4, column=0,sticky="W", padx=30, pady=2)
 
 # Agregar contenido a la segunda columna (columna 1)
-check_benf_promep = tk.IntVar()
-check_button = tk.Checkbutton(checkBoxes_frame, text="Beneficios PROMEP", font=fText,variable=check_benf_promep, onvalue=1, offvalue=0, bg=backgroundColor)
+check_benf_promep = tk.BooleanVar()
+check_button = tk.Checkbutton(checkBoxes_frame, text="Beneficios PROMEP", font=fText,variable=check_benf_promep,  bg=backgroundColor)
 check_button.grid(row=0, column=1,sticky="W", padx=30, pady=2)
 
-check_cuerpo_academico = tk.IntVar()
-check_button = tk.Checkbutton(checkBoxes_frame, text="Cuerpo Académico", font=fText,variable=check_cuerpo_academico, onvalue=1, offvalue=0, bg=backgroundColor)
+check_cuerpo_academico = tk.BooleanVar()
+check_button = tk.Checkbutton(checkBoxes_frame, text="Cuerpo Académico", font=fText,variable=check_cuerpo_academico,  bg=backgroundColor)
 check_button.grid(row=1, column=1,sticky="W", padx=30, pady=2)
 
-check_prog_academicos = tk.IntVar()
-check_button = tk.Checkbutton(checkBoxes_frame, text="Programas Académicos",font=fText, variable=check_prog_academicos, onvalue=1, offvalue=0, bg=backgroundColor)
+check_prog_academicos = tk.BooleanVar()
+check_button = tk.Checkbutton(checkBoxes_frame, text="Programas Académicos",font=fText, variable=check_prog_academicos,  bg=backgroundColor)
 check_button.grid(row=2, column=1,sticky="W", padx=30, pady=2)
 
-check_tutorias = tk.IntVar()
-check_button = tk.Checkbutton(checkBoxes_frame, text="Tutorías", font=fText,variable=check_tutorias, onvalue=1, offvalue=0, bg=backgroundColor)
+check_tutorias = tk.BooleanVar()
+check_button = tk.Checkbutton(checkBoxes_frame, text="Tutorías", font=fText,variable=check_tutorias,  bg=backgroundColor)
 check_button.grid(row=3, column=1,sticky="W", padx=30, pady=2)
 
-check_dir_individualizada = tk.IntVar()
-check_button = tk.Checkbutton(checkBoxes_frame, text="Dirección Individualizada",font=fText,variable=check_dir_individualizada, onvalue=1, offvalue=0, bg=backgroundColor)
+check_dir_individualizada = tk.BooleanVar()
+check_button = tk.Checkbutton(checkBoxes_frame, text="Dirección Individualizada",font=fText,variable=check_dir_individualizada,  bg=backgroundColor)
 check_button.grid(row=4, column=1,sticky="W", padx=30, pady=2)
 
 
@@ -137,8 +138,8 @@ filters.grid(row=1, column=0, padx=30)
 
 
 #Campos
-filtro_autor = tk.IntVar()
-check_button = tk.Checkbutton(filters, text="Filtrar por autor", font=fText, variable=filtro_autor, onvalue=1, offvalue=0, command=toggle_input, bg=backgroundColor)
+filtro_autor = tk.BooleanVar()
+check_button = tk.Checkbutton(filters, text="Filtrar por autor", font=fText, variable=filtro_autor, command=toggle_input, bg=backgroundColor)
 check_button.grid(row=0, column=0,sticky="W", padx=30, pady=2)
 # filtro_autor.trace("w", toggle_entry)
 # print("\nFiltro: ",filtro_autor)
@@ -152,16 +153,16 @@ entry4 = tk.Entry(filters)
 
 
 
-filtro_anio = tk.IntVar()
-check_button = tk.Checkbutton(filters, text="Filtrar por año",font=fText, variable=filtro_anio, onvalue=1, offvalue=0, command=toggle_input, bg=backgroundColor)
+filtro_anio = tk.BooleanVar()
+check_button = tk.Checkbutton(filters, text="Filtrar por año",font=fText, variable=filtro_anio, command=toggle_input, bg=backgroundColor)
 check_button.grid(row=2, column=0,sticky="W", padx=30, pady=2)
 
-filtro_documento = tk.IntVar()
-check_button = tk.Checkbutton(filters, text="Filtrar por tipo de documento", font=fText,variable=filtro_documento, onvalue=1, offvalue=0, command=toggle_input, bg=backgroundColor)
+filtro_documento = tk.BooleanVar()
+check_button = tk.Checkbutton(filters, text="Filtrar por tipo de documento", font=fText,variable=filtro_documento, command=toggle_input, bg=backgroundColor)
 check_button.grid(row=4, column=0,sticky="W", padx=30, pady=2)
 
-filtro_area_conocimiento = tk.IntVar()
-check_button = tk.Checkbutton(filters, text="Filtrar por area de conocimiento", font=fText,variable=filtro_area_conocimiento, onvalue=1, offvalue=0, command=toggle_input, bg=backgroundColor)
+filtro_area_conocimiento = tk.BooleanVar()
+check_button = tk.Checkbutton(filters, text="Filtrar por area de conocimiento", font=fText,variable=filtro_area_conocimiento, command=toggle_input, bg=backgroundColor)
 check_button.grid(row=6, column=0,sticky="W", padx=30, pady=2)
 
 
@@ -181,8 +182,30 @@ listado.grid(row=1, column=1, sticky="n")
 # tk.Label(listado, text="Seleccionar carpeta:", padx=10, pady=10).grid(row=2, column=0, padx=30)
 crear_etiquetas()
 
-def helloCallBack():
+def exportDocument():
     print("Exportando")
+
+    SelectedTables={
+        "InfoProfesor": check_info_Profesor.get(),
+        "LogrosProfesor": check_logros_Profesor.get(),
+        "InvestigacionesProfesor": check_invest_Profesor.get(),
+        "GestionAcademica": check_gest_academica.get(),
+        "Docencias": check_docencias.get(),
+        "BeneficiosPROMEP": check_benf_promep.get(),
+        "CuerpoAcademico": check_cuerpo_academico.get(),
+        "ProgramasAcademicos": check_prog_academicos.get(),
+        "Tutorias": check_tutorias.get(),
+        "DireccionIndividualizada": check_dir_individualizada.get()
+    }
+    Filters = {
+        "autor":{"estado": filtro_autor, "data":}
+        "anio":{"estado": filtro_anio, "data":}
+        "documento":{"estado": filtro_documento, "data":}
+        "areaConocimiento":{"estado": filtro_area_conocimiento, "data":}
+    }
+    
+    print(SelectedTables)
+    print(Filters)
     # print(folder_path)
     # print(documentosArray)
     lecturaCV(folder_path, documentosArray)
@@ -193,7 +216,7 @@ def helloCallBack():
 button_frame = tk.Frame(root, bg="white")
 button_frame.pack()
 
-export_button = tk.Button(button_frame, text ="Exportar Informe", font=fBotton,command = helloCallBack)
+export_button = tk.Button(button_frame, text ="Exportar Informe", font=fBotton,command = exportDocument)
 export_button.place(x=0,y=0)
 export_button.grid( pady=0)
 # Start the Tkinter main loop
