@@ -11,7 +11,8 @@ fBotton = ("Arial", 13)
 folder_path = ""
 documentosArray = []
 
-
+# for font in font.families():
+#     print(font)
 
 def toggle_input():
     if filtro_autor.get() == True:
@@ -48,10 +49,36 @@ def select_folder():
     if folder_path:
         folder_path_label.config(text=f"Carpeta: {folder_path}")
         documents =  os.listdir(folder_path) # Ruta de los archivos
+        print(folder_path)
         print(documents)
         crear_etiquetas(documents)
         documentosArray = documents
 
+def exportDocument():
+    print("Exportando")
+
+    SelectedTables={
+        "InfoProfesor": check_info_Profesor.get(),
+        "LogrosProfesor": check_logros_Profesor.get(),
+        "InvestigacionesProfesor": check_invest_Profesor.get(),
+        "GestionAcademica": check_gest_academica.get(),
+        "Docencias": check_docencias.get(),
+        "BeneficiosPROMEP": check_benf_promep.get(),
+        "CuerpoAcademico": check_cuerpo_academico.get(),
+        "ProgramasAcademicos": check_prog_academicos.get(),
+        "Tutorias": check_tutorias.get(),
+        "DireccionIndividualizada": check_dir_individualizada.get()
+    }
+    Filters = {
+        "autor":{"estado": filtro_autor.get(), "data":entry1.get()},
+        "anio":{"estado": filtro_anio.get(), "data":entry2.get()},
+        "documento":{"estado": filtro_documento.get(), "data":entry3.get()},
+        "areaConocimiento":{"estado": filtro_area_conocimiento.get(), "data":entry4.get()}
+    }
+    # print(SelectedTables)
+    # print(Filters)
+    lecturaCV(folder_path, documentosArray, SelectedTables,Filters)
+    
 # Create the main window
 root = tk.Tk()
 root.title("Formulario")
@@ -73,13 +100,10 @@ folder_path_label.pack(side="left")
 select_button = tk.Button(folder_frame, text="Seleccionar Carpeta",font=fBotton, command=select_folder)
 select_button.pack(side="left")
 
-# for font in font.families():
-#     print(font)
 
 # Frame para checkboxes
 select_tables_frame = tk.Frame(root,  bg=backgroundColor)
 select_tables_frame.pack()
-# select_tables_frame.config(width=nuevo_ancho, height=nuevo_alto)
 titulo = tk.Label(select_tables_frame, text="Seleccionar tablas para insertar a la base de datos", font=fTitle, bg=backgroundColor)
 titulo.grid(row=0, padx=140, pady=10)
 
@@ -133,25 +157,16 @@ columns = tk.Frame(root, bg=backgroundColor)
 columns.pack(pady=30)
 titulo = tk.Label(columns, text="Filtros", font=fTitle, bg=backgroundColor)
 titulo.grid(row=0, padx=170,pady=10)
-
 filters = tk.Frame(columns, bg=backgroundColor)
 filters.grid(row=1, column=0, padx=30)
-
-
 #Campos
 filtro_autor = tk.BooleanVar()
 check_button = tk.Checkbutton(filters, text="Filtrar por autor", font=fText, variable=filtro_autor, command=toggle_input, bg=backgroundColor)
 check_button.grid(row=0, column=0,sticky="W", padx=30, pady=2)
-# filtro_autor.trace("w", toggle_entry)
-# print("\nFiltro: ",filtro_autor)
-
 entry1 = tk.Entry(filters)
 entry2 = tk.Entry(filters)
 entry3 = tk.Entry(filters)
 entry4 = tk.Entry(filters)
-# entry1 = tk.Entry(filters, state=tk.DISABLED)
-# entry1.grid(row=0, column=1, padx=5, pady=5)
-
 
 
 filtro_anio = tk.BooleanVar()
@@ -167,58 +182,19 @@ check_button = tk.Checkbutton(filters, text="Filtrar por area de conocimiento", 
 check_button.grid(row=6, column=0,sticky="W", padx=30, pady=2)
 
 
-
-
-
 titulo_directorio = tk.Label(columns, text="Archivos encontrados en Directorio", font=fTitle)
 titulo_directorio.grid(row=0, column=1, padx=10, pady=10, )
 # Listado de documentos encontrados
 listado = tk.Frame(columns, bg=backgroundColor)
 listado.grid(row=1, column=1, sticky="n")
-# listado.grid(sticky="n")
-
-
-        
-# tk.Label(listado, text="Seleccionar carpeta:", padx=10, pady=10).grid(row=1, column=0, padx=30)
-# tk.Label(listado, text="Seleccionar carpeta:", padx=10, pady=10).grid(row=2, column=0, padx=30)
 crear_etiquetas()
-
-def exportDocument():
-    print("Exportando")
-
-    SelectedTables={
-        "InfoProfesor": check_info_Profesor.get(),
-        "LogrosProfesor": check_logros_Profesor.get(),
-        "InvestigacionesProfesor": check_invest_Profesor.get(),
-        "GestionAcademica": check_gest_academica.get(),
-        "Docencias": check_docencias.get(),
-        "BeneficiosPROMEP": check_benf_promep.get(),
-        "CuerpoAcademico": check_cuerpo_academico.get(),
-        "ProgramasAcademicos": check_prog_academicos.get(),
-        "Tutorias": check_tutorias.get(),
-        "DireccionIndividualizada": check_dir_individualizada.get()
-    }
-    Filters = {
-        "autor":{"estado": filtro_autor, "data":}
-        "anio":{"estado": filtro_anio, "data":}
-        "documento":{"estado": filtro_documento, "data":}
-        "areaConocimiento":{"estado": filtro_area_conocimiento, "data":}
-    }
-    
-    print(SelectedTables)
-    print(Filters)
-    # print(folder_path)
-    # print(documentosArray)
-    lecturaCV(folder_path, documentosArray)
-    # msg=messagebox.showinfo( "Hello Python", "Hello World")
-
 
 
 button_frame = tk.Frame(root, bg="white")
 button_frame.pack()
-
 export_button = tk.Button(button_frame, text ="Exportar Informe", font=fBotton,command = exportDocument)
 export_button.place(x=0,y=0)
 export_button.grid( pady=0)
+
 # Start the Tkinter main loop
 root.mainloop()

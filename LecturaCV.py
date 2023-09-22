@@ -7,7 +7,10 @@ from functions.createDictionary import createDictionary, tablePromep
 from functions.cleanData import cleanData
 from functions.dataFunctions import RetrieveAllRecords, RetrieveRecords, RetrieveRecordByID, InsertRecord, UpdateRecords, UpdateRecordByID, DeleteRecords, DeleteRecordByID
 
-def lecturaCV(ruta_actual, files):
+def lecturaCV(ruta_actual, files, SelectedTables, Filters):
+    print("\nTablas Seleccionadas para insertar: ", SelectedTables)
+    print("\nFiltros por aplicar: ",Filters)
+    # (folder_path, documentosArray, SelectedTables,Filters)
     inicio = time.time() # Inicio de la ejecución
     print("\n-------------------------------------- Iniciando Lectura --------------------------------------")
     # ruta_actual = os.path.dirname(os.path.abspath(__file__)) # Directorio actual
@@ -18,7 +21,7 @@ def lecturaCV(ruta_actual, files):
         try:
             word = win32com.client.Dispatch("Word.Application") # Generar instancia de word
             word.Visible = False # Ocultar doc para el usuario
-            doc = word.Documents.Open(ruta_actual + file) # Ruta del archivo
+            doc = word.Documents.Open(ruta_actual + "/" + file) # Ruta del archivo
             tablas = []
             contenido = []
             nombre = ''
