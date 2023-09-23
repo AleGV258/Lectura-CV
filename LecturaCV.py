@@ -12,7 +12,7 @@ def lecturaCV(ruta_actual, files, SelectedTables, Filters):
     # (folder_path, documentosArray, SelectedTables,Filters)
     inicio = time.time() # Inicio de la ejecución
     print("\n-------------------------------------- Iniciando Lectura --------------------------------------")
-    # ruta_actual = os.path.dirname(os.path.abspath(__file__)) # Directorio actual
+    # ruta_actual2 = os.path.dirname(os.path.abspath(__file__)) # Directorio actual
     # files = os.listdir(ruta_actual + "\\files") # Ruta de los archivos
 
     mc = connectionDB()
@@ -21,7 +21,7 @@ def lecturaCV(ruta_actual, files, SelectedTables, Filters):
     print(files)
     for index, file in enumerate(files, start = 1): # Por c/archivo en el directorio
         try:
-            word.Documents.Open(ruta_actual + '\\files\\' + file) # Ruta del archivo
+            doc = word.Documents.Open(ruta_actual.replace("/", "\\") + "\\" + file) # Ruta del archivo
             doc = word.ActiveDocument # Selección del documento abierto
             doc.ActiveWindow.Visible = False # Ocultar doc para el usuario
             tablas = []
