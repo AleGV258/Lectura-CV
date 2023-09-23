@@ -1,27 +1,61 @@
-from functions.dataFunctions import RetrieveAllRecords, RetrieveRecords, RetrieveRecordByID, InsertRecord, UpdateRecords, UpdateRecordByID, DeleteRecords, DeleteRecordByID
+from functions.dataFunctions import retrieveAllRecords, retrieveRecords, retrieveRecordByID, insertRecord, updateRecords, updateRecordByID, deleteRecords, deleteRecordByID
 from functions.cleanData import cleanData
 from fuzzywuzzy import fuzz
 import difflib
+import psutil
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#### Contar instancias de un programa corriendo
+count = 0
+for process in psutil.process_iter(attrs=['pid', 'name']):
+        if 'WINWORD.EXE' in process.info['name']:
+                count += 1
+print(f"Instancias de Microsoft Word en ejecución: {count}")
+
+
+
+
+
+
+
+
+
+
+
 
 #### Comparar Nombres
-data = RetrieveAllRecords("Profesores")
-nombreComparar1 = "JOSE ALEJANDRO VARGAS DIAZ"
-nombreComparar2 = "MAURICIO ARTURO IBARRA CORONA"
-nombreComparar3 = "CARLOS OLMOS TREJO"
-nombreComparar4 = "GABRIELA XICONTECATL RAMIREZ"
-profesores = set([nombre["Nombre"] for nombre in data])
+# data = RetrieveAllRecords("Profesores")
+# nombreComparar1 = "JOSE ALEJANDRO VARGAS DIAZ"
+# nombreComparar2 = "MAURICIO ARTURO IBARRA CORONA"
+# nombreComparar3 = "CARLOS OLMOS TREJO"
+# nombreComparar4 = "GABRIELA XICONTECATL RAMIREZ"
+# profesores = set([nombre["Nombre"] for nombre in data])
 
 # print("\n", nombres)
 # print("\n", nombreComparar)
 
 # nombresAutor = set(nombreComparar.split(' '))
-for profesor in profesores:
-        similarity_ratio1 = fuzz.ratio(nombreComparar1, profesor)
-        similarity_ratio2 = fuzz.ratio(nombreComparar2, profesor)
-        similarity_ratio3 = fuzz.ratio(nombreComparar3, profesor)
-        similarity_ratio4 = fuzz.ratio(nombreComparar4, profesor)
-        if(similarity_ratio1 > 48):
-                print(f"\nLa similitud entre los nombres es {similarity_ratio1}% {nombreComparar1} - {profesor}")
+# for profesor in profesores:
+#         similarity_ratio1 = fuzz.ratio(nombreComparar1, profesor)
+#         similarity_ratio2 = fuzz.ratio(nombreComparar2, profesor)
+#         similarity_ratio3 = fuzz.ratio(nombreComparar3, profesor)
+#         similarity_ratio4 = fuzz.ratio(nombreComparar4, profesor)
+#         if(similarity_ratio1 > 48):
+#                 print(f"\nLa similitud entre los nombres es {similarity_ratio1}% {nombreComparar1} - {profesor}")
         # if(similarity_ratio2 > 48):
         #         print(f"\nLa similitud entre los nombres es {similarity_ratio2}% {nombreComparar2} - {profesor}")
         # if(similarity_ratio3 > 48):
@@ -90,6 +124,11 @@ for profesor in profesores:
 
 # profesores = RetrieveAllRecords("Profesores")
 # print(profesores[0]["Nombre"])
+
+
+
+
+
 
 
 

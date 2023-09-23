@@ -1,11 +1,10 @@
 import win32com.client # Para leer .doc → ´pip install pywin32´
-# import difflib
 import os
 import time
 from bson import ObjectId
 from functions.createDictionary import createDictionary, tablePromep
 from functions.cleanData import cleanData
-from functions.dataFunctions import RetrieveAllRecords, RetrieveRecords, RetrieveRecordByID, InsertRecord, UpdateRecords, UpdateRecordByID, DeleteRecords, DeleteRecordByID
+from functions.dataFunctions import connectionDB, retrieveAllRecords, retrieveRecords, retrieveRecordByID, insertRecord, updateRecords, updateRecordByID, deleteRecords, deleteRecordByID
 
 def lecturaCV(ruta_actual, files, SelectedTables, Filters):
     print("\nTablas Seleccionadas para insertar: ", SelectedTables)
@@ -16,12 +15,15 @@ def lecturaCV(ruta_actual, files, SelectedTables, Filters):
     # ruta_actual = os.path.dirname(os.path.abspath(__file__)) # Directorio actual
     # files = os.listdir(ruta_actual + "\\files") # Ruta de los archivos
 
+    mc = connectionDB()
+    bd = mc[0]
+    word = win32com.client.Dispatch("Word.Application") # Generar instancia de word
     print(files)
     for index, file in enumerate(files, start = 1): # Por c/archivo en el directorio
         try:
-            word = win32com.client.Dispatch("Word.Application") # Generar instancia de word
-            word.Visible = False # Ocultar doc para el usuario
-            doc = word.Documents.Open(ruta_actual + "/" + file) # Ruta del archivo
+            word.Documents.Open(ruta_actual + '\\files\\' + file) # Ruta del archivo
+            doc = word.ActiveDocument # Selección del documento abierto
+            doc.ActiveWindow.Visible = False # Ocultar doc para el usuario
             tablas = []
             contenido = []
             nombre = ''
@@ -37,12 +39,10 @@ def lecturaCV(ruta_actual, files, SelectedTables, Filters):
                         nombre = row_content[0]
                     elif len(row_content) > 1:
                         contenido.append(row_content)
-                        
             doc.Close() # Cerrar el doc
-            word.Quit() # Eliminar la instancia del word
             
             # SEPARACIÓN DE DATOS DE LAS TABLAS
-                
+            
             print('\n------------------Profesores--------------------')
             nombreProfesor = tablas[1]['contenido'][0][1].upper().replace("Á", "A").replace("É", "E").replace("Í", "I").replace("Ó", "O").replace("Ú", "U")
             profesorRecord = {
@@ -59,12 +59,12 @@ def lecturaCV(ruta_actual, files, SelectedTables, Filters):
             # print("\nProfesor: ", Profesor)
 
             # Verificar si el profesor ya existe o es uno nuevo
-            dataBusqueda = RetrieveRecords("Profesores", {"Nombre":nombreProfesor})
+            dataBusqueda = retrieveRecords(bd, "Profesores", {"Nombre":nombreProfesor})
             if(len(dataBusqueda) != 0):
-                profesorID = UpdateRecords("Profesores", {"Nombre":nombreProfesor}, profesorRecord)
+                profesorID = updateRecords(bd, "Profesores", {"Nombre":nombreProfesor}, profesorRecord)
             else:
-                profesorID = InsertRecord("Profesores", profesorRecord)
-            data = RetrieveAllRecords("Profesores")
+                profesorID = insertRecord(bd, "Profesores", profesorRecord)
+            data = retrieveAllRecords(bd, "Profesores")
             profesores = set(nombre["Nombre"] for nombre in data)
             nuevosProfesores = set()
             
@@ -114,16 +114,16 @@ def lecturaCV(ruta_actual, files, SelectedTables, Filters):
                     record = {
                         'Nombre': cleanData(profesor, False),
                     }
-                    InsertRecord('Profesores', record)
+                    insertRecord(bd, "Profesores", record)
                     
-            data = RetrieveAllRecords("Profesores")
+            data = retrieveAllRecords(bd, "Profesores")
             profesores = {nombre["_id"]: nombre["Nombre"] for nombre in data}
             # Insertar Logros hacía un Profesor
             # print("\nLogros: ", Logros[0])
             for logro in Logros:
-                busqueda = RetrieveRecords("Logros", logro)
+                busqueda = retrieveRecords(bd, "Logros", logro)
                 if(len(busqueda) == 0):
-                    logroID = InsertRecord("Logros", logro)
+                    logroID = insertRecord(bd, "Logros", logro)
                     for autor in logro['OtrosDatos'][0]['Autor']:
                         nombreProfesorSplit = set(autor['Autor'].split(' '))
                         for profesorID, profesorNombre in profesores.items():
@@ -135,7 +135,7 @@ def lecturaCV(ruta_actual, files, SelectedTables, Filters):
                                     'IdProfesor': ObjectId(profesorID),
                                     'IdLogro': ObjectId(logroID)
                                 }
-                                InsertRecord("ProfesorLogros", ProfesorLogros)
+                                insertRecord(bd, "ProfesorLogros", ProfesorLogros)
                                 break
                 
 
@@ -244,14 +244,19 @@ def lecturaCV(ruta_actual, files, SelectedTables, Filters):
             # print("\nDirección Individualizada: ", DireccionIndividualizada)
             
             
+            
         except Exception as error:
             print("An exception occurred:", error)
         # except:
         #     print()
         #     print(f"\nEl archivo que intentas leer no tiene el formato adecuado para extraer la información y se ha omitido: {file}")
-
-    print("\n------------------------------------- Terminando Lectura -------------------------------------\n")
+    
+    mc[1].close()
+    print("\n------------------------------------- Terminando Lectura-------------------------------------\n")
     fin = time.time() # Fin de la ejecución
     print(str(fin - inicio) + " Segundos") # Calcular tiempo de ejecución
+
+
+
 
 
