@@ -4,6 +4,7 @@ import time
 from bson import ObjectId
 from functions.createDictionary import createDictionary, tablePromep
 from functions.cleanData import cleanData
+from functions.cleanNames import cleanNames
 from functions.dataFunctions import connectionDB, retrieveAllRecords, retrieveRecords, retrieveRecordByID, insertRecord, updateRecords, updateRecordByID, deleteRecords, deleteRecordByID
 
 def lecturaCV(ruta_actual, files, SelectedTables, Filters):
@@ -60,90 +61,133 @@ def lecturaCV(ruta_actual, files, SelectedTables, Filters):
                     profesorID = updateRecords(bd, "Profesores", {"Nombre":nombreProfesor}, profesorRecord)
                 else:
                     profesorID = insertRecord(bd, "Profesores", profesorRecord)
-                data = retrieveAllRecords(bd, "Profesores")
-                profesores = set(nombre["Nombre"] for nombre in data)
-                nuevosProfesores = set()
+                # data = retrieveAllRecords(bd, "Profesores")
+                # profesores = set(nombre["Nombre"] for nombre in data)
+                # nuevosProfesores = set()
             
             if SelectedTables['LogrosProfesor'] == True:  
                 print('\n------------------Logros--------------------')
                 Logros = createDictionary(tablas[5]['contenido'], ['Tipo', 'Año', 'Título', 'País'], 'Tipo')
                 # print("\nLogros: ", Logros)
                 
-                # Separar a los Autores
+                # # Separar a los Autores
                 for logro in Logros:
-                    ProfesorLogros = []
-                    if(len(logro['OtrosDatos'][0]['Autor'].split(';')) > 1):
-                        autores = logro['OtrosDatos'][0]['Autor'].replace('; ', ';').replace('.', '').replace(',', '').split(';')
-                    else:
-                        autores = logro['OtrosDatos'][0]['Autor'].replace(', ', ',').replace('.', '').split(',')
-                    # print('autores:', autores)
-                    for autor in autores:
-                        autor = autor.upper().replace('Á', 'A').replace('É', 'E').replace('Í', 'I').replace('Ó', 'O').replace('Ú', 'U')
-                        contador = 0
-                        nombresAutorSplit = set(autor.split(' '))
-                        for profesor in profesores:
-                            nombresSplit = set(profesor.split(' '))
-                            interseccion = nombresAutorSplit.intersection(nombresSplit)
-                            # print(nombresAutorSplit, " - \t", nombresSplit, " - \t", len(interseccion), " - \t", interseccion)
-                            if(len(interseccion) >= 3):
-                                contador = contador + 1
-                                break
-                        for profesor in nuevosProfesores:
-                            nombresSplit = set(profesor.split(' '))
-                            interseccion = nombresAutorSplit.intersection(nombresSplit)
-                            if(len(interseccion) >= 3):
-                                contador = contador + 1
-                                break
-                        if(contador == 0):
-                            # print("\nSe agrego: ", autor)
-                            nuevosProfesores.add(autor)
-                        # print("\n", len(profesores), " - ", profesores)
-                        ProfesorLogrosRow ={
-                            'Autor': cleanData(autor, False),
-                        }
-                        # print(ProfesorLogrosRow)
-                        ProfesorLogros.append(ProfesorLogrosRow)
-                    logro['OtrosDatos'][0]['Autor'] = ProfesorLogros
+                    cleanNames(logro['OtrosDatos'][0]['Autor'], logro, 'Logros', 'ProfesorLogros', 'IdLogro')
+                    
+                    
+                #     ProfesorLogros = []
+                #     if(len(logro['OtrosDatos'][0]['Autor'].split(';')) > 1):
+                #         autores = logro['OtrosDatos'][0]['Autor'].replace('; ', ';').replace('.', '').replace(',', '').split(';')
+                #     else:
+                #         autores = logro['OtrosDatos'][0]['Autor'].replace(', ', ',').replace('.', '').split(',')
+                #     # print('autores:', autores)
+                #     for autor in autores:
+                #         autor = autor.upper().replace('Á', 'A').replace('É', 'E').replace('Í', 'I').replace('Ó', 'O').replace('Ú', 'U')
+                #         contador = 0
+                #         nombresAutorSplit = set(autor.split(' '))
+                #         for profesor in profesores:
+                #             nombresSplit = set(profesor.split(' '))
+                #             interseccion = nombresAutorSplit.intersection(nombresSplit)
+                #             # print(nombresAutorSplit, " - \t", nombresSplit, " - \t", len(interseccion), " - \t", interseccion)
+                #             if(len(interseccion) >= 3):
+                #                 contador = contador + 1
+                #                 break
+                #         for profesor in nuevosProfesores:
+                #             nombresSplit = set(profesor.split(' '))
+                #             interseccion = nombresAutorSplit.intersection(nombresSplit)
+                #             if(len(interseccion) >= 3):
+                #                 contador = contador + 1
+                #                 break
+                #         if(contador == 0):
+                #             # print("\nSe agrego: ", autor)
+                #             nuevosProfesores.add(autor)
+                #         # print("\n", len(profesores), " - ", profesores)
+                #         ProfesorLogrosRow ={
+                #             'Autor': cleanData(autor, False),
+                #         }
+                #         # print(ProfesorLogrosRow)
+                #         ProfesorLogros.append(ProfesorLogrosRow)
+                #     logro['OtrosDatos'][0]['Autor'] = ProfesorLogros
                 
-                # Insertar Nuevos Profesores Encontrados
-                for profesor in nuevosProfesores:
-                    if(nombreProfesor != cleanData(profesor, False)):
-                        record = {
-                            'Nombre': cleanData(profesor, False),
-                        }
-                        insertRecord(bd, "Profesores", record)
+                # # Insertar Nuevos Profesores Encontrados
+                # for profesor in nuevosProfesores:
+                #     if(nombreProfesor != cleanData(profesor, False)):
+                #         record = {
+                #             'Nombre': cleanData(profesor, False),
+                #         }
+                #         insertRecord(bd, "Profesores", record)
                         
-                data = retrieveAllRecords(bd, "Profesores")
-                profesores = {nombre["_id"]: nombre["Nombre"] for nombre in data}
-                # Insertar Logros hacía un Profesor
-                # print("\nLogros: ", Logros[0])
-                for logro in Logros:
-                    busqueda = retrieveRecords(bd, "Logros", logro)
-                    if(len(busqueda) == 0):
-                        logroID = insertRecord(bd, "Logros", logro)
-                        for autor in logro['OtrosDatos'][0]['Autor']:
-                            nombreProfesorSplit = set(autor['Autor'].split(' '))
-                            for profesorID, profesorNombre in profesores.items():
-                                profesorNombreSplit = set(profesorNombre.split(' '))
-                                interseccion = nombreProfesorSplit.intersection(profesorNombreSplit)
-                                if(len(interseccion) >= 3):
-                                    ProfesorLogros = {
-                                        'Nombre': profesorNombre,
-                                        'IdProfesor': ObjectId(profesorID),
-                                        'IdLogro': ObjectId(logroID)
-                                    }
-                                    insertRecord(bd, "ProfesorLogros", ProfesorLogros)
-                                    break
+                # data = retrieveAllRecords(bd, "Profesores")
+                # profesores = {nombre["_id"]: nombre["Nombre"] for nombre in data}
+                # # Insertar Logros hacía un Profesor
+                # # print("\nLogros: ", Logros[0])
+                # for logro in Logros:
+                #     busqueda = retrieveRecords(bd, "Logros", logro)
+                #     if(len(busqueda) == 0):
+                #         logroID = insertRecord(bd, "Logros", logro)
+                #         for autor in logro['OtrosDatos'][0]['Autor']:
+                #             nombreProfesorSplit = set(autor['Autor'].split(' '))
+                #             for profesorID, profesorNombre in profesores.items():
+                #                 profesorNombreSplit = set(profesorNombre.split(' '))
+                #                 interseccion = nombreProfesorSplit.intersection(profesorNombreSplit)
+                #                 if(len(interseccion) >= 3):
+                #                     ProfesorLogros = {
+                #                         'Nombre': profesorNombre,
+                #                         'IdProfesor': ObjectId(profesorID),
+                #                         'IdLogro': ObjectId(logroID)
+                #                     }
+                #                     insertRecord(bd, "ProfesorLogros", ProfesorLogros)
+                #                     break
                 
             if SelectedTables['InvestigacionesProfesor'] == True:  
                 print('\n------------------Investigaciones--------------------')
                 Investigaciones = createDictionary(tablas[11]['contenido'],['Título del proyecto','Nombre del patrocinador','Fecha de inicio','Fecha de fin del proyecto','Tipo de patrocinador','TipoPatrocinador','Investigadores participantes','Alumnos participantes','Actividades realizadas','Para considerar en el currículum de cuerpo académico','Miembros','LGACs'], 'Título del proyecto')
                 print("\nInvestigaciones: ", Investigaciones)     
+                for investigacion in Investigaciones:
+                    # print("\nParticipantes: ", investigacion['InvestigadoresParticipantes']   )
+                    if(len(investigacion['InvestigadoresParticipantes'].split(';')) > 1):
+                        autores = investigacion['InvestigadoresParticipantes'].replace('; ', ';').replace('.', '').replace(',', '').split(';')
+                    else:
+                        autores = investigacion['InvestigadoresParticipantes'].replace(', ', ',').replace('.', '').split(',')
+                    print('autores:', autores)
+                # for autor in autores:
+                #     autor = autor.upper().replace('Á', 'A').replace('É', 'E').replace('Í', 'I').replace('Ó', 'O').replace('Ú', 'U')
+                #     contador = 0
+                #     nombresAutorSplit = set(autor.split(' '))
+                #     for profesor in profesores:
+                #         nombresSplit = set(profesor.split(' '))
+                #         interseccion = nombresAutorSplit.intersection(nombresSplit)
+                #         # print(nombresAutorSplit, " - \t", nombresSplit, " - \t", len(interseccion), " - \t", interseccion)
+                #         if(len(interseccion) >= 3):
+                #             contador = contador + 1
+                #             break
+                #     for profesor in nuevosProfesores:
+                #         nombresSplit = set(profesor.split(' '))
+                #         interseccion = nombresAutorSplit.intersection(nombresSplit)
+                #         if(len(interseccion) >= 3):
+                #             contador = contador + 1
+                #             break
+                #     if(contador == 0):
+                #         # print("\nSe agrego: ", autor)
+                #         nuevosProfesores.add(autor)
+                #     # print("\n", len(profesores), " - ", profesores)
+                #     ProfesorLogrosRow ={
+                #         'Autor': cleanData(autor, False),
+                #     }
+                #     # print(ProfesorLogrosRow)
+                #     ProfesorLogros.append(ProfesorLogrosRow)
                 
-                ProfesorInvestigaciones = {
-                    'IdProfesor': tablas[1]['contenido'][0][1],
-                    'IdInvestigacion': tablas[1]['contenido'][0][1]
-                }
+                
+                
+                
+                
+                
+                
+                
+                # ProfesorInvestigaciones = {
+                #     'IdProfesor': tablas[1]['contenido'][0][1],
+                #     'IdInvestigacion': tablas[1]['contenido'][0][1]
+                # }
             if SelectedTables['GestionAcademica'] == True:  
                 print('\n------------------Gestion Academica--------------------')
                 GestionAcademica = createDictionary(tablas[9]['contenido'],['Tipo gestión','Cargo dentro de la comisión o cuerpo colegiado','Función encomendada','Órgano colegiado al que fué presentado','Aprobado','Resultados obtenidos','Estado'], 'Tipo gestión')
@@ -168,8 +212,8 @@ def lecturaCV(ruta_actual, files, SelectedTables, Filters):
             if SelectedTables['BeneficiosPROMEP'] == True:  
                 print("\n-------------------Beneficios PROMEP----------------------")
                 # Obtención de diccionarios de Beneficios PROMEP
-                # BeneficiosPROMEP= tablePromep(tablas[12]['contenido'],['IES', 'Solicitud', 'Vigencia', 'Estado'])
-                # print("\nBeneficios PROMEP: ", BeneficiosPROMEP)
+                BeneficiosPROMEP= tablePromep(tablas[12]['contenido'],['IES', 'Solicitud', 'Vigencia', 'Estado'])
+                print("\nBeneficios PROMEP: ", BeneficiosPROMEP)
             if SelectedTables['CuerpoAcademico'] == True:  
                 print("\n-------------------Cuerpo Academico----------------------")
                 # CuerpoAcademico = tablePromep(tablas[13]['contenido'],['Nombre','Clave','Grado Consolidación','Línea Académica'])
