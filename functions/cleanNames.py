@@ -55,6 +55,8 @@ def cleanNames(profes='', relacion ={}, nombreTabla='', tablaInsertarRelacion=''
         ProfesorLogros.append(ProfesorLogrosRow)
     # logro['OtrosDatos'][0]['Autor'] = ProfesorLogros
 
+    # print("\nProfesor Logros: ", ProfesorLogros)
+
     # Insertar Nuevos Profesores Encontrados
     for nuevoProfesor in nuevosProfesores:
         # if (nombreProfesor != cleanData(profesor, False)):
