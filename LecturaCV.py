@@ -67,8 +67,10 @@ def lecturaCV(ruta_actual, files, SelectedTables, Filters):
             
             if SelectedTables['LogrosProfesor'] == True:  
                 print('\n------------------Logros--------------------')
+                print("\n Tabla original: ",tablas[5]['contenido'])
                 Logros = createDictionary(tablas[5]['contenido'], ['Tipo', 'Año', 'Título', 'País'], 'Tipo')
-                # print("\nLogros: ", Logros)
+                print("\nTabla Resultante: ")
+                print("\nLogros: ", Logros)
                 
                 # # Separar a los Autores
                 for logro in Logros:
