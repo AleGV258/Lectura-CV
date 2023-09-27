@@ -21,7 +21,7 @@ def cleanNames(profes='', relacion ={}, nombreTabla='', tablaInsertarRelacion=''
         autores = profes.replace(
             ', ', ',').replace('.', '').split(',')
 
-    print('autores:', autores)
+    # print('autores:', autores)
 
     for autor in autores:
         autor = autor.upper().replace('Á', 'A').replace('É', 'E').replace(

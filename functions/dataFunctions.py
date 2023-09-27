@@ -57,7 +57,7 @@ def updateRecords(db, collection, recordAnterior, recordNuevo):
         return result.upserted_id
     else:
         print(f"Records no actualizados en colección {collection}")
-        return []
+        return recordAnterior["_id"]
     
 # Actualizar por un id (id del documento), {field: value}
 def updateRecordByID(db, collection, recordAnterior, recordNuevo):

@@ -8,7 +8,7 @@ def createDictionary(array = [], fields = [], separatorWord = ''):
     for row in array: 
         if row[0] == separatorWord and counter != 0: 
             inserted = True
-            print("\n Nuevo logro",row) 
+            # print("\n Nuevo logro",row) 
         if inserted:            
             dictionary = generateData(container, fields)
             # print("\nDiccionario: ", dictionary)   
@@ -17,7 +17,7 @@ def createDictionary(array = [], fields = [], separatorWord = ''):
             container = []
             inserted = False
         container.append(row)
-        print("\n Entra",row)            
+        # print("\n Entra",row)            
         counter = counter + 1
         if counter == len(array):
             dictionary = generateData(container, fields)
