@@ -2,7 +2,7 @@ import win32com.client # Para leer .doc → ´pip install pywin32´
 import os
 import time
 from bson import ObjectId
-from functions.createDictionary import createDictionary, tablePromep
+from functions.createDictionary import createDictionary, horizontalTable
 from functions.cleanData import cleanData
 from functions.cleanNames import cleanNames
 from functions.dataFunctions import connectionDB, retrieveAllRecords, retrieveRecords, retrieveRecordByID, insertRecord, updateRecords, updateRecordByID, deleteRecords, deleteRecordByID
@@ -127,17 +127,26 @@ def lecturaCV(ruta_actual, files, SelectedTables, Filters):
                 # print("\nDocencias: ", Docencias)
                 Docencias = createDictionary(tablas[6]['contenido'],['Nombre del curso','Institución de Educación Superior (IES)', 'Dependencia de Educación Superior (IES)', 'Programa educativo','Nivel', 'Fecha de inicio'], 'Nombre del curso')  
                 print("\n Docencias: ", Docencias)
-            if SelectedTables['BeneficiosPROMEP'] == True:  
+            
+            if SelectedTables['BeneficiosPROMEP'] == True and tablas[12]['nombre'] == 'Beneficios externos a PROMEP':  
                 print("\n-------------------Beneficios PROMEP----------------------")
                 # Obtención de diccionarios de Beneficios PROMEP
-                BeneficiosPROMEP= tablePromep(tablas[12]['contenido'],['IES', 'Solicitud', 'Vigencia', 'Estado'])
+                BeneficiosPROMEP= horizontalTable(tablas[12]['contenido'])
                 print("\nBeneficios PROMEP: ", BeneficiosPROMEP)
+                
+                for beneficio in BeneficiosPROMEP:
+                    beneficio['IdProfesor'] = ObjectId(profesorID)
+                    insertRecord(bd, 'BeneficiosPROMEP', beneficio)
                     
-            if SelectedTables['CuerpoAcademico'] == True:  
+            if SelectedTables['CuerpoAcademico'] == True and tablas[13]['nombre'] == 'Cuerpo Académico':  
                 print("\n-------------------Cuerpo Academico----------------------")
-                CuerpoAcademico = tablePromep(tablas[13]['contenido'],['Nombre','Clave','Grado Consolidación','Línea Académica'])
+                CuerpoAcademico = horizontalTable(tablas[13]['contenido'])
                 print("\nCuerpo Academico: ", CuerpoAcademico)
-            
+                
+                for cAcademico in CuerpoAcademico:
+                    cAcademico['IdProfesor'] = ObjectId(profesorID)
+                    insertRecord(bd, 'CuerpoAcademico', cAcademico)
+                    
             if SelectedTables['ProgramasAcademicos'] == True:  
                 print("\n-------------------Programas Academicos----------------------")
                 # # ProgramaAcademico = {
@@ -146,6 +155,8 @@ def lecturaCV(ruta_actual, files, SelectedTables, Filters):
                 # #     'TipoActualizacion': tablas[1]['contenido'][0][1]
                 # # }
                 # # print("\n Programa Academico: ", ProgramaAcademico)        
+            
+            print("\nTablas encontradas: ----------------------")
             for tabla in tablas:
                 print(tabla['nombre'])
                 

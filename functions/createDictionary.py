@@ -1,4 +1,5 @@
 from functions.generateData import generateData
+from functions.cleanData import cleanData
 
 def createDictionary(array = [], fields = [], separatorWord = ''):
     counter = 0
@@ -26,14 +27,20 @@ def createDictionary(array = [], fields = [], separatorWord = ''):
     return result
 
 
-def tablePromep(array = [], fields = [], separatorWord=''):
-    backtothefuture = {}
-    field = array[0]; 
-    date = array[1]
-    cont = 0
+def horizontalTable(array = []):
+    fields = array[0];
     
-    for title in field:
-        backtothefuture[title] = date[cont]     
-        cont += 1
+    counter = 0
+    result = []
     
-    return backtothefuture
+    for row in array: 
+        # print("\nRow:",row)
+        if counter > 0: 
+            dictionary = {}
+            for i in range(len(fields)):
+                # print("\n",fields[i], ": ", row[i])
+                dictionary[cleanData(fields[i], True)] =cleanData(row[i], False)
+            result.append(dictionary)            
+        counter = counter + 1
+            
+    return result
