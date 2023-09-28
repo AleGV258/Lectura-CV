@@ -63,40 +63,52 @@ def lecturaCV(ruta_actual, files, SelectedTables, Filters):
             else:
                 profesorID = insertRecord(bd, "Profesores", profesorRecord)
 
-            if SelectedTables['LogrosProfesor'] == True:  
+            if SelectedTables['LogrosProfesor'] == True and tablas[5]['nombre'] == 'Producción':  
                 print('\n------------------Logros--------------------')
-                if(tablas[5]['nombre'] == 'Producción'):
-                    Logros = createDictionary(tablas[5]['contenido'], ['Tipo', 'Año', 'Título', 'País'], 'Tipo')
-                    # print("\nLogros: ", Logros)
-                    
-                    for logro in Logros:
-                        cleanNames(logro['OtrosDatos'][0]['Autor'], logro, 'Logros', 'ProfesorLogros', 'IdLogro')
+             
+                Logros = createDictionary(tablas[5]['contenido'], ['Tipo', 'Año', 'Título', 'País'], 'Tipo')
+                # print("\nLogros: ", Logros)
                 
-            if SelectedTables['InvestigacionesProfesor'] == True:  
+                for logro in Logros:
+                    cleanNames(logro['OtrosDatos'][0]['Autor'], logro, 'Logros', 'ProfesorLogros', 'IdLogro')
+                
+            if SelectedTables['InvestigacionesProfesor'] == True and tablas[11]['nombre'] == 'Proyectos de investigación':  
                 print('\n------------------Investigaciones--------------------')
-                if(tablas[11]['nombre'] == 'Proyectos de investigación'):
-                    Investigaciones = createDictionary(tablas[11]['contenido'],['Título del proyecto','Nombre del patrocinador','Fecha de inicio','Fecha de fin del proyecto','Tipo de patrocinador','TipoPatrocinador','Investigadores participantes','Alumnos participantes','Actividades realizadas','Para considerar en el currículum de cuerpo académico','Miembros','LGACs'], 'Título del proyecto')
-                    # print("\nInvestigaciones: ", Investigaciones)     
                 
-                    for investigacion in Investigaciones:
-                        cleanNames(investigacion['InvestigadoresParticipantes'], investigacion, 'Investigaciones', 'ProfesorInvestigaciones', 'IdInvestigacion')
+                Investigaciones = createDictionary(tablas[11]['contenido'],['Título del proyecto','Nombre del patrocinador','Fecha de inicio','Fecha de fin del proyecto','Tipo de patrocinador','TipoPatrocinador','Investigadores participantes','Alumnos participantes','Actividades realizadas','Para considerar en el currículum de cuerpo académico','Miembros','LGACs'], 'Título del proyecto')
+                # print("\nInvestigaciones: ", Investigaciones)     
+            
+                for investigacion in Investigaciones:
+                    cleanNames(investigacion['InvestigadoresParticipantes'], investigacion, 'Investigaciones', 'ProfesorInvestigaciones', 'IdInvestigacion')
                 
-            if SelectedTables['GestionAcademica'] == True:  
+            if SelectedTables['GestionAcademica'] == True and tablas[9]['nombre'] == 'Gestión académica':  
                 print('\n------------------Gestion Academica--------------------')
-                if(tablas[9]['nombre'] == 'Gestión académica'):
-                    GestionAcademica = createDictionary(tablas[9]['contenido'],['Tipo gestión','Cargo dentro de la comisión o cuerpo colegiado','Función encomendada','Órgano colegiado al que fué presentado','Aprobado','Resultados obtenidos','Estado'], 'Tipo gestión')
-                    # print("\nGestion Academica: ", GestionAcademica)
+                GestionAcademica = createDictionary(tablas[9]['contenido'],['Tipo gestión','Cargo dentro de la comisión o cuerpo colegiado','Función encomendada','Órgano colegiado al que fué presentado','Aprobado','Resultados obtenidos','Estado'], 'Tipo gestión')
+                # print("\nGestion Academica: ", GestionAcademica)
+                                
+                for gestion in GestionAcademica:
+                    gestion['IdProfesor'] = ObjectId(profesorID)
+                    insertRecord(bd, 'GestionesAcademicas', gestion)                              
+            
+            if SelectedTables['Tutorias'] == True and tablas[7]['nombre'] == 'Tutoría':  
+                print('\n------------------Tutorias--------------------')
+                Tutorias = createDictionary(tablas[7]['contenido'],['Tutoría','Nivel', 'Programa educativo en el que participa', 'Fecha de inicio', 'Fecha de término', 'Tipo de tutelaje', 'Estado del tutelaje'], 'Tutoría')
+                print("\nTutorias: ", Tutorias)
+                
+                for tutoria in Tutorias:
+                    tutoria['IdProfesor'] = ObjectId(profesorID)
+                    insertRecord(bd, 'Tutorias', tutoria)
                     
-                    for gestion in GestionAcademica:
-                        gestion['IdProfesor'] = ObjectId(profesorID)
-                        insertRecord(bd, 'GestionesAcademicas', gestion)
-                    
-                    
-                    
-                    
-                    
-                    
-            if SelectedTables['Docencias'] == True:  
+            if SelectedTables['DireccionIndividualizada'] == True and tablas[8]['nombre'] == 'Dirección individualizada':  
+                print('\n------------------Dirección Individualizada--------------------')
+                DireccionIndividualizada = createDictionary(tablas[8]['contenido'],['Título de la tesis o proyecto individual','Grado'], 'Título de la tesis o proyecto individual')
+                print("\nDirección Individualizada: ", DireccionIndividualizada)        
+            
+                for direccion in DireccionIndividualizada:
+                    direccion['IdProfesor'] = ObjectId(profesorID)
+                    insertRecord(bd, 'DireccionesIndividualizadas', direccion)
+            
+            if SelectedTables['Docencias'] == True and tablas[6]['nombre'] == 'Docencia':   
                 # # Docencia = {
                 # #     'Curso': tablas[1]['contenido'][0][1],
                 # #     'InstitucionEducacionSuperior': tablas[1]['contenido'][0][1],
@@ -110,17 +122,22 @@ def lecturaCV(ruta_actual, files, SelectedTables, Filters):
                 # #     'HorasSemanalesDedicadas': tablas[1]['contenido'][0][1]
                 # # }
                 print('\n------------------Docencias--------------------')
+                print(tablas[6]['contenido'])
                 # Docencias = createDictionary()
-                # print("\nDocencias: ", Docencias)  
+                # print("\nDocencias: ", Docencias)
+                Docencias = createDictionary(tablas[6]['contenido'],['Nombre del curso','Institución de Educación Superior (IES)', 'Dependencia de Educación Superior (IES)', 'Programa educativo','Nivel', 'Fecha de inicio'], 'Nombre del curso')  
+                print("\n Docencias: ", Docencias)
             if SelectedTables['BeneficiosPROMEP'] == True:  
                 print("\n-------------------Beneficios PROMEP----------------------")
                 # Obtención de diccionarios de Beneficios PROMEP
                 BeneficiosPROMEP= tablePromep(tablas[12]['contenido'],['IES', 'Solicitud', 'Vigencia', 'Estado'])
                 print("\nBeneficios PROMEP: ", BeneficiosPROMEP)
+                    
             if SelectedTables['CuerpoAcademico'] == True:  
                 print("\n-------------------Cuerpo Academico----------------------")
                 CuerpoAcademico = tablePromep(tablas[13]['contenido'],['Nombre','Clave','Grado Consolidación','Línea Académica'])
                 print("\nCuerpo Academico: ", CuerpoAcademico)
+            
             if SelectedTables['ProgramasAcademicos'] == True:  
                 print("\n-------------------Programas Academicos----------------------")
                 # # ProgramaAcademico = {
@@ -128,16 +145,10 @@ def lecturaCV(ruta_actual, files, SelectedTables, Filters):
                 # #     'Fecha': tablas[1]['contenido'][0][1],
                 # #     'TipoActualizacion': tablas[1]['contenido'][0][1]
                 # # }
-                # # print("\n Programa Academico: ", ProgramaAcademico)
-            if SelectedTables['Tutorias'] == True:  
-                print('\n------------------Tutorias--------------------')
-                Tutorias = createDictionary(tablas[7]['contenido'],['Tutoría','Nivel', 'Programa educativo en el que participa', 'Fecha de inicio', 'Fecha de término', 'Tipo de tutelaje', 'Estado del tutelaje'], 'Tutoría')
-                print("\nTutorias: ", Tutorias)
-            if SelectedTables['DireccionIndividualizada'] == True:  
-                print('\n------------------Dirección Individualizada--------------------')
-                DireccionIndividualizada = createDictionary(tablas[8]['contenido'],['Título de la tesis o proyecto individual','Grado'], 'Título de la tesis o proyecto individual')
-                print("\nDirección Individualizada: ", DireccionIndividualizada)        
-            
+                # # print("\n Programa Academico: ", ProgramaAcademico)        
+            for tabla in tablas:
+                print(tabla['nombre'])
+                
         except Exception as error:
             print("An exception occurred:", error)
         # except:
