@@ -6,8 +6,7 @@ from bson import ObjectId
 mc = connectionDB()
 bd = mc[0]
 
-
-def cleanNames(profes='', relacion ={}, nombreTabla='', tablaInsertarRelacion='', idInsert=''):
+def cleanNames(profes = '', relacion = {}, nombreTabla = '', tablaInsertarRelacion = '', idInsert = ''):
     data = retrieveAllRecords(bd, "Profesores")
     profesores = set(nombre["Nombre"] for nombre in data)
     nuevosProfesores = set()
@@ -22,7 +21,6 @@ def cleanNames(profes='', relacion ={}, nombreTabla='', tablaInsertarRelacion=''
             ', ', ',').replace('.', '').split(',')
 
     # print('autores:', autores)
-
     for autor in autores:
         autor = autor.upper().replace('Á', 'A').replace('É', 'E').replace(
             'Í', 'I').replace('Ó', 'O').replace('Ú', 'U')
@@ -54,7 +52,6 @@ def cleanNames(profes='', relacion ={}, nombreTabla='', tablaInsertarRelacion=''
         # print(ProfesorLogrosRow)
         ProfesorLogros.append(ProfesorLogrosRow)
     # logro['OtrosDatos'][0]['Autor'] = ProfesorLogros
-
     # print("\nProfesor Logros: ", ProfesorLogros)
 
     # Insertar Nuevos Profesores Encontrados

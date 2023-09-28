@@ -8,7 +8,6 @@ from functions.cleanNames import cleanNames
 from functions.dataFunctions import connectionDB, retrieveAllRecords, retrieveRecords, retrieveRecordByID, insertRecord, updateRecords, updateRecordByID, deleteRecords, deleteRecordByID
 
 def lecturaCV(ruta_actual, files, SelectedTables, Filters):
-    # (folder_path, documentosArray, SelectedTables,Filters)
     inicio = time.time() # Inicio de la ejecución
     print("\n-------------------------------------- Iniciando Lectura --------------------------------------")
     # ruta_actual2 = os.path.dirname(os.path.abspath(__file__)) # Directorio actual
@@ -59,37 +58,44 @@ def lecturaCV(ruta_actual, files, SelectedTables, Filters):
             dataBusqueda = retrieveRecords(bd, "Profesores", {"Nombre":nombreProfesor})
             if(len(dataBusqueda) != 0):
                 profesorID = updateRecords(bd, "Profesores", {"Nombre":nombreProfesor}, profesorRecord)
+                if(profesorID == []):
+                    profesorID = dataBusqueda[0]["_id"]
             else:
                 profesorID = insertRecord(bd, "Profesores", profesorRecord)
 
             if SelectedTables['LogrosProfesor'] == True:  
                 print('\n------------------Logros--------------------')
-                print("\n Tabla original: ",tablas[5]['contenido'])
-                Logros = createDictionary(tablas[5]['contenido'], ['Tipo', 'Año', 'Título', 'País'], 'Tipo')
-                print("\nTabla Resultante: ")
-                print("\nLogros: ", Logros)
-                
-                # # Separar a los Autores
-                for logro in Logros:
-                    cleanNames(logro['OtrosDatos'][0]['Autor'], logro, 'Logros', 'ProfesorLogros', 'IdLogro')
+                if(tablas[5]['nombre'] == 'Producción'):
+                    Logros = createDictionary(tablas[5]['contenido'], ['Tipo', 'Año', 'Título', 'País'], 'Tipo')
+                    # print("\nLogros: ", Logros)
+                    
+                    for logro in Logros:
+                        cleanNames(logro['OtrosDatos'][0]['Autor'], logro, 'Logros', 'ProfesorLogros', 'IdLogro')
                 
             if SelectedTables['InvestigacionesProfesor'] == True:  
                 print('\n------------------Investigaciones--------------------')
-                Investigaciones = createDictionary(tablas[11]['contenido'],['Título del proyecto','Nombre del patrocinador','Fecha de inicio','Fecha de fin del proyecto','Tipo de patrocinador','TipoPatrocinador','Investigadores participantes','Alumnos participantes','Actividades realizadas','Para considerar en el currículum de cuerpo académico','Miembros','LGACs'], 'Título del proyecto')
-                print("\nInvestigaciones: ", Investigaciones)     
+                if(tablas[11]['nombre'] == 'Proyectos de investigación'):
+                    Investigaciones = createDictionary(tablas[11]['contenido'],['Título del proyecto','Nombre del patrocinador','Fecha de inicio','Fecha de fin del proyecto','Tipo de patrocinador','TipoPatrocinador','Investigadores participantes','Alumnos participantes','Actividades realizadas','Para considerar en el currículum de cuerpo académico','Miembros','LGACs'], 'Título del proyecto')
+                    # print("\nInvestigaciones: ", Investigaciones)     
                 
-                for investigacion in Investigaciones:
-                    cleanNames(investigacion['InvestigadoresParticipantes'], investigacion, 'Investigaciones', 'ProfesorInvestigaciones', 'IdInvestigacion')
+                    for investigacion in Investigaciones:
+                        cleanNames(investigacion['InvestigadoresParticipantes'], investigacion, 'Investigaciones', 'ProfesorInvestigaciones', 'IdInvestigacion')
                 
             if SelectedTables['GestionAcademica'] == True:  
                 print('\n------------------Gestion Academica--------------------')
-                GestionAcademica = createDictionary(tablas[9]['contenido'],['Tipo gestión','Cargo dentro de la comisión o cuerpo colegiado','Función encomendada','Órgano colegiado al que fué presentado','Aprobado','Resultados obtenidos','Estado'], 'Tipo gestión')
-                print("\nGestion Academica: ", GestionAcademica)
-                
-                for gestion in GestionAcademica:
-                    gestion.update({'IdProfesor':ObjectId(profesorID)})
-                    print(gestion)
-                    insertRecord(bd, 'GestionesAcademicas', gestion)
+                if(tablas[9]['nombre'] == 'Gestión académica'):
+                    GestionAcademica = createDictionary(tablas[9]['contenido'],['Tipo gestión','Cargo dentro de la comisión o cuerpo colegiado','Función encomendada','Órgano colegiado al que fué presentado','Aprobado','Resultados obtenidos','Estado'], 'Tipo gestión')
+                    # print("\nGestion Academica: ", GestionAcademica)
+                    
+                    for gestion in GestionAcademica:
+                        gestion['IdProfesor'] = ObjectId(profesorID)
+                        insertRecord(bd, 'GestionesAcademicas', gestion)
+                    
+                    
+                    
+                    
+                    
+                    
             if SelectedTables['Docencias'] == True:  
                 # # Docencia = {
                 # #     'Curso': tablas[1]['contenido'][0][1],
