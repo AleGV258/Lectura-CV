@@ -2,7 +2,7 @@ import win32com.client # Para leer .doc → ´pip install pywin32´
 import os
 import time
 from bson import ObjectId
-from functions.createDictionary import createDictionary, horizontalTable
+from functions.createDictionary import createDictionary, horizontalTable, dictionaryMixTable
 from functions.cleanData import cleanData
 from functions.cleanNames import cleanNames
 from functions.dataFunctions import connectionDB, retrieveAllRecords, retrieveRecords, retrieveRecordByID, insertRecord, updateRecords, updateRecordByID, deleteRecords, deleteRecordByID
@@ -109,24 +109,16 @@ def lecturaCV(ruta_actual, files, SelectedTables, Filters):
                     insertRecord(bd, 'DireccionesIndividualizadas', direccion)
             
             if SelectedTables['Docencias'] == True and tablas[6]['nombre'] == 'Docencia':   
-                # # Docencia = {
-                # #     'Curso': tablas[1]['contenido'][0][1],
-                # #     'InstitucionEducacionSuperior': tablas[1]['contenido'][0][1],
-                # #     'DependenciaEducacionSuperior': tablas[1]['contenido'][0][1],
-                # #     'ProgramaEducativo': tablas[1]['contenido'][0][1],
-                # #     'Nivel': tablas[1]['contenido'][0][1],
-                # #     'FechaInicio': tablas[1]['contenido'][0][1],
-                # #     'Alumnos': tablas[1]['contenido'][0][1],
-                # #     'Semanas': tablas[1]['contenido'][0][1],
-                # #     'HorasMes': tablas[1]['contenido'][0][1],
-                # #     'HorasSemanalesDedicadas': tablas[1]['contenido'][0][1]
-                # # }
                 print('\n------------------Docencias--------------------')
                 print(tablas[6]['contenido'])
                 # Docencias = createDictionary()
                 # print("\nDocencias: ", Docencias)
-                Docencias = createDictionary(tablas[6]['contenido'],['Nombre del curso','Institución de Educación Superior (IES)', 'Dependencia de Educación Superior (IES)', 'Programa educativo','Nivel', 'Fecha de inicio'], 'Nombre del curso')  
+                Docencias = dictionaryMixTable(tablas[6]['contenido'],['Nombre del curso','Institución de Educación Superior (IES)', 'Dependencia de Educación Superior (IES)', 'Programa educativo','Nivel'], 'Nombre del curso','Fecha de inicio')  
                 print("\n Docencias: ", Docencias)
+                
+                for docencia in Docencias:
+                    docencia['IdProfesor'] = ObjectId(profesorID)
+                    insertRecord(bd, 'Docencias', docencia)
             
             if SelectedTables['BeneficiosPROMEP'] == True and tablas[12]['nombre'] == 'Beneficios externos a PROMEP':  
                 print("\n-------------------Beneficios PROMEP----------------------")

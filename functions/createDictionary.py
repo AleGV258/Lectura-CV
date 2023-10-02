@@ -44,3 +44,49 @@ def horizontalTable(array = []):
         counter = counter + 1
             
     return result
+
+def dictionaryMixTable(array=[], fields=[], separatorWord='', horizontalWord='Fecha de inicio'):
+    counter = 0
+    result = []
+    container = []
+    inserted = False
+
+    isHorizontal = False
+    valuesHorizontal = []
+
+    for row in array:
+        if row[0] == separatorWord and counter != 0:
+            inserted = True
+            isHorizontal = False
+            # print("\n Nuevo logro",row)
+        if inserted:
+            dictionary = generateData(container, fields)
+            # print("\nDiccionario: ", dictionary)
+            container = []
+            inserted = False
+            
+            fieldsHorizontal = valuesHorizontal[0]
+            # print("\nValues:", fieldsHorizontal)
+            counterHor = 0
+            for nRow in valuesHorizontal:
+                if counterHor > 0:                    
+                    for i in range(len(fieldsHorizontal)):
+                        dictionary[cleanData(fieldsHorizontal[i], True)] = cleanData(nRow[i], False)
+                counterHor = counterHor + 1
+            
+            result.append(dictionary)
+
+        if row[0] == horizontalWord:
+            isHorizontal = True
+
+        if isHorizontal == True:
+            valuesHorizontal.append(row)
+        else:
+            container.append(row)
+        # print("\n Entra",row)
+        counter = counter + 1
+        if counter == len(array):
+            dictionary = generateData(container, fields)
+            result.append(dictionary)
+
+    return result
