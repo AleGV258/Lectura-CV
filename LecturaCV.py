@@ -5,6 +5,7 @@ from bson import ObjectId
 from functions.createDictionary import createDictionary, horizontalTable, dictionaryMixTable
 from functions.cleanData import cleanData
 from functions.cleanNames import cleanNames
+from functions.generateData import generateData
 from functions.dataFunctions import connectionDB, retrieveAllRecords, retrieveRecords, retrieveRecordByID, insertRecord, updateRecords, updateRecordByID, deleteRecords, deleteRecordByID
 
 def lecturaCV(ruta_actual, files, SelectedTables, Filters):
@@ -42,6 +43,11 @@ def lecturaCV(ruta_actual, files, SelectedTables, Filters):
             # if SelectedTables['InfoProfesor'] == True:            
             # SEPARACIÓN DE DATOS DE LAS TABLAS                
             print('\n------------------Profesores--------------------')
+            
+            estudiosRealizados = dictionaryMixTable(tablas[2]['contenido'],['Nivel de estudios','Estudios en','Área     > Disciplina','Institución otorgante','Institución otorgante no considerada en el catálogo'], 'Nivel de estudios','País')  
+            
+            datosLaborales = generateData(tablas[3]['contenido'], ['Nombramiento', 'Tipo de nombramiento','Dedicación','Institución de Educación Superior','Dependencia de Educación Superior','Unidad Académica','Inicio del contrato', 'Fin del contrato', 'Cronología'])
+            
             nombreProfesor = tablas[1]['contenido'][0][1].upper().replace("Á", "A").replace("É", "E").replace("Í", "I").replace("Ó", "O").replace("Ú", "U")
             profesorRecord = {
                 'Nombre': nombreProfesor,
@@ -49,8 +55,8 @@ def lecturaCV(ruta_actual, files, SelectedTables, Filters):
                 'CURP':  tablas[1]['contenido'][3][1],
                 'FechaNacimiento':  tablas[1]['contenido'][5][1],
                 'IES':  tablas[1]['contenido'][6][1],
-                'EstudioRealizado':  tablas[2]['contenido'], # CORREGIR QUE NO SEA UN ARRAY SINO UN OBJETO
-                'DatosLaborales':  tablas[3]['contenido'], # CORREGIR QUE NO SEA UN ARRAY SINO UN OBJETO
+                'EstudioRealizado':  estudiosRealizados[0],
+                'DatosLaborales':  datosLaborales,
                 'Area':  tablas[4]['contenido'][0][1],
                 'Disciplina':  tablas[4]['contenido'][1][1]
             }
@@ -70,7 +76,7 @@ def lecturaCV(ruta_actual, files, SelectedTables, Filters):
                 # print("\nLogros: ", Logros)
                 
                 for logro in Logros:
-                    cleanNames(logro['OtrosDatos'][0]['Autor'], logro, 'Logros', 'ProfesorLogros', 'IdLogro')
+                    cleanNames(logro['OtrosDatos']['Autor'], logro, 'Logros', 'ProfesorLogros', 'IdLogro')
                 
             if SelectedTables['InvestigacionesProfesor'] == True and tablas[11]['nombre'] == 'Proyectos de investigación':  
                 print('\n------------------Investigaciones--------------------')
@@ -83,7 +89,7 @@ def lecturaCV(ruta_actual, files, SelectedTables, Filters):
                 
             if SelectedTables['GestionAcademica'] == True and tablas[9]['nombre'] == 'Gestión académica':  
                 print('\n------------------Gestion Academica--------------------')
-                GestionAcademica = createDictionary(tablas[9]['contenido'],['Tipo gestión','Cargo dentro de la comisión o cuerpo colegiado','Función encomendada','Órgano colegiado al que fué presentado','Aprobado','Resultados obtenidos','Estado'], 'Tipo gestión')
+                GestionAcademica = dictionaryMixTable(tablas[9]['contenido'],['Tipo gestión','Cargo dentro de la comisión o cuerpo colegiado','Función encomendada','Órgano colegiado al que fué presentado','Aprobado','Resultados obtenidos','Estado'], 'Tipo gestión', 'Fecha de inicio')
                 # print("\nGestion Academica: ", GestionAcademica)
                                 
                 for gestion in GestionAcademica:
@@ -101,7 +107,7 @@ def lecturaCV(ruta_actual, files, SelectedTables, Filters):
                     
             if SelectedTables['DireccionIndividualizada'] == True and tablas[8]['nombre'] == 'Dirección individualizada':  
                 print('\n------------------Dirección Individualizada--------------------')
-                DireccionIndividualizada = createDictionary(tablas[8]['contenido'],['Título de la tesis o proyecto individual','Grado'], 'Título de la tesis o proyecto individual')
+                DireccionIndividualizada = dictionaryMixTable(tablas[8]['contenido'],['Título de la tesis o proyecto individual','Grado'], 'Título de la tesis o proyecto individual','Fecha de inicio')
                 print("\nDirección Individualizada: ", DireccionIndividualizada)        
             
                 for direccion in DireccionIndividualizada:
