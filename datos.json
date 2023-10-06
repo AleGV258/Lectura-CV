@@ -1,0 +1,17 @@
+[
+{
+    "_id": "1234", 
+    "Nombre": "Carlos", 
+    "Area": "Ingenieria y tecnologia", 
+    "CURP" : "12rdgds1vd214", 
+    "Diciplina" : "tecnologia", 
+    "FechaNacimiento" : "28/06/1991",
+    "IES" : "Universidad Autonoma de queretaro",
+    "RFC" : "12421ndslgndsjndsl141"
+},
+{
+    "_id": "12345", 
+    "Nombre": "Jose"
+},
+    {"_id": "928349", "Nombre": "KRATOS" }
+]
