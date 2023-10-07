@@ -1,0 +1,788 @@
+<?xml version='1.0' encoding='utf-8'?>
+<interface version="1.3">
+  <object class="tk.Frame" id="frm_principal" named="True">
+    <property name="background">#E9E0EB</property>
+    <property name="relief">flat</property>
+    <property name="takefocus">true</property>
+    <property name="width">3000</property>
+    <layout manager="grid">
+      <property name="column">1</property>
+      <property name="row">1</property>
+      <property name="sticky">nsew</property>
+    </layout>
+    <child>
+      <object class="tk.Label" id="label_titulo" named="True">
+        <property name="background">#1B1725</property>
+        <property name="compound">top</property>
+        <property name="font">{Glacial Indifference} 20 {bold}</property>
+        <property name="foreground">#ffffff</property>
+        <property name="justify">center</property>
+        <property name="pady">15</property>
+        <property name="relief">flat</property>
+        <property name="state">normal</property>
+        <property name="text" translatable="yes">Lectura de Curriculums</property>
+        <property name="width">0</property>
+        <layout manager="grid">
+          <property name="column">0</property>
+          <property name="columnspan">2</property>
+          <property name="row">0</property>
+          <property name="sticky">ew</property>
+        </layout>
+      </object>
+    </child>
+    <child>
+      <object class="tk.Button" id="btn_exportar" named="True">
+        <property name="background">#82589F</property>
+        <property name="borderwidth">1</property>
+        <property name="default">active</property>
+        <property name="disabledforeground">#000</property>
+        <property name="font">{Glacial Indifference} 16 {bold}</property>
+        <property name="foreground">#fff</property>
+        <property name="justify">center</property>
+        <property name="overrelief">flat</property>
+        <property name="pady">6</property>
+        <property name="relief">flat</property>
+        <property name="text" translatable="yes">Exportar Información</property>
+        <property name="width">50</property>
+        <layout manager="grid">
+          <property name="column">1</property>
+          <property name="row">1</property>
+        </layout>
+      </object>
+    </child>
+    <child>
+      <object class="tk.Button" id="btn_importar" named="True">
+        <property name="background">#82589F</property>
+        <property name="borderwidth">1</property>
+        <property name="cursor">arrow</property>
+        <property name="default">disabled</property>
+        <property name="disabledforeground">#000</property>
+        <property name="font">{Glacial Indifference} 16 {bold}</property>
+        <property name="foreground">#fff</property>
+        <property name="justify">center</property>
+        <property name="overrelief">flat</property>
+        <property name="pady">6</property>
+        <property name="relief">flat</property>
+        <property name="text" translatable="yes">Importar Datos</property>
+        <property name="width">50</property>
+        <layout manager="grid">
+          <property name="column">0</property>
+          <property name="row">1</property>
+        </layout>
+      </object>
+    </child>
+    <child>
+      <object class="tk.Frame" id="frm_importar" named="True">
+        <property name="background">#E9E0EB</property>
+        <property name="height">200</property>
+        <layout manager="grid">
+          <property name="column">0</property>
+          <property name="columnspan">2</property>
+          <property name="row">2</property>
+          <property name="sticky">ew</property>
+        </layout>
+        <containerlayout manager="grid">
+          <property name="anchor">center</property>
+        </containerlayout>
+        <child>
+          <object class="tk.Button" id="btn_path" named="True">
+            <property name="background">#534B62</property>
+            <property name="borderwidth">0</property>
+            <property name="cursor">arrow</property>
+            <property name="default">active</property>
+            <property name="font">{Glacial Indifference} 16 {bold}</property>
+            <property name="foreground">#fff</property>
+            <property name="justify">center</property>
+            <property name="overrelief">flat</property>
+            <property name="pady">6</property>
+            <property name="relief">flat</property>
+            <property name="takefocus">true</property>
+            <property name="text" translatable="yes">Seleccionar Carpeta</property>
+            <property name="width">30</property>
+            <layout manager="grid">
+              <property name="column">0</property>
+              <property name="columnspan">2</property>
+              <property name="padx">400 0</property>
+              <property name="row">0</property>
+            </layout>
+          </object>
+        </child>
+        <child>
+          <object class="tk.Frame" id="frm_tablas" named="True">
+            <property name="background">#AF9EB7</property>
+            <property name="height">200</property>
+            <property name="width">700</property>
+            <layout manager="grid">
+              <property name="column">0</property>
+              <property name="ipady">15</property>
+              <property name="padx">20</property>
+              <property name="row">1</property>
+            </layout>
+            <child>
+              <object class="tk.Label" id="label_checkboxes" named="True">
+                <property name="background">#AF9EB7</property>
+                <property name="font">{Glacial Indifference} 16 {bold}</property>
+                <property name="justify">center</property>
+                <property name="relief">flat</property>
+                <property name="text" translatable="yes">Seleccionar Tablas para
+Insertar en la Base de Datos:</property>
+                <property name="width">56</property>
+                <layout manager="grid">
+                  <property name="column">0</property>
+                  <property name="columnspan">2</property>
+                  <property name="pady">20</property>
+                  <property name="row">0</property>
+                </layout>
+              </object>
+            </child>
+            <child>
+              <object class="tk.Checkbutton" id="check_logros" named="True">
+                <property name="background">#AF9EB7</property>
+                <property name="borderwidth">0</property>
+                <property name="font">{Glacial Indifference} 16 {}</property>
+                <property name="justify">left</property>
+                <property name="offrelief">flat</property>
+                <property name="offvalue">False</property>
+                <property name="onvalue">True</property>
+                <property name="overrelief">flat</property>
+                <property name="selectcolor">#E9E0EB</property>
+                <property name="takefocus">true</property>
+                <property name="text" translatable="yes">Logros de Profesor</property>
+                <layout manager="grid">
+                  <property name="column">0</property>
+                  <property name="padx">40</property>
+                  <property name="pady">15</property>
+                  <property name="row">2</property>
+                  <property name="sticky">w</property>
+                </layout>
+              </object>
+            </child>
+            <child>
+              <object class="tk.Checkbutton" id="check_cuerpo" named="True">
+                <property name="background">#AF9EB7</property>
+                <property name="borderwidth">0</property>
+                <property name="font">{Glacial Indifference} 16 {}</property>
+                <property name="justify">center</property>
+                <property name="offrelief">flat</property>
+                <property name="offvalue">False</property>
+                <property name="onvalue">True</property>
+                <property name="overrelief">flat</property>
+                <property name="selectcolor">#E9E0EB</property>
+                <property name="takefocus">true</property>
+                <property name="text" translatable="yes">Cuerpo Académico</property>
+                <layout manager="grid">
+                  <property name="column">1</property>
+                  <property name="padx">40</property>
+                  <property name="pady">20</property>
+                  <property name="row">2</property>
+                  <property name="sticky">w</property>
+                </layout>
+              </object>
+            </child>
+            <child>
+              <object class="tk.Checkbutton" id="check_investigaciones" named="True">
+                <property name="background">#AF9EB7</property>
+                <property name="borderwidth">0</property>
+                <property name="font">{Glacial Indifference} 16 {}</property>
+                <property name="justify">left</property>
+                <property name="offrelief">flat</property>
+                <property name="offvalue">False</property>
+                <property name="onvalue">True</property>
+                <property name="overrelief">flat</property>
+                <property name="selectcolor">#E9E0EB</property>
+                <property name="takefocus">true</property>
+                <property name="text" translatable="yes">Investigaciones de Profesor</property>
+                <layout manager="grid">
+                  <property name="column">0</property>
+                  <property name="padx">40</property>
+                  <property name="pady">0</property>
+                  <property name="row">3</property>
+                  <property name="sticky">w</property>
+                </layout>
+              </object>
+            </child>
+            <child>
+              <object class="tk.Checkbutton" id="check_programas" named="True">
+                <property name="background">#AF9EB7</property>
+                <property name="borderwidth">0</property>
+                <property name="font">{Glacial Indifference} 16 {}</property>
+                <property name="justify">center</property>
+                <property name="offrelief">flat</property>
+                <property name="offvalue">False</property>
+                <property name="onvalue">True</property>
+                <property name="overrelief">flat</property>
+                <property name="selectcolor">#E9E0EB</property>
+                <property name="takefocus">true</property>
+                <property name="text" translatable="yes">Programas Académicos</property>
+                <layout manager="grid">
+                  <property name="column">1</property>
+                  <property name="padx">40</property>
+                  <property name="row">3</property>
+                  <property name="sticky">w</property>
+                </layout>
+              </object>
+            </child>
+            <child>
+              <object class="tk.Checkbutton" id="check_gestion" named="True">
+                <property name="background">#AF9EB7</property>
+                <property name="borderwidth">0</property>
+                <property name="font">{Glacial Indifference} 16 {}</property>
+                <property name="justify">left</property>
+                <property name="offrelief">flat</property>
+                <property name="offvalue">False</property>
+                <property name="onvalue">True</property>
+                <property name="overrelief">flat</property>
+                <property name="selectcolor">#E9E0EB</property>
+                <property name="takefocus">true</property>
+                <property name="text" translatable="yes">Gestión Académica</property>
+                <layout manager="grid">
+                  <property name="column">0</property>
+                  <property name="padx">40</property>
+                  <property name="pady">15</property>
+                  <property name="row">4</property>
+                  <property name="sticky">w</property>
+                </layout>
+              </object>
+            </child>
+            <child>
+              <object class="tk.Checkbutton" id="check_tutorias" named="True">
+                <property name="background">#AF9EB7</property>
+                <property name="borderwidth">0</property>
+                <property name="font">{Glacial Indifference} 16 {}</property>
+                <property name="justify">center</property>
+                <property name="offrelief">flat</property>
+                <property name="offvalue">False</property>
+                <property name="onvalue">True</property>
+                <property name="overrelief">flat</property>
+                <property name="selectcolor">#E9E0EB</property>
+                <property name="takefocus">true</property>
+                <property name="text" translatable="yes">Tutorías</property>
+                <layout manager="grid">
+                  <property name="column">1</property>
+                  <property name="padx">40</property>
+                  <property name="pady">20</property>
+                  <property name="row">4</property>
+                  <property name="sticky">w</property>
+                </layout>
+              </object>
+            </child>
+            <child>
+              <object class="tk.Checkbutton" id="check_docencias" named="True">
+                <property name="background">#AF9EB7</property>
+                <property name="borderwidth">0</property>
+                <property name="font">{Glacial Indifference} 16 {}</property>
+                <property name="justify">center</property>
+                <property name="offrelief">flat</property>
+                <property name="offvalue">False</property>
+                <property name="onvalue">True</property>
+                <property name="overrelief">flat</property>
+                <property name="selectcolor">#E9E0EB</property>
+                <property name="takefocus">true</property>
+                <property name="text" translatable="yes">Docencias</property>
+                <layout manager="grid">
+                  <property name="column">0</property>
+                  <property name="padx">40</property>
+                  <property name="pady">0</property>
+                  <property name="row">5</property>
+                  <property name="sticky">w</property>
+                </layout>
+              </object>
+            </child>
+            <child>
+              <object class="tk.Checkbutton" id="check_direccion" named="True">
+                <property name="background">#AF9EB7</property>
+                <property name="borderwidth">0</property>
+                <property name="font">{Glacial Indifference} 16 {}</property>
+                <property name="justify">center</property>
+                <property name="offrelief">flat</property>
+                <property name="offvalue">False</property>
+                <property name="onvalue">True</property>
+                <property name="overrelief">flat</property>
+                <property name="selectcolor">#E9E0EB</property>
+                <property name="takefocus">true</property>
+                <property name="text" translatable="yes">Dirección Individualizada</property>
+                <layout manager="grid">
+                  <property name="column">1</property>
+                  <property name="padx">40</property>
+                  <property name="row">5</property>
+                  <property name="sticky">w</property>
+                </layout>
+              </object>
+            </child>
+            <child>
+              <object class="tk.Checkbutton" id="check_promep" named="True">
+                <property name="background">#AF9EB7</property>
+                <property name="borderwidth">0</property>
+                <property name="font">{Glacial Indifference} 16 {}</property>
+                <property name="justify">center</property>
+                <property name="offrelief">flat</property>
+                <property name="offvalue">False</property>
+                <property name="onvalue">True</property>
+                <property name="overrelief">flat</property>
+                <property name="selectcolor">#E9E0EB</property>
+                <property name="takefocus">true</property>
+                <property name="text" translatable="yes">Beneficios PROMEP</property>
+                <layout manager="grid">
+                  <property name="column">1</property>
+                  <property name="padx">40</property>
+                  <property name="row">1</property>
+                  <property name="sticky">w</property>
+                </layout>
+              </object>
+            </child>
+            <child>
+              <object class="tk.Checkbutton" id="check_todo" named="True">
+                <property name="background">#AF9EB7</property>
+                <property name="borderwidth">0</property>
+                <property name="font">{Glacial Indifference} 16 {}</property>
+                <property name="justify">left</property>
+                <property name="offrelief">flat</property>
+                <property name="offvalue">False</property>
+                <property name="onvalue">True</property>
+                <property name="overrelief">flat</property>
+                <property name="selectcolor">#E9E0EB</property>
+                <property name="takefocus">true</property>
+                <property name="text" translatable="yes">Seleccionar todas las Tablas</property>
+                <layout manager="grid">
+                  <property name="column">0</property>
+                  <property name="padx">40</property>
+                  <property name="row">1</property>
+                  <property name="sticky">w</property>
+                </layout>
+              </object>
+            </child>
+          </object>
+        </child>
+        <child>
+          <object class="tk.Frame" id="frm_archivos" named="True">
+            <property name="background">#AF9EB7</property>
+            <property name="width">400</property>
+            <layout manager="grid">
+              <property name="column">1</property>
+              <property name="ipady">15</property>
+              <property name="padx">20</property>
+              <property name="row">1</property>
+            </layout>
+            <child>
+              <object class="tk.Label" id="label_archivos" named="True">
+                <property name="background">#AF9EB7</property>
+                <property name="font">{Glacial Indifference} 16 {bold}</property>
+                <property name="justify">center</property>
+                <property name="relief">flat</property>
+                <property name="text" translatable="yes">Archivos Encontrados
+en Directorio</property>
+                <property name="width">33</property>
+                <layout manager="grid">
+                  <property name="column">0</property>
+                  <property name="pady">20</property>
+                  <property name="row">0</property>
+                </layout>
+              </object>
+            </child>
+            <child>
+              <object class="pygubu.builder.widgets.tkscrolledframe" id="scroll_archivos" named="True">
+                <property name="background">#AF9EB7</property>
+                <property name="scrolltype">vertical</property>
+                <property name="usemousewheel">false</property>
+                <layout manager="grid">
+                  <property name="column">0</property>
+                  <property name="ipadx">86</property>
+                  <property name="ipady">22</property>
+                  <property name="row">1</property>
+                </layout>
+                <child>
+                  <object class="tk.Label" id="label_archivo" named="True">
+                    <property name="background">#AF9EB7</property>
+                    <property name="font">{Glacial Indifference} 16 {}</property>
+                    <property name="justify">center</property>
+                    <property name="relief">flat</property>
+                    <property name="state">normal</property>
+                    <property name="text" translatable="yes">No se encontraron archivos
+en el directorio específicado</property>
+                    <property name="width">30</property>
+                    <property name="wraplength">400</property>
+                    <layout manager="grid">
+                      <property name="column">0</property>
+                      <property name="padx">20</property>
+                      <property name="pady">20</property>
+                      <property name="row">1</property>
+                    </layout>
+                  </object>
+                </child>
+                <child>
+                  <object class="tk.Frame" id="separator" named="True">
+                    <property name="background">#000</property>
+                    <property name="height">2</property>
+                    <property name="width">300</property>
+                    <layout manager="grid">
+                      <property name="column">0</property>
+                      <property name="row">0</property>
+                    </layout>
+                  </object>
+                </child>
+              </object>
+            </child>
+          </object>
+        </child>
+        <child>
+          <object class="tk.Label" id="label_notificacion_importar" named="True">
+            <property name="background">#E9E0EB</property>
+            <property name="font">{Glacial Indifference} 16 {bold}</property>
+            <property name="foreground">#808080</property>
+            <property name="text" translatable="yes">Este apartado es para mandar mendajes desde los Script</property>
+            <layout manager="grid">
+              <property name="column">0</property>
+              <property name="columnspan">2</property>
+              <property name="pady">30</property>
+              <property name="row">4</property>
+            </layout>
+          </object>
+        </child>
+        <child>
+          <object class="tk.Button" id="btn_BaseDatos" named="True">
+            <property name="background">#534B62</property>
+            <property name="borderwidth">0</property>
+            <property name="cursor">arrow</property>
+            <property name="default">active</property>
+            <property name="font">{Glacial Indifference} 16 {bold}</property>
+            <property name="foreground">#fff</property>
+            <property name="justify">center</property>
+            <property name="overrelief">flat</property>
+            <property name="pady">6</property>
+            <property name="relief">flat</property>
+            <property name="takefocus">true</property>
+            <property name="text" translatable="yes">Cargar Datos en la Base de Datos</property>
+            <property name="width">60</property>
+            <layout manager="grid">
+              <property name="column">0</property>
+              <property name="columnspan">2</property>
+              <property name="pady">0 30</property>
+              <property name="row">5</property>
+            </layout>
+          </object>
+        </child>
+        <child>
+          <object class="tk.Label" id="label_path" named="True">
+            <property name="background">#E9E0EB</property>
+            <property name="font">{Glacial Indifference} 16 {}</property>
+            <property name="justify">right</property>
+            <property name="text" translatable="yes">Selecciona el Directorio:</property>
+            <layout manager="grid">
+              <property name="column">0</property>
+              <property name="columnspan">2</property>
+              <property name="padx">0 270</property>
+              <property name="pady">30</property>
+              <property name="row">0</property>
+            </layout>
+          </object>
+        </child>
+      </object>
+    </child>
+    <child>
+      <object class="tk.Frame" id="frm_exportar" named="True">
+        <property name="background">#E9E0EB</property>
+        <property name="height">200</property>
+        <bind sequence="&lt;Visibility&gt;" handler="false" add="" />
+        <layout manager="grid">
+          <property name="column">0</property>
+          <property name="columnspan">2</property>
+          <property name="ipadx">137</property>
+          <property name="row">2</property>
+        </layout>
+        <containerlayout manager="grid">
+          <property name="anchor">center</property>
+        </containerlayout>
+        <child>
+          <object class="tk.Label" id="label_notificacion_exportar" named="True">
+            <property name="background">#E9E0EB</property>
+            <property name="font">{Glacial Indifference} 16 {bold}</property>
+            <property name="foreground">#808080</property>
+            <property name="text" translatable="yes">Este apartado es para mandar mensajes desde los Script</property>
+            <layout manager="grid">
+              <property name="column">0</property>
+              <property name="pady">30</property>
+              <property name="row">1</property>
+            </layout>
+          </object>
+        </child>
+        <child>
+          <object class="tk.Button" id="btn_Informe" named="True">
+            <property name="background">#534B62</property>
+            <property name="borderwidth">0</property>
+            <property name="cursor">arrow</property>
+            <property name="default">active</property>
+            <property name="font">{Glacial Indifference} 16 {bold}</property>
+            <property name="foreground">#fff</property>
+            <property name="justify">center</property>
+            <property name="overrelief">flat</property>
+            <property name="pady">6</property>
+            <property name="relief">flat</property>
+            <property name="takefocus">true</property>
+            <property name="text" translatable="yes">Exportar la información a un Informe</property>
+            <property name="width">60</property>
+            <layout manager="grid">
+              <property name="column">0</property>
+              <property name="pady">0 30</property>
+              <property name="row">2</property>
+            </layout>
+          </object>
+        </child>
+        <child>
+          <object class="tk.Frame" id="frm_filtros" named="True">
+            <property name="background">#AF9EB7</property>
+            <property name="height">200</property>
+            <property name="width">700</property>
+            <layout manager="grid">
+              <property name="column">0</property>
+              <property name="ipadx">20</property>
+              <property name="ipady">15</property>
+              <property name="pady">40 0</property>
+              <property name="row">0</property>
+            </layout>
+            <child>
+              <object class="tk.Label" id="label7" named="True">
+                <property name="background">#AF9EB7</property>
+                <property name="font">{Glacial Indifference} 20 {bold}</property>
+                <property name="justify">center</property>
+                <property name="relief">flat</property>
+                <property name="text" translatable="yes">Aplicar Filtros
+para Exportar la Información</property>
+                <property name="width">56</property>
+                <layout manager="grid">
+                  <property name="column">0</property>
+                  <property name="columnspan">2</property>
+                  <property name="pady">27</property>
+                  <property name="row">0</property>
+                </layout>
+              </object>
+            </child>
+            <child>
+              <object class="tk.Checkbutton" id="check_ano" named="True">
+                <property name="background">#AF9EB7</property>
+                <property name="borderwidth">0</property>
+                <property name="font">{Glacial Indifference} 16 {}</property>
+                <property name="justify">left</property>
+                <property name="offrelief">flat</property>
+                <property name="offvalue">False</property>
+                <property name="onvalue">True</property>
+                <property name="overrelief">flat</property>
+                <property name="selectcolor">#E9E0EB</property>
+                <property name="takefocus">true</property>
+                <property name="text" translatable="yes">Filtrar po Año</property>
+                <layout manager="grid">
+                  <property name="column">0</property>
+                  <property name="padx">40</property>
+                  <property name="pady">20</property>
+                  <property name="row">2</property>
+                  <property name="sticky">w</property>
+                </layout>
+              </object>
+            </child>
+            <child>
+              <object class="tk.Checkbutton" id="check_documento" named="True">
+                <property name="background">#AF9EB7</property>
+                <property name="borderwidth">0</property>
+                <property name="font">{Glacial Indifference} 16 {}</property>
+                <property name="justify">left</property>
+                <property name="offrelief">flat</property>
+                <property name="offvalue">False</property>
+                <property name="onvalue">True</property>
+                <property name="overrelief">flat</property>
+                <property name="selectcolor">#E9E0EB</property>
+                <property name="takefocus">true</property>
+                <property name="text" translatable="yes">Filtrar por Tipo de Documento</property>
+                <layout manager="grid">
+                  <property name="column">0</property>
+                  <property name="padx">40</property>
+                  <property name="pady">0</property>
+                  <property name="row">3</property>
+                  <property name="sticky">w</property>
+                </layout>
+              </object>
+            </child>
+            <child>
+              <object class="tk.Checkbutton" id="check_conocimiento" named="True">
+                <property name="background">#AF9EB7</property>
+                <property name="borderwidth">0</property>
+                <property name="font">{Glacial Indifference} 16 {}</property>
+                <property name="justify">left</property>
+                <property name="offrelief">flat</property>
+                <property name="offvalue">False</property>
+                <property name="onvalue">True</property>
+                <property name="overrelief">flat</property>
+                <property name="selectcolor">#E9E0EB</property>
+                <property name="takefocus">true</property>
+                <property name="text" translatable="yes">Filtrar por Area de Conocimiento</property>
+                <layout manager="grid">
+                  <property name="column">0</property>
+                  <property name="padx">40</property>
+                  <property name="pady">20</property>
+                  <property name="row">4</property>
+                  <property name="sticky">w</property>
+                </layout>
+              </object>
+            </child>
+            <child>
+              <object class="tk.Checkbutton" id="check_otro" named="True">
+                <property name="background">#AF9EB7</property>
+                <property name="borderwidth">0</property>
+                <property name="font">{Glacial Indifference} 16 {}</property>
+                <property name="justify">center</property>
+                <property name="offrelief">flat</property>
+                <property name="offvalue">False</property>
+                <property name="onvalue">True</property>
+                <property name="overrelief">flat</property>
+                <property name="selectcolor">#E9E0EB</property>
+                <property name="takefocus">true</property>
+                <property name="text" translatable="yes">Filtrar por Otro</property>
+                <layout manager="grid">
+                  <property name="column">0</property>
+                  <property name="padx">40</property>
+                  <property name="pady">0</property>
+                  <property name="row">5</property>
+                  <property name="sticky">w</property>
+                </layout>
+              </object>
+            </child>
+            <child>
+              <object class="tk.Checkbutton" id="check_autor" named="True">
+                <property name="background">#AF9EB7</property>
+                <property name="borderwidth">0</property>
+                <property name="font">{Glacial Indifference} 16 {}</property>
+                <property name="justify">left</property>
+                <property name="offrelief">flat</property>
+                <property name="offvalue">False</property>
+                <property name="onvalue">True</property>
+                <property name="overrelief">flat</property>
+                <property name="selectcolor">#E9E0EB</property>
+                <property name="takefocus">true</property>
+                <property name="text" translatable="yes">Filtrar por Autor</property>
+                <layout manager="grid">
+                  <property name="column">0</property>
+                  <property name="padx">40</property>
+                  <property name="row">1</property>
+                  <property name="sticky">w</property>
+                </layout>
+              </object>
+            </child>
+            <child>
+              <object class="tk.Entry" id="entry1">
+                <property name="background">#E9E0EB</property>
+                <property name="disabledbackground">#80738B</property>
+                <property name="disabledforeground">#AF9EB7</property>
+                <property name="font">{Glacial Indifference} 18 {}</property>
+                <property name="foreground">#000</property>
+                <property name="justify">center</property>
+                <property name="relief">flat</property>
+                <property name="state">disabled</property>
+                <property name="takefocus">true</property>
+                <property name="text" translatable="yes">Nombre de Autor</property>
+                <property name="width">30</property>
+                <layout manager="grid">
+                  <property name="column">1</property>
+                  <property name="ipadx">4</property>
+                  <property name="ipady">4</property>
+                  <property name="padx">40</property>
+                  <property name="row">1</property>
+                  <property name="sticky">e</property>
+                </layout>
+              </object>
+            </child>
+            <child>
+              <object class="tk.Entry" id="entry2">
+                <property name="background">#E9E0EB</property>
+                <property name="disabledbackground">#80738B</property>
+                <property name="disabledforeground">#AF9EB7</property>
+                <property name="font">{Glacial Indifference} 18 {}</property>
+                <property name="foreground">#000</property>
+                <property name="justify">center</property>
+                <property name="relief">flat</property>
+                <property name="state">disabled</property>
+                <property name="takefocus">true</property>
+                <property name="text" translatable="yes">Año</property>
+                <property name="width">30</property>
+                <layout manager="grid">
+                  <property name="column">1</property>
+                  <property name="ipadx">4</property>
+                  <property name="ipady">4</property>
+                  <property name="padx">40</property>
+                  <property name="row">2</property>
+                  <property name="sticky">e</property>
+                </layout>
+              </object>
+            </child>
+            <child>
+              <object class="tk.Entry" id="entry3">
+                <property name="background">#E9E0EB</property>
+                <property name="disabledbackground">#80738B</property>
+                <property name="disabledforeground">#AF9EB7</property>
+                <property name="font">{Glacial Indifference} 18 {}</property>
+                <property name="foreground">#000</property>
+                <property name="justify">center</property>
+                <property name="relief">flat</property>
+                <property name="state">disabled</property>
+                <property name="takefocus">true</property>
+                <property name="text" translatable="yes">Tipo de Documento</property>
+                <property name="width">30</property>
+                <layout manager="grid">
+                  <property name="column">1</property>
+                  <property name="ipadx">4</property>
+                  <property name="ipady">4</property>
+                  <property name="padx">40</property>
+                  <property name="row">3</property>
+                  <property name="sticky">e</property>
+                </layout>
+              </object>
+            </child>
+            <child>
+              <object class="tk.Entry" id="entry4">
+                <property name="background">#E9E0EB</property>
+                <property name="disabledbackground">#80738B</property>
+                <property name="disabledforeground">#AF9EB7</property>
+                <property name="font">{Glacial Indifference} 18 {}</property>
+                <property name="foreground">#000</property>
+                <property name="justify">center</property>
+                <property name="relief">flat</property>
+                <property name="state">disabled</property>
+                <property name="takefocus">true</property>
+                <property name="text" translatable="yes">Area de Conocimiento</property>
+                <property name="width">30</property>
+                <layout manager="grid">
+                  <property name="column">1</property>
+                  <property name="ipadx">4</property>
+                  <property name="ipady">4</property>
+                  <property name="padx">40</property>
+                  <property name="row">4</property>
+                  <property name="sticky">e</property>
+                </layout>
+              </object>
+            </child>
+            <child>
+              <object class="tk.Entry" id="entry5">
+                <property name="background">#E9E0EB</property>
+                <property name="disabledbackground">#80738B</property>
+                <property name="disabledforeground">#AF9EB7</property>
+                <property name="font">{Glacial Indifference} 18 {}</property>
+                <property name="foreground">#000</property>
+                <property name="justify">center</property>
+                <property name="relief">flat</property>
+                <property name="state">disabled</property>
+                <property name="takefocus">true</property>
+                <property name="text" translatable="yes">Otro</property>
+                <property name="width">30</property>
+                <layout manager="grid">
+                  <property name="column">1</property>
+                  <property name="ipadx">4</property>
+                  <property name="ipady">4</property>
+                  <property name="padx">40</property>
+                  <property name="row">5</property>
+                  <property name="sticky">e</property>
+                </layout>
+              </object>
+            </child>
+          </object>
+        </child>
+      </object>
+    </child>
+  </object>
+</interface>

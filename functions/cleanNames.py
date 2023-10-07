@@ -56,11 +56,13 @@ def cleanNames(profes = '', relacion = {}, nombreTabla = '', tablaInsertarRelaci
 
     # Insertar Nuevos Profesores Encontrados
     for nuevoProfesor in nuevosProfesores:
+        dataBusqueda = retrieveRecords(bd, "Profesores", {"Nombre":cleanData(nuevoProfesor.upper(), False)})
         # if (nombreProfesor != cleanData(profesor, False)):
-        record = {
-            'Nombre': cleanData(nuevoProfesor, False),
-        }
-        insertRecord(bd, "Profesores", record)
+        if(len(dataBusqueda) == 0):
+            record = {
+                'Nombre': cleanData(nuevoProfesor, False),
+            }
+            insertRecord(bd, "Profesores", record)
 
     data = retrieveAllRecords(bd, "Profesores")
     profesores = {nombre["_id"]: nombre["Nombre"] for nombre in data}

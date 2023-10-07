@@ -1,4 +1,4 @@
-import win32com.client # Para leer .doc → ´pip install pywin32´
+import win32com.client
 import os
 import time
 from bson import ObjectId
@@ -8,7 +8,21 @@ from functions.cleanNames import cleanNames
 from functions.generateData import generateData
 from functions.dataFunctions import connectionDB, retrieveAllRecords, retrieveRecords, retrieveRecordByID, insertRecord, updateRecords, updateRecordByID, deleteRecords, deleteRecordByID
 
-def lecturaCV(ruta_actual, files, SelectedTables, Filters):
+########## CURRICULUM DE ALEX
+# Docencias falta la ultima parte de la ultima tabla (dixionarymixtable)
+# Direccion Individualizada falta la ultima parte de la ultima tabla (dixionarymixtable)
+# Gestion academica falta la ultima parte de la ultima tabla (dixionarymixtable)
+# Beneficios externos a promep != beneficios promep?
+# Cuerpo Academico, no ultima linea (horizontaltable)
+
+########## CURRICULUM DE DIEGO
+# No se inserta la ultima tabla docencias
+# Direccion Individualizada falta la ultima parte de la ultima tabla
+# Gestion academica falta la ultima parte de la ultima tabla
+# No se inserta beneficios promep (list index out of range)
+# No se inserta cuerpo academico
+
+def lecturaCV(ruta_actual, files, SelectedTables):
     inicio = time.time() # Inicio de la ejecución
     print("\n-------------------------------------- Iniciando Lectura --------------------------------------")
     # ruta_actual2 = os.path.dirname(os.path.abspath(__file__)) # Directorio actual
@@ -39,15 +53,12 @@ def lecturaCV(ruta_actual, files, SelectedTables, Filters):
                     elif len(row_content) > 1:
                         contenido.append(row_content)
             doc.Close() # Cerrar el doc
-          
-            # if SelectedTables['InfoProfesor'] == True:            
+                     
             # SEPARACIÓN DE DATOS DE LAS TABLAS                
             print('\n------------------Profesores--------------------')
             
             estudiosRealizados = dictionaryMixTable(tablas[2]['contenido'],['Nivel de estudios','Estudios en','Área     > Disciplina','Institución otorgante','Institución otorgante no considerada en el catálogo'], 'Nivel de estudios','País')  
-            
             datosLaborales = generateData(tablas[3]['contenido'], ['Nombramiento', 'Tipo de nombramiento','Dedicación','Institución de Educación Superior','Dependencia de Educación Superior','Unidad Académica','Inicio del contrato', 'Fin del contrato', 'Cronología'])
-            
             nombreProfesor = tablas[1]['contenido'][0][1].upper().replace("Á", "A").replace("É", "E").replace("Í", "I").replace("Ó", "O").replace("Ú", "U")
             profesorRecord = {
                 'Nombre': nombreProfesor,
@@ -60,6 +71,7 @@ def lecturaCV(ruta_actual, files, SelectedTables, Filters):
                 'Area':  tablas[4]['contenido'][0][1],
                 'Disciplina':  tablas[4]['contenido'][1][1]
             }
+            
             # Verificar si el profesor ya existe o es uno nuevo
             dataBusqueda = retrieveRecords(bd, "Profesores", {"Nombre":nombreProfesor})
             if(len(dataBusqueda) != 0):
@@ -71,79 +83,81 @@ def lecturaCV(ruta_actual, files, SelectedTables, Filters):
 
             if SelectedTables['LogrosProfesor'] == True and tablas[5]['nombre'] == 'Producción':  
                 print('\n------------------Logros--------------------')
-             
                 Logros = createDictionary(tablas[5]['contenido'], ['Tipo', 'Año', 'Título', 'País'], 'Tipo')
                 # print("\nLogros: ", Logros)
-                
                 for logro in Logros:
                     cleanNames(logro['OtrosDatos']['Autor'], logro, 'Logros', 'ProfesorLogros', 'IdLogro')
                 
             if SelectedTables['InvestigacionesProfesor'] == True and tablas[11]['nombre'] == 'Proyectos de investigación':  
                 print('\n------------------Investigaciones--------------------')
-                
                 Investigaciones = createDictionary(tablas[11]['contenido'],['Título del proyecto','Nombre del patrocinador','Fecha de inicio','Fecha de fin del proyecto','Tipo de patrocinador','TipoPatrocinador','Investigadores participantes','Alumnos participantes','Actividades realizadas','Para considerar en el currículum de cuerpo académico','Miembros','LGACs'], 'Título del proyecto')
                 # print("\nInvestigaciones: ", Investigaciones)     
-            
                 for investigacion in Investigaciones:
                     cleanNames(investigacion['InvestigadoresParticipantes'], investigacion, 'Investigaciones', 'ProfesorInvestigaciones', 'IdInvestigacion')
                 
             if SelectedTables['GestionAcademica'] == True and tablas[9]['nombre'] == 'Gestión académica':  
                 print('\n------------------Gestion Academica--------------------')
                 GestionAcademica = dictionaryMixTable(tablas[9]['contenido'],['Tipo gestión','Cargo dentro de la comisión o cuerpo colegiado','Función encomendada','Órgano colegiado al que fué presentado','Aprobado','Resultados obtenidos','Estado'], 'Tipo gestión', 'Fecha de inicio')
-                # print("\nGestion Academica: ", GestionAcademica)
-                                
+                # print("\nGestion Academica: ", GestionAcademica)     
                 for gestion in GestionAcademica:
-                    gestion['IdProfesor'] = ObjectId(profesorID)
-                    insertRecord(bd, 'GestionesAcademicas', gestion)                              
+                    busqueda = retrieveRecords(bd, "GestionesAcademicas", gestion)
+                    if (len(busqueda) == 0):
+                        gestion['IdProfesor'] = ObjectId(profesorID)
+                        insertRecord(bd, 'GestionesAcademicas', gestion)
             
             if SelectedTables['Tutorias'] == True and tablas[7]['nombre'] == 'Tutoría':  
                 print('\n------------------Tutorias--------------------')
                 Tutorias = createDictionary(tablas[7]['contenido'],['Tutoría','Nivel', 'Programa educativo en el que participa', 'Fecha de inicio', 'Fecha de término', 'Tipo de tutelaje', 'Estado del tutelaje'], 'Tutoría')
-                print("\nTutorias: ", Tutorias)
-                
+                # print("\nTutorias: ", Tutorias)
                 for tutoria in Tutorias:
-                    tutoria['IdProfesor'] = ObjectId(profesorID)
-                    insertRecord(bd, 'Tutorias', tutoria)
+                    busqueda = retrieveRecords(bd, "Tutorias", tutoria)
+                    if (len(busqueda) == 0):
+                        tutoria['IdProfesor'] = ObjectId(profesorID)
+                        insertRecord(bd, 'Tutorias', tutoria)
                     
             if SelectedTables['DireccionIndividualizada'] == True and tablas[8]['nombre'] == 'Dirección individualizada':  
                 print('\n------------------Dirección Individualizada--------------------')
                 DireccionIndividualizada = dictionaryMixTable(tablas[8]['contenido'],['Título de la tesis o proyecto individual','Grado'], 'Título de la tesis o proyecto individual','Fecha de inicio')
-                print("\nDirección Individualizada: ", DireccionIndividualizada)        
-            
+                # print("\nDirección Individualizada: ", DireccionIndividualizada)        
                 for direccion in DireccionIndividualizada:
-                    direccion['IdProfesor'] = ObjectId(profesorID)
-                    insertRecord(bd, 'DireccionesIndividualizadas', direccion)
+                    busqueda = retrieveRecords(bd, "DireccionesIndividualizadas", direccion)
+                    if (len(busqueda) == 0):
+                        direccion['IdProfesor'] = ObjectId(profesorID)
+                        insertRecord(bd, 'DireccionesIndividualizadas', direccion)
             
             if SelectedTables['Docencias'] == True and tablas[6]['nombre'] == 'Docencia':   
                 print('\n------------------Docencias--------------------')
-                print(tablas[6]['contenido'])
+                # print(tablas[6]['contenido'])
                 # Docencias = createDictionary()
                 # print("\nDocencias: ", Docencias)
                 Docencias = dictionaryMixTable(tablas[6]['contenido'],['Nombre del curso','Institución de Educación Superior (IES)', 'Dependencia de Educación Superior (IES)', 'Programa educativo','Nivel'], 'Nombre del curso','Fecha de inicio')  
-                print("\n Docencias: ", Docencias)
-                
+                # print("\n Docencias: ", Docencias)
                 for docencia in Docencias:
-                    docencia['IdProfesor'] = ObjectId(profesorID)
-                    insertRecord(bd, 'Docencias', docencia)
+                    busqueda = retrieveRecords(bd, "Docencias", docencia)
+                    if (len(busqueda) == 0):
+                        docencia['IdProfesor'] = ObjectId(profesorID)
+                        insertRecord(bd, 'Docencias', docencia)
             
             if SelectedTables['BeneficiosPROMEP'] == True and tablas[12]['nombre'] == 'Beneficios externos a PROMEP':  
                 print("\n-------------------Beneficios PROMEP----------------------")
                 # Obtención de diccionarios de Beneficios PROMEP
-                BeneficiosPROMEP= horizontalTable(tablas[12]['contenido'])
-                print("\nBeneficios PROMEP: ", BeneficiosPROMEP)
-                
+                BeneficiosPROMEP = horizontalTable(tablas[12]['contenido'])
+                # print("\nBeneficios PROMEP: ", BeneficiosPROMEP)
                 for beneficio in BeneficiosPROMEP:
-                    beneficio['IdProfesor'] = ObjectId(profesorID)
-                    insertRecord(bd, 'BeneficiosPROMEP', beneficio)
+                    busqueda = retrieveRecords(bd, "BeneficiosPROMEP", beneficio)
+                    if (len(busqueda) == 0):
+                        beneficio['IdProfesor'] = ObjectId(profesorID)
+                        insertRecord(bd, 'BeneficiosPROMEP', beneficio)
                     
             if SelectedTables['CuerpoAcademico'] == True and tablas[13]['nombre'] == 'Cuerpo Académico':  
                 print("\n-------------------Cuerpo Academico----------------------")
                 CuerpoAcademico = horizontalTable(tablas[13]['contenido'])
-                print("\nCuerpo Academico: ", CuerpoAcademico)
-                
+                # print("\nCuerpo Academico: ", CuerpoAcademico)
                 for cAcademico in CuerpoAcademico:
-                    cAcademico['IdProfesor'] = ObjectId(profesorID)
-                    insertRecord(bd, 'CuerpoAcademico', cAcademico)
+                    busqueda = retrieveRecords(bd, "CuerpoAcademico", cAcademico)
+                    if (len(busqueda) == 0):
+                        cAcademico['IdProfesor'] = ObjectId(profesorID)
+                        insertRecord(bd, 'CuerpoAcademico', cAcademico)
                     
             if SelectedTables['ProgramasAcademicos'] == True:  
                 print("\n-------------------Programas Academicos----------------------")
@@ -154,9 +168,9 @@ def lecturaCV(ruta_actual, files, SelectedTables, Filters):
                 # # }
                 # # print("\n Programa Academico: ", ProgramaAcademico)        
             
-            print("\nTablas encontradas: ----------------------")
-            for tabla in tablas:
-                print(tabla['nombre'])
+            # print("\nTablas encontradas: ----------------------")
+            # for tabla in tablas:
+            #     print(tabla['nombre'])
                 
         except Exception as error:
             print("An exception occurred:", error)

@@ -28,6 +28,46 @@ from reportlab.lib import colors
  #   datos = json.load(json_file)
 
 
+# ____ _ _    ___ ____ ____ ____          ____ _    ____ ____       |
+# |___ | |     |  |__/ |  | [__     __    |  | |    |__| |___     \ | /
+# |    | |___  |  |  \ |__| ___]          |__| |___ |  | |         \|/
+                                                            
+# --------------------------- DATOS QUE SE DEBEN FILTRAR
+# Existen 4 principales filtros Año, Area de Conocimiento, Nombre de Autor, Tipo de Documento
+
+# Nombre de Autor se encuentra en las tablas Logros e Investigaciones
+# Retrieve records from (Logros o Investigaciones)
+#
+# busqueda = {"Nombre":"MAURICIO ARTURO IBARRA CORONA"}
+# data = RetrieveRecords("Profesores", busqueda)
+# print(data)
+#
+# De la forma anterior solo se regresaran los que coincidan con la busqueda, ahora ojo, esto regresara solo la informacion de la tabla profesor, se requiere extraer el id y hacerlo coincidir con las tablas profesorlogros y profesorinvestigaciones
+
+# Año se encuentra en varias tablas pero solo vamos a filtrarlo en Logros e Investigaciones, en logros no hay mayor problema que buscar {"Ano":"2019"}, pero en Investigaciones tienes traer todas las investigaciones y por cada fechainicio y fechafinproyecto, separar la fecha por / , una vez hecho esto coincidir lo s años y regresar esto
+
+# Tipo de Documento se encuentra en la tabla Logros y es simplemente filtrar por {"Tipo":"Productividad Innovadora"}
+# Si se ingresa algo como "Patente", esto no se encuentra directamente en tipo se tiene que ingresar a otros datos y buscar lo siguiente {"TipoProduccionInnovadora":"Patente"}
+
+# Area de Conocimiento se encuentra en un "stand by" ese todavia no lo consideres, le tengo que preguntar una cosa primero al profe
+# Otros se encuentra en un "stand by" ese todavia no lo consideres 
+
+# los filtros se te devuelven de la siguiente manera:
+# {'autor': {'state': True, 'data': 'ALEJANDRO'}, 
+# 'ano': {'state': False, 'data': '2019'}, 
+# 'documento': {'state': True, 'data': 'Patente'}, 
+# 'areaConocimiento': {'state': True, 'data': ''}, 
+# 'otro': {'state': False, 'data': 'Otros'}}
+#
+# Si state es False no se considera aunque data tenga información
+
+# ------------------------------------------------------
+
+# ____ _ _    ___ ____ ____ ____          ____ _    ____ ____      /|\
+# |___ | |     |  |__/ |  | [__     __    |  | |    |__| |___     / | \
+# |    | |___  |  |  \ |__| ___]          |__| |___ |  | |          |
+
+
 mc = connectionDB()
 db = mc[0]
 profesorI = retrieveAllRecords(db, "Profesores")

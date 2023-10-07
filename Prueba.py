@@ -3,7 +3,8 @@ from functions.cleanData import cleanData
 from fuzzywuzzy import fuzz
 import difflib
 import psutil
-
+import subprocess
+import os
 
 
 
@@ -20,11 +21,11 @@ import psutil
 
 
 #### Contar instancias de un programa corriendo
-count = 0
-for process in psutil.process_iter(attrs=['pid', 'name']):
-        if 'WINWORD.EXE' in process.info['name']:
-                count += 1
-print(f"Instancias de Microsoft Word en ejecución: {count}")
+# count = 0
+# for process in psutil.process_iter(attrs=['pid', 'name']):
+#         if 'WINWORD.EXE' in process.info['name']:
+#                 count += 1
+# print(f"Instancias de Microsoft Word en ejecución: {count}")
 
 
 
