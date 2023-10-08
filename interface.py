@@ -2,13 +2,18 @@ import tkinter as tk
 from tkinter import filedialog
 from pygubu.widgets.tkscrolledframe import TkScrolledFrame
 from LecturaCV import lecturaCV
+import time
 import os
+import threading
+import queue
 
 class InterfazCV:
     def __init__(self, master=None):
         # Variables
-        self.folder_path = ""
+        self.selectedTables = {}
+        self.folderPath = ""
         self.documentosArray = []
+        self.queue = queue.Queue()
         
         # Master
         self.master = master
@@ -364,7 +369,8 @@ class InterfazCV:
             background="#E9E0EB",
             font="{Glacial Indifference} 16 {bold}",
             foreground="#808080",
-            text='Carga el directorio con los Archivos (Curriculums) que deseas cargar a la Base de Datos')
+            wraplength=1100,
+            text='Carga el directorio con los archivos (Curriculums) que deseas cargar a la base de datos')
         self.label_notificacion_importar.grid(
             column=0, columnspan=2, pady=30, row=4)
         
@@ -419,7 +425,8 @@ class InterfazCV:
             background="#E9E0EB",
             font="{Glacial Indifference} 16 {bold}",
             foreground="#808080",
-            text='Exporta la Información de la Base de Datos a un Informe')
+            wraplength=1100,
+            text='Exporta la información de la base de datos a un Informe')
         self.label_notificacion_exportar.grid(column=0, pady=30, row=1)
         
         # Botón para exportar por ciertos filtros hacía un Informe
@@ -576,10 +583,9 @@ class InterfazCV:
             state="disabled",
             takefocus=True,
             width=30)
-        _text_ = 'Nombre de Autor'
         self.input_autor["state"] = "normal"
         self.input_autor.delete("0", "end")
-        self.input_autor.insert("0", _text_)
+        self.input_autor.insert("0", 'Nombre de Autor')
         self.input_autor["state"] = "disabled"
         self.input_autor.grid(column=1, ipadx=4, ipady=4, padx=40, row=1, sticky="e")
         
@@ -596,10 +602,9 @@ class InterfazCV:
             state="disabled",
             takefocus=True,
             width=30)
-        _text_ = 'Año'
         self.input_ano["state"] = "normal"
         self.input_ano.delete("0", "end")
-        self.input_ano.insert("0", _text_)
+        self.input_ano.insert("0", 'Año')
         self.input_ano["state"] = "disabled"
         self.input_ano.grid(column=1, ipadx=4, ipady=4, padx=40, row=2, sticky="e")
         
@@ -616,10 +621,9 @@ class InterfazCV:
             state="disabled",
             takefocus=True,
             width=30)
-        _text_ = 'Tipo de Documento'
         self.input_documento["state"] = "normal"
         self.input_documento.delete("0", "end")
-        self.input_documento.insert("0", _text_)
+        self.input_documento.insert("0", 'Tipo de Documento')
         self.input_documento["state"] = "disabled"
         self.input_documento.grid(column=1, ipadx=4, ipady=4, padx=40, row=3, sticky="e")
         
@@ -636,10 +640,9 @@ class InterfazCV:
             state="disabled",
             takefocus=True,
             width=30)
-        _text_ = 'Área de Conocimiento'
         self.input_conocimiento["state"] = "normal"
         self.input_conocimiento.delete("0", "end")
-        self.input_conocimiento.insert("0", _text_)
+        self.input_conocimiento.insert("0", 'Área de Conocimiento')
         self.input_conocimiento["state"] = "disabled"
         self.input_conocimiento.grid(column=1, ipadx=4, ipady=4, padx=40, row=4, sticky="e")
         
@@ -656,10 +659,9 @@ class InterfazCV:
             state="disabled",
             takefocus=True,
             width=30)
-        _text_ = 'Otros'
         self.input_otro["state"] = "normal"
         self.input_otro.delete("0", "end")
-        self.input_otro.insert("0", _text_)
+        self.input_otro.insert("0", 'Otros')
         self.input_otro["state"] = "disabled"
         self.input_otro.grid(column=1, ipadx=4, ipady=4, padx=40, row=5, sticky="e")
         
@@ -712,9 +714,35 @@ class InterfazCV:
             self.check_prog_academicos.set(False)
             self.check_tutorias_Profesor.set(False)
             self.check_dir_individualizada.set(False)
-
+    
+    def select_folder(self):
+        self.folderPath = filedialog.askdirectory()
+        if self.folderPath:
+            self.label_path.config(text=f"Carpeta: {self.folderPath}")
+            self.label_path.grid(padx="0 500")
+            self.documents =  os.listdir(self.folderPath)
+            self.crear_etiquetas(self.documents)
+            self.documentosArray = self.documents
+            self.label_notificacion_importar.configure(text=f'Cargados documentos de {self.folderPath}')
+            # print("\n", self.documents)
+    
+    def ejecutar_lecturaCV(self):
+        lecturaCV(self.folderPath, self.documentosArray, self.selectedTables, self.queue)
+        
+    def actualizar_mensaje(self, txt):
+        self.label_notificacion_importar.configure(text=txt)
+        
+    def actualizar_mensaje_en_bucle(self):
+        while True:
+            try:
+                mensaje = self.queue.get_nowait()
+                self.actualizar_mensaje(mensaje)
+            except queue.Empty:
+                pass
+            time.sleep(1)
+        
     def importar_informacion(self):
-        self.SelectedTables={
+        self.selectedTables={
             "LogrosProfesor": self.check_logros_Profesor.get(),
             "InvestigacionesProfesor": self.check_invest_Profesor.get(),
             "GestionAcademica": self.check_gest_academica.get(),
@@ -725,23 +753,13 @@ class InterfazCV:
             "Tutorias": self.check_tutorias_Profesor.get(),
             "DireccionIndividualizada": self.check_dir_individualizada.get()
         }
-        lecturaCV(folder_path, documentosArray, self.SelectedTables)
-        # self.label_notificacion_importar.configure(text=f'{self.txtMessage}')
-    
-    def select_folder(self):
-        global folder_path
-        global documentosArray
-        folder_path = filedialog.askdirectory()
-        if folder_path:
-            self.label_path.config(text=f"Carpeta: {folder_path}")
-            self.label_path.grid(padx="0 500")
-            self.documents =  os.listdir(folder_path)
-            self.crear_etiquetas(self.documents)
-            documentosArray = self.documents
-            self.label_notificacion_importar.configure(text=f'Cargados documentos de {folder_path}')
-            print("\n", self.documents)
+        self.hilo = threading.Thread(target=self.ejecutar_lecturaCV)
+        self.hilo.start()
+        self.actualizar_mensaje_thread = threading.Thread(target=self.actualizar_mensaje_en_bucle)
+        self.actualizar_mensaje_thread.daemon = True
+        self.actualizar_mensaje_thread.start()
             
-    def crear_etiquetas(self, documentos=[]):
+    def crear_etiquetas(self, documentos = []):
         self.counter = 0
         if(len(documentos) != 0):
             self.label_archivo.grid_remove()
@@ -811,14 +829,14 @@ class InterfazCV:
             self.input_documento.config(state="disabled")
             
     def exportar_informe(self):
-        self.Filters = {
+        self.filtersData = {
             "autor": {"state":self.check_autor_Profesor.get(), "data":self.input_autor.get()},
             "ano": {"state":self.check_ano_Profesor.get(), "data":self.input_ano.get()},
             "documento": {"state":self.check_documento_Profesor.get(), "data":self.input_documento.get()},
             "areaConocimiento": {"state":self.check_conocimiento_Profesor.get(), "data":self.input_conocimiento.get()},
             "otro": {"state":self.check_otro_Profesor.get(), "data":self.input_otro.get()}
         }
-        print(self.Filters)
+        print(self.filtersData)
         
 if __name__ == "__main__":
     root = tk.Tk()
