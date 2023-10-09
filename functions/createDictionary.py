@@ -86,7 +86,24 @@ def dictionaryMixTable(array=[], fields=[], separatorWord='', horizontalWord='Fe
         # print("\n Entra",row)
         counter = counter + 1
         if counter == len(array):
+            # dictionary = generateData(container, fields)
+            # result.append(dictionary)
             dictionary = generateData(container, fields)
+            # print("\nDiccionario: ", dictionary)
+            container = []
+            inserted = False
+            
+            fieldsHorizontal = valuesHorizontal[0]
+            # print("\nValues:", fieldsHorizontal)
+            counterHor = 0
+            # print("\n valuesHorizontal: ", len(valuesHorizontal))
+            # print("\nfieldsHorizontal: ", len(fieldsHorizontal))
+            for nRow in valuesHorizontal:
+                if counterHor > 0:                    
+                    for i in range(len(fieldsHorizontal)):
+                        dictionary[cleanData(fieldsHorizontal[i], True)] = cleanData(nRow[i], False)
+                counterHor = counterHor + 1
+            
             result.append(dictionary)
 
     return result

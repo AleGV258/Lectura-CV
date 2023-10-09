@@ -2,6 +2,7 @@ import tkinter as tk
 from tkinter import filedialog
 from pygubu.widgets.tkscrolledframe import TkScrolledFrame
 from LecturaCV import lecturaCV
+from CreatePDF import createTable
 import time
 import os
 import threading
@@ -837,6 +838,8 @@ class InterfazCV:
             "otro": {"state":self.check_otro_Profesor.get(), "data":self.input_otro.get()}
         }
         print(self.filtersData)
+        createTable(self.filtersData)
+        
         
 if __name__ == "__main__":
     root = tk.Tk()

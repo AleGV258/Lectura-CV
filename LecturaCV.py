@@ -176,8 +176,9 @@ def lecturaCV(actualPath, files, selectedTables, queue):
                 txtNotification = f"Insertando records de Cuerpo Académico del archivo {file}" 
                 queue.put(txtNotification)
                 print("\n-------------------Cuerpo Academico----------------------")
+                print("\nAntes: ", tablas[13]['contenido'])
                 CuerpoAcademico = horizontalTable(tablas[13]['contenido'])
-                # print("\nCuerpo Academico: ", CuerpoAcademico)
+                print("\nCuerpo Academico: ", CuerpoAcademico)
                 for cAcademico in CuerpoAcademico:
                     busqueda = retrieveRecords(bd, "CuerpoAcademico", cAcademico)
                     if (len(busqueda) == 0):

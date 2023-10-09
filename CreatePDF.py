@@ -68,65 +68,68 @@ from reportlab.lib import colors
 # |    | |___  |  |  \ |__| ___]          |__| |___ |  | |          |
 
 
-mc = connectionDB()
-db = mc[0]
-profesorI = retrieveAllRecords(db, "Profesores")
-print(profesorI)
-with open("datos.json", "r") as json_file:
-    datos = json.load(json_file)
+def createTable(filtros = {}):
+    print("\n Filtros recibidos: ", filtros)
+    
+    mc = connectionDB()
+    db = mc[0]
+    profesorI = retrieveAllRecords(db, "Profesores")
+    print(profesorI)
+    with open("datos.json", "r") as json_file:
+        datos = json.load(json_file)
 
-# Crear un archivo PDF llamado "tabla_desde_json.pdf"
-doc = SimpleDocTemplate("tabla_desde_json.pdf", pagesize=letter)
+    # Crear un archivo PDF llamado "tabla_desde_json.pdf"
+    doc = SimpleDocTemplate("tabla_desde_json.pdf", pagesize=letter)
 
-# Crear una lista de listas a partir de los datos JSON
-data = ["_id", "Nombre", "Area", "CURP", "Diciplina", "FechaNacimiento", "IES", "RFC"]
-
-
-
-dataFinal = []
-data2 = []
-for dato in data:
-    data2.append(dato)
-dataFinal.append(data2)
-
-for key in datos:
-    info = []
-    for dato in data: 
-        if dato in key:      
-            info.append(
-                key[dato]
-            )
-        else:
-            info.append(
-                ''
-            )
-    dataFinal.append(info)
-
-print(dataFinal)
+    # Crear una lista de listas a partir de los datos JSON
+    data = ["_id", "Nombre", "Area", "CURP", "Diciplina", "FechaNacimiento", "IES", "RFC"]
 
 
-# Crear una tabla con los datos
-tabla = Table(dataFinal)
 
-#area_delimitada.add(tabla)
-# Aplicar estilo a la tabla
-estilo = TableStyle([
-    ('BACKGROUND', (0, 0), (-1, 0), colors.grey),
-    ('TEXTCOLOR', (0, 0), (-1, 0), colors.whitesmoke),
-    ('ALIGN', (0, 0), (-1, -1), 'CENTER'),
-    ('FONTNAME', (0, 0), (-1, 0), 'Helvetica-Bold'),
-    ('BOTTOMPADDING', (0, 0), (-1, 0), 12),
-    ('BACKGROUND', (0, 1), (-1, -1), colors.beige),
-    ('GRID', (0, 0), (-1, -1), 1, '#27a39d' ),
-    ('INNERGRID', (0, 0), (-1, -1), 0.25, colors.black),  # Borde interno
-    ('BOX', (0, 0), (-1, -1), 0.25, colors.black) 
-    ])
+    dataFinal = []
+    data2 = []
+    for dato in data:
+        data2.append(dato)
+    dataFinal.append(data2)
 
-tabla.setStyle(estilo)
+    for key in datos:
+        info = []
+        for dato in data: 
+            if dato in key:      
+                info.append(
+                    key[dato]
+                )
+            else:
+                info.append(
+                    ''
+                )
+        dataFinal.append(info)
 
-# Crear el objeto Story y agregar la tabla al contenido
-story = []
-story.append(tabla)
+    print(dataFinal)
 
-# Construir el PDF
-doc.build(story)
+
+    # Crear una tabla con los datos
+    tabla = Table(dataFinal)
+
+    #area_delimitada.add(tabla)
+    # Aplicar estilo a la tabla
+    estilo = TableStyle([
+        ('BACKGROUND', (0, 0), (-1, 0), colors.grey),
+        ('TEXTCOLOR', (0, 0), (-1, 0), colors.whitesmoke),
+        ('ALIGN', (0, 0), (-1, -1), 'CENTER'),
+        ('FONTNAME', (0, 0), (-1, 0), 'Helvetica-Bold'),
+        ('BOTTOMPADDING', (0, 0), (-1, 0), 12),
+        ('BACKGROUND', (0, 1), (-1, -1), colors.beige),
+        ('GRID', (0, 0), (-1, -1), 1, '#27a39d' ),
+        ('INNERGRID', (0, 0), (-1, -1), 0.25, colors.black),  # Borde interno
+        ('BOX', (0, 0), (-1, -1), 0.25, colors.black) 
+        ])
+
+    tabla.setStyle(estilo)
+
+    # Crear el objeto Story y agregar la tabla al contenido
+    story = []
+    story.append(tabla)
+
+    # Construir el PDF
+    doc.build(story)
