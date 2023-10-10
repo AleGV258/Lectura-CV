@@ -6,3 +6,5 @@
 - pip install python-dotenv
 - pip install pymongo
 - pip install pywin32
+- pip install pygubu
+- pip install pygubu-designer
