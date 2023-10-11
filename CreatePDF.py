@@ -79,7 +79,7 @@ def createTable(filtros = {}):
     profesorI = retrieveAllRecords(db, "Profesores")
 
     # Filtra los datos de acuerdo a los filtros recibidos
-    datosFiltrados = profesorI
+    #datosFiltrados = profesorI
 
     #Intento de crear los filtros, estos se guardaran en una lista y despues de 
     # tomamos la lista para poder  realizar los filtros bases
@@ -90,26 +90,39 @@ def createTable(filtros = {}):
     # |  | |    |__| |___     / | \             Y el isra
     # |__| |___ |  | |          |
 
+    #Intento de arreglar el problema del codigo
+    def filter_func(profesor):
+        for filtro_key, filtro_info in filtros.items():
+            if filtro_info['state']:
+                if profesor.get(filtro_key, '') != filtro_info['data']:
+                    return False
+        return True
 
-    if 'Nombre' in filtros:
-        nombre_filtro = filtros['Nombre']
-        datosFiltrados = filter(lambda x: x.get("Nombre") == nombre_filtro['data'], datosFiltrados)
-
-    if 'ano' in filtros:
-        edad_filtro = filtros['ano']
-        datosFiltrados = filter(lambda x: x.get("ano", 0) == edad_filtro['data'], datosFiltrados)
-
-    if 'documento' in filtros:
-        documento_filtro = filtros['documento']
-        datosFiltrados = filter(lambda x: x.get("documento") == documento_filtro['data'], datosFiltrados)
-
-    if 'disciplina' in filtros:
-        disciplina_filtro = filtros['areaConocimiento']
-        datosFiltrados = filter(lambda x: x.get("areaConociminto") == disciplina_filtro['data'], datosFiltrados)
-
+    # Aplicar la función de filtro a los datos
+    datosFiltrados = filter(filter_func, profesorI)
 
     # Convertir el resultado filtrado a una lista
     datosFiltrados = list(datosFiltrados)
+
+    #if 'Nombre' in filtros:
+    #    nombre_filtro = filtros['Nombre']
+    #    datosFiltrados = filter(lambda x: x.get("Nombre") == nombre_filtro['data'], datosFiltrados)
+
+    #if 'ano' in filtros:
+    #    edad_filtro = filtros['ano']
+    #    datosFiltrados = filter(lambda x: x.get("ano", 0) == edad_filtro['data'], datosFiltrados)
+
+    #if 'documento' in filtros:
+        #documento_filtro = filtros['documento']
+        #datosFiltrados = filter(lambda x: x.get("documento") == documento_filtro['data'], datosFiltrados)
+
+    #if 'disciplina' in filtros:
+     #   disciplina_filtro = filtros['areaConocimiento']
+    #    datosFiltrados = filter(lambda x: x.get("areaConociminto") == disciplina_filtro['data'], datosFiltrados)
+
+
+    # Convertir el resultado filtrado a una lista
+    #datosFiltrados = list(datosFiltrados)
 
     # Crear un archivo PDF llamado "tabla_desde_json.pdf"
     doc = SimpleDocTemplate("tabla_desde_json.pdf", pagesize=letter)
