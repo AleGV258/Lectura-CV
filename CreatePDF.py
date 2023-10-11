@@ -81,6 +81,16 @@ def createTable(filtros = {}):
     # Filtra los datos de acuerdo a los filtros recibidos
     datosFiltrados = profesorI
 
+    #Intento de crear los filtros, estos se guardaran en una lista y despues de 
+    # tomamos la lista para poder  realizar los filtros bases
+    #Si no los encuentra sigue, aunque creo que tiene un problema, se vuelven a insertar los impresos
+    #Solo quedaria eso para verificar si funciona
+    
+    #  ____ _    ____ ____     /|\
+    # |  | |    |__| |___     / | \             Y el isra
+    # |__| |___ |  | |          |
+
+
     if 'Nombre' in filtros:
         nombre_filtro = filtros['Nombre']
         datosFiltrados = filter(lambda x: x.get("Nombre") == nombre_filtro['data'], datosFiltrados)
