@@ -102,30 +102,38 @@ def createTable(filtros = {}):
     # |__| |___ |  | |          |
 
     #Intento de arreglar el problema del codigo
-    def filter_func(profesor):
+    #def filter_func(profesor):
         #print("Esto es loq ue tiene profesor", profesor)
-        for filtro_key, filtro_info in filtros.items():
-            if filtro_info['state']:
+        #for filtro_key, filtro_info in filtros.items():
+            #if filtro_info['state']:
                 #print("FiltroInfo------------------",filtro_info)
                 #print("Buscando la mierda en la sopa", filtro_key)
-                if profesor.get(filtro_key, '') != filtro_info['data']:
+            #    if profesor.get(filtro_key, '') != filtro_info['data']:
                     #print("iltro Key---------------", filtro_key, "Dta que esta buscando", filtro_info['data'])
                     #print("datos que esta buscando en profesor", profesor.get(filtro_key, ''))
+            #        return False 
+            #return True
+
+    def filter_func(profesor):
+        for filtro_key, filtro_info in filtros.items():
+            if filtro_info['state']:
+                if profesor.get(filtro_key, '') != filtro_info['data']:
                     return False
-            return True
+        return True
 
 
     x = len(filtros)
     # Aplicar la función de filtro a los datos si hay alguno
-    if x != 0: 
-        datosFiltrados1 = filter(filter_func, profesorI)
+    
+    datosFiltrados1 = filter(filter_func, profesorI)
 
     # Convertir el resultado filtrado a una lista
     datosFiltrados = list(datosFiltrados1)
 
+    print(datosFiltrados)
 
     # Crear un archivo PDF llamado "tabla_desde_json.pdf"
-    doc = SimpleDocTemplate("tabla_desde_json.pdf", pagesize=letter)
+    doc = SimpleDocTemplate("tabla_desde_python.pdf", pagesize=letter)
 
     # Crear una lista de nombres de columnas
     columnas = []
@@ -165,9 +173,9 @@ def createTable(filtros = {}):
     doc.build(story)
     print("DOCUMENTO CREADO")
 #Prueba del codigo con datos estaticos
-filtrosPrueba = {'autor': {'state': False, 'data': 'ALEJANDRO'}, 
-         'ano': {'state': False, 'data': '2019'}, 
-        'documento': {'state': False, 'data': 'Patente'}, 
+filtrosPrueba = {'autor': {'state': True, 'data': 'Ana'}, 
+        'ano': {'state': True, 'data': 2019}, 
+        'documento': {'state': True, 'data': 'Patente'}, 
         'areaConocimiento': {'state': False, 'data': ''}, 
         'otro': {'state': False, 'data': 'Otros'}}
 
