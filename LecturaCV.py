@@ -9,17 +9,25 @@ from functions.cleanNames import cleanNames
 from functions.generateData import generateData
 from functions.dataFunctions import connectionDB, retrieveAllRecords, retrieveRecords, retrieveRecordByID, insertRecord, updateRecords, updateRecordByID, deleteRecords, deleteRecordByID
 
+########## YA ESTA
+# Profesor
+# Logros Profesor
+# Investigaciones Profesor
+# Gestiones Academicas
+# Docencias
+# Tutorias
+# Direccion Individualizada
+########### NO ESTA
+# Beneficios PROMEP
+# Cuerpo Academico
+# Programas Academicos
+
+
 ########## CURRICULUM DE ALEX
-# Docencias falta la ultima parte de la ultima tabla (dixionarymixtable)
-# Direccion Individualizada falta la ultima parte de la ultima tabla (dixionarymixtable)
-# Gestion academica falta la ultima parte de la ultima tabla (dixionarymixtable)
 # Beneficios externos a promep != beneficios promep?
 # Cuerpo Academico, no ultima linea (horizontaltable)
 
 ########## CURRICULUM DE DIEGO
-# No se inserta la ultima tabla docencias
-# Direccion Individualizada falta la ultima parte de la ultima tabla
-# Gestion academica falta la ultima parte de la ultima tabla
 # No se inserta beneficios promep (list index out of range)
 # No se inserta cuerpo academico
 
@@ -27,10 +35,8 @@ def lecturaCV(actualPath, files, selectedTables, queue):
     inicio = time.time() # Inicio de la ejecución
     txtNotification = "Iniciando la Lectura y Carga de los Datos, te pedimos paciencia, ya que la lectura puede tardar hasta 2 minutos por archivo, por la cantidad de información que contenga y velocidad de la red, además te pedimos no abrir documentos de Word mientras se realiza la lectura"
     queue.put(txtNotification)
+    
     print("\n-------------------------------------- Iniciando Lectura --------------------------------------")
-    # actualPath2 = os.path.dirname(os.path.abspath(__file__)) # Directorio actual
-    # files = os.listdir(actualPath + "\\files") # Ruta de los archivos
-
     mc = connectionDB()
     bd = mc[0]
     word = win32com.client.Dispatch("Word.Application") # Generar instancia de word
@@ -59,17 +65,12 @@ def lecturaCV(actualPath, files, selectedTables, queue):
             doc.Close() # Cerrar el doc
             txtNotification = f"Terminando lectura del archivo {file}. Iniciando la carga de datos"
             queue.put(txtNotification)
-            
-
-    
+                     
             # SEPARACIÓN DE DATOS DE LAS TABLAS
             print('\n------------------Profesores--------------------')
             estudiosRealizados = dictionaryMixTable(tablas[2]['contenido'],['Nivel de estudios','Estudios en','Área     > Disciplina','Institución otorgante','Institución otorgante no considerada en el catálogo'], 'Nivel de estudios','País')  
             datosLaborales = generateData(tablas[3]['contenido'], ['Nombramiento', 'Tipo de nombramiento','Dedicación','Institución de Educación Superior','Dependencia de Educación Superior','Unidad Académica','Inicio del contrato', 'Fin del contrato', 'Cronología'])
             nombreProfesor = tablas[1]['contenido'][0][1].upper().replace("Á", "A").replace("É", "E").replace("Í", "I").replace("Ó", "O").replace("Ú", "U")
-            print('\neRealizados:', estudiosRealizados)
-            print('\ndatosLaborales:', datosLaborales)
-            print('\nnombreProfesor:', nombreProfesor)
             profesorRecord = {
                 'Nombre': nombreProfesor,
                 'RFC': tablas[1]['contenido'][2][1],
@@ -95,121 +96,114 @@ def lecturaCV(actualPath, files, selectedTables, queue):
                 queue.put(txtNotification)
                 profesorID = insertRecord(bd, "Profesores", profesorRecord)
 
-
-
-            # counteri=0 
-            for tabla in tablas:
-                # print("\n Tabla ",counteri, ": ",tabla['nombre'])
-                # counteri= counteri + 1
+            if selectedTables['LogrosProfesor'] == True and tablas[5]['nombre'] == 'Producción':  
+                txtNotification = f"Insertando records de Producción y Logros del archivo {file}"
+                queue.put(txtNotification)
+                print('\n------------------Logros--------------------')
+                Logros = createDictionary(tablas[5]['contenido'], ['Tipo', 'Año', 'Título', 'País'], 'Tipo')
+                # print("\nLogros: ", Logros)
+                for logro in Logros:
+                    cleanNames(logro['OtrosDatos']['Autor'], logro, 'Logros', 'ProfesorLogros', 'IdLogro')
                 
-                if selectedTables['LogrosProfesor'] == True and tabla['nombre'] == 'Producción':  
-                    txtNotification = f"Insertando records de Producción y Logros del archivo {file}"
-                    queue.put(txtNotification)
-                    print('\n------------------Logros--------------------')
-                    Logros = createDictionary(tabla['contenido'], ['Tipo', 'Año', 'Título', 'País'], 'Tipo')
-                    # print("\nLogros: ", Logros)
-                    for logro in Logros:
-                        cleanNames(logro['OtrosDatos']['Autor'], logro, 'Logros', 'ProfesorLogros', 'IdLogro')
+            if selectedTables['InvestigacionesProfesor'] == True and tablas[11]['nombre'] == 'Proyectos de investigación':
+                txtNotification = f"Insertando records de Investigaciones del Profesor del archivo {file}"
+                queue.put(txtNotification)
+                print('\n------------------Investigaciones--------------------')
+                Investigaciones = createDictionary(tablas[11]['contenido'],['Título del proyecto','Nombre del patrocinador','Fecha de inicio','Fecha de fin del proyecto','Tipo de patrocinador','TipoPatrocinador','Investigadores participantes','Alumnos participantes','Actividades realizadas','Para considerar en el currículum de cuerpo académico','Miembros','LGACs'], 'Título del proyecto')
+                # print("\nInvestigaciones: ", Investigaciones)     
+                for investigacion in Investigaciones:
+                    cleanNames(investigacion['InvestigadoresParticipantes'], investigacion, 'Investigaciones', 'ProfesorInvestigaciones', 'IdInvestigacion')
+                
+            if selectedTables['GestionAcademica'] == True and tablas[9]['nombre'] == 'Gestión académica': 
+                txtNotification = f"Insertando records de Gestión Académica del archivo {file}" 
+                queue.put(txtNotification)
+                print('\n------------------Gestion Academica--------------------')
+                GestionAcademica = dictionaryMixTable(tablas[9]['contenido'],['Tipo gestión','Cargo dentro de la comisión o cuerpo colegiado','Función encomendada','Órgano colegiado al que fué presentado','Aprobado','Resultados obtenidos','Estado'], 'Tipo gestión', 'Fecha de inicio')
+                # print("\nGestion Academica: ", GestionAcademica)     
+                for gestion in GestionAcademica:
+                    busqueda = retrieveRecords(bd, "GestionesAcademicas", gestion)
+                    if (len(busqueda) == 0):
+                        gestion['IdProfesor'] = ObjectId(profesorID)
+                        insertRecord(bd, 'GestionesAcademicas', gestion)
+            
+            if selectedTables['Tutorias'] == True and tablas[7]['nombre'] == 'Tutoría':
+                txtNotification = f"Insertando records de Tutorías del archivo {file}"
+                queue.put(txtNotification)
+                print('\n------------------Tutorias--------------------')
+                Tutorias = createDictionary(tablas[7]['contenido'],['Tutoría','Nivel', 'Programa educativo en el que participa', 'Fecha de inicio', 'Fecha de término', 'Tipo de tutelaje', 'Estado del tutelaje'], 'Tutoría')
+                # print("\nTutorias: ", Tutorias)
+                for tutoria in Tutorias:
+                    busqueda = retrieveRecords(bd, "Tutorias", tutoria)
+                    if (len(busqueda) == 0):
+                        tutoria['IdProfesor'] = ObjectId(profesorID)
+                        insertRecord(bd, 'Tutorias', tutoria)
                     
-                if selectedTables['InvestigacionesProfesor'] == True and tabla['nombre'] == 'Proyectos de investigación':
-                    txtNotification = f"Insertando records de Investigaciones del Profesor del archivo {file}"
-                    queue.put(txtNotification)
-                    print('\n------------------Investigaciones--------------------')
-                    Investigaciones = createDictionary(tabla['contenido'],['Título del proyecto','Nombre del patrocinador','Fecha de inicio','Fecha de fin del proyecto','Tipo de patrocinador','TipoPatrocinador','Investigadores participantes','Alumnos participantes','Actividades realizadas','Para considerar en el currículum de cuerpo académico','Miembros','LGACs'], 'Título del proyecto')
-                    # print("\nInvestigaciones: ", Investigaciones)     
-                    for investigacion in Investigaciones:
-                        cleanNames(investigacion['InvestigadoresParticipantes'], investigacion, 'Investigaciones', 'ProfesorInvestigaciones', 'IdInvestigacion')
+            if selectedTables['DireccionIndividualizada'] == True and tablas[8]['nombre'] == 'Dirección individualizada':
+                txtNotification = f"Insertando records de Dirección Individualizada del archivo {file}"
+                queue.put(txtNotification)
+                print('\n------------------Dirección Individualizada--------------------')
+                DireccionIndividualizada = dictionaryMixTable(tablas[8]['contenido'],['Título de la tesis o proyecto individual','Grado'], 'Título de la tesis o proyecto individual','Fecha de inicio')
+                # print("\nDirección Individualizada: ", DireccionIndividualizada)        
+                for direccion in DireccionIndividualizada:
+                    busqueda = retrieveRecords(bd, "DireccionesIndividualizadas", direccion)
+                    if (len(busqueda) == 0):
+                        direccion['IdProfesor'] = ObjectId(profesorID)
+                        insertRecord(bd, 'DireccionesIndividualizadas', direccion)
+            
+            if selectedTables['Docencias'] == True and tablas[6]['nombre'] == 'Docencia':
+                txtNotification = f"Insertando records de Docencias del archivo {file}"
+                queue.put(txtNotification)
+                print('\n------------------Docencias--------------------')
+                # print(tablas[6]['contenido'])
+                # Docencias = createDictionary()
+                # print("\nDocencias: ", Docencias)
+                Docencias = dictionaryMixTable(tablas[6]['contenido'],['Nombre del curso','Institución de Educación Superior (IES)', 'Dependencia de Educación Superior (IES)', 'Programa educativo','Nivel'], 'Nombre del curso','Fecha de inicio')  
+                # print("\n Docencias: ", Docencias)
+                for docencia in Docencias:
+                    busqueda = retrieveRecords(bd, "Docencias", docencia)
+                    if (len(busqueda) == 0):
+                        docencia['IdProfesor'] = ObjectId(profesorID)
+                        insertRecord(bd, 'Docencias', docencia)
+            
+            if selectedTables['BeneficiosPROMEP'] == True and tablas[12]['nombre'] == 'Beneficios externos a PROMEP':
+                txtNotification = f"Insertando records de Beneficios PROMEP del archivo {file}"
+                queue.put(txtNotification)
+                print("\n-------------------Beneficios PROMEP----------------------")
+                # Obtención de diccionarios de Beneficios PROMEP
+                BeneficiosPROMEP = horizontalTable(tablas[12]['contenido'])
+                print("\nBeneficios PROMEP: ", BeneficiosPROMEP)
+                # for beneficio in BeneficiosPROMEP:
+                #     busqueda = retrieveRecords(bd, "BeneficiosPROMEP", beneficio)
+                #     if (len(busqueda) == 0):
+                #         beneficio['IdProfesor'] = ObjectId(profesorID)
+                #         insertRecord(bd, 'BeneficiosPROMEP', beneficio)
                     
-                if selectedTables['GestionAcademica'] == True and tabla['nombre'] == 'Gestión académica': 
-                    txtNotification = f"Insertando records de Gestión Académica del archivo {file}" 
-                    queue.put(txtNotification)
-                    print('\n------------------Gestion Academica--------------------')
-                    GestionAcademica = dictionaryMixTable(tabla['contenido'],['Tipo gestión','Cargo dentro de la comisión o cuerpo colegiado','Función encomendada','Órgano colegiado al que fué presentado','Aprobado','Resultados obtenidos','Estado'], 'Tipo gestión', 'Fecha de inicio')
-                    # print("\nGestion Academica: ", GestionAcademica)     
-                    for gestion in GestionAcademica:
-                        busqueda = retrieveRecords(bd, "GestionesAcademicas", gestion)
-                        if (len(busqueda) == 0):
-                            gestion['IdProfesor'] = ObjectId(profesorID)
-                            insertRecord(bd, 'GestionesAcademicas', gestion)
-                
-                if selectedTables['Tutorias'] == True and tabla['nombre'] == 'Tutoría':
-                    txtNotification = f"Insertando records de Tutorías del archivo {file}"
-                    queue.put(txtNotification)
-                    print('\n------------------Tutorias--------------------')
-                    Tutorias = createDictionary(tabla['contenido'],['Tutoría','Nivel', 'Programa educativo en el que participa', 'Fecha de inicio', 'Fecha de término', 'Tipo de tutelaje', 'Estado del tutelaje'], 'Tutoría')
-                    # print("\nTutorias: ", Tutorias)
-                    for tutoria in Tutorias:
-                        busqueda = retrieveRecords(bd, "Tutorias", tutoria)
-                        if (len(busqueda) == 0):
-                            tutoria['IdProfesor'] = ObjectId(profesorID)
-                            insertRecord(bd, 'Tutorias', tutoria)
-                        
-                if selectedTables['DireccionIndividualizada'] == True and tabla['nombre'] == 'Dirección individualizada':
-                    txtNotification = f"Insertando records de Dirección Individualizada del archivo {file}"
-                    queue.put(txtNotification)
-                    print('\n------------------Dirección Individualizada--------------------')
-                    DireccionIndividualizada = dictionaryMixTable(tabla['contenido'],['Título de la tesis o proyecto individual','Grado'], 'Título de la tesis o proyecto individual','Fecha de inicio')
-                    # print("\nDirección Individualizada: ", DireccionIndividualizada)        
-                    for direccion in DireccionIndividualizada:
-                        busqueda = retrieveRecords(bd, "DireccionesIndividualizadas", direccion)
-                        if (len(busqueda) == 0):
-                            direccion['IdProfesor'] = ObjectId(profesorID)
-                            insertRecord(bd, 'DireccionesIndividualizadas', direccion)
-                
-                if selectedTables['Docencias'] == True and tabla['nombre'] == 'Docencia':
-                    txtNotification = f"Insertando records de Docencias del archivo {file}"
-                    queue.put(txtNotification)
-                    print('\n------------------Docencias--------------------')
-                    # print(tablas[6]['contenido'])
-                    # Docencias = createDictionary()
-                    # print("\nDocencias: ", Docencias)
-                    Docencias = dictionaryMixTable(tabla['contenido'],['Nombre del curso','Institución de Educación Superior (IES)', 'Dependencia de Educación Superior (IES)', 'Programa educativo','Nivel'], 'Nombre del curso','Fecha de inicio')  
-                    # print("\n Docencias: ", Docencias)
-                    for docencia in Docencias:
-                        busqueda = retrieveRecords(bd, "Docencias", docencia)
-                        if (len(busqueda) == 0):
-                            docencia['IdProfesor'] = ObjectId(profesorID)
-                            insertRecord(bd, 'Docencias', docencia)
-                
-                if selectedTables['BeneficiosPROMEP'] == True and tabla['nombre'] == 'Beneficios externos a PROMEP':
-                    txtNotification = f"Insertando records de Beneficios PROMEP del archivo {file}"
-                    queue.put(txtNotification)
-                    print("\n-------------------Beneficios PROMEP----------------------")
-                    # Obtención de diccionarios de Beneficios PROMEP
-                    BeneficiosPROMEP = horizontalTable(tabla['contenido'])
-                    # print("\nBeneficios PROMEP: ", BeneficiosPROMEP)
-                    for beneficio in BeneficiosPROMEP:
-                        busqueda = retrieveRecords(bd, "BeneficiosPROMEP", beneficio)
-                        if (len(busqueda) == 0):
-                            beneficio['IdProfesor'] = ObjectId(profesorID)
-                            insertRecord(bd, 'BeneficiosPROMEP', beneficio)
-                        
-                if selectedTables['CuerpoAcademico'] == True and tabla['nombre'] == 'Cuerpo Académico':
-                    txtNotification = f"Insertando records de Cuerpo Académico del archivo {file}" 
-                    queue.put(txtNotification)
-                    print("\n-------------------Cuerpo Academico----------------------")
-                    print("\nAntes: ", tabla['contenido'])
-                    CuerpoAcademico = horizontalTable(tabla['contenido'])
-                    print("\nCuerpo Academico: ", CuerpoAcademico)
-                    for cAcademico in CuerpoAcademico:
-                        busqueda = retrieveRecords(bd, "CuerpoAcademico", cAcademico)
-                        if (len(busqueda) == 0):
-                            cAcademico['IdProfesor'] = ObjectId(profesorID)
-                            insertRecord(bd, 'CuerpoAcademico', cAcademico)
-                        
-                # if selectedTables['ProgramasAcademicos'] == True tabla['nombre'] == 'Cuerpo Académico':
-                #     print("\n-------------------Programas Academicos----------------------")
-                    # # ProgramaAcademico = {
-                    # #     'Programa': tablas[1]['contenido'][0][1],
-                    # #     'Fecha': tablas[1]['contenido'][0][1],
-                    # #     'TipoActualizacion': tablas[1]['contenido'][0][1]
-                    # # }
-                    # # print("\n Programa Academico: ", ProgramaAcademico)        
-                
-                # print("\nTablas encontradas: ----------------------")
-                # for tabla in tablas:
-                #     print(tabla['nombre'])
-                
+            if selectedTables['CuerpoAcademico'] == True and tablas[13]['nombre'] == 'Cuerpo Académico':
+                txtNotification = f"Insertando records de Cuerpo Académico del archivo {file}" 
+                queue.put(txtNotification)
+                print("\n-------------------Cuerpo Academico----------------------")
+                print("\nAntes: ", tablas[13]['contenido'])
+                CuerpoAcademico = horizontalTable(tablas[13]['contenido'])
+                print("\nCuerpo Academico: ", CuerpoAcademico)
+                for cAcademico in CuerpoAcademico:
+                    busqueda = retrieveRecords(bd, "CuerpoAcademico", cAcademico)
+                    if (len(busqueda) == 0):
+                        cAcademico['IdProfesor'] = ObjectId(profesorID)
+                        insertRecord(bd, 'CuerpoAcademico', cAcademico)
+                    
+            if selectedTables['ProgramasAcademicos'] == True:
+                print("\n-------------------Programas Academicos----------------------")
+                # # ProgramaAcademico = {
+                # #     'Programa': tablas[1]['contenido'][0][1],
+                # #     'Fecha': tablas[1]['contenido'][0][1],
+                # #     'TipoActualizacion': tablas[1]['contenido'][0][1]
+                # # }
+                # # print("\n Programa Academico: ", ProgramaAcademico)        
+            
+            # print("\nTablas encontradas: ----------------------")
+            # for tabla in tablas:
+            #     print(tabla['nombre'])
+            
             finArchivo = time.time() # Fin de la ejecución
             txtNotification = f"Terminando lectura y carga de datos del archivo {file}, tiempo transcurrido: {str(finArchivo - inicioArchivo)} segundos. Iniciando lectura del siguiente archivo"
             if(index == len(files)):

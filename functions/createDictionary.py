@@ -6,7 +6,7 @@ def createDictionary(array = [], fields = [], separatorWord = ''):
     result = []
     container = []
     inserted = False
-    for row in array: 
+    for row in array:
         if row[0] == separatorWord and counter != 0: 
             inserted = True
             # print("\n Nuevo logro",row) 
@@ -28,7 +28,7 @@ def createDictionary(array = [], fields = [], separatorWord = ''):
 
 
 def horizontalTable(array = []):
-    fields = array[0];
+    fields = array[0]
     
     counter = 0
     result = []
