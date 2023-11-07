@@ -9,19 +9,6 @@ from functions.cleanNames import cleanNames
 from functions.generateData import generateData
 from functions.dataFunctions import connectionDB, retrieveAllRecords, retrieveRecords, retrieveRecordByID, insertRecord, updateRecords, updateRecordByID, deleteRecords, deleteRecordByID
 
-########## CURRICULUM DE ALEX
-# Docencias falta la ultima parte de la ultima tabla (dixionarymixtable)
-# Direccion Individualizada falta la ultima parte de la ultima tabla (dixionarymixtable)
-# Gestion academica falta la ultima parte de la ultima tabla (dixionarymixtable)
-# Beneficios externos a promep != beneficios promep?
-# Cuerpo Academico, no ultima linea (horizontaltable)
-
-########## CURRICULUM DE DIEGO
-# No se inserta la ultima tabla docencias
-# Direccion Individualizada falta la ultima parte de la ultima tabla
-# Gestion academica falta la ultima parte de la ultima tabla
-# No se inserta beneficios promep (list index out of range)
-# No se inserta cuerpo academico
 
 def lecturaCV(actualPath, files, selectedTables, queue):
     inicio = time.time() # Inicio de la ejecución
@@ -96,18 +83,11 @@ def lecturaCV(actualPath, files, selectedTables, queue):
                 profesorID = insertRecord(bd, "Profesores", profesorRecord)
 
 
-
-            counteri=0 
+            # counteri=0 
             for tabla in tablas:
-                print("\n Tabla ",counteri, ": ",tabla['nombre'])
-                counteri= counteri + 1
-                # if tabla['nombre'] == 'Beneficios externos a PROMEP':  
-                #     print(tabla['contenido'])
-                #     print('----------------------------TEMP')
-                # if tabla['nombre'] == 'Beneficios PROMEP':
-                #     print(tabla['contenido'])
-                #     print('----------------------------TEMP')
-                    
+                # print("\n Tabla ",counteri, ": ",tabla['nombre'])
+                # counteri= counteri + 1
+
                 if selectedTables['LogrosProfesor'] == True and tabla['nombre'] == 'Producción':  
                     txtNotification = f"Insertando records de Producción y Logros del archivo {file}"
                     queue.put(txtNotification)
@@ -166,9 +146,6 @@ def lecturaCV(actualPath, files, selectedTables, queue):
                     txtNotification = f"Insertando records de Docencias del archivo {file}"
                     queue.put(txtNotification)
                     print('\n------------------Docencias--------------------')
-                    # print(tablas[6]['contenido'])
-                    # Docencias = createDictionary()
-                    # print("\nDocencias: ", Docencias)
                     Docencias = dictionaryMixTable(tabla['contenido'],['Nombre del curso','Institución de Educación Superior (IES)', 'Dependencia de Educación Superior (IES)', 'Programa educativo','Nivel'], 'Nombre del curso','Fecha de inicio')  
                     # print("\n Docencias: ", Docencias)
                     for docencia in Docencias:
@@ -177,12 +154,6 @@ def lecturaCV(actualPath, files, selectedTables, queue):
                             docencia['IdProfesor'] = ObjectId(profesorID)
                             insertRecord(bd, 'Docencias', docencia)
                 
-                #  if tabla['nombre'] == 'Beneficios externos a PROMEP':  
-                #     print(tabla['contenido'])
-                #     print('----------------------------TEMP')
-                # if tabla['nombre'] == 'Beneficios PROMEP':
-                #     print(tabla['contenido'])
-                #     print('--
                 if selectedTables['BeneficiosPROMEP'] == True and tabla['nombre'] == 'Beneficios externos a PROMEP':
                     txtNotification = f"Insertando records de Beneficios externos a PROMEP del archivo {file}"
                     queue.put(txtNotification)
