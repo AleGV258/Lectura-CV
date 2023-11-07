@@ -97,11 +97,17 @@ def lecturaCV(actualPath, files, selectedTables, queue):
 
 
 
-            # counteri=0 
+            counteri=0 
             for tabla in tablas:
-                # print("\n Tabla ",counteri, ": ",tabla['nombre'])
-                # counteri= counteri + 1
-                
+                print("\n Tabla ",counteri, ": ",tabla['nombre'])
+                counteri= counteri + 1
+                # if tabla['nombre'] == 'Beneficios externos a PROMEP':  
+                #     print(tabla['contenido'])
+                #     print('----------------------------TEMP')
+                # if tabla['nombre'] == 'Beneficios PROMEP':
+                #     print(tabla['contenido'])
+                #     print('----------------------------TEMP')
+                    
                 if selectedTables['LogrosProfesor'] == True and tabla['nombre'] == 'Producción':  
                     txtNotification = f"Insertando records de Producción y Logros del archivo {file}"
                     queue.put(txtNotification)
@@ -171,7 +177,26 @@ def lecturaCV(actualPath, files, selectedTables, queue):
                             docencia['IdProfesor'] = ObjectId(profesorID)
                             insertRecord(bd, 'Docencias', docencia)
                 
+                #  if tabla['nombre'] == 'Beneficios externos a PROMEP':  
+                #     print(tabla['contenido'])
+                #     print('----------------------------TEMP')
+                # if tabla['nombre'] == 'Beneficios PROMEP':
+                #     print(tabla['contenido'])
+                #     print('--
                 if selectedTables['BeneficiosPROMEP'] == True and tabla['nombre'] == 'Beneficios externos a PROMEP':
+                    txtNotification = f"Insertando records de Beneficios externos a PROMEP del archivo {file}"
+                    queue.put(txtNotification)
+                    print("\n-------------------Beneficios externos a PROMEP----------------------")
+                    # Obtención de diccionarios de Beneficios PROMEP
+                    BeneficiosPROMEP = horizontalTable(tabla['contenido'])
+                    # print("\nBeneficios PROMEP: ", BeneficiosPROMEP)
+                    for beneficio in BeneficiosPROMEP:
+                        busqueda = retrieveRecords(bd, "BeneficiosPROMEP", beneficio)
+                        if (len(busqueda) == 0):
+                            beneficio['IdProfesor'] = ObjectId(profesorID)
+                            insertRecord(bd, 'BeneficiosExternosPROMEP', beneficio)
+                            
+                if selectedTables['BeneficiosPROMEP'] == True and tabla['nombre'] == 'Beneficios PROMEP':
                     txtNotification = f"Insertando records de Beneficios PROMEP del archivo {file}"
                     queue.put(txtNotification)
                     print("\n-------------------Beneficios PROMEP----------------------")
