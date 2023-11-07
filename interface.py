@@ -3,7 +3,6 @@ from tkinter import filedialog
 from pygubu.widgets.tkscrolledframe import TkScrolledFrame
 from LecturaCV import lecturaCV
 from CreatePDF import createTable
-from PIL import Image, ImageTk
 import time
 import os
 import threading
@@ -29,13 +28,6 @@ class InterfazCV:
             takefocus=True)
         self.frm_principal.grid(column=1, row=1, sticky="nsew")
         
-        # Imagen para el Título de la App
-        self.imagen = Image.open("./images/escudo.png")
-        self.imagen = self.imagen.resize((275, 63))
-        self.img_titulo = ImageTk.PhotoImage(self.imagen)
-        self.label = tk.Label(self.frm_principal, image=self.img_titulo)
-        self.label.grid(column=0, row=0, sticky="w")
-        
         # Label de Título de la App
         self.label_titulo = tk.Label(self.frm_principal)
         self.label_titulo.configure(
@@ -43,17 +35,13 @@ class InterfazCV:
             compound="top",
             font="{Glacial Indifference} 20 {bold}",
             foreground="#ffffff",
-            justify="right",
+            justify="center",
             pady=15,
             relief="flat",
             state="normal",
-            text='Lectura de Curriculums')
-        self.label_titulo.grid(
-            column=0,
-            columnspan=2,
-            ipadx=320,
-            row=0,
-            sticky="e")
+            text='Lectura de Curriculums',
+            width=0)
+        self.label_titulo.grid(column=0, columnspan=2, row=0, sticky="ew")
         
         # Botón de Panel de Exportar
         self.btn_exportar = tk.Button(self.frm_principal)
@@ -95,7 +83,7 @@ class InterfazCV:
         
         # Frame que contiene todo lo de Importar
         self.frm_importar = tk.Frame(self.frm_principal)
-        self.frm_importar.configure(background="#E9E0EB")
+        self.frm_importar.configure(background="#E9E0EB", height=200)
         
         # Botón para seleccionar Directorio
         self.btn_path = tk.Button(self.frm_importar)
@@ -852,6 +840,7 @@ class InterfazCV:
         print(self.filtersData)
         createTable(self.filtersData)
         
+        
 if __name__ == "__main__":
     root = tk.Tk()
     root.title("Lectura de Curriculums")
@@ -859,4 +848,3 @@ if __name__ == "__main__":
     root.grid_columnconfigure(0, weight=1)
     app = InterfazCV(root)
     app.run()
-

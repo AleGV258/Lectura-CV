@@ -9,6 +9,7 @@ from reportlab.lib import colors
 #with open("datos.json", "r") as json_file:
  #   datos = json.load(json_file)
 
+
 # ____ _ _    ___ ____ ____ ____          ____ _    ____ ____       |
 # |___ | |     |  |__/ |  | [__     __    |  | |    |__| |___     \ | /
 # |    | |___  |  |  \ |__| ___]          |__| |___ |  | |         \|/
@@ -51,6 +52,7 @@ from reportlab.lib import colors
 
 def createTable(filtros = {}):
     print("\n Filtros recibidos: ", filtros)
+    
 
     mc = connectionDB()
     db = mc[0]
@@ -171,7 +173,7 @@ def createTable(filtros = {}):
     doc.build(story)
     print("DOCUMENTO CREADO")
 #Prueba del codigo con datos estaticos
-filtrosPrueba = {'autor': {'state': True, 'data': 'ALEJANDRO'}, 
+filtrosPrueba = {'autor': {'state': True, 'data': 'Ana'}, 
         'ano': {'state': True, 'data': 2019}, 
         'documento': {'state': True, 'data': 'Patente'}, 
         'areaConocimiento': {'state': False, 'data': ''}, 
