@@ -741,7 +741,10 @@ class InterfazCV:
     
     def ejecutar_lecturaCV(self):
         if self.folderPath:
-            lecturaCV(self.folderPath, self.documentosArray, self.selectedTables, self.queue)
+            if self.documentosArray:
+                lecturaCV(self.folderPath, self.documentosArray, self.selectedTables, self.queue)
+            else:
+                self.label_notificacion_importar.configure(text=f'Este directorio no contiene documentos por cargar')
         else:
             self.label_notificacion_importar.configure(text=f'No se ha seleccionado ningun directorio de donde cargar los documentos')
         
