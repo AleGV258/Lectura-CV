@@ -1,5 +1,5 @@
-from functions.dataFunctions import retrieveAllRecords, retrieveRecords, retrieveRecordByID, insertRecord, updateRecords, updateRecordByID, deleteRecords, deleteRecordByID
-from functions.cleanData import cleanData
+from functions.generateData import generateData
+from functions.dataFunctions import connectionDB, retrieveAllRecords, retrieveRecords, retrieveRecordByID, insertRecord, updateRecords, updateRecordByID, deleteRecords, deleteRecordByID
 from fuzzywuzzy import fuzz
 import difflib
 import psutil
@@ -84,16 +84,17 @@ import os
 
 
 
-
+# mc = connectionDB()
+# bd = mc[0]
 
 # #### Retrieve All Data
 # data = RetrieveAllRecords("Profesores")
 # print(data)
 
 # #### Retrieve Data
-# record = {"prueba":"prueba"}
-# data = RetrieveRecords("Profesores", record)
-# print(data)
+# record = {'TituloTesisProyectoIndividual': 'Metodología para la creación de cursos de formación y preparación de estudiantes de licenciatura en modalidad en línea', 'Grado': 'Maestría', 'FechaInicio': '04/02/2022', 'FechaTermino': '22/12/2023', 'No.Alumnos': '1', 'EstadoDireccionIndividualizada': 'En proceso', 'ParaConsiderarCurriculumCuerpoAcademico': 'Si', 'Miembros': '0', 'LGACs': '1'}
+# data = retrieveRecords(bd, "DireccionesIndividualizadas", record)
+# print("\n",data)
 
 # #### Retrieve Data By ID
 # data = RetrieveRecordByID("Profesores", "64ed0fea48358aee9d17d8f5")

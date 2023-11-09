@@ -195,24 +195,24 @@ class InterfazCV:
             column=0, padx=40, pady=0, row=3, sticky="w")
         
         # Checkbox de Programas Académicos
-        self.check_prog_academicos = tk.BooleanVar()
-        self.check_programas = tk.Checkbutton(self.frm_tablas)
-        self.check_programas.configure(
-            background="#AF9EB7",
-            activebackground="#AF9EB7",
-            cursor="circle",
-            borderwidth=0,
-            font="{Glacial Indifference} 16 {}",
-            justify="center",
-            offrelief="flat",
-            offvalue=False,
-            onvalue=True,
-            overrelief="flat",
-            selectcolor="#E9E0EB",
-            takefocus=True,
-            text='Programas Académicos',
-            variable=self.check_prog_academicos)
-        self.check_programas.grid(column=1, padx=40, row=3, sticky="w")
+        # self.check_prog_academicos = tk.BooleanVar()
+        # self.check_programas = tk.Checkbutton(self.frm_tablas)
+        # self.check_programas.configure(
+        #     background="#AF9EB7",
+        #     activebackground="#AF9EB7",
+        #     cursor="circle",
+        #     borderwidth=0,
+        #     font="{Glacial Indifference} 16 {}",
+        #     justify="center",
+        #     offrelief="flat",
+        #     offvalue=False,
+        #     onvalue=True,
+        #     overrelief="flat",
+        #     selectcolor="#E9E0EB",
+        #     takefocus=True,
+        #     text='Programas Académicos',
+        #     variable=self.check_prog_academicos)
+        # self.check_programas.grid(column=1, padx=40, row=3, sticky="w")
         
         # Checkbox de Gestión Académica
         self.check_gest_academica = tk.BooleanVar()
@@ -292,7 +292,7 @@ class InterfazCV:
             takefocus=True,
             text='Dirección Individualizada',
             variable=self.check_dir_individualizada)
-        self.check_direccion.grid(column=1, padx=40, row=5, sticky="w")
+        self.check_direccion.grid(column=1, padx=40, row=3, sticky="w")
         
         # Checkbox de Beneficios PROMEP
         self.check_benf_promep = tk.BooleanVar()
@@ -714,7 +714,7 @@ class InterfazCV:
             self.check_docencias_Profesor.set(True)
             self.check_benf_promep.set(True)
             self.check_cuerpo_academico.set(True)
-            self.check_prog_academicos.set(True)
+            # self.check_prog_academicos.set(True)
             self.check_tutorias_Profesor.set(True)
             self.check_dir_individualizada.set(True)
         else:
@@ -724,7 +724,7 @@ class InterfazCV:
             self.check_docencias_Profesor.set(False)
             self.check_benf_promep.set(False)
             self.check_cuerpo_academico.set(False)
-            self.check_prog_academicos.set(False)
+            # self.check_prog_academicos.set(False)
             self.check_tutorias_Profesor.set(False)
             self.check_dir_individualizada.set(False)
     
@@ -737,12 +737,15 @@ class InterfazCV:
             self.crear_etiquetas(self.documents)
             self.documentosArray = self.documents
             self.label_notificacion_importar.configure(text=f'Cargados documentos de {self.folderPath}')
+            self.btn_BaseDatos.configure(state="normal", background="#534B62")
             # print("\n", self.documents)
     
     def ejecutar_lecturaCV(self):
         if self.folderPath:
             if self.documentosArray:
+                self.btn_BaseDatos.configure(state="disabled", background="#574b90")
                 lecturaCV(self.folderPath, self.documentosArray, self.selectedTables, self.queue)
+                self.btn_BaseDatos.configure(state="normal", background="#534B62")
             else:
                 self.label_notificacion_importar.configure(text=f'Este directorio no contiene documentos por cargar')
         else:
@@ -768,7 +771,7 @@ class InterfazCV:
             "Docencias": self.check_docencias_Profesor.get(),
             "BeneficiosPROMEP": self.check_benf_promep.get(),
             "CuerpoAcademico": self.check_cuerpo_academico.get(),
-            "ProgramasAcademicos": self.check_prog_academicos.get(),
+            # "ProgramasAcademicos": self.check_prog_academicos.get(),
             "Tutorias": self.check_tutorias_Profesor.get(),
             "DireccionIndividualizada": self.check_dir_individualizada.get()
         }

@@ -23,16 +23,14 @@ def createDictionary(array = [], fields = [], separatorWord = ''):
         if counter == len(array):
             dictionary = generateData(container, fields)
             result.append(dictionary)
-            
     return result
 
 
 def horizontalTable(array = []):
     fields = array[0];
-    
     counter = 0
     result = []
-    
+
     for row in array: 
         # print("\nRow:",row)
         if counter > 0: 
@@ -42,7 +40,6 @@ def horizontalTable(array = []):
                 dictionary[cleanData(fields[i], True)] =cleanData(row[i], False)
             result.append(dictionary)            
         counter = counter + 1
-            
     return result
 
 def dictionaryMixTable(array=[], fields=[], separatorWord='', horizontalWord='Fecha de inicio'):
@@ -103,7 +100,5 @@ def dictionaryMixTable(array=[], fields=[], separatorWord='', horizontalWord='Fe
                     for i in range(len(fieldsHorizontal)):
                         dictionary[cleanData(fieldsHorizontal[i], True)] = cleanData(nRow[i], False)
                 counterHor = counterHor + 1
-            
             result.append(dictionary)
-
     return result

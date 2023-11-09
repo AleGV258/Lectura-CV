@@ -9,7 +9,6 @@ from functions.cleanNames import cleanNames
 from functions.generateData import generateData
 from functions.dataFunctions import connectionDB, retrieveAllRecords, retrieveRecords, retrieveRecordByID, insertRecord, updateRecords, updateRecordByID, deleteRecords, deleteRecordByID
 
-
 def lecturaCV(actualPath, files, selectedTables, queue):
     inicio = time.time() # Inicio de la ejecución
     txtNotification = "Iniciando la Lectura y Carga de los Datos, te pedimos paciencia, ya que la lectura puede tardar hasta 2 minutos por archivo, por la cantidad de información que contenga y velocidad de la red, además te pedimos no abrir documentos de Word mientras se realiza la lectura"
@@ -47,16 +46,14 @@ def lecturaCV(actualPath, files, selectedTables, queue):
             txtNotification = f"Terminando lectura del archivo {file}. Iniciando la carga de datos"
             queue.put(txtNotification)
             
-
-    
             # SEPARACIÓN DE DATOS DE LAS TABLAS
             print('\n------------------Profesores--------------------')
             estudiosRealizados = dictionaryMixTable(tablas[2]['contenido'],['Nivel de estudios','Estudios en','Área     > Disciplina','Institución otorgante','Institución otorgante no considerada en el catálogo'], 'Nivel de estudios','País')  
             datosLaborales = generateData(tablas[3]['contenido'], ['Nombramiento', 'Tipo de nombramiento','Dedicación','Institución de Educación Superior','Dependencia de Educación Superior','Unidad Académica','Inicio del contrato', 'Fin del contrato', 'Cronología'])
             nombreProfesor = tablas[1]['contenido'][0][1].upper().replace("Á", "A").replace("É", "E").replace("Í", "I").replace("Ó", "O").replace("Ú", "U")
-            print('\neRealizados:', estudiosRealizados)
-            print('\ndatosLaborales:', datosLaborales)
-            print('\nnombreProfesor:', nombreProfesor)
+            # print('\nRealizados:', estudiosRealizados)
+            # print('\ndatosLaborales:', datosLaborales)
+            # print('\nnombreProfesor:', nombreProfesor)
             profesorRecord = {
                 'Nombre': nombreProfesor,
                 'RFC': tablas[1]['contenido'][2][1],
@@ -81,8 +78,7 @@ def lecturaCV(actualPath, files, selectedTables, queue):
                 txtNotification = f"Insertando records de Profesor del archivo {file}"
                 queue.put(txtNotification)
                 profesorID = insertRecord(bd, "Profesores", profesorRecord)
-
-
+                
             # counteri=0 
             for tabla in tablas:
                 # print("\n Tabla ",counteri, ": ",tabla['nombre'])
@@ -184,23 +180,14 @@ def lecturaCV(actualPath, files, selectedTables, queue):
                     txtNotification = f"Insertando records de Cuerpo Académico del archivo {file}" 
                     queue.put(txtNotification)
                     print("\n-------------------Cuerpo Academico----------------------")
-                    print("\nAntes: ", tabla['contenido'])
+                    # print("\nAntes: ", tabla['contenido'])
                     CuerpoAcademico = horizontalTable(tabla['contenido'])
-                    print("\nCuerpo Academico: ", CuerpoAcademico)
+                    # print("\nCuerpo Academico: ", CuerpoAcademico)
                     for cAcademico in CuerpoAcademico:
                         busqueda = retrieveRecords(bd, "CuerpoAcademico", cAcademico)
                         if (len(busqueda) == 0):
                             cAcademico['IdProfesor'] = ObjectId(profesorID)
-                            insertRecord(bd, 'CuerpoAcademico', cAcademico)
-                        
-                # if selectedTables['ProgramasAcademicos'] == True tabla['nombre'] == 'Cuerpo Académico':
-                #     print("\n-------------------Programas Academicos----------------------")
-                    # # ProgramaAcademico = {
-                    # #     'Programa': tablas[1]['contenido'][0][1],
-                    # #     'Fecha': tablas[1]['contenido'][0][1],
-                    # #     'TipoActualizacion': tablas[1]['contenido'][0][1]
-                    # # }
-                    # # print("\n Programa Academico: ", ProgramaAcademico)        
+                            insertRecord(bd, 'CuerpoAcademico', cAcademico)    
                 
                 # print("\nTablas encontradas: ----------------------")
                 # for tabla in tablas:
