@@ -35,11 +35,7 @@ from reportlab.lib import colors
 # Otros se encuentra en un "stand by" ese todavia no lo consideres 
 
 # los filtros se te devuelven de la siguiente manera:
-# {'autor': {'state': True, 'data': 'ALEJANDRO'}, 
-# 'ano': {'state': False, 'data': '2019'}, 
-# 'documento': {'state': True, 'data': 'Patente'}, 
-# 'areaConocimiento': {'state': True, 'data': ''}, 
-# 'otro': {'state': False, 'data': 'Otros'}}
+#  
 #
     # Si state es False no se considera aunque data tenga información
 
@@ -61,74 +57,34 @@ def createTable(filtros = {}):
     #profesorI = retrieveAllRecords(db, "Profesores") #Comentado por que no puedo usar la base de datos xd
 
     #Prueba estatica de datos
-    profesorI = [
-    {
-        "autor": "ALEJANDRO",
-        "ano": 2019,
-        "documento": "Patente",
-        "areaConocimiento": "Ciencias de la Computación",
-        "otro" : {"dia" : "no", "fecha" : 20192, "_id" : 290256}
-    },
-    {
-        "autor": "María",
-        "ano": 2020,
-        "documento": "Tesis",
-        "areaConocimiento": "Matemáticas"
-    },
-    {
-        "autor": "Carlos",
-        "ano": 2019,
-        "documento": "Artículo",
-        "areaConocimiento": "Física"
-    },
-    {
-        "autor": "Ana",
-        "ano": 2020,
-        "documento": "Tesis",
-        "areaConocimiento": "Biología"
-    }
-]
+    profesorI = retrieveAllRecords(db, "Profesores")
 
-    # Filtra los datos de acuerdo a los filtros recibidos
-    #datosFiltrados = profesorI
-
-    #Intento de crear los filtros, estos se guardaran en una lista y despues de 
-    # tomamos la lista para poder  realizar los filtros bases
-    #Si no los encuentra sigue, aunque creo que tiene un problema, se vuelven a insertar los impresos
-    #Solo quedaria eso para verificar si funciona
-    
-    #  ____ _    ____ ____     /|\
-    # |  | |    |__| |___     / | \             Y el isra
-    # |__| |___ |  | |          |
-
-    #Intento de arreglar el problema del codigo
+    print(profesorI)
     #def filter_func(profesor):
-        #print("Esto es loq ue tiene profesor", profesor)
-        #for filtro_key, filtro_info in filtros.items():
-            #if filtro_info['state']:
-                #print("FiltroInfo------------------",filtro_info)
-                #print("Buscando la mierda en la sopa", filtro_key)
-            #    if profesor.get(filtro_key, '') != filtro_info['data']:
-                    #print("iltro Key---------------", filtro_key, "Dta que esta buscando", filtro_info['data'])
-                    #print("datos que esta buscando en profesor", profesor.get(filtro_key, ''))
-            #        return False 
-            #return True
+    #    for filtro_key, filtro_info in filtros.items():
+    #        if filtro_info['state']:
+    #            if profesor.get(filtro_key, '') != filtro_info['data']:
+    #                return False
+    #    return 
+    #listaData = []
+    #for profesorData in profesorI['data']:
+     #   filtroData = profesorData
+    #    listaData.add(filtroData)
+    #print(filtroData)
+    #def filter_func(profesor):
+    #    for filtro_key, filtro_info in filtros.items():
+    ##        if filtro_info['state']:
+     #           if profesor.get(filtro_key, '') != filtro_info['data']:
+    #                return False
+    #    return True
 
-    def filter_func(profesor):
-        for filtro_key, filtro_info in filtros.items():
-            if filtro_info['state']:
-                if profesor.get(filtro_key, '') != filtro_info['data']:
-                    return False
-        return True
 
-
-    x = len(filtros)
     # Aplicar la función de filtro a los datos si hay alguno
     
-    datosFiltrados1 = filter(filter_func, profesorI)
+    #datosFiltrados1 = filter(filter_func, profesorI)
 
     # Convertir el resultado filtrado a una lista
-    datosFiltrados = list(datosFiltrados1)
+    datosFiltrados = profesorI
 
     print(datosFiltrados)
 
@@ -136,17 +92,23 @@ def createTable(filtros = {}):
     doc = SimpleDocTemplate("tabla_desde_python.pdf", pagesize=letter)
 
     # Crear una lista de nombres de columnas
-    columnas = []
-    for i in filtros:
-        columnas.append(i)
+    columnas = ["_id", "Nombre", "FechaNacimiento", "IES"]
+    #for i in filtros:
+    #    columnas.append(i)
 
     # Crear una lista de listas a partir de los datos filtrados
     dataFinal = [columnas]
     
     for profesor in datosFiltrados:
-        fila = [profesor.get(col, '') for col in columnas]
-        dataFinal.append(fila)
+        dataFinal.append([
+            profesor.get("_id", ""),
+            profesor.get("Nombre", ""),
+            profesor.get("FechaNacimiento", ""),
+            profesor.get("IES", "")
+        ])
 
+
+    print(dataFinal,"------------------------------")
     # Crear una tabla con los datos
     tabla = Table(dataFinal)
 
@@ -156,6 +118,7 @@ def createTable(filtros = {}):
         ('TEXTCOLOR', (0, 0), (-1, 0), colors.whitesmoke),
         ('ALIGN', (0, 0), (-1, -1), 'CENTER'),
         ('FONTNAME', (0, 0), (-1, 0), 'Helvetica-Bold'),
+        ('FONTSIZE', (0, 0), (-1, -1), 8),
         ('BOTTOMPADDING', (0, 0), (-1, 0), 12),
         ('BACKGROUND', (0, 1), (-1, -1), colors.beige),
         ('GRID', (0, 0), (-1, -1), 1, '#27a39d'),
@@ -173,10 +136,10 @@ def createTable(filtros = {}):
     doc.build(story)
     print("DOCUMENTO CREADO")
 #Prueba del codigo con datos estaticos
-filtrosPrueba = {'autor': {'state': True, 'data': 'Ana'}, 
-        'ano': {'state': True, 'data': 2019}, 
-        'documento': {'state': True, 'data': 'Patente'}, 
-        'areaConocimiento': {'state': False, 'data': ''}, 
-        'otro': {'state': False, 'data': 'Otros'}}
+#filtrosPrueba = {'autor': {'state': False, 'data': 'ALEJANDRO'}, 
+#        'ano': {'state': True, 'data': '2019'}, 
+#        'documento': {'state': True, 'data': 'Patente'}, 
+#        'areaConocimiento': {'state': False, 'data': ''}, 
+#        'otro': {'state': False, 'data': 'Otros'}}
 
-createTable(filtrosPrueba)
+
