@@ -5,45 +5,6 @@ import json
 from reportlab.platypus import SimpleDocTemplate, Table, TableStyle, Frame
 from reportlab.lib import colors
 
-# Cargar datos desde el archivo JSON
-#with open("datos.json", "r") as json_file:
- #   datos = json.load(json_file)
-
-
-# ____ _ _    ___ ____ ____ ____          ____ _    ____ ____       |
-# |___ | |     |  |__/ |  | [__     __    |  | |    |__| |___     \ | /
-# |    | |___  |  |  \ |__| ___]          |__| |___ |  | |         \|/
-                                                            
-# --------------------------- DATOS QUE SE DEBEN FILTRAR
-# Existen 4 principales filtros Año, Area de Conocimiento, Nombre de Autor, Tipo de Documento
-
-# Nombre de Autor se encuentra en las tablas Logros e Investigaciones
-# Retrieve records from (Logros o Investigaciones)
-#
-# busqueda = {"Nombre":"MAURICIO ARTURO IBARRA CORONA"}
-# data = RetrieveRecords("Profesores", busqueda)
-# print(data)
-#
-# De la forma anterior solo se regresaran los que coincidan con la busqueda, ahora ojo, esto regresara solo la informacion de la tabla profesor, se requiere extraer el id y hacerlo coincidir con las tablas profesorlogros y profesorinvestigaciones
-
-# Año se encuentra en varias tablas pero solo vamos a filtrarlo en Logros e Investigaciones, en logros no hay mayor problema que buscar {"Ano":"2019"}, pero en Investigaciones tienes traer todas las investigaciones y por cada fechainicio y fechafinproyecto, separar la fecha por / , una vez hecho esto coincidir lo s años y regresar esto
-
-# Tipo de Documento se encuentra en la tabla Logros y es simplemente filtrar por {"Tipo":"Productividad Innovadora"}
-# Si se ingresa algo como "Patente", esto no se encuentra directamente en tipo se tiene que ingresar a otros datos y buscar lo siguiente {"TipoProduccionInnovadora":"Patente"}
-
-# Area de Conocimiento se encuentra en un "stand by" ese todavia no lo consideres, le tengo que preguntar una cosa primero al profe
-# Otros se encuentra en un "stand by" ese todavia no lo consideres 
-
-# los filtros se te devuelven de la siguiente manera:
-#  
-#
-    # Si state es False no se considera aunque data tenga información
-
-# ------------------------------------------------------
-
-# ____ _ _    ___ ____ ____ ____          ____ _    ____ ____      /|\
-# |___ | |     |  |__/ |  | [__     __    |  | |    |__| |___     / | \
-# |    | |___  |  |  \ |__| ___]          |__| |___ |  | |          |
 
 
 def createTable(filtros = {}):
@@ -58,26 +19,17 @@ def createTable(filtros = {}):
 
     #Prueba estatica de datos
     profesorI = retrieveAllRecords(db, "Profesores")
-
-    print(profesorI)
-    #def filter_func(profesor):
-    #    for filtro_key, filtro_info in filtros.items():
-    #        if filtro_info['state']:
-    #            if profesor.get(filtro_key, '') != filtro_info['data']:
-    #                return False
-    #    return 
-    #listaData = []
-    #for profesorData in profesorI['data']:
-     #   filtroData = profesorData
-    #    listaData.add(filtroData)
-    #print(filtroData)
-    #def filter_func(profesor):
-    #    for filtro_key, filtro_info in filtros.items():
-    ##        if filtro_info['state']:
-     #           if profesor.get(filtro_key, '') != filtro_info['data']:
-    #                return False
-    #    return True
-
+    beneficiosPROMEP = retrieveAllRecords(db, "BeneficiosPROMEP")
+    cuerpoAcademico = retrieveAllRecords(db, "CuerpoAcademico")
+    direccionIndividualizada = retrieveAllRecords(db, "DireccionesIndividualizadas")
+    docencias = retrieveAllRecords(db, "Docencias")
+    gestionAcademica = retrieveAllRecords(db, "GestionesAcademicas")
+    investigaciones = retrieveAllRecords(db, "Investigaciones")
+    logros = retrieveAllRecords(db, "Logros")
+    profesoresInvestigaciones = retrieveAllRecords(db, "ProfesorInvestigaciones")
+    profesorLogros = retrieveAllRecords(db, "ProfesorLogros")
+    tutorias = retrieveAllRecords(db, "Tutorias")
+    
 
     # Aplicar la función de filtro a los datos si hay alguno
     
@@ -86,29 +38,146 @@ def createTable(filtros = {}):
     # Convertir el resultado filtrado a una lista
     datosFiltrados = profesorI
 
-    print(datosFiltrados)
-
     # Crear un archivo PDF llamado "tabla_desde_json.pdf"
-    doc = SimpleDocTemplate("tabla_desde_python.pdf", pagesize=letter)
+    
 
     # Crear una lista de nombres de columnas
-    columnas = ["_id", "Nombre", "FechaNacimiento", "IES"]
+    columnasProf = ["_id", "Nombre", "FechaNacimiento", "IES"]
+    columnasPROMEP = ["IES Solicitud", "Solicitud", "Vigencia", "Estado", "id Profesor"]
+    columnasAcademico = ["id", "Nombre Academico", "clave", "Consolidacion"]
+    columnasDireccion = ["Titulo", "grado", "Direccion Individualizada", "LAGCs"]
+    columnasDocencias = ["Curso", "Institucion", "Dependencia"]
+    cGAcademica = ["Tipo", "Cargo", "Funcion", "Aprobado", "Estado"]
+    cInvestigacion = ["Titulo", "Nombre", "Tipo"]
+    cLogros = ["Tipo", "Titulo", "pais", "Año"]
+    cProfesoresInvestigacion = ["_id", "Nombre", "id_profesor", "id_investigacion"]
+    cProfesoresLogros = ["Nombre", "idProfesor", "idLogro"]
+    cTurorias = ["Tutoria", "Nivel", "programa", "Estado"]
     #for i in filtros:
     #    columnas.append(i)
 
     # Crear una lista de listas a partir de los datos filtrados
-    dataFinal = [columnas]
-    
+    dataFinalProf = [columnasProf]
+    dataFinalPROMEP = [columnasPROMEP]
+    dataFinalAcademicos = [columnasAcademico]
+    dataFinalDireccion = [columnasDireccion]
+    dataFinalDocencias = [columnasDocencias]
+    dataFinalGAcademicas = [cGAcademica]
+    dataFinalInvestigacion = [cInvestigacion]
+    dataFinalLogros = [cLogros]
+    dataFinalPinvestifaciones = [cProfesoresInvestigacion]
+    dataFinalPLogros = [cProfesoresLogros]
+    dataFinalTutorias = [cTurorias]
+
     for profesor in datosFiltrados:
-        dataFinal.append([
+        dataFinalProf.append([
             profesor.get("_id", ""),
             profesor.get("Nombre", ""),
             profesor.get("FechaNacimiento", ""),
             profesor.get("IES", "")
         ])
 
+    for promep in beneficiosPROMEP: 
+        dataFinalPROMEP.append([
+            promep.get("IESSolicitud", ""),
+            promep.get("Solicitud", ""),
+            promep.get("Vigencia", ""),
+            promep.get("Estado", ""),
+            promep.get("IdProfesor", "") 
+        ])
 
-    print(dataFinal,"------------------------------")
+    for academicos in cuerpoAcademico:
+        dataFinalAcademicos.append([
+            academicos.get("_id", ""),
+            academicos.get("NombreCuerpoAcademico"),
+            academicos.get("Clave"),
+            academicos.get("GradoConsolidacion"),
+        ]) 
+
+    for direccion in direccionIndividualizada:
+        dataFinalDireccion.append([
+            direccion.get("TituloTesisProyectoIndividual", ""),
+            direccion.get("Grado", ""),
+            direccion.get("EstadoDireccionIndividualizada", ""),
+            direccion.get("LAGCs"),
+        ])
+    for docencia in docencias:
+        dataFinalDocencias.append([
+            docencia.get("NombreCurso", ""),
+            docencia.get("InsitucionEducacionSuperior(IES)"),
+            docencia.get("DependenciaEducacionSuperior(IES)"),
+        ])
+
+    for GAcademica in gestionAcademica: 
+        dataFinalGAcademicas.append([
+            GAcademica.get("TipoGestion", ""),
+            GAcademica.get("CargoDentroComisionCuerpoColegiado", ""),
+            GAcademica.get("FuncionEncomendada", ""),
+            GAcademica.get("Aprobado", ""),
+            GAcademica.get("Estado", ""),
+        ])
+
+    for investigacion in investigaciones:
+        dataFinalInvestigacion.append([
+            investigacion.get("TituloProyecto", ""),
+            investigacion.get("NombrePatrocinador", ""),
+            investigacion.get("TipoPatrocinador")
+        ])
+
+    for logro in logros:
+        dataFinalLogros.append([
+            logro.get("Tipo", ""),
+            logro.get("Titulo", ""),
+            logro.get("Pais", ""),
+            logro.get("Ano", ""),
+        ])
+    
+    for pInvestigacion in profesoresInvestigaciones:
+        dataFinalPinvestifaciones.append([
+            pInvestigacion.get("_id", ""),
+            pInvestigacion.get("Nombre", ""),
+            pInvestigacion.get("IdProfesor", ""),
+            pInvestigacion.get("IdInvestigacion", "")
+        ])
+
+    for pLogro in profesorLogros:
+        dataFinalPLogros.append([
+            pLogro.get("Nombre", ""),
+            pLogro.get("IdProfesor", ""),
+            pLogro.get("IdLogro", "")
+        ])
+
+    for tutoria in tutorias:
+        dataFinalTutorias.append([
+            tutoria.get("Tutoria", ""),
+            tutoria.get("Nivel", ""),
+            tutoria.get("ProgramaEducativoParticipa", ""),
+            tutoria.get("EstadoTutelaje", "")
+        ])
+
+
+
+    creacionTabla("Profesor", dataFinalProf)
+    creacionTabla("PROMEP", dataFinalPROMEP)
+    creacionTabla("Academicos", dataFinalAcademicos)
+    creacionTabla("Direccion", dataFinalDireccion)
+    creacionTabla("Docencias", dataFinalDocencias)
+    creacionTabla("Gestion Academica", dataFinalGAcademicas)
+    creacionTabla("Investigaciones", dataFinalInvestigacion)
+    creacionTabla("Logros", dataFinalLogros)
+    creacionTabla("Profesores Investigaciones", dataFinalPinvestifaciones)
+    creacionTabla("Profesores Logros", dataFinalPLogros)
+    creacionTabla("Tutorias", dataFinalTutorias)
+    
+    
+    print("DOCUMENTOS CREADO")
+
+
+
+
+def creacionTabla(nombreTabla, dataFinal):
+
+    doc = SimpleDocTemplate(nombreTabla+".pdf", pagesize=letter)
     # Crear una tabla con los datos
     tabla = Table(dataFinal)
 
@@ -134,12 +203,3 @@ def createTable(filtros = {}):
 
     # Construir el PDF
     doc.build(story)
-    print("DOCUMENTO CREADO")
-#Prueba del codigo con datos estaticos
-#filtrosPrueba = {'autor': {'state': False, 'data': 'ALEJANDRO'}, 
-#        'ano': {'state': True, 'data': '2019'}, 
-#        'documento': {'state': True, 'data': 'Patente'}, 
-#        'areaConocimiento': {'state': False, 'data': ''}, 
-#        'otro': {'state': False, 'data': 'Otros'}}
-
-
