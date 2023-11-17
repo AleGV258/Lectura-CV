@@ -1,14 +1,13 @@
 .env
 __pycache__
-tabla_desde_python.pdf
-Academicos.pdf
-Direccion.pdf
-Docencias.pdf
-Gestion Academica.pdf
-Investigaciones.pdf
-Logros.pdf
-Profesor.pdf
-Profesores Investigaciones.pdf
-Profesores Logros.pdf
-PROMEP.pdf
-Tutorias.pdf
+PROFESOR.pdf
+BENEFICIOS_PROMEP.pdf
+CUERPO_ACADEMICO.pdf
+DIRECCIONES.pdf
+DOCENCIAS.pdf
+GESTION_ACADEMICA.pdf
+INVESTIGACION.pdf
+LOGROS.pdf
+PROFESOR_INVESTIGACIONES.pdf
+PROFESOR_LOGROS.pdf
+TUTORIAS.pdf
