@@ -90,7 +90,7 @@ def creacionTabla(nombreTabla, camposBusqueda, dataBase, camposTitulo):
 
     
     #Crea el documento, se coloca el nombre y el tamaño
-    doc = SimpleDocTemplate(nombreTabla+".pdf", pagesize=letter)
+    doc = SimpleDocTemplate('./datashets/'+nombreTabla+".pdf", pagesize=letter)
     # Crear una tabla con los datos
     tabla = Table(dataFinal)
 
