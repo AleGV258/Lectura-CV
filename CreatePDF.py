@@ -1,11 +1,26 @@
-from reportlab.lib.pagesizes import letter
+from reportlab.lib.pagesizes import letter,A4
+from reportlab.lib.units import cm
+from reportlab.lib.styles import getSampleStyleSheet
 from reportlab.pdfgen import canvas
 from functions.dataFunctions import connectionDB, retrieveAllRecords, retrieveRecords, retrieveRecordByID, insertRecord, updateRecords, updateRecordByID, deleteRecords, deleteRecordByID
 import json
-from reportlab.platypus import SimpleDocTemplate, Table, TableStyle, Frame
+from reportlab.platypus import SimpleDocTemplate, Table, TableStyle, paragraph, Frame
+from reportlab.lib.enums import TA_JUSTIFY, TA_LEFT, TA_CENTER
 from reportlab.lib import colors
 
 
+#estilos para los envabezados y los textos (si utilizar por el momento)
+width, height = A4
+styles = getSampleStyleSheet()
+styleN = styles["BodyText"]
+styleN.alignment = TA_LEFT
+styleBH = styles["Normal"]
+styleBH.alignment = TA_CENTER
+
+#Mapeo de las coordenadas para envolver el drawOn 
+def coord(x, y, unit=1):
+    x, y = x * unit, height -  y * unit
+    return x, y
 
 def createTable(filtros = {}):
     print("\n Filtros recibidos: ", filtros)
@@ -109,6 +124,15 @@ def creacionTabla(nombreTabla, camposBusqueda, dataBase, camposTitulo):
     ])
 
     tabla.setStyle(estilo)
+    
+    #Wrap para envolver el texto en las celdas según su tamaño
+    c = canvas.Canvas("a.pdf", pagesize=A4)
+    tabla.wrapOn(c, width, height)
+    tabla.drawOn(c, *coord(1.8, 9.6, cm))
+    c.save()
+    
+    
+
 
     # Crear el objeto Story y agregar la tabla al contenido
     story = []
@@ -116,3 +140,5 @@ def creacionTabla(nombreTabla, camposBusqueda, dataBase, camposTitulo):
 
     # Construir el PDF
     doc.build(story)
+    
+    
