@@ -1,3 +1,4 @@
+# Librerias utilizadas
 import win32com.client
 import os
 import queue
@@ -10,17 +11,26 @@ from functions.generateData import generateData
 from functions.dataFunctions import connectionDB, retrieveAllRecords, retrieveRecords, retrieveRecordByID, insertRecord, updateRecords, updateRecordByID, deleteRecords, deleteRecordByID
 
 def lecturaCV(actualPath, files, selectedTables, queue):
+    #Funcion lectura de curriculums vitae con los siguientes variables requeridas:
+        #Directorio en el que se encuentran los documentos.
+        #Lista de archivos a leer.
+        #Tablas seleccionadas para generar la base de datos.
+        #Cola de mensajes.        
+    
     inicio = time.time() # Inicio de la ejecución
+    
+    #Cambio de estado del mensaje que aparece en la interfaz gráfica
     txtNotification = "Iniciando la Lectura y Carga de los Datos, te pedimos paciencia, ya que la lectura puede tardar hasta 2 minutos por archivo, por la cantidad de información que contenga y velocidad de la red, además te pedimos no abrir documentos de Word mientras se realiza la lectura"
     queue.put(txtNotification)
+    
+    
     print("\n-------------------------------------- Iniciando Lectura --------------------------------------")
-    # actualPath2 = os.path.dirname(os.path.abspath(__file__)) # Directorio actual
-    # files = os.listdir(actualPath + "\\files") # Ruta de los archivos
-
-    mc = connectionDB()
+    mc = connectionDB() #Conexión a la base de datos
     bd = mc[0]
     word = win32com.client.Dispatch("Word.Application") # Generar instancia de word
-    print(files)
+    
+    print(files) #Archivos encontrados en el directorio
+    
     for index, file in enumerate(files, start = 1): # Por c/archivo en el directorio
         try:
             inicioArchivo = time.time() # Inicio de la ejecución del archivo en específico
@@ -51,10 +61,12 @@ def lecturaCV(actualPath, files, selectedTables, queue):
             estudiosRealizados = dictionaryMixTable(tablas[2]['contenido'],['Nivel de estudios','Estudios en','Área     > Disciplina','Institución otorgante','Institución otorgante no considerada en el catálogo'], 'Nivel de estudios','País')  
             datosLaborales = generateData(tablas[3]['contenido'], ['Nombramiento', 'Tipo de nombramiento','Dedicación','Institución de Educación Superior','Dependencia de Educación Superior','Unidad Académica','Inicio del contrato', 'Fin del contrato', 'Cronología'])
             nombreProfesor = tablas[1]['contenido'][0][1].upper().replace("Á", "A").replace("É", "E").replace("Í", "I").replace("Ó", "O").replace("Ú", "U")
+            
             # print('\nRealizados:', estudiosRealizados)
             # print('\ndatosLaborales:', datosLaborales)
             # print('\nnombreProfesor:', nombreProfesor)
-            profesorRecord = {
+            
+            profesorRecord = { #Construcción de diccionario de la información del Profesor
                 'Nombre': nombreProfesor,
                 'RFC': tablas[1]['contenido'][2][1],
                 'CURP':  tablas[1]['contenido'][3][1],
@@ -79,11 +91,9 @@ def lecturaCV(actualPath, files, selectedTables, queue):
                 queue.put(txtNotification)
                 profesorID = insertRecord(bd, "Profesores", profesorRecord)
                 
-            # counteri=0 
-            for tabla in tablas:
-                # print("\n Tabla ",counteri, ": ",tabla['nombre'])
-                # counteri= counteri + 1
+            for tabla in tablas: #Iteración de todas las tablas encontradas
 
+                #Extraer información para generar el diccionario con los logros del profesor
                 if selectedTables['LogrosProfesor'] == True and tabla['nombre'] == 'Producción':  
                     txtNotification = f"Insertando records de Producción y Logros del archivo {file}"
                     queue.put(txtNotification)
@@ -92,7 +102,8 @@ def lecturaCV(actualPath, files, selectedTables, queue):
                     # print("\nLogros: ", Logros)
                     for logro in Logros:
                         cleanNames(logro['OtrosDatos']['Autor'], logro, 'Logros', 'ProfesorLogros', 'IdLogro')
-                    
+                   
+                #Extraer información para generar el diccionario con las investigaciones de los profesores 
                 if selectedTables['InvestigacionesProfesor'] == True and tabla['nombre'] == 'Proyectos de investigación':
                     txtNotification = f"Insertando records de Investigaciones del Profesor del archivo {file}"
                     queue.put(txtNotification)
@@ -101,7 +112,8 @@ def lecturaCV(actualPath, files, selectedTables, queue):
                     # print("\nInvestigaciones: ", Investigaciones)     
                     for investigacion in Investigaciones:
                         cleanNames(investigacion['InvestigadoresParticipantes'], investigacion, 'Investigaciones', 'ProfesorInvestigaciones', 'IdInvestigacion')
-                    
+                
+                #Extraer la información para generar el diccionario con la información encontrada en la gestión académica    
                 if selectedTables['GestionAcademica'] == True and tabla['nombre'] == 'Gestión académica': 
                     txtNotification = f"Insertando records de Gestión Académica del archivo {file}" 
                     queue.put(txtNotification)
@@ -114,6 +126,7 @@ def lecturaCV(actualPath, files, selectedTables, queue):
                             gestion['IdProfesor'] = ObjectId(profesorID)
                             insertRecord(bd, 'GestionesAcademicas', gestion)
                 
+                #Extraer información para generar el diccionario con la información encontrada sobre tutorías
                 if selectedTables['Tutorias'] == True and tabla['nombre'] == 'Tutoría':
                     txtNotification = f"Insertando records de Tutorías del archivo {file}"
                     queue.put(txtNotification)
@@ -125,7 +138,8 @@ def lecturaCV(actualPath, files, selectedTables, queue):
                         if (len(busqueda) == 0):
                             tutoria['IdProfesor'] = ObjectId(profesorID)
                             insertRecord(bd, 'Tutorias', tutoria)
-                        
+                
+                #Extraer información para generar el diccionario con la información encontrada sobre dirección individualizada    
                 if selectedTables['DireccionIndividualizada'] == True and tabla['nombre'] == 'Dirección individualizada':
                     txtNotification = f"Insertando records de Dirección Individualizada del archivo {file}"
                     queue.put(txtNotification)
@@ -138,6 +152,7 @@ def lecturaCV(actualPath, files, selectedTables, queue):
                             direccion['IdProfesor'] = ObjectId(profesorID)
                             insertRecord(bd, 'DireccionesIndividualizadas', direccion)
                 
+                #Extraer información para generar el diccionario con la información encontrada sobre docencias
                 if selectedTables['Docencias'] == True and tabla['nombre'] == 'Docencia':
                     txtNotification = f"Insertando records de Docencias del archivo {file}"
                     queue.put(txtNotification)
@@ -150,6 +165,7 @@ def lecturaCV(actualPath, files, selectedTables, queue):
                             docencia['IdProfesor'] = ObjectId(profesorID)
                             insertRecord(bd, 'Docencias', docencia)
                 
+                #Extraer informacion para generar el diccionario con la información encontrada sobre beneficios externos PROMEP
                 if selectedTables['BeneficiosPROMEP'] == True and tabla['nombre'] == 'Beneficios externos a PROMEP':
                     txtNotification = f"Insertando records de Beneficios externos a PROMEP del archivo {file}"
                     queue.put(txtNotification)
@@ -162,7 +178,8 @@ def lecturaCV(actualPath, files, selectedTables, queue):
                         if (len(busqueda) == 0):
                             beneficio['IdProfesor'] = ObjectId(profesorID)
                             insertRecord(bd, 'BeneficiosExternosPROMEP', beneficio)
-                            
+                
+                #Extraer información para generar el diccionario con la información encontrada sobre beneficios PROMED         
                 if selectedTables['BeneficiosPROMEP'] == True and tabla['nombre'] == 'Beneficios PROMEP':
                     txtNotification = f"Insertando records de Beneficios PROMEP del archivo {file}"
                     queue.put(txtNotification)
@@ -176,6 +193,7 @@ def lecturaCV(actualPath, files, selectedTables, queue):
                             beneficio['IdProfesor'] = ObjectId(profesorID)
                             insertRecord(bd, 'BeneficiosPROMEP', beneficio)
                         
+                #Extraer información para generar el diccionario con la información encontrada sobre cuerpo académico
                 if selectedTables['CuerpoAcademico'] == True and tabla['nombre'] == 'Cuerpo Académico':
                     txtNotification = f"Insertando records de Cuerpo Académico del archivo {file}" 
                     queue.put(txtNotification)
@@ -189,17 +207,20 @@ def lecturaCV(actualPath, files, selectedTables, queue):
                             cAcademico['IdProfesor'] = ObjectId(profesorID)
                             insertRecord(bd, 'CuerpoAcademico', cAcademico)    
                 
-                # print("\nTablas encontradas: ----------------------")
-                # for tabla in tablas:
-                #     print(tabla['nombre'])
-                
             finArchivo = time.time() # Fin de la ejecución
+            
+            #Texto para enviar con el cambio de estado de la información mostrada en la interfaz gráfica
             txtNotification = f"Terminando lectura y carga de datos del archivo {file}, tiempo transcurrido: {str(finArchivo - inicioArchivo)} segundos. Iniciando lectura del siguiente archivo"
+            
+            #Cambio de estado del mensaje mostrado en la interfaz gráfica cuando se termino con todos los archivos
             if(index == len(files)):
                 fin = time.time()
                 txtNotification = f"Terminando lectura y carga de datos de todos los archivos en el directorio: {actualPath}\nTiempo total transcurrido: {str(fin - inicio)} segundos"
+            
+            #Envió de cambio de estado
             queue.put(txtNotification)
 
+        #Excepción en caso de ocurrir un erro en la lectura de los archivos
         except Exception as error:
             txtNotification = f"Ah ocurrido un error al cargar o leer los datos en el archivo ({file})\nError: {error}"
             queue.put(txtNotification)
