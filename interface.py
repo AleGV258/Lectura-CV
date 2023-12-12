@@ -30,8 +30,8 @@ class InterfazCV:
         self.frm_principal.grid(column=1, row=1, sticky="nsew")
         
         # Imagen para el Título de la App
-        self.imagen = Image.open("./images/escudo.png")
-        self.imagen = self.imagen.resize((275, 63))
+        self.imagen = Image.open("./images/UAQ2.png")
+        self.imagen = self.imagen.resize((278, 66))
         self.img_titulo = ImageTk.PhotoImage(self.imagen)
         self.label = tk.Label(self.frm_principal, image=self.img_titulo)
         self.label.grid(column=0, row=0, sticky="w")
