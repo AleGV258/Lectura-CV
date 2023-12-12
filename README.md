@@ -67,6 +67,7 @@ _Se colocan notas que son de utilidad para la manipulación del proyecto y/o sis
 _Documentos, enlaces y más información referente a la construcción del proyecto, sistema o aplicación_
 
 * [Figma](https://www.figma.com/file/I1Cb2SfUBRSHAuwZtn7n7C/Lectura-de-CV?type=design&node-id=0%3A1&mode=design&t=3XbOK3KuaujEw89O-1) – Modelos y prototipos creados para la aplicación
+* [LucidChart](https://lucid.app/lucidchart/d2f34fda-5d00-4a72-9c1e-68c1151e10dc/edit?invitationId=inv_f7ee5e3d-2ca5-4807-bbd2-87ce0cf75a3f) – Modelo de la base de datos
 
 ## Autores ✒️
 
