@@ -22,7 +22,7 @@ _Antes de inicializar el proyecto y ejecutarlo, debes tener en cuenta los siguie
 
 ## Construido con 🛠️
 
-_Herramientas, lenguajes de programación y demás recursos usados para su construcción _
+_Herramientas, lenguajes de programación y demás recursos usados para su construcción_
 
 * [Python](https://www.python.org/downloads/) – (3.10 o superior) Lenguaje de programación usado para su construcción 
 * [Pygubu-Designer](https://github.com/alejandroautalan/pygubu-designer) – Aplicación de desarrollo rápida que permite construir las interfaces de usuario de la aplicación.
